@@ -105,6 +105,37 @@
           }
         }
       }
+    },
+    "clapp": {
+      "projectType": "library",
+      "root": "projects/clapp",
+      "sourceRoot": "projects/clapp/src",
+      "prefix": "cl",
+      "architect": {
+        "build": {
+          "builder": "@angular-devkit/build-angular:ng-packagr",
+          "options": {
+            "project": "projects/clapp/ng-package.json"
+          },
+          "configurations": {
+            "production": {
+              "tsConfig": "projects/clapp/tsconfig.lib.prod.json"
+            },
+            "development": {
+              "tsConfig": "projects/clapp/tsconfig.lib.json"
+            }
+          },
+          "defaultConfiguration": "production"
+        },
+        "test": {
+          "builder": "@angular-devkit/build-angular:karma",
+          "options": {
+            "main": "projects/clapp/src/test.ts",
+            "tsConfig": "projects/clapp/tsconfig.spec.json",
+            "karmaConfig": "projects/clapp/karma.conf.js"
+          }
+        }
+      }
     }
   },
   "defaultProject": "clapp-components"
