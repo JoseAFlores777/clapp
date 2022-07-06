@@ -14,7 +14,9 @@ import { SidebarComponent } from './patterns/sidebar/sidebar.component';
   imports: [
   ],
   exports: [
-    ClappComponent
+    ClappComponent,
+    IconButtonComponent,
+    SidebarComponent
   ]
 })
 export class ClappModule { }

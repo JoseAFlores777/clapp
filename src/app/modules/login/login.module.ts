@@ -1,7 +1,9 @@
-import { NgModule } from '@angular/core';
+import { CUSTOM_ELEMENTS_SCHEMA, NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { GatekeeperComponent } from './pages/gatekeeper/gatekeeper.component';
 import { EndorsementComponent } from './pages/endorsement/endorsement.component';
+import { ClappModule } from 'clapp';
+
 
 
 
@@ -11,7 +13,12 @@ import { EndorsementComponent } from './pages/endorsement/endorsement.component'
     EndorsementComponent
   ],
   imports: [
-    CommonModule
+    CommonModule,
+    ClappModule
+  ],
+  exports: [
+    GatekeeperComponent,
+    EndorsementComponent
   ]
 })
 export class LoginModule { }
