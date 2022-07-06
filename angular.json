@@ -33,7 +33,13 @@
             "styles": [
               "src/styles.scss"
             ],
-            "scripts": []
+            "scripts": [],
+            "stylePreprocessorOptions": {
+              "includePaths": [
+                "projects/clapp/assets/scss",
+                "projects/clapp/assets/scss/partials"
+              ]
+            }
           },
           "configurations": {
             "production": {
