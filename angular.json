@@ -37,7 +37,8 @@
             "stylePreprocessorOptions": {
               "includePaths": [
                 "projects/clapp/assets/scss",
-                "projects/clapp/assets/scss/partials"
+                "projects/clapp/assets/scss/partials",
+                "projects/clapp/assets/icons/System"
               ]
             }
           },

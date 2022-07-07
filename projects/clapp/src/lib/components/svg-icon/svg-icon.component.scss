@@ -1,0 +1,75 @@
+@import '../../../../assets/scss/partials/clapp-base';
+
+@mixin iconPainter($color) {
+    fill: $color;
+
+}
+
+.applaudo-navy-blue {
+    @include iconPainter($applaudo-navy-blue);
+}
+
+.applaudo-red {
+    @include iconPainter($applaudo-red);
+}
+
+.light-gray {
+    @include iconPainter($light-gray);
+}
+
+.white {
+    @include iconPainter($white);
+}
+
+.applaudo-red-plus {
+    @include iconPainter($applaudo-red-plus);
+
+
+}
+
+.applaudo-red-minus {
+    @include iconPainter($applaudo-red-minus);
+}
+
+.error-red {
+    @include iconPainter($error-red);
+}
+
+.green {
+    @include iconPainter($green);
+}
+
+.mid-gray {
+    @include iconPainter($mid-gray);
+}
+
+.yellow {
+    @include iconPainter($yellow);
+}
+
+.charcoal {
+    @include iconPainter($charcoal);
+}
+
+.cool-gray {
+    @include iconPainter($cool-gray);
+}
+
+.platinum {
+    @include iconPainter($platinum);
+}
+
+.applaudo-purple {
+    @include iconPainter($applaudo-purple);
+}
+
+.blue{
+    @include iconPainter($blue);
+}
+.bronze {
+    @include iconPainter($bronze);
+}
+
+.light-navy-blue {
+    @include iconPainter($light-navy-blue);
+}
