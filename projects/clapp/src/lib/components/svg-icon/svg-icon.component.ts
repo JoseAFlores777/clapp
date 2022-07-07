@@ -7,7 +7,7 @@ type TYPE_ICONS_NAMES = keyof typeof ClappIcons;
 
 @Component({
   selector: 'cl-svg-icon',
-  template: `<div #iconContainer></div>`,
+  template: `<div #iconContainer id="iconContainer"></div>`,
   styleUrls: ['./svg-icon.component.scss'],
 })
 export class SvgIconComponent implements OnInit, AfterViewInit {
@@ -17,9 +17,16 @@ export class SvgIconComponent implements OnInit, AfterViewInit {
   @Input('height') height: number = 24;
   @Input('fill') fill: TYPE_ICON_FILLS = 'ApplaudoNavyBlue';
 
-  constructor(private element: ElementRef, private renderer: Renderer2) {}
+  constructor(private renderer: Renderer2) {}
 
   ngAfterViewInit(): void {
+    this.buildIcon();
+  }
+  
+  ngOnInit(): void { }
+  
+  
+  buildIcon():void {
     let templateTmp = this.renderer.createElement('template');
     templateTmp.innerHTML = ClappIcons[this.icon];
     let svg = templateTmp.content.firstChild as SVGElement;
@@ -28,6 +35,4 @@ export class SvgIconComponent implements OnInit, AfterViewInit {
     this.iconContainer.nativeElement.setAttribute('class', `${IconFill[this.fill]}`);
     this.renderer.appendChild(this.iconContainer.nativeElement, svg);
   }
-
-  ngOnInit(): void {}
 }
