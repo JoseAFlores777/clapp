@@ -1,0 +1,6 @@
+@import '../../../../assets/scss/partials/clapp-base';
+
+h5{
+@include clapp-h5;
+  color: $applaudo-red-plus;
+}

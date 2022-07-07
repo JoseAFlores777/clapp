@@ -6,7 +6,8 @@
     "paths": {
       "clapp": [
         "dist/clapp/clapp",
-        "dist/clapp"
+        "dist/clapp",
+        "projects/clapp/src/public_api"
       ]
     },
     "outDir": "./dist/out-tsc",
