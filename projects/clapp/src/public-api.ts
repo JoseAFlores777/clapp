@@ -10,3 +10,6 @@ export * from './lib/components/buttons/icon-button/icon-button.component';
 export * from './lib/patterns/sidebar/sidebar.component';
 export * from './lib/components/buttons/primary-button/primary-button.component';
 export * from './lib/components/button/button.component';
+export * from './lib/components/buttons/icon-button/icon-button.component';
+export * from './lib/patterns/sidebar/sidebar.component';
+export * from './lib/components/svg-icon/svg-icon.component';
