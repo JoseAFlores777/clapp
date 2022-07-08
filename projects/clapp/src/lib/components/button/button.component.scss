@@ -1,6 +1,19 @@
 @import '../../../../assets/scss/partials/clapp-base';
 
-.button {
+@mixin buttonType($type) {
+  @if $type =='secondary' {
+    background-color: red;
+    color: #333;
+    border: 1px solid #ccc;
+
+    &:hover {
+      background-color: #e6e6e6;
+    }
+  }
+}
+
+button {
+  @include clapp-body-demi;
   width: 100%;
   height: 3rem;
   display: flex;
@@ -11,11 +24,7 @@
   border-style: none;
   cursor: pointer;
   outline: none;
-  font-family: Avenir Next;
   font-style: normal;
-  font-size: 16px;
-  font-weight: 600;
-  line-height: 24px;
   letter-spacing: 0em;
   text-align: center;
   background-color: $applaudo-red;
@@ -33,4 +42,8 @@
     background-color: $light-gray;
     color: $mid-gray;
   }
+}
+
+.secondary {
+  @include buttonType(secondary)
 }

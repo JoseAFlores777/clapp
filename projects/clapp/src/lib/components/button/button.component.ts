@@ -7,8 +7,8 @@ import { Component, Input, OnInit } from '@angular/core';
 })
 export class ButtonComponent implements OnInit {
   @Input('disabled') disabled = false;
-  @Input('text') text = 'Call to Action';
-
+  @Input('buttonType') buttonType!: string;
+  
   constructor() {}
 
   ngOnInit(): void {}
