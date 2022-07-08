@@ -3,13 +3,14 @@ import { Component, OnInit } from '@angular/core';
 @Component({
   selector: 'app-gatekeeper',
   templateUrl: './gatekeeper.component.html',
-  styleUrls: ['./gatekeeper.component.scss']
+  styleUrls: ['./gatekeeper.component.scss'],
 })
 export class GatekeeperComponent implements OnInit {
+  constructor() {}
 
-  constructor() { }
+  ngOnInit(): void {}
 
-  ngOnInit(): void {
+  hola(){
+    console.log('hola');
   }
-
 }
