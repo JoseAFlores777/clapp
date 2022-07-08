@@ -1,5 +1,15 @@
 @import '../../../../assets/scss/partials/clapp-base';
 
+:host{
+    display: flex;
+    justify-content: center;
+
+    #iconContainer{
+        display: flex;
+        justify-content: center;
+    }
+}
+
 @mixin iconPainter($color) {
     fill: $color;
 

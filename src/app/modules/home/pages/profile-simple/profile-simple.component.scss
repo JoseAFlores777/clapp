@@ -5,3 +5,22 @@ p{
   font-weight: bold;
   color: $applaudo-red-plus;
 }
+
+#prueba{
+width: 200px;
+background-color: aqua;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-decoration: none;
+  gap: 10px;
+  height: 40px;
+  @include clapp-body-demi();
+  
+ a{
+  color: $applaudo-red-plus;
+  text-decoration: none;
+  
+
+}
+}
