@@ -22,7 +22,7 @@
   text-align: center;
 }
 
-@mixin button-states($hover, $active) {
+@mixin button-states ($hover, $active) {
 
   &:hover,
   &:focus {
@@ -40,7 +40,7 @@
   border-color: $border-color;
 }
 
-@mixin type($type) {
+@mixin type ($type) {
   @if $type =='primary' {
     @include color($applaudo-red, $white, $applaudo-red);
     @include button-states($applaudo-red-plus, $applaudo-red-minus);
