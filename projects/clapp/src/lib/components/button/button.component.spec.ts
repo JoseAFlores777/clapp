@@ -22,4 +22,21 @@ describe('ButtonComponent', () => {
   it('should create', () => {
     expect(component).toBeTruthy();
   });
+
+  it('should render a button element', () => {
+    const compiled = fixture.debugElement.nativeElement;
+    expect(compiled.querySelector('button')).toBeTruthy();
+  });
+  
+  it('should have a property disabled', () => {
+    expect(component.disabled).toBeDefined();
+    component.disabled = true;
+    expect(component.disabled).toBeTruthy();
+  })
+  
+  it('should have a property type', () => {
+    expect(component.type).toBeDefined();
+    component.type = 'primary';
+    expect(component.type).toBeTruthy();
+  })
 });
