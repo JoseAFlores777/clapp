@@ -97,6 +97,12 @@
       background-color: $white;
     }
   }
+
+  @else if $type =='icon' {
+    background-color: $white;
+
+    @include button-states($light-gray, $light-gray);
+  }
 }
 
 @mixin small() {
@@ -144,4 +150,9 @@
 .text {
   @include button-creator();
   @include type('text');
+}
+
+.icon {
+  @include button-creator();
+  @include type('icon');
 }
