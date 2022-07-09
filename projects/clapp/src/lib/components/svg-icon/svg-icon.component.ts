@@ -9,9 +9,9 @@ type TYPE_ICONS_NAMES = keyof typeof ClappIcons;
 @Component({
   selector: 'cl-svg-icon',
   template: `<div #iconContainer id="iconContainer"></div>`,
-  styleUrls: ['./svg-icon.component.scss']
+  styleUrls: ['./svg-icon.component.scss'],
 })
-export class SvgIconComponent implements OnInit, AfterViewInit,OnChanges {
+export class SvgIconComponent implements OnInit, AfterViewInit, OnChanges {
   @ViewChild('iconContainer') iconContainer!: ElementRef;
   @Input('icon') icon: TYPE_ICONS_NAMES = 'account';
   @Input('width') width: number = 24;
@@ -19,8 +19,7 @@ export class SvgIconComponent implements OnInit, AfterViewInit,OnChanges {
   @Input('fill') fill: TYPE_ICON_FILLS = 'ApplaudoNavyBlue';
 
   propertiesSubs$: Subject<any> = new Subject();
-  changeLog:any = [];
-
+  changeLog: any = [];
 
   constructor(private renderer: Renderer2) {}
 
@@ -29,28 +28,27 @@ export class SvgIconComponent implements OnInit, AfterViewInit,OnChanges {
   }
 
   ngOnChanges(changes: SimpleChanges) {
-      const chng = changes['icon'];
-      const cur  = chng.currentValue;
-      const prev = chng.previousValue;
-      this.changeLog.push(`icon: currentValue = ${cur}, previousValue = ${prev}`);
-    if ((this.icon != undefined && this.iconContainer != undefined) || (cur != prev && cur != undefined && prev != undefined)) {
+    let changesCant = 0;
+    for (let propName in changes) {
+      if (!changes[propName].isFirstChange()) {
+        changesCant++;
+      }
+    }
+    if (changesCant > 0) {
       this.buildIcon();
     }
   }
 
-  ngOnInit(): void { }
-  
-  
-  buildIcon():void {
-    console.log(`building of ${this.icon}`);
+  ngOnInit(): void {}
+
+  buildIcon(): void {
     let templateTmp = this.renderer.createElement('template');
     templateTmp.innerHTML = ClappIcons[this.icon];
     let svg = templateTmp.content.firstChild as SVGElement;
     this.renderer.setAttribute(svg, 'width', `${this.width}px`);
     this.renderer.setAttribute(svg, 'height', `${this.height}px`);
     this.iconContainer.nativeElement.setAttribute('class', `${IconFill[this.fill]}`);
-    this.iconContainer.nativeElement.innerHTML='';
-    
+    this.iconContainer.nativeElement.innerHTML = '';
     this.renderer.appendChild(this.iconContainer.nativeElement, svg);
   }
 }
