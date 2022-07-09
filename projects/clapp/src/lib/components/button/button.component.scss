@@ -34,7 +34,7 @@
   }
 }
 
-@mixin color ($background, $color, $border-color) {
+@mixin colors ($background, $color, $border-color) {
   background-color: $background;
   color: $color;
   border-color: $border-color;
@@ -42,7 +42,7 @@
 
 @mixin type ($type) {
   @if $type =='primary' {
-    @include color($applaudo-red, $white, $applaudo-red);
+    @include colors($applaudo-red, $white, $applaudo-red);
     @include button-states($applaudo-red-plus, $applaudo-red-minus);
 
     &:disabled {
@@ -52,7 +52,7 @@
 
   @else if $type =='secondary' {
     @include clapp-body-regular;
-    @include color($white, $applaudo-red, $platinum);
+    @include colors($white, $applaudo-red, $platinum);
     border: 2px solid;
 
     &:hover,
@@ -72,11 +72,29 @@
   }
 
   @else if $type =='tertiary' {
-    @include color($applaudo-navy-blue, $white, $applaudo-navy-blue);
+    @include colors($applaudo-navy-blue, $white, $applaudo-navy-blue);
     @include button-states($applaudo-red, $applaudo-red-minus);
 
     &:disabled {
       @include disabled();
+    }
+  }
+
+  @else if $type =='text' {
+    @include colors($white, $applaudo-red, $white);
+
+    &:hover,
+    &:focus {
+      color: $applaudo-red-plus;
+    }
+
+    &:active {
+      color: $applaudo-red-minus;
+    }
+
+    &:disabled {
+      @include disabled();
+      background-color: $white;
     }
   }
 }
@@ -121,4 +139,9 @@
 .tertiary-small {
   @extend .tertiary;
   @include small();
+}
+
+.text {
+  @include button-creator();
+  @include type('text');
 }
