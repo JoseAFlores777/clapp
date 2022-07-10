@@ -9,8 +9,4 @@ export class GatekeeperComponent implements OnInit {
   constructor() {}
 
   ngOnInit(): void {}
-
-  hola(){
-    console.log('hola');
-  }
 }

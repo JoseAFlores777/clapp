@@ -3,12 +3,12 @@
     "interfaces": [
         {
             "name": "User",
-            "id": "interface-User-9c7e5f1bbbab702cb032307d130876cb68969b0cd4eedef32a0c8cad8081a54e5f8f577ed6ad4539c1b99a1d246cb34031d198c2ea8eba440e64e91b14f01fdc",
+            "id": "interface-User-dcc5c3137cd472dd0002d85b562efd23162e3eff53ca4438a6251e6c46e3b8299076255380d1d42f386510cb6f2cbaab49fa5b5f253be459cdc3869428c5c400",
             "file": "src/stories/User.ts",
             "deprecated": false,
             "deprecationMessage": "",
             "type": "interface",
-            "sourceCode": "export interface User {}\n",
+            "sourceCode": "export interface User {}\r\n",
             "properties": [],
             "indexSignatures": [],
             "methods": []
@@ -17,7 +17,7 @@
     "injectables": [
         {
             "name": "ClappService",
-            "id": "injectable-ClappService-3dec9d10355f9f3c6e75801276c06aeabaf7b35e453a025f0efd549ff229a319c691db7ffa7b3b0be513199765d6ef85edd80c8f16e4592ad8c13956359599f1",
+            "id": "injectable-ClappService-f2f895e0f4df226da0f5165d2f8625d53586925662fec3b1a6cae310accfd9cf4c3abc2baf38510559d4f1b2b0c70196167c3b43db96024e3fea2e7244cf7d1b",
             "file": "projects/clapp/src/lib/clapp.service.ts",
             "properties": [],
             "methods": [],
@@ -25,7 +25,7 @@
             "deprecationMessage": "",
             "description": "",
             "rawdescription": "\n",
-            "sourceCode": "import { Injectable } from '@angular/core';\n\n@Injectable({\n  providedIn: 'root'\n})\nexport class ClappService {\n\n  constructor() { }\n}\n",
+            "sourceCode": "import { Injectable } from '@angular/core';\r\n\r\n@Injectable({\r\n  providedIn: 'root'\r\n})\r\nexport class ClappService {\r\n\r\n  constructor() { }\r\n}\r\n",
             "constructorObj": {
                 "name": "constructor",
                 "description": "",
@@ -44,7 +44,7 @@
     "components": [
         {
             "name": "AppComponent",
-            "id": "component-AppComponent-f86cb96c844ea6d3d3e8eef8b1665b65332d073c2a26c7486efa3f38984a8b213aec33e03b51523910b76613436eb154bab28cfa6b37cd5d92fc1d1a3f7d7367",
+            "id": "component-AppComponent-be01bfb88b70a177977d7c21fce1e2e60f8d47d9402bc010e2bd06016eb56f6ea38f2f83ecb541c8fc41ae47e349cdccac3c799e9eefc8278afbbe49f8b7fac1",
             "file": "src/app/app.component.ts",
             "encapsulation": [],
             "entryComponents": [],
@@ -82,7 +82,7 @@
             "description": "",
             "rawdescription": "\n",
             "type": "component",
-            "sourceCode": "import { Component } from '@angular/core';\n\n@Component({\n  selector: 'app-root',\n  templateUrl: './app.component.html',\n  styleUrls: ['./app.component.scss']\n})\nexport class AppComponent {\n  title = 'clapp-components';\n}\n",
+            "sourceCode": "import { Component } from '@angular/core';\r\n\r\n@Component({\r\n  selector: 'app-root',\r\n  templateUrl: './app.component.html',\r\n  styleUrls: ['./app.component.scss']\r\n})\r\nexport class AppComponent {\r\n  title = 'clapp-components';\r\n}\r\n",
             "assetsDirs": [],
             "styleUrlsData": [
                 {
@@ -95,7 +95,7 @@
         },
         {
             "name": "ButtonComponent",
-            "id": "component-ButtonComponent-4ef205c97a334c309aa4001c8ab4a6d9571dcae18d0e85aaf0d367467ab5d3a9f13ab3573726f1fcb409bc9b49894dadfb80b1bbe1b6ba7041455ad9d4922004",
+            "id": "component-ButtonComponent-8ceaf520f96e5437b08eeda244d84efb29effe62ddca4fc38eaa229085c2a1126c5715e61445bae741505aca1e4d377b350cb05fadd1dc45d9b2bbf7527029f1",
             "file": "src/stories/button.component.ts",
             "encapsulation": [],
             "entryComponents": [],
@@ -128,15 +128,15 @@
                     "deprecationMessage": "",
                     "jsdoctags": [
                         {
-                            "pos": 711,
-                            "end": 724,
+                            "pos": 747,
+                            "end": 761,
                             "flags": 4227072,
                             "modifierFlagsCache": 0,
                             "transformFlags": 0,
                             "kind": 325,
                             "tagName": {
-                                "pos": 712,
-                                "end": 720,
+                                "pos": 748,
+                                "end": 756,
                                 "flags": 4227072,
                                 "modifierFlagsCache": 0,
                                 "transformFlags": 0,
@@ -196,11 +196,11 @@
             "description": "",
             "rawdescription": "\n",
             "type": "component",
-            "sourceCode": "import { Component, Input, Output, EventEmitter } from '@angular/core';\n\n@Component({\n  selector: 'storybook-button',\n  template: ` <button\n    type=\"button\"\n    (click)=\"onClick.emit($event)\"\n    [ngClass]=\"classes\"\n    [ngStyle]=\"{ 'background-color': backgroundColor }\"\n  >\n    {{ label }}\n  </button>`,\n  styleUrls: ['./button.css'],\n})\nexport default class ButtonComponent {\n  /**\n   * Is this the principal call to action on the page?\n   */\n  @Input()\n  primary = false;\n\n  /**\n   * What background color to use\n   */\n  @Input()\n  backgroundColor?: string;\n\n  /**\n   * How large should the button be?\n   */\n  @Input()\n  size: 'small' | 'medium' | 'large' = 'medium';\n\n  /**\n   * Button contents\n   *\n   * @required\n   */\n  @Input()\n  label = 'Button';\n\n  /**\n   * Optional click handler\n   */\n  @Output()\n  onClick = new EventEmitter<Event>();\n\n  public get classes(): string[] {\n    const mode = this.primary ? 'storybook-button--primary' : 'storybook-button--secondary';\n\n    return ['storybook-button', `storybook-button--${this.size}`, mode];\n  }\n}\n",
+            "sourceCode": "import { Component, Input, Output, EventEmitter } from '@angular/core';\r\n\r\n@Component({\r\n  selector: 'storybook-button',\r\n  template: ` <button\r\n    type=\"button\"\r\n    (click)=\"onClick.emit($event)\"\r\n    [ngClass]=\"classes\"\r\n    [ngStyle]=\"{ 'background-color': backgroundColor }\"\r\n  >\r\n    {{ label }}\r\n  </button>`,\r\n  styleUrls: ['./button.css'],\r\n})\r\nexport default class ButtonComponent {\r\n  /**\r\n   * Is this the principal call to action on the page?\r\n   */\r\n  @Input()\r\n  primary = false;\r\n\r\n  /**\r\n   * What background color to use\r\n   */\r\n  @Input()\r\n  backgroundColor?: string;\r\n\r\n  /**\r\n   * How large should the button be?\r\n   */\r\n  @Input()\r\n  size: 'small' | 'medium' | 'large' = 'medium';\r\n\r\n  /**\r\n   * Button contents\r\n   *\r\n   * @required\r\n   */\r\n  @Input()\r\n  label = 'Button';\r\n\r\n  /**\r\n   * Optional click handler\r\n   */\r\n  @Output()\r\n  onClick = new EventEmitter<Event>();\r\n\r\n  public get classes(): string[] {\r\n    const mode = this.primary ? 'storybook-button--primary' : 'storybook-button--secondary';\r\n\r\n    return ['storybook-button', `storybook-button--${this.size}`, mode];\r\n  }\r\n}\r\n",
             "assetsDirs": [],
             "styleUrlsData": [
                 {
-                    "data": ".storybook-button {\n  font-family: 'Nunito Sans', 'Helvetica Neue', Helvetica, Arial, sans-serif;\n  font-weight: 700;\n  border: 0;\n  border-radius: 3em;\n  cursor: pointer;\n  display: inline-block;\n  line-height: 1;\n}\n.storybook-button--primary {\n  color: white;\n  background-color: #1ea7fd;\n}\n.storybook-button--secondary {\n  color: #333;\n  background-color: transparent;\n  box-shadow: rgba(0, 0, 0, 0.15) 0px 0px 0px 1px inset;\n}\n.storybook-button--small {\n  font-size: 12px;\n  padding: 10px 16px;\n}\n.storybook-button--medium {\n  font-size: 14px;\n  padding: 11px 20px;\n}\n.storybook-button--large {\n  font-size: 16px;\n  padding: 12px 24px;\n}\n",
+                    "data": ".storybook-button {\r\n  font-family: 'Nunito Sans', 'Helvetica Neue', Helvetica, Arial, sans-serif;\r\n  font-weight: 700;\r\n  border: 0;\r\n  border-radius: 3em;\r\n  cursor: pointer;\r\n  display: inline-block;\r\n  line-height: 1;\r\n}\r\n.storybook-button--primary {\r\n  color: white;\r\n  background-color: #1ea7fd;\r\n}\r\n.storybook-button--secondary {\r\n  color: #333;\r\n  background-color: transparent;\r\n  box-shadow: rgba(0, 0, 0, 0.15) 0px 0px 0px 1px inset;\r\n}\r\n.storybook-button--small {\r\n  font-size: 12px;\r\n  padding: 10px 16px;\r\n}\r\n.storybook-button--medium {\r\n  font-size: 14px;\r\n  padding: 11px 20px;\r\n}\r\n.storybook-button--large {\r\n  font-size: 16px;\r\n  padding: 12px 24px;\r\n}\r\n",
                     "styleUrl": "./button.css"
                 }
             ],
@@ -218,8 +218,92 @@
             }
         },
         {
+            "name": "ButtonComponent",
+            "id": "component-ButtonComponent-7f7d2627ff86868a8e6769aa3589a4d8ea5e0844cd2f217d2986111c49653e0b9327bea42fe6473d040d3c9453ee8dc211748d9af6204d6267c84f58907f258e-1",
+            "file": "projects/clapp/src/lib/components/button/button.component.ts",
+            "encapsulation": [],
+            "entryComponents": [],
+            "inputs": [],
+            "outputs": [],
+            "providers": [],
+            "selector": "cl-button",
+            "styleUrls": [
+                "./button.component.scss"
+            ],
+            "styles": [],
+            "templateUrl": [
+                "./button.component.html"
+            ],
+            "viewProviders": [],
+            "inputsClass": [
+                {
+                    "name": "disabled",
+                    "defaultValue": "false",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "line": 9,
+                    "type": "boolean",
+                    "decorators": []
+                },
+                {
+                    "name": "type",
+                    "defaultValue": "'primary'",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "line": 10,
+                    "type": "string",
+                    "decorators": []
+                }
+            ],
+            "outputsClass": [],
+            "propertiesClass": [],
+            "methodsClass": [
+                {
+                    "name": "ngOnInit",
+                    "args": [],
+                    "optional": false,
+                    "returnType": "void",
+                    "typeParameters": [],
+                    "line": 14,
+                    "deprecated": false,
+                    "deprecationMessage": ""
+                }
+            ],
+            "deprecated": false,
+            "deprecationMessage": "",
+            "hostBindings": [],
+            "hostListeners": [],
+            "description": "",
+            "rawdescription": "\n",
+            "type": "component",
+            "sourceCode": "import { Component, Input, OnInit } from '@angular/core';\n\n@Component({\n  selector: 'cl-button',\n  templateUrl: './button.component.html',\n  styleUrls: ['./button.component.scss'],\n})\nexport class ButtonComponent implements OnInit {\n  @Input('disabled') disabled = false;\n  @Input('type') type = 'primary';\n\n  constructor() {}\n\n  ngOnInit(): void {}\n}\n",
+            "assetsDirs": [],
+            "styleUrlsData": [
+                {
+                    "data": "@import '../../../../assets/scss/partials/clapp-base';\r\n\r\n:host {\r\n  display: flex;\r\n  justify-content: center;\r\n}\r\n\r\n@mixin button-creator() {\r\n  @include clapp-body-demi;\r\n  width: 100%;\r\n  height: 3rem;\r\n  display: flex;\r\n  flex-direction: column;\r\n  align-items: center;\r\n  padding: 12px 32px;\r\n  justify-content: center;\r\n  border-style: none;\r\n  cursor: pointer;\r\n  outline: none;\r\n  font-style: normal;\r\n  letter-spacing: 0em;\r\n  text-align: center;\r\n}\r\n\r\n@mixin button-states ($hover, $active) {\r\n\r\n  &:hover,\r\n  &:focus {\r\n    background-color: $hover;\r\n  }\r\n\r\n  &:active {\r\n    background-color: $active;\r\n  }\r\n}\r\n\r\n@mixin colors ($background, $color, $border-color) {\r\n  background-color: $background;\r\n  color: $color;\r\n  border-color: $border-color;\r\n}\r\n\r\n@mixin type ($type) {\r\n  @if $type =='primary' {\r\n    @include colors($applaudo-red, $white, $applaudo-red);\r\n    @include button-states($applaudo-red-plus, $applaudo-red-minus);\r\n\r\n    &:disabled {\r\n      @include disabled();\r\n    }\r\n  }\r\n\r\n  @else if $type =='secondary' {\r\n    @include clapp-body-regular;\r\n    @include colors($white, $applaudo-red, $platinum);\r\n    border: 2px solid;\r\n\r\n    &:hover,\r\n    &:focus {\r\n      border: 2px solid $applaudo-red-plus;\r\n      color: $applaudo-red-plus;\r\n    }\r\n\r\n    &:active {\r\n      border: 2px solid $applaudo-red-minus;\r\n      color: $applaudo-red-minus;\r\n    }\r\n\r\n    &:disabled {\r\n      @include disabled();\r\n    }\r\n  }\r\n\r\n  @else if $type =='tertiary' {\r\n    @include colors($applaudo-navy-blue, $white, $applaudo-navy-blue);\r\n    @include button-states($applaudo-red, $applaudo-red-minus);\r\n\r\n    &:disabled {\r\n      @include disabled();\r\n    }\r\n  }\r\n\r\n  @else if $type =='text' {\r\n    @include colors($white, $applaudo-red, $white);\r\n\r\n    &:hover,\r\n    &:focus {\r\n      color: $applaudo-red-plus;\r\n    }\r\n\r\n    &:active {\r\n      color: $applaudo-red-minus;\r\n    }\r\n\r\n    &:disabled {\r\n      @include disabled();\r\n      background-color: $white;\r\n    }\r\n  }\r\n\r\n  @else if $type =='icon' {\r\n    background-color: $white;\r\n\r\n    @include button-states($light-gray, $light-gray);\r\n  }\r\n}\r\n\r\n@mixin small() {\r\n  padding: 8px 16px;\r\n  height: 40px;\r\n}\r\n\r\n@mixin disabled() {\r\n  background-color: $light-gray;\r\n  color: $mid-gray;\r\n  cursor: auto;\r\n  border: none;\r\n}\r\n\r\n.primary {\r\n  @include button-creator();\r\n  @include type('primary');\r\n}\r\n\r\n.primary-small {\r\n  @extend .primary;\r\n  @include small();\r\n}\r\n\r\n.secondary {\r\n  @include button-creator();\r\n  @include type('secondary');\r\n}\r\n\r\n.secondary-small {\r\n  @extend .secondary;\r\n  @include small();\r\n}\r\n\r\n.tertiary {\r\n  @include button-creator();\r\n  @include type('tertiary');\r\n}\r\n\r\n.tertiary-small {\r\n  @extend .tertiary;\r\n  @include small();\r\n}\r\n\r\n.text {\r\n  @include button-creator();\r\n  @include type('text');\r\n}\r\n\r\n.icon {\r\n  @include button-creator();\r\n  @include type('icon');\r\n}",
+                    "styleUrl": "./button.component.scss"
+                }
+            ],
+            "stylesData": "",
+            "constructorObj": {
+                "name": "constructor",
+                "description": "",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "args": [],
+                "line": 10
+            },
+            "implements": [
+                "OnInit"
+            ],
+            "isDuplicate": true,
+            "duplicateId": 1,
+            "duplicateName": "ButtonComponent-1",
+            "templateData": "<button [disabled]=\"disabled\" [ngClass]=\"type\">\n  <ng-content></ng-content>\n</button>"
+        },
+        {
             "name": "ClappComponent",
-            "id": "component-ClappComponent-5b5b45aa4665e271ab17e6ce19cff2106937b3cbb8e8906a678462922431e1da41adae47b0643d6295e3444ba3274602c8353fb3d7a1da7357e200bf344b047d",
+            "id": "component-ClappComponent-547c41e2ff1414e4fdd25f01df989ffb0d65fc94f34f74b147637da737fbca2889ac8b286b437907b56fc5adb27eba73e759b07ae9f5d00e357a93b30032d2c2",
             "file": "projects/clapp/src/lib/clapp.component.ts",
             "encapsulation": [],
             "entryComponents": [],
@@ -254,7 +338,7 @@
             "description": "",
             "rawdescription": "\n",
             "type": "component",
-            "sourceCode": "import { Component, OnInit } from '@angular/core';\n\n@Component({\n  selector: 'cl-clapp',\n  template: `\n    <p>\n      clapp works!\n    </p>\n  `,\n  styles: [\n  ]\n})\nexport class ClappComponent implements OnInit {\n\n  constructor() { }\n\n  ngOnInit(): void {\n  }\n\n}\n",
+            "sourceCode": "import { Component, OnInit } from '@angular/core';\r\n\r\n@Component({\r\n  selector: 'cl-clapp',\r\n  template: `\r\n    <p>\r\n      clapp works!\r\n    </p>\r\n  `,\r\n  styles: [\r\n  ]\r\n})\r\nexport class ClappComponent implements OnInit {\r\n\r\n  constructor() { }\r\n\r\n  ngOnInit(): void {\r\n  }\r\n\r\n}\r\n",
             "assetsDirs": [],
             "styleUrlsData": "",
             "stylesData": "",
@@ -272,7 +356,7 @@
         },
         {
             "name": "EndorsementComponent",
-            "id": "component-EndorsementComponent-3b7a7a2ffc178f204bbad53731e1784ea5fe086b5307cd49e7f9725ce67de907356c45414f61b9d6e4961686aa129bbf3ca4429b29d36a38e9e6e773a1dd7aac",
+            "id": "component-EndorsementComponent-d16409a6831ec08c2fa49962c47d7c70f2a15e1ead6e269f9562cf0af9e876cc8a505b1a2d5c3b0542007ba5aab13c7fca3d234a68883bf982833ed815d5e5ba",
             "file": "src/app/modules/login/pages/endorsement/endorsement.component.ts",
             "encapsulation": [],
             "entryComponents": [],
@@ -310,11 +394,11 @@
             "description": "",
             "rawdescription": "\n",
             "type": "component",
-            "sourceCode": "import { Component, OnInit } from '@angular/core';\n\n@Component({\n  selector: 'app-endorsement',\n  templateUrl: './endorsement.component.html',\n  styleUrls: ['./endorsement.component.scss']\n})\nexport class EndorsementComponent implements OnInit {\n\n  constructor() { }\n\n  ngOnInit(): void {\n  }\n\n}\n",
+            "sourceCode": "import { Component, OnInit } from '@angular/core';\r\n\r\n@Component({\r\n  selector: 'app-endorsement',\r\n  templateUrl: './endorsement.component.html',\r\n  styleUrls: ['./endorsement.component.scss']\r\n})\r\nexport class EndorsementComponent implements OnInit {\r\n\r\n  constructor() { }\r\n\r\n  ngOnInit(): void {\r\n  }\r\n\r\n}\r\n",
             "assetsDirs": [],
             "styleUrlsData": [
                 {
-                    "data": "\n",
+                    "data": "\r\n",
                     "styleUrl": "./endorsement.component.scss"
                 }
             ],
@@ -334,7 +418,7 @@
         },
         {
             "name": "GatekeeperComponent",
-            "id": "component-GatekeeperComponent-a655d2ec73b2fb8696e2f9a0a119c4d680462eb69ec565f434b91cfb5e1c7010a05bd5969b4b525939108835ea0f3ac3628c74b005f2fa5ce0a7b704e67f6aa9",
+            "id": "component-GatekeeperComponent-2dd38c86c08498ea42348a4b551f6da4c84b36ba2c8d92e1d476ef825f68087614d1102039491bfb4bf7881fe7d4c1a8770a1e6007d453fa2a8e35825bec4d2b",
             "file": "src/app/modules/login/pages/gatekeeper/gatekeeper.component.ts",
             "encapsulation": [],
             "entryComponents": [],
@@ -355,12 +439,22 @@
             "propertiesClass": [],
             "methodsClass": [
                 {
+                    "name": "hola",
+                    "args": [],
+                    "optional": false,
+                    "returnType": "void",
+                    "typeParameters": [],
+                    "line": 13,
+                    "deprecated": false,
+                    "deprecationMessage": ""
+                },
+                {
                     "name": "ngOnInit",
                     "args": [],
                     "optional": false,
                     "returnType": "void",
                     "typeParameters": [],
-                    "line": 12,
+                    "line": 11,
                     "deprecated": false,
                     "deprecationMessage": ""
                 }
@@ -372,7 +466,7 @@
             "description": "",
             "rawdescription": "\n",
             "type": "component",
-            "sourceCode": "import { Component, OnInit } from '@angular/core';\n\n@Component({\n  selector: 'app-gatekeeper',\n  templateUrl: './gatekeeper.component.html',\n  styleUrls: ['./gatekeeper.component.scss']\n})\nexport class GatekeeperComponent implements OnInit {\n\n  constructor() { }\n\n  ngOnInit(): void {\n  }\n\n}\n",
+            "sourceCode": "import { Component, OnInit } from '@angular/core';\r\n\r\n@Component({\r\n  selector: 'app-gatekeeper',\r\n  templateUrl: './gatekeeper.component.html',\r\n  styleUrls: ['./gatekeeper.component.scss'],\r\n})\r\nexport class GatekeeperComponent implements OnInit {\r\n  constructor() {}\r\n\r\n  ngOnInit(): void {}\r\n\r\n  hola(){\r\n    console.log('hola');\r\n  }\r\n}\r\n",
             "assetsDirs": [],
             "styleUrlsData": [
                 {
@@ -392,11 +486,11 @@
             "implements": [
                 "OnInit"
             ],
-            "templateData": "<p>gatekeeper works!</p>\n"
+            "templateData": "<p>gatekeeper works!</p>\r\n\r\n<cl-button icon=\"gatekeeper\" type=\"icon\" [disabled]=\"true\" (click)=\"hola()\">\r\n  <cl-svg-icon icon=\"camera\"></cl-svg-icon>\r\n</cl-button>\r\n"
         },
         {
             "name": "HeaderComponent",
-            "id": "component-HeaderComponent-a557eec14f72c438a8033301f4d6ce023e0a1844a3b06ec2b38794a612acc31735ae78a5ee10071b230c8c20d699eb914554e69d07ade54adb371da8efb464cc",
+            "id": "component-HeaderComponent-bda17aa3451a9f731685153f2587877b8267c32007f05e7abad3581336e6bc02346a1b660e8c69c4d90b4526b6e047b3ac1f4246252c9dc83985c9148aab5e97",
             "file": "src/stories/header.component.ts",
             "encapsulation": [],
             "entryComponents": [],
@@ -457,11 +551,11 @@
             "description": "",
             "rawdescription": "\n",
             "type": "component",
-            "sourceCode": "import { Component, Input, Output, EventEmitter } from '@angular/core';\nimport { User } from './User';\n\n@Component({\n  selector: 'storybook-header',\n  template: `<header>\n    <div class=\"wrapper\">\n      <div>\n        <svg width=\"32\" height=\"32\" viewBox=\"0 0 32 32\" xmlns=\"http://www.w3.org/2000/svg\">\n          <g fill=\"none\" fillRule=\"evenodd\">\n            <path\n              d=\"M10 0h12a10 10 0 0110 10v12a10 10 0 01-10 10H10A10 10 0 010 22V10A10 10 0 0110 0z\"\n              fill=\"#FFF\"\n            />\n            <path\n              d=\"M5.3 10.6l10.4 6v11.1l-10.4-6v-11zm11.4-6.2l9.7 5.5-9.7 5.6V4.4z\"\n              fill=\"#555AB9\"\n            />\n            <path\n              d=\"M27.2 10.6v11.2l-10.5 6V16.5l10.5-6zM15.7 4.4v11L6 10l9.7-5.5z\"\n              fill=\"#91BAF8\"\n            />\n          </g>\n        </svg>\n        <h1>Acme</h1>\n      </div>\n      <div>\n        <div *ngIf=\"user\">\n          <span class=\"welcome\">\n            Welcome, <b>{{ user.name }}</b\n            >!\n          </span>\n          <storybook-button\n            *ngIf=\"user\"\n            size=\"small\"\n            (onClick)=\"onLogout.emit($event)\"\n            label=\"Log out\"\n          ></storybook-button>\n        </div>\n        <div *ngIf=\"!user\">\n          <storybook-button\n            *ngIf=\"!user\"\n            size=\"small\"\n            class=\"margin-left\"\n            (onClick)=\"onLogin.emit($event)\"\n            label=\"Log in\"\n          ></storybook-button>\n          <storybook-button\n            *ngIf=\"!user\"\n            primary\n            size=\"small\"\n            primary=\"true\"\n            class=\"margin-left\"\n            (onClick)=\"onCreateAccount.emit($event)\"\n            label=\"Sign up\"\n          ></storybook-button>\n        </div>\n      </div>\n    </div>\n  </header>`,\n  styleUrls: ['./header.css'],\n})\nexport default class HeaderComponent {\n  @Input()\n  user: User | null = null;\n\n  @Output()\n  onLogin = new EventEmitter<Event>();\n\n  @Output()\n  onLogout = new EventEmitter<Event>();\n\n  @Output()\n  onCreateAccount = new EventEmitter<Event>();\n}\n",
+            "sourceCode": "import { Component, Input, Output, EventEmitter } from '@angular/core';\r\nimport { User } from './User';\r\n\r\n@Component({\r\n  selector: 'storybook-header',\r\n  template: `<header>\r\n    <div class=\"wrapper\">\r\n      <div>\r\n        <svg width=\"32\" height=\"32\" viewBox=\"0 0 32 32\" xmlns=\"http://www.w3.org/2000/svg\">\r\n          <g fill=\"none\" fillRule=\"evenodd\">\r\n            <path\r\n              d=\"M10 0h12a10 10 0 0110 10v12a10 10 0 01-10 10H10A10 10 0 010 22V10A10 10 0 0110 0z\"\r\n              fill=\"#FFF\"\r\n            />\r\n            <path\r\n              d=\"M5.3 10.6l10.4 6v11.1l-10.4-6v-11zm11.4-6.2l9.7 5.5-9.7 5.6V4.4z\"\r\n              fill=\"#555AB9\"\r\n            />\r\n            <path\r\n              d=\"M27.2 10.6v11.2l-10.5 6V16.5l10.5-6zM15.7 4.4v11L6 10l9.7-5.5z\"\r\n              fill=\"#91BAF8\"\r\n            />\r\n          </g>\r\n        </svg>\r\n        <h1>Acme</h1>\r\n      </div>\r\n      <div>\r\n        <div *ngIf=\"user\">\r\n          <span class=\"welcome\">\r\n            Welcome, <b>{{ user.name }}</b\r\n            >!\r\n          </span>\r\n          <storybook-button\r\n            *ngIf=\"user\"\r\n            size=\"small\"\r\n            (onClick)=\"onLogout.emit($event)\"\r\n            label=\"Log out\"\r\n          ></storybook-button>\r\n        </div>\r\n        <div *ngIf=\"!user\">\r\n          <storybook-button\r\n            *ngIf=\"!user\"\r\n            size=\"small\"\r\n            class=\"margin-left\"\r\n            (onClick)=\"onLogin.emit($event)\"\r\n            label=\"Log in\"\r\n          ></storybook-button>\r\n          <storybook-button\r\n            *ngIf=\"!user\"\r\n            primary\r\n            size=\"small\"\r\n            primary=\"true\"\r\n            class=\"margin-left\"\r\n            (onClick)=\"onCreateAccount.emit($event)\"\r\n            label=\"Sign up\"\r\n          ></storybook-button>\r\n        </div>\r\n      </div>\r\n    </div>\r\n  </header>`,\r\n  styleUrls: ['./header.css'],\r\n})\r\nexport default class HeaderComponent {\r\n  @Input()\r\n  user: User | null = null;\r\n\r\n  @Output()\r\n  onLogin = new EventEmitter<Event>();\r\n\r\n  @Output()\r\n  onLogout = new EventEmitter<Event>();\r\n\r\n  @Output()\r\n  onCreateAccount = new EventEmitter<Event>();\r\n}\r\n",
             "assetsDirs": [],
             "styleUrlsData": [
                 {
-                    "data": ".wrapper {\n  font-family: 'Nunito Sans', 'Helvetica Neue', Helvetica, Arial, sans-serif;\n  border-bottom: 1px solid rgba(0, 0, 0, 0.1);\n  padding: 15px 20px;\n  display: flex;\n  align-items: center;\n  justify-content: space-between;\n}\n\nsvg {\n  display: inline-block;\n  vertical-align: top;\n}\n\nh1 {\n  font-weight: 900;\n  font-size: 20px;\n  line-height: 1;\n  margin: 6px 0 6px 10px;\n  display: inline-block;\n  vertical-align: top;\n}\n\nbutton + button {\n  margin-left: 10px;\n}\n\n.welcome {\n  color: #333;\n  font-size: 14px;\n  margin-right: 10px;\n}\n",
+                    "data": ".wrapper {\r\n  font-family: 'Nunito Sans', 'Helvetica Neue', Helvetica, Arial, sans-serif;\r\n  border-bottom: 1px solid rgba(0, 0, 0, 0.1);\r\n  padding: 15px 20px;\r\n  display: flex;\r\n  align-items: center;\r\n  justify-content: space-between;\r\n}\r\n\r\nsvg {\r\n  display: inline-block;\r\n  vertical-align: top;\r\n}\r\n\r\nh1 {\r\n  font-weight: 900;\r\n  font-size: 20px;\r\n  line-height: 1;\r\n  margin: 6px 0 6px 10px;\r\n  display: inline-block;\r\n  vertical-align: top;\r\n}\r\n\r\nbutton + button {\r\n  margin-left: 10px;\r\n}\r\n\r\n.welcome {\r\n  color: #333;\r\n  font-size: 14px;\r\n  margin-right: 10px;\r\n}\r\n",
                     "styleUrl": "./header.css"
                 }
             ],
@@ -469,7 +563,7 @@
         },
         {
             "name": "HomeMainComponent",
-            "id": "component-HomeMainComponent-bf1ba6a9d62c5f6c0e440e60aa9f52175cf836837400406300d6cf2abdb9b8cfbe21361de91b4869b086962ff706c554f948f0c47ee3df0d24059f2e413b2b8b",
+            "id": "component-HomeMainComponent-a8d7ffcd870a5ba8bf7b420c7561dec6860ad69ef4a776cac4a7a2dac6d6e391c9beb0d0a5e7b42f98d3c5c16885b33906c386b8617e17b3445a1bf0462e759d",
             "file": "src/app/modules/home/pages/home-main/home-main.component.ts",
             "encapsulation": [],
             "entryComponents": [],
@@ -507,7 +601,7 @@
             "description": "",
             "rawdescription": "\n",
             "type": "component",
-            "sourceCode": "import { Component, OnInit } from '@angular/core';\n\n@Component({\n  selector: 'app-home-main',\n  templateUrl: './home-main.component.html',\n  styleUrls: ['./home-main.component.scss']\n})\nexport class HomeMainComponent implements OnInit {\n\n  constructor() { }\n\n  ngOnInit(): void {\n  }\n\n}\n",
+            "sourceCode": "import { Component, OnInit } from '@angular/core';\r\n\r\n@Component({\r\n  selector: 'app-home-main',\r\n  templateUrl: './home-main.component.html',\r\n  styleUrls: ['./home-main.component.scss']\r\n})\r\nexport class HomeMainComponent implements OnInit {\r\n\r\n  constructor() { }\r\n\r\n  ngOnInit(): void {\r\n  }\r\n\r\n}\r\n",
             "assetsDirs": [],
             "styleUrlsData": [
                 {
@@ -531,7 +625,7 @@
         },
         {
             "name": "IconButtonComponent",
-            "id": "component-IconButtonComponent-858d302b73ba04480faaab7d0300f7d8020eb19dc0a5cebcb5f3cd3a481c81ff8a97a658898e43070a9764adb86fb7bdd91ccf281751b64ea6b70471f440d213",
+            "id": "component-IconButtonComponent-50db2ae3195bcda4a038922a6d36a81c5eafb89df844940db685f25f46e9024d688d0cd6815455349ae8c46449c20e247fd90af7772988af9ce29d51e1197339",
             "file": "projects/clapp/src/lib/components/buttons/icon-button/icon-button.component.ts",
             "encapsulation": [],
             "entryComponents": [],
@@ -569,11 +663,11 @@
             "description": "",
             "rawdescription": "\n",
             "type": "component",
-            "sourceCode": "import { Component, OnInit } from '@angular/core';\n\n@Component({\n  selector: 'cl-icon-button',\n  templateUrl: './icon-button.component.html',\n  styleUrls: ['./icon-button.component.scss']\n})\nexport class IconButtonComponent implements OnInit {\n\n  constructor() { }\n\n  ngOnInit(): void {\n  }\n\n}\n",
+            "sourceCode": "import { Component, OnInit } from '@angular/core';\r\n\r\n@Component({\r\n  selector: 'cl-icon-button',\r\n  templateUrl: './icon-button.component.html',\r\n  styleUrls: ['./icon-button.component.scss']\r\n})\r\nexport class IconButtonComponent implements OnInit {\r\n\r\n  constructor() { }\r\n\r\n  ngOnInit(): void {\r\n  }\r\n\r\n}\r\n",
             "assetsDirs": [],
             "styleUrlsData": [
                 {
-                    "data": "\n#button-container{\n\n    .btn{\n        width: 100%;\n        height: 100%;\n        border-radius: 0;\n        border: none;\n        background-color: #00bcd4;\n        color: #fff;\n        font-size: 1.2rem;\n        font-weight: bold;\n        cursor: pointer;\n        &:hover{\n            background-color: #3d7076;\n        }\n    }\n}",
+                    "data": "\r\n#button-container{\r\n\r\n    .btn{\r\n        width: 100%;\r\n        height: 100%;\r\n        border-radius: 0;\r\n        border: none;\r\n        background-color: #00bcd4;\r\n        color: #fff;\r\n        font-size: 1.2rem;\r\n        font-weight: bold;\r\n        cursor: pointer;\r\n        &:hover{\r\n            background-color: #3d7076;\r\n        }\r\n    }\r\n}",
                     "styleUrl": "./icon-button.component.scss"
                 }
             ],
@@ -589,11 +683,11 @@
             "implements": [
                 "OnInit"
             ],
-            "templateData": "<div id=\"button-container\">\n    <button class=\"btn\">Hola</button>\n    </div>"
+            "templateData": "<div id=\"button-container\">\r\n    <button class=\"btn\">Hola</button>\r\n    </div>"
         },
         {
             "name": "PageComponent",
-            "id": "component-PageComponent-7126d8c2607c946741c651482413b43feb72b2d63cac9d3ac173fde206a5e635eb4cdbf7ca7ac9327c7d4d05cf7ef619144c34c11609ad677081d0ee4e855064",
+            "id": "component-PageComponent-1fc7c24c98b4f0b0f413d91f5a6126f11ad55647457f5a7f372b7f83fe8ecd6dbe67b5ca4b826ed20b9bfbc04d5606b15f82a203b1311f98b18bd28ec9f4fc7c",
             "file": "src/stories/page.component.ts",
             "encapsulation": [],
             "entryComponents": [],
@@ -661,19 +755,100 @@
             "description": "",
             "rawdescription": "\n",
             "type": "component",
-            "sourceCode": "import { Component } from '@angular/core';\nimport { User } from './User';\n\n@Component({\n  selector: 'storybook-page',\n  template: `<article>\n    <storybook-header\n      [user]=\"user\"\n      (onLogout)=\"doLogout()\"\n      (onLogin)=\"doLogin()\"\n      (onCreateAccount)=\"doCreateAccount()\"\n    ></storybook-header>\n    <section>\n      <h2>Pages in Storybook</h2>\n      <p>\n        We recommend building UIs with a\n        <a href=\"https://componentdriven.org\" target=\"_blank\" rel=\"noopener noreferrer\">\n          <strong>component-driven</strong>\n        </a>\n        process starting with atomic components and ending with pages.\n      </p>\n      <p>\n        Render pages with mock data. This makes it easy to build and review page states without\n        needing to navigate to them in your app. Here are some handy patterns for managing page data\n        in Storybook:\n      </p>\n      <ul>\n        <li>\n          Use a higher-level connected component. Storybook helps you compose such data from the\n          \"args\" of child component stories\n        </li>\n        <li>\n          Assemble data in the page component from your services. You can mock these services out\n          using Storybook.\n        </li>\n      </ul>\n      <p>\n        Get a guided tutorial on component-driven development at\n        <a href=\"https://storybook.js.org/tutorials/\" target=\"_blank\" rel=\"noopener noreferrer\">\n          Storybook tutorials\n        </a>\n        . Read more in the\n        <a href=\"https://storybook.js.org/docs\" target=\"_blank\" rel=\"noopener noreferrer\"> docs </a>\n        .\n      </p>\n      <div class=\"tip-wrapper\">\n        <span class=\"tip\">Tip</span> Adjust the width of the canvas with the\n        <svg width=\"10\" height=\"10\" viewBox=\"0 0 12 12\" xmlns=\"http://www.w3.org/2000/svg\">\n          <g fill=\"none\" fillRule=\"evenodd\">\n            <path\n              d=\"M1.5 5.2h4.8c.3 0 .5.2.5.4v5.1c-.1.2-.3.3-.4.3H1.4a.5.5 0 01-.5-.4V5.7c0-.3.2-.5.5-.5zm0-2.1h6.9c.3 0 .5.2.5.4v7a.5.5 0 01-1 0V4H1.5a.5.5 0 010-1zm0-2.1h9c.3 0 .5.2.5.4v9.1a.5.5 0 01-1 0V2H1.5a.5.5 0 010-1zm4.3 5.2H2V10h3.8V6.2z\"\n              id=\"a\"\n              fill=\"#999\"\n            />\n          </g>\n        </svg>\n        Viewports addon in the toolbar\n      </div>\n    </section>\n  </article>`,\n  styleUrls: ['./page.css'],\n})\nexport default class PageComponent {\n  user: User | null = null;\n\n  doLogout() {\n    this.user = null;\n  }\n\n  doLogin() {\n    this.user = { name: 'Jane Doe' };\n  }\n\n  doCreateAccount() {\n    this.user = { name: 'Jane Doe' };\n  }\n}\n",
+            "sourceCode": "import { Component } from '@angular/core';\r\nimport { User } from './User';\r\n\r\n@Component({\r\n  selector: 'storybook-page',\r\n  template: `<article>\r\n    <storybook-header\r\n      [user]=\"user\"\r\n      (onLogout)=\"doLogout()\"\r\n      (onLogin)=\"doLogin()\"\r\n      (onCreateAccount)=\"doCreateAccount()\"\r\n    ></storybook-header>\r\n    <section>\r\n      <h2>Pages in Storybook</h2>\r\n      <p>\r\n        We recommend building UIs with a\r\n        <a href=\"https://componentdriven.org\" target=\"_blank\" rel=\"noopener noreferrer\">\r\n          <strong>component-driven</strong>\r\n        </a>\r\n        process starting with atomic components and ending with pages.\r\n      </p>\r\n      <p>\r\n        Render pages with mock data. This makes it easy to build and review page states without\r\n        needing to navigate to them in your app. Here are some handy patterns for managing page data\r\n        in Storybook:\r\n      </p>\r\n      <ul>\r\n        <li>\r\n          Use a higher-level connected component. Storybook helps you compose such data from the\r\n          \"args\" of child component stories\r\n        </li>\r\n        <li>\r\n          Assemble data in the page component from your services. You can mock these services out\r\n          using Storybook.\r\n        </li>\r\n      </ul>\r\n      <p>\r\n        Get a guided tutorial on component-driven development at\r\n        <a href=\"https://storybook.js.org/tutorials/\" target=\"_blank\" rel=\"noopener noreferrer\">\r\n          Storybook tutorials\r\n        </a>\r\n        . Read more in the\r\n        <a href=\"https://storybook.js.org/docs\" target=\"_blank\" rel=\"noopener noreferrer\"> docs </a>\r\n        .\r\n      </p>\r\n      <div class=\"tip-wrapper\">\r\n        <span class=\"tip\">Tip</span> Adjust the width of the canvas with the\r\n        <svg width=\"10\" height=\"10\" viewBox=\"0 0 12 12\" xmlns=\"http://www.w3.org/2000/svg\">\r\n          <g fill=\"none\" fillRule=\"evenodd\">\r\n            <path\r\n              d=\"M1.5 5.2h4.8c.3 0 .5.2.5.4v5.1c-.1.2-.3.3-.4.3H1.4a.5.5 0 01-.5-.4V5.7c0-.3.2-.5.5-.5zm0-2.1h6.9c.3 0 .5.2.5.4v7a.5.5 0 01-1 0V4H1.5a.5.5 0 010-1zm0-2.1h9c.3 0 .5.2.5.4v9.1a.5.5 0 01-1 0V2H1.5a.5.5 0 010-1zm4.3 5.2H2V10h3.8V6.2z\"\r\n              id=\"a\"\r\n              fill=\"#999\"\r\n            />\r\n          </g>\r\n        </svg>\r\n        Viewports addon in the toolbar\r\n      </div>\r\n    </section>\r\n  </article>`,\r\n  styleUrls: ['./page.css'],\r\n})\r\nexport default class PageComponent {\r\n  user: User | null = null;\r\n\r\n  doLogout() {\r\n    this.user = null;\r\n  }\r\n\r\n  doLogin() {\r\n    this.user = { name: 'Jane Doe' };\r\n  }\r\n\r\n  doCreateAccount() {\r\n    this.user = { name: 'Jane Doe' };\r\n  }\r\n}\r\n",
             "assetsDirs": [],
             "styleUrlsData": [
                 {
-                    "data": "section {\n  font-family: 'Nunito Sans', 'Helvetica Neue', Helvetica, Arial, sans-serif;\n  font-size: 14px;\n  line-height: 24px;\n  padding: 48px 20px;\n  margin: 0 auto;\n  max-width: 600px;\n  color: #333;\n}\n\nsection h2 {\n  font-weight: 900;\n  font-size: 32px;\n  line-height: 1;\n  margin: 0 0 4px;\n  display: inline-block;\n  vertical-align: top;\n}\n\nsection p {\n  margin: 1em 0;\n}\n\nsection a {\n  text-decoration: none;\n  color: #1ea7fd;\n}\n\nsection ul {\n  padding-left: 30px;\n  margin: 1em 0;\n}\n\nsection li {\n  margin-bottom: 8px;\n}\n\nsection .tip {\n  display: inline-block;\n  border-radius: 1em;\n  font-size: 11px;\n  line-height: 12px;\n  font-weight: 700;\n  background: #e7fdd8;\n  color: #66bf3c;\n  padding: 4px 12px;\n  margin-right: 10px;\n  vertical-align: top;\n}\n\nsection .tip-wrapper {\n  font-size: 13px;\n  line-height: 20px;\n  margin-top: 40px;\n  margin-bottom: 40px;\n}\n\nsection .tip-wrapper svg {\n  display: inline-block;\n  height: 12px;\n  width: 12px;\n  margin-right: 4px;\n  vertical-align: top;\n  margin-top: 3px;\n}\n\nsection .tip-wrapper svg path {\n  fill: #1ea7fd;\n}\n",
+                    "data": "section {\r\n  font-family: 'Nunito Sans', 'Helvetica Neue', Helvetica, Arial, sans-serif;\r\n  font-size: 14px;\r\n  line-height: 24px;\r\n  padding: 48px 20px;\r\n  margin: 0 auto;\r\n  max-width: 600px;\r\n  color: #333;\r\n}\r\n\r\nsection h2 {\r\n  font-weight: 900;\r\n  font-size: 32px;\r\n  line-height: 1;\r\n  margin: 0 0 4px;\r\n  display: inline-block;\r\n  vertical-align: top;\r\n}\r\n\r\nsection p {\r\n  margin: 1em 0;\r\n}\r\n\r\nsection a {\r\n  text-decoration: none;\r\n  color: #1ea7fd;\r\n}\r\n\r\nsection ul {\r\n  padding-left: 30px;\r\n  margin: 1em 0;\r\n}\r\n\r\nsection li {\r\n  margin-bottom: 8px;\r\n}\r\n\r\nsection .tip {\r\n  display: inline-block;\r\n  border-radius: 1em;\r\n  font-size: 11px;\r\n  line-height: 12px;\r\n  font-weight: 700;\r\n  background: #e7fdd8;\r\n  color: #66bf3c;\r\n  padding: 4px 12px;\r\n  margin-right: 10px;\r\n  vertical-align: top;\r\n}\r\n\r\nsection .tip-wrapper {\r\n  font-size: 13px;\r\n  line-height: 20px;\r\n  margin-top: 40px;\r\n  margin-bottom: 40px;\r\n}\r\n\r\nsection .tip-wrapper svg {\r\n  display: inline-block;\r\n  height: 12px;\r\n  width: 12px;\r\n  margin-right: 4px;\r\n  vertical-align: top;\r\n  margin-top: 3px;\r\n}\r\n\r\nsection .tip-wrapper svg path {\r\n  fill: #1ea7fd;\r\n}\r\n",
                     "styleUrl": "./page.css"
                 }
             ],
             "stylesData": ""
         },
         {
+            "name": "PrimaryButtonComponent",
+            "id": "component-PrimaryButtonComponent-5909c7ded80b5213a76deb9bfa1dc9a67d42a2a7fb59d194f6fe49d606ef9f0df5d8d520eea082710ec65fd8d6fc625c7995a3cc3252c33951667ff4aea2390c",
+            "file": "projects/clapp/src/lib/components/buttons/primary-button/primary-button.component.ts",
+            "encapsulation": [],
+            "entryComponents": [],
+            "inputs": [],
+            "outputs": [],
+            "providers": [],
+            "selector": "cl-primary-button",
+            "styleUrls": [
+                "./primary-button.component.scss"
+            ],
+            "styles": [],
+            "templateUrl": [
+                "./primary-button.component.html"
+            ],
+            "viewProviders": [],
+            "inputsClass": [
+                {
+                    "name": "disabled",
+                    "defaultValue": "false",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "line": 9,
+                    "type": "boolean",
+                    "decorators": []
+                },
+                {
+                    "name": "text",
+                    "defaultValue": "'Primary'",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "line": 10,
+                    "type": "string",
+                    "decorators": []
+                }
+            ],
+            "outputsClass": [],
+            "propertiesClass": [],
+            "methodsClass": [
+                {
+                    "name": "ngOnInit",
+                    "args": [],
+                    "optional": false,
+                    "returnType": "void",
+                    "typeParameters": [],
+                    "line": 14,
+                    "deprecated": false,
+                    "deprecationMessage": ""
+                }
+            ],
+            "deprecated": false,
+            "deprecationMessage": "",
+            "hostBindings": [],
+            "hostListeners": [],
+            "description": "",
+            "rawdescription": "\n",
+            "type": "component",
+            "sourceCode": "import { AfterViewInit, Component, ElementRef, Input, OnInit, ViewChild } from '@angular/core';\r\n\r\n@Component({\r\n  selector: 'cl-primary-button',\r\n  templateUrl: './primary-button.component.html',\r\n  styleUrls: ['./primary-button.component.scss'],\r\n})\r\nexport class PrimaryButtonComponent implements OnInit {\r\n  @Input('disabled') disabled = false;\r\n  @Input('text') text = 'Primary';\r\n\r\n  constructor() {}\r\n\r\n  ngOnInit(): void {}\r\n}\r\n",
+            "assetsDirs": [],
+            "styleUrlsData": [
+                {
+                    "data": "$applaudo-red : #FF4040;\r\n$white: #FFFFFF;\r\n$applaudo-red-plus: #FF6060;\r\n$applaudo-red-minus: #E60000;\r\n$light-gray: #F6F6F6;\r\n$mid-gray:#C4C4C4;\r\n\r\n.buttons-primary-button {\r\n  width: 100%;\r\n  height: 3rem;\r\n  display: flex;\r\n  flex-direction: column;\r\n  align-items: center;\r\n  padding: 12px 32px;\r\n  justify-content: center;\r\n  border-style: none;\r\n  cursor: pointer;\r\n  outline: none;\r\n  font-family: Avenir Next;\r\n  font-style: normal;\r\n  font-size: 16px;\r\n  font-weight: 600;\r\n  line-height: 24px;\r\n  letter-spacing: 0em;\r\n  text-align: center;\r\n  background-color: $applaudo-red;\r\n  color: $white;\r\n\r\n  &:hover {\r\n    background-color: $applaudo-red-plus;\r\n  }\r\n\r\n  &:active {\r\n    background-color: $applaudo-red-minus;\r\n  }\r\n\r\n  &:disabled {\r\n    background-color: $light-gray;\r\n    color: $mid-gray;\r\n  }\r\n}",
+                    "styleUrl": "./primary-button.component.scss"
+                }
+            ],
+            "stylesData": "",
+            "constructorObj": {
+                "name": "constructor",
+                "description": "",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "args": [],
+                "line": 10
+            },
+            "implements": [
+                "OnInit"
+            ],
+            "templateData": "<button #primaryButton class=\"buttons-primary-button\" [disabled]=\"disabled\" [innerText]=\"text\">\r\n  <ng-content></ng-content>\r\n</button>"
+        },
+        {
             "name": "ProfileSimpleComponent",
-            "id": "component-ProfileSimpleComponent-923a1a0c4bb0b687b057170934e516829c34ec35417f286500bdb8d9f74391bb3861e8db14dc30ddb7b58b394731e22a86ae782b43df58fcca273cb25e987afc",
+            "id": "component-ProfileSimpleComponent-3f937572977e06975c3961fb7d23269434b647bccf1897d2622e460d4ea0ab89066caf88cfa8b39473d0de83f3cb1616fb92b935cb0a8a949a9996506a6fc869",
             "file": "src/app/modules/home/pages/profile-simple/profile-simple.component.ts",
             "encapsulation": [],
             "entryComponents": [],
@@ -711,11 +886,11 @@
             "description": "",
             "rawdescription": "\n",
             "type": "component",
-            "sourceCode": "import { Component, OnInit } from '@angular/core';\n\n@Component({\n  selector: 'app-profile-simple',\n  templateUrl: './profile-simple.component.html',\n  styleUrls: ['./profile-simple.component.scss']\n})\nexport class ProfileSimpleComponent implements OnInit {\n\n  constructor() { }\n\n  ngOnInit(): void {\n  }\n\n}\n",
+            "sourceCode": "import { Component, OnInit } from '@angular/core';\r\n\r\n@Component({\r\n  selector: 'app-profile-simple',\r\n  templateUrl: './profile-simple.component.html',\r\n  styleUrls: ['./profile-simple.component.scss']\r\n})\r\nexport class ProfileSimpleComponent implements OnInit {\r\n\r\n  constructor() { }\r\n\r\n  ngOnInit(): void {\r\n  }\r\n\r\n}\r\n",
             "assetsDirs": [],
             "styleUrlsData": [
                 {
-                    "data": "@import 'clapp-base';\n\np{\n  font-size: 1.5rem;\n  font-weight: bold;\n  color: $applaudo-red-plus;\n}",
+                    "data": "@import 'clapp-base';\r\n\r\np{\r\n  font-size: 1.5rem;\r\n  font-weight: bold;\r\n  color: $applaudo-red-plus;\r\n}\r\n\r\n#prueba{\r\nwidth: 200px;\r\nbackground-color: aqua;\r\n  display: flex;\r\n  justify-content: center;\r\n  align-items: center;\r\n  text-decoration: none;\r\n  gap: 10px;\r\n  height: 40px;\r\n  @include clapp-body-demi();\r\n  \r\n a{\r\n  color: $applaudo-red-plus;\r\n  text-decoration: none;\r\n  \r\n\r\n}\r\n}",
                     "styleUrl": "./profile-simple.component.scss"
                 }
             ],
@@ -731,11 +906,11 @@
             "implements": [
                 "OnInit"
             ],
-            "templateData": "<p>profile-simple works!</p>\n\n<cl-sidebar></cl-sidebar>\n\n\n<cl-svg-icon icon=\"apps\" [height]=\"60\" [width]=\"60\" fill=\"ApplaudoPurple\"></cl-svg-icon>\n"
+            "templateData": "<p>profile-simple works!</p>\r\n\r\n<cl-sidebar></cl-sidebar>\r\n\r\n\r\n<a href=\"\" id=\"prueba\">\r\n    <div id=\"uno\">\r\n        <cl-svg-icon icon=\"apps\" fill=\"ApplaudoPurple\"></cl-svg-icon>\r\n    </div>\r\n    <div id=\"dos\"><span>Este es un Enlace</span></div>\r\n</a>\r\n"
         },
         {
             "name": "ProfileWithCommentsComponent",
-            "id": "component-ProfileWithCommentsComponent-9acaaef9e7b23aba659f89969e5399e7bf4c5acbf6b8f58790e614de9db1e813bc6fb8705611152964ddac285707ca33f0034a968ea0dc1abbc1cdbafddd2c98",
+            "id": "component-ProfileWithCommentsComponent-a710074b20f4f7ecff82304fd7ef3bcc28789df43a0d2c8e9cd6a5d7235c7d2e3bcc6464864dada46163c7398f97412a0b75710cc9a01880cea2d4c8df2e139c",
             "file": "src/app/modules/home/pages/profile-with-comments/profile-with-comments.component.ts",
             "encapsulation": [],
             "entryComponents": [],
@@ -773,7 +948,7 @@
             "description": "",
             "rawdescription": "\n",
             "type": "component",
-            "sourceCode": "import { Component, OnInit } from '@angular/core';\n\n@Component({\n  selector: 'app-profile-with-comments',\n  templateUrl: './profile-with-comments.component.html',\n  styleUrls: ['./profile-with-comments.component.scss']\n})\nexport class ProfileWithCommentsComponent implements OnInit {\n\n  constructor() { }\n\n  ngOnInit(): void {\n  }\n\n}\n",
+            "sourceCode": "import { Component, OnInit } from '@angular/core';\r\n\r\n@Component({\r\n  selector: 'app-profile-with-comments',\r\n  templateUrl: './profile-with-comments.component.html',\r\n  styleUrls: ['./profile-with-comments.component.scss']\r\n})\r\nexport class ProfileWithCommentsComponent implements OnInit {\r\n\r\n  constructor() { }\r\n\r\n  ngOnInit(): void {\r\n  }\r\n\r\n}\r\n",
             "assetsDirs": [],
             "styleUrlsData": [
                 {
@@ -793,11 +968,11 @@
             "implements": [
                 "OnInit"
             ],
-            "templateData": "<p>profile-with-comments works!</p>\n"
+            "templateData": "<p>profile-with-comments works!</p>\r\n"
         },
         {
             "name": "SidebarComponent",
-            "id": "component-SidebarComponent-7b9a507ded48873d1090971f34c22bcabed40ddcbd3ccfb09ce69cfd2a232edd19cf9318f60886475ff37c05c15ad5e58c97a4b94363e35cb06cecf3966194a6",
+            "id": "component-SidebarComponent-53513988cb42dcfa39bcdf0269471d8e1d4829d342616ca55eb6b7c98b5784d9f0a07208496fe3812e64d63e41d37268a14ee0c948ab42d4271c8b4617f5fca6",
             "file": "projects/clapp/src/lib/patterns/sidebar/sidebar.component.ts",
             "encapsulation": [],
             "entryComponents": [],
@@ -835,11 +1010,11 @@
             "description": "",
             "rawdescription": "\n",
             "type": "component",
-            "sourceCode": "import { Component, OnInit } from '@angular/core';\n\n@Component({\n  selector: 'cl-sidebar',\n  templateUrl: './sidebar.component.html',\n  styleUrls: ['./sidebar.component.scss']\n})\nexport class SidebarComponent implements OnInit {\n\n  constructor() { }\n\n  ngOnInit(): void {\n  }\n\n}\n",
+            "sourceCode": "import { Component, OnInit } from '@angular/core';\r\n\r\n@Component({\r\n  selector: 'cl-sidebar',\r\n  templateUrl: './sidebar.component.html',\r\n  styleUrls: ['./sidebar.component.scss']\r\n})\r\nexport class SidebarComponent implements OnInit {\r\n\r\n  constructor() { }\r\n\r\n  ngOnInit(): void {\r\n  }\r\n\r\n}\r\n",
             "assetsDirs": [],
             "styleUrlsData": [
                 {
-                    "data": "@import '../../../../assets/scss/partials/clapp-base';\n\nh5{\n@include clapp-h5;\n  color: $applaudo-red-plus;\n}",
+                    "data": "@import '../../../../assets/scss/partials/clapp-base';\r\n\r\nh5{\r\n@include clapp-h5;\r\n  color: $applaudo-red-plus;\r\n}",
                     "styleUrl": "./sidebar.component.scss"
                 }
             ],
@@ -855,11 +1030,11 @@
             "implements": [
                 "OnInit"
             ],
-            "templateData": "<h5>sidebar works!</h5>\n"
+            "templateData": "<h5>sidebar works!</h5>\r\n"
         },
         {
             "name": "SvgIconComponent",
-            "id": "component-SvgIconComponent-6086c041b59567937c7dbb1e8e9633c8176b7fb4e1f2e4203c33273d3049be0383aea0d11a5e74c248eaafec33ee503b5a7e326d2e986b43062b7c835207b2d2",
+            "id": "component-SvgIconComponent-994d3aadfbfbc8c8e6331a862fcae250d70e141af1b1aead198ed8948e502ff5456ad7e3f85b99a3c771d92dfd9de9a0f6be2413b1f0362a642642e2a5678d17",
             "file": "projects/clapp/src/lib/components/svg-icon/svg-icon.component.ts",
             "encapsulation": [],
             "entryComponents": [],
@@ -969,11 +1144,11 @@
             "description": "",
             "rawdescription": "\n",
             "type": "component",
-            "sourceCode": "import { AfterViewInit, Component, ElementRef, Input, OnInit, Renderer2, ViewChild } from '@angular/core';\n\nimport { ClappIcons, IconFill } from './clapp-icons.helper';\n\ntype TYPE_ICON_FILLS = keyof typeof IconFill;\ntype TYPE_ICONS_NAMES = keyof typeof ClappIcons;\n\n@Component({\n  selector: 'cl-svg-icon',\n  template: `<div #iconContainer id=\"iconContainer\"></div>`,\n  styleUrls: ['./svg-icon.component.scss'],\n})\nexport class SvgIconComponent implements OnInit, AfterViewInit {\n  @ViewChild('iconContainer') iconContainer!: ElementRef;\n  @Input('icon') icon: TYPE_ICONS_NAMES = 'account';\n  @Input('width') width: number = 24;\n  @Input('height') height: number = 24;\n  @Input('fill') fill: TYPE_ICON_FILLS = 'ApplaudoNavyBlue';\n\n  constructor(private renderer: Renderer2) {}\n\n  ngAfterViewInit(): void {\n    this.buildIcon();\n  }\n  \n  ngOnInit(): void { }\n  \n  \n  buildIcon():void {\n    let templateTmp = this.renderer.createElement('template');\n    templateTmp.innerHTML = ClappIcons[this.icon];\n    let svg = templateTmp.content.firstChild as SVGElement;\n    this.renderer.setAttribute(svg, 'width', `${this.width}px`);\n    this.renderer.setAttribute(svg, 'height', `${this.height}px`);\n    this.iconContainer.nativeElement.setAttribute('class', `${IconFill[this.fill]}`);\n    this.renderer.appendChild(this.iconContainer.nativeElement, svg);\n  }\n}\n",
+            "sourceCode": "import { AfterViewInit, Component, ElementRef, Input, OnInit, Renderer2, ViewChild } from '@angular/core';\r\n\r\nimport { ClappIcons, IconFill } from './clapp-icons.helper';\r\n\r\ntype TYPE_ICON_FILLS = keyof typeof IconFill;\r\ntype TYPE_ICONS_NAMES = keyof typeof ClappIcons;\r\n\r\n@Component({\r\n  selector: 'cl-svg-icon',\r\n  template: `<div #iconContainer id=\"iconContainer\"></div>`,\r\n  styleUrls: ['./svg-icon.component.scss'],\r\n})\r\nexport class SvgIconComponent implements OnInit, AfterViewInit {\r\n  @ViewChild('iconContainer') iconContainer!: ElementRef;\r\n  @Input('icon') icon: TYPE_ICONS_NAMES = 'account';\r\n  @Input('width') width: number = 24;\r\n  @Input('height') height: number = 24;\r\n  @Input('fill') fill: TYPE_ICON_FILLS = 'ApplaudoNavyBlue';\r\n\r\n  constructor(private renderer: Renderer2) {}\r\n\r\n  ngAfterViewInit(): void {\r\n    this.buildIcon();\r\n  }\r\n  \r\n  ngOnInit(): void { }\r\n  \r\n  \r\n  buildIcon():void {\r\n    let templateTmp = this.renderer.createElement('template');\r\n    templateTmp.innerHTML = ClappIcons[this.icon];\r\n    let svg = templateTmp.content.firstChild as SVGElement;\r\n    this.renderer.setAttribute(svg, 'width', `${this.width}px`);\r\n    this.renderer.setAttribute(svg, 'height', `${this.height}px`);\r\n    this.iconContainer.nativeElement.setAttribute('class', `${IconFill[this.fill]}`);\r\n    this.renderer.appendChild(this.iconContainer.nativeElement, svg);\r\n  }\r\n}\r\n",
             "assetsDirs": [],
             "styleUrlsData": [
                 {
-                    "data": "@import '../../../../assets/scss/partials/clapp-base';\n\n@mixin iconPainter($color) {\n    fill: $color;\n\n}\n\n.applaudo-navy-blue {\n    @include iconPainter($applaudo-navy-blue);\n}\n\n.applaudo-red {\n    @include iconPainter($applaudo-red);\n}\n\n.light-gray {\n    @include iconPainter($light-gray);\n}\n\n.white {\n    @include iconPainter($white);\n}\n\n.applaudo-red-plus {\n    @include iconPainter($applaudo-red-plus);\n\n\n}\n\n.applaudo-red-minus {\n    @include iconPainter($applaudo-red-minus);\n}\n\n.error-red {\n    @include iconPainter($error-red);\n}\n\n.green {\n    @include iconPainter($green);\n}\n\n.mid-gray {\n    @include iconPainter($mid-gray);\n}\n\n.yellow {\n    @include iconPainter($yellow);\n}\n\n.charcoal {\n    @include iconPainter($charcoal);\n}\n\n.cool-gray {\n    @include iconPainter($cool-gray);\n}\n\n.platinum {\n    @include iconPainter($platinum);\n}\n\n.applaudo-purple {\n    @include iconPainter($applaudo-purple);\n}\n\n.blue{\n    @include iconPainter($blue);\n}\n.bronze {\n    @include iconPainter($bronze);\n}\n\n.light-navy-blue {\n    @include iconPainter($light-navy-blue);\n}",
+                    "data": "@import '../../../../assets/scss/partials/clapp-base';\r\n\r\n:host{\r\n    display: flex;\r\n    justify-content: center;\r\n\r\n    #iconContainer{\r\n        display: flex;\r\n        justify-content: center;\r\n    }\r\n}\r\n\r\n@mixin iconPainter($color) {\r\n    fill: $color;\r\n\r\n}\r\n\r\n.applaudo-navy-blue {\r\n    @include iconPainter($applaudo-navy-blue);\r\n}\r\n\r\n.applaudo-red {\r\n    @include iconPainter($applaudo-red);\r\n}\r\n\r\n.light-gray {\r\n    @include iconPainter($light-gray);\r\n}\r\n\r\n.white {\r\n    @include iconPainter($white);\r\n}\r\n\r\n.applaudo-red-plus {\r\n    @include iconPainter($applaudo-red-plus);\r\n\r\n\r\n}\r\n\r\n.applaudo-red-minus {\r\n    @include iconPainter($applaudo-red-minus);\r\n}\r\n\r\n.error-red {\r\n    @include iconPainter($error-red);\r\n}\r\n\r\n.green {\r\n    @include iconPainter($green);\r\n}\r\n\r\n.mid-gray {\r\n    @include iconPainter($mid-gray);\r\n}\r\n\r\n.yellow {\r\n    @include iconPainter($yellow);\r\n}\r\n\r\n.charcoal {\r\n    @include iconPainter($charcoal);\r\n}\r\n\r\n.cool-gray {\r\n    @include iconPainter($cool-gray);\r\n}\r\n\r\n.platinum {\r\n    @include iconPainter($platinum);\r\n}\r\n\r\n.applaudo-purple {\r\n    @include iconPainter($applaudo-purple);\r\n}\r\n\r\n.blue{\r\n    @include iconPainter($blue);\r\n}\r\n.bronze {\r\n    @include iconPainter($bronze);\r\n}\r\n\r\n.light-navy-blue {\r\n    @include iconPainter($light-navy-blue);\r\n}",
                     "styleUrl": "./svg-icon.component.scss"
                 }
             ],
@@ -1013,13 +1188,13 @@
     "modules": [
         {
             "name": "AppModule",
-            "id": "module-AppModule-0670705cf3c239fd351a0f74d9fe0a29e43849fc6084ee1adf502aa0fe488dc434beeb25872597f3c7c7235321871e32a31f0370eae86c59bf87ffdd7249a1db",
+            "id": "module-AppModule-4517380e2660896d843be014cefc69376fb98c950e96cbf887f5ef90af1c3b466812231e02a148a09f1a928ab35307eb975cfd7721429ce6f08404154d21f771",
             "description": "",
             "deprecationMessage": "",
             "deprecated": false,
             "file": "src/app/app.module.ts",
             "methods": [],
-            "sourceCode": "import { NgModule } from '@angular/core';\nimport { BrowserModule } from '@angular/platform-browser';\n\nimport { AppRoutingModule } from './app-routing.module';\nimport { AppComponent } from './app.component';\nimport { ClappModule } from 'clapp';\nimport { LoginModule } from './modules/login/login.module';\n\n@NgModule({\n  declarations: [\n    AppComponent\n  ],\n  imports: [\n    BrowserModule,\n    AppRoutingModule,\n    ClappModule,\n    LoginModule\n  ],\n  providers: [],\n  bootstrap: [AppComponent]\n})\nexport class AppModule { }\n",
+            "sourceCode": "import { NgModule } from '@angular/core';\r\nimport { BrowserModule } from '@angular/platform-browser';\r\n\r\nimport { AppRoutingModule } from './app-routing.module';\r\nimport { AppComponent } from './app.component';\r\nimport { ClappModule } from 'clapp';\r\nimport { LoginModule } from './modules/login/login.module';\r\n\r\n@NgModule({\r\n  declarations: [\r\n    AppComponent\r\n  ],\r\n  imports: [\r\n    BrowserModule,\r\n    AppRoutingModule,\r\n    ClappModule,\r\n    LoginModule\r\n  ],\r\n  providers: [],\r\n  bootstrap: [AppComponent]\r\n})\r\nexport class AppModule { }\r\n",
             "children": [
                 {
                     "type": "providers",
@@ -1067,13 +1242,13 @@
         },
         {
             "name": "AppRoutingModule",
-            "id": "module-AppRoutingModule-805f77f64fc3e310a4a9b242378a6b03326b316045bd0e8e4a7c5bb4680d71143eed322b386bd4880c6fa0e0b7d528e10b5b68f83ddc2e17c9974a3468c51818",
+            "id": "module-AppRoutingModule-6c0fce5e3d17590d5291ebf3c47aabf587270a8c08d5d7d7d53e34744cdc9fe8e7dbbb4f293ddb3fec69be88d353858d1be5f6d516746044526a38868e8a556d",
             "description": "",
             "deprecationMessage": "",
             "deprecated": false,
             "file": "src/app/app-routing.module.ts",
             "methods": [],
-            "sourceCode": "import { NgModule } from '@angular/core';\nimport { RouterModule, Routes } from '@angular/router';\nimport { GatekeeperComponent } from './modules/login/pages/gatekeeper/gatekeeper.component';\nimport { EndorsementComponent } from './modules/login/pages/endorsement/endorsement.component';\n\nconst routes: Routes = [\n  {\n    path: 'gatekeeper',\n    component: GatekeeperComponent,\n  },\n  {\n    path: 'endorsement',\n    component: EndorsementComponent\n  },\n  {\n    path: 'home',\n    loadChildren: () => \"import('./modules/home/home.module').then(m => m.HomeModule)\"\n  },\n  {\n    path: '',\n    redirectTo: 'gatekeeper',\n    pathMatch: 'full'\n  },\n  {\n    path: '**',\n    redirectTo: 'gatekeeper'\n  }\n];\n\n@NgModule({\n  imports: [RouterModule.forRoot(routes)],\n  exports: [RouterModule]\n})\nexport class AppRoutingModule { }\n",
+            "sourceCode": "import { NgModule } from '@angular/core';\r\nimport { RouterModule, Routes } from '@angular/router';\r\nimport { GatekeeperComponent } from './modules/login/pages/gatekeeper/gatekeeper.component';\r\nimport { EndorsementComponent } from './modules/login/pages/endorsement/endorsement.component';\r\n\r\nconst routes: Routes = [\r\n  {\r\n    path: 'gatekeeper',\r\n    component: GatekeeperComponent,\r\n  },\r\n  {\r\n    path: 'endorsement',\r\n    component: EndorsementComponent\r\n  },\r\n  {\r\n    path: 'home',\r\n    loadChildren: () => \"import('./modules/home/home.module').then(m => m.HomeModule)\"\r\n  },\r\n  {\r\n    path: '',\r\n    redirectTo: 'gatekeeper',\r\n    pathMatch: 'full'\r\n  },\r\n  {\r\n    path: '**',\r\n    redirectTo: 'gatekeeper'\r\n  }\r\n];\r\n\r\n@NgModule({\r\n  imports: [RouterModule.forRoot(routes)],\r\n  exports: [RouterModule]\r\n})\r\nexport class AppRoutingModule { }\r\n",
             "children": [
                 {
                     "type": "providers",
@@ -1103,13 +1278,13 @@
         },
         {
             "name": "ClappModule",
-            "id": "module-ClappModule-5877fb62ab9a2214f372414d7b922333a5fd9cffc37ba19e661f59742f950a1aab0ed5ca8b5616bebff9b3e26fe8ed84bf14dec8cdd24d3da83c9bbd8008a396",
+            "id": "module-ClappModule-b3d19dae4e18888f509d63f281b079eeadc5d28b588332aa15eab688476cd972b4d7f3c45217e545acefb33730ed0ac74ecafa35a794c50366f483f1d8abd877",
             "description": "",
             "deprecationMessage": "",
             "deprecated": false,
             "file": "projects/clapp/src/lib/clapp.module.ts",
             "methods": [],
-            "sourceCode": "import { NgModule } from '@angular/core';\nimport { ClappComponent } from './clapp.component';\nimport { IconButtonComponent } from './components/buttons/icon-button/icon-button.component';\nimport { SidebarComponent } from './patterns/sidebar/sidebar.component';\nimport { SvgIconComponent } from './components/svg-icon/svg-icon.component';\n\n\n\n@NgModule({\n  declarations: [\n    ClappComponent,\n    IconButtonComponent,\n    SidebarComponent,\n    SvgIconComponent,\n\n  ],\n  imports: [\n  ],\n  exports: [\n    ClappComponent,\n    IconButtonComponent,\n    SidebarComponent,\n    SvgIconComponent\n  ]\n})\nexport class ClappModule { }\n",
+            "sourceCode": "import { NgModule } from '@angular/core';\r\nimport { ClappComponent } from './clapp.component';\r\nimport { IconButtonComponent } from './components/buttons/icon-button/icon-button.component';\r\nimport { SidebarComponent } from './patterns/sidebar/sidebar.component';\r\nimport { PrimaryButtonComponent } from './components/buttons/primary-button/primary-button.component';\r\nimport { ButtonComponent } from './components/button/button.component';\r\nimport { CommonModule } from '@angular/common';\r\nimport { SvgIconComponent } from './components/svg-icon/svg-icon.component';\r\n\r\n\r\n\r\n@NgModule({\r\n  declarations: [\r\n    ClappComponent,\r\n    IconButtonComponent,\r\n    SidebarComponent,\r\n    PrimaryButtonComponent,\r\n    ButtonComponent,\r\n    SvgIconComponent,\r\n  ],\r\n  imports: [\r\n    CommonModule\r\n  ],\r\n  exports: [\r\n    ClappComponent,\r\n    IconButtonComponent,\r\n    SidebarComponent,\r\n    PrimaryButtonComponent,\r\n    ButtonComponent,\r\n    SvgIconComponent\r\n  ]\r\n})\r\nexport class ClappModule { }\r\n",
             "children": [
                 {
                     "type": "providers",
@@ -1119,10 +1294,16 @@
                     "type": "declarations",
                     "elements": [
                         {
+                            "name": "ButtonComponent"
+                        },
+                        {
                             "name": "ClappComponent"
                         },
                         {
                             "name": "IconButtonComponent"
+                        },
+                        {
+                            "name": "PrimaryButtonComponent"
                         },
                         {
                             "name": "SidebarComponent"
@@ -1146,6 +1327,9 @@
                             "name": "IconButtonComponent"
                         },
                         {
+                            "name": "PrimaryButtonComponent"
+                        },
+                        {
                             "name": "SidebarComponent"
                         },
                         {
@@ -1165,13 +1349,13 @@
         },
         {
             "name": "HomeModule",
-            "id": "module-HomeModule-08f30c49d708af292841fe5f28e830460c7f2cb301c8650db6e7f97363fba878df4f245c15e14c28b7395f95e3f5efe98884954e0ee7cceeeebb1bdeeaa0dd50",
+            "id": "module-HomeModule-4065dabeabc518e38a17162f24008ba20301faaa5bf348e3d369b7e74f0ce68699d41faf75ae75630b5522261a05a58170a52fea5743da5ce85a7bc5e8f847d7",
             "description": "",
             "deprecationMessage": "",
             "deprecated": false,
             "file": "src/app/modules/home/home.module.ts",
             "methods": [],
-            "sourceCode": "import { NgModule } from '@angular/core';\nimport { CommonModule } from '@angular/common';\n\nimport { HomeRoutingModule } from './home-routing.module';\nimport { ProfileSimpleComponent } from './pages/profile-simple/profile-simple.component';\nimport { ProfileWithCommentsComponent } from './pages/profile-with-comments/profile-with-comments.component';\nimport { HomeMainComponent } from './pages/home-main/home-main.component';\nimport { ClappModule } from 'clapp';\n\n\n@NgModule({\n  declarations: [\n    ProfileSimpleComponent,\n    ProfileWithCommentsComponent,\n    HomeMainComponent\n  ],\n  imports: [\n    CommonModule,\n    HomeRoutingModule,\n    ClappModule\n  ],\n  exports: []\n})\nexport class HomeModule { }\n",
+            "sourceCode": "import { NgModule } from '@angular/core';\r\nimport { CommonModule } from '@angular/common';\r\n\r\nimport { HomeRoutingModule } from './home-routing.module';\r\nimport { ProfileSimpleComponent } from './pages/profile-simple/profile-simple.component';\r\nimport { ProfileWithCommentsComponent } from './pages/profile-with-comments/profile-with-comments.component';\r\nimport { HomeMainComponent } from './pages/home-main/home-main.component';\r\nimport { ClappModule } from 'clapp';\r\n\r\n\r\n@NgModule({\r\n  declarations: [\r\n    ProfileSimpleComponent,\r\n    ProfileWithCommentsComponent,\r\n    HomeMainComponent\r\n  ],\r\n  imports: [\r\n    CommonModule,\r\n    HomeRoutingModule,\r\n    ClappModule\r\n  ],\r\n  exports: []\r\n})\r\nexport class HomeModule { }\r\n",
             "children": [
                 {
                     "type": "providers",
@@ -1218,13 +1402,13 @@
         },
         {
             "name": "HomeRoutingModule",
-            "id": "module-HomeRoutingModule-b2d1af8e94915b1d0a5eed297128ecb5f65c21d6142f2dd1437fdcbc76fdce49818816faf1500882789bfc5c0213cbc0021570ebd31fdf5f0b8c10200b24a5ae",
+            "id": "module-HomeRoutingModule-7b7344dd565ba55c7d46ebacf0a3f63576f4f57e241b8245c2c972f4313d9d63b42f0f1f1950bac07d805d32fdeb6daffe9deefb6b5c96e80de9cc58f7d1c152",
             "description": "",
             "deprecationMessage": "",
             "deprecated": false,
             "file": "src/app/modules/home/home-routing.module.ts",
             "methods": [],
-            "sourceCode": "import { NgModule } from '@angular/core';\nimport { RouterModule, Routes } from '@angular/router';\nimport { HomeMainComponent } from './pages/home-main/home-main.component';\nimport { ProfileSimpleComponent } from './pages/profile-simple/profile-simple.component';\nimport { ProfileWithCommentsComponent } from './pages/profile-with-comments/profile-with-comments.component';\n\nconst routes: Routes = [\n  {\n    path: '',\n    component: HomeMainComponent,\n    children: [\n      {\n        path: 'profile-simple',\n        component: ProfileSimpleComponent\n      },\n      {\n        path: 'profile-with-comments',\n        component: ProfileWithCommentsComponent\n      },\n      {\n        path: '',\n        redirectTo: 'profile-simple',\n        pathMatch: 'full'\n      },\n      {\n        path: '**',\n        redirectTo: 'profile-simple'\n      }\n    ]\n  }\n];\n\n@NgModule({\n  imports: [RouterModule.forChild(routes)],\n  exports: [RouterModule]\n})\nexport class HomeRoutingModule { }\n",
+            "sourceCode": "import { NgModule } from '@angular/core';\r\nimport { RouterModule, Routes } from '@angular/router';\r\nimport { HomeMainComponent } from './pages/home-main/home-main.component';\r\nimport { ProfileSimpleComponent } from './pages/profile-simple/profile-simple.component';\r\nimport { ProfileWithCommentsComponent } from './pages/profile-with-comments/profile-with-comments.component';\r\n\r\nconst routes: Routes = [\r\n  {\r\n    path: '',\r\n    component: HomeMainComponent,\r\n    children: [\r\n      {\r\n        path: 'profile-simple',\r\n        component: ProfileSimpleComponent\r\n      },\r\n      {\r\n        path: 'profile-with-comments',\r\n        component: ProfileWithCommentsComponent\r\n      },\r\n      {\r\n        path: '',\r\n        redirectTo: 'profile-simple',\r\n        pathMatch: 'full'\r\n      },\r\n      {\r\n        path: '**',\r\n        redirectTo: 'profile-simple'\r\n      }\r\n    ]\r\n  }\r\n];\r\n\r\n@NgModule({\r\n  imports: [RouterModule.forChild(routes)],\r\n  exports: [RouterModule]\r\n})\r\nexport class HomeRoutingModule { }\r\n",
             "children": [
                 {
                     "type": "providers",
@@ -1254,13 +1438,13 @@
         },
         {
             "name": "LoginModule",
-            "id": "module-LoginModule-5bcdbdec87db44fa0a00c326529e80f635e02fc4e2bdd5f954b165a561ad0e815a866a6cbe10c6eaf687c57f9ba17bc9c69ed581fe7ac6b9710066391def5e13",
+            "id": "module-LoginModule-727e7f7f7c0983a90a984094c53547a353f795476eaca239948acb2bad3b59263a51482c38330a07f3851845e8d2b4feb224ae3e6c18cf838c5f338d4f4266e4",
             "description": "",
             "deprecationMessage": "",
             "deprecated": false,
             "file": "src/app/modules/login/login.module.ts",
             "methods": [],
-            "sourceCode": "import { CUSTOM_ELEMENTS_SCHEMA, NgModule } from '@angular/core';\nimport { CommonModule } from '@angular/common';\nimport { GatekeeperComponent } from './pages/gatekeeper/gatekeeper.component';\nimport { EndorsementComponent } from './pages/endorsement/endorsement.component';\nimport { ClappModule } from 'clapp';\n\n\n\n\n@NgModule({\n  declarations: [\n    GatekeeperComponent,\n    EndorsementComponent\n  ],\n  imports: [\n    CommonModule,\n    ClappModule\n  ],\n  exports: [\n    GatekeeperComponent,\n    EndorsementComponent\n  ]\n})\nexport class LoginModule { }\n",
+            "sourceCode": "import { CUSTOM_ELEMENTS_SCHEMA, NgModule } from '@angular/core';\r\nimport { CommonModule } from '@angular/common';\r\nimport { GatekeeperComponent } from './pages/gatekeeper/gatekeeper.component';\r\nimport { EndorsementComponent } from './pages/endorsement/endorsement.component';\r\nimport { ClappModule } from 'clapp';\r\n\r\n\r\n\r\n\r\n@NgModule({\r\n  declarations: [\r\n    GatekeeperComponent,\r\n    EndorsementComponent\r\n  ],\r\n  imports: [\r\n    CommonModule,\r\n    ClappModule\r\n  ],\r\n  exports: [\r\n    GatekeeperComponent,\r\n    EndorsementComponent\r\n  ]\r\n})\r\nexport class LoginModule { }\r\n",
             "children": [
                 {
                     "type": "providers",
@@ -1317,7 +1501,7 @@
                 "deprecated": false,
                 "deprecationMessage": "",
                 "type": "object",
-                "defaultValue": "{\n  account: '<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 24 24\"><g><path fill=\"none\" d=\"M0 0h24v24H0z\"/><path d=\"M12 22C6.477 22 2 17.523 2 12S6.477 2 12 2s10 4.477 10 10-4.477 10-10 10zm-4.987-3.744A7.966 7.966 0 0 0 12 20c1.97 0 3.773-.712 5.167-1.892A6.979 6.979 0 0 0 12.16 16a6.981 6.981 0 0 0-5.147 2.256zM5.616 16.82A8.975 8.975 0 0 1 12.16 14a8.972 8.972 0 0 1 6.362 2.634 8 8 0 1 0-12.906.187zM12 13a4 4 0 1 1 0-8 4 4 0 0 1 0 8zm0-2a2 2 0 1 0 0-4 2 2 0 0 0 0 4z\"/></g></svg>',\n  add: '<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 24 24\"><g><path fill=\"none\" d=\"M0 0h24v24H0z\"/><path d=\"M19 13h-6v6h-2v-6H5v-2h6V5h2v6h6v2z\"/></g></svg>',\n  admin: '<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 24 24\"><g><path fill=\"none\" d=\"M0 0h24v24H0z\"/><path d=\"M12 14v2a6 6 0 0 0-6 6H4a8 8 0 0 1 8-8zm0-1c-3.315 0-6-2.685-6-6s2.685-6 6-6 6 2.685 6 6-2.685 6-6 6zm0-2c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm9 6h1v5h-8v-5h1v-1a3 3 0 0 1 6 0v1zm-2 0v-1a1 1 0 0 0-2 0v1h2z\"/></g></svg>',\n  apps: '<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 24 24\"><g><path fill=\"none\" d=\"M0 0h24v24H0z\"/><path d=\"M4 8h4V4H4v4zm6 12h4v-4h-4v4zm-6 0h4v-4H4v4zm0-6h4v-4H4v4zm6 0h4v-4h-4v4zm6-10v4h4V4h-4zm-6 4h4V4h-4v4zm6-6v4h4V4h-4z\"/></g></svg>',\n  arrowLeft: '<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 24 24\"><g><path fill=\"none\" d=\"M0 0h24v24H0z\"/><path d=\"M15.41 7.41L14 6l-6 6 6 6 1.41-1.41L10.83 12z\"/></g></svg>',\n  arrowRight: '<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 24 24\"><g><path fill=\"none\" d=\"M0 0h24v24H0z\"/><path d=\"M16.172 11l-5.364-5.364 1.414-1.414L20 12l-7.778 7.778-1.414-1.414L16.172 13H4v-2z\"/></g></svg>',\n  attachment: '<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 24 24\"><g><path fill=\"none\" d=\"M0 0h24v24H0z\"/><path d=\"M14 13.5V8a4 4 0 1 0-8 0v5.5a6.5 6.5 0 1 0 13 0V4h2v9.5a8.5 8.5 0 1 1-17 0V8a6 6 0 1 1 12 0v5.5a3.5 3.5 0 0 1-7 0V8h2v5.5a1.5 1.5 0 0 0 3 0z\"/></g></svg>',\n  awardFill: '<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 24 24\"><g><path fill=\"none\" d=\"M0 0h24v24H0z\"/><path d=\"M17 15.245v6.872a.5.5 0 0 1-.757.429L12 20l-4.243 2.546a.5.5 0 0 1-.757-.43v-6.87a8 8 0 1 1 10 0zM12 15a6 6 0 1 0 0-12 6 6 0 0 0 0 12zm0-2a4 4 0 1 1 0-8 4 4 0 0 1 0 8z\"/></g></svg>',\n  awardLine: '<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 24 24\"><g><path fill=\"none\" d=\"M0 0h24v24H0z\"/><path d=\"M17 15.245v6.872a.5.5 0 0 1-.757.429L12 20l-4.243 2.546a.5.5 0 0 1-.757-.43v-6.87a8 8 0 1 1 10 0zm-8 1.173v3.05l3-1.8 3 1.8v-3.05A7.978 7.978 0 0 1 12 17a7.978 7.978 0 0 1-3-.582zM12 15a6 6 0 1 0 0-12 6 6 0 0 0 0 12z\"/></g></svg>',\n  calendar: '<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 24 24\"><g><path fill=\"none\" d=\"M0 0h24v24H0z\"/><path d=\"M17 3h4a1 1 0 0 1 1 1v16a1 1 0 0 1-1 1H3a1 1 0 0 1-1-1V4a1 1 0 0 1 1-1h4V1h2v2h6V1h2v2zm-2 2H9v2H7V5H4v4h16V5h-3v2h-2V5zm5 6H4v8h16v-8z\"/></g></svg>',\n  camera: '<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 24 24\"><g><path fill=\"none\" d=\"M0 0h24v24H0z\"/><path d=\"M9.828 5l-2 2H4v12h16V7h-3.828l-2-2H9.828zM9 3h6l2 2h4a1 1 0 0 1 1 1v14a1 1 0 0 1-1 1H3a1 1 0 0 1-1-1V6a1 1 0 0 1 1-1h4l2-2zm3 15a5.5 5.5 0 1 1 0-11 5.5 5.5 0 0 1 0 11zm0-2a3.5 3.5 0 1 0 0-7 3.5 3.5 0 0 0 0 7z\"/></g></svg>',\n  chevronDown: '<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 24 24\"><g><path fill=\"none\" d=\"M0 0h24v24H0z\"/><path d=\"M12 13.172l4.95-4.95 1.414 1.414L12 16 5.636 9.636 7.05 8.222z\"/></g></svg>',\n  chevronLeft: '<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 24 24\"><g><path fill=\"none\" d=\"M0 0h24v24H0z\"/><path d=\"M10.828 12l4.95 4.95-1.414 1.414L8 12l6.364-6.364 1.414 1.414z\"/></g></svg>',\n  chevronRight: '<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 24 24\"><g><path fill=\"none\" d=\"M0 0h24v24H0z\"/><path d=\"M13.172 12l-4.95-4.95 1.414-1.414L16 12l-6.364 6.364-1.414-1.414z\"/></g></svg>',\n  chevronUp: '<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 24 24\"><g><path fill=\"none\" d=\"M0 0h24v24H0z\"/><path d=\"M12 10.828l-4.95 4.95-1.414-1.414L12 8l6.364 6.364-1.414 1.414z\"/></g></svg>',\n  close: '<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 24 24\"><g><path fill=\"none\" d=\"M0 0h24v24H0z\"/><path d=\"M12 10.586l4.95-4.95 1.414 1.414-4.95 4.95 4.95 4.95-1.414 1.414-4.95-4.95-4.95 4.95-1.414-1.414 4.95-4.95-4.95-4.95L7.05 5.636z\"/></g></svg>',\n  dashboard: '<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 24 24\"><g><path fill=\"none\" d=\"M0 0h24v24H0z\"/><path d=\"M13 21V11h8v10h-8zM3 13V3h8v10H3zm6-2V5H5v6h4zM3 21v-6h8v6H3zm2-2h4v-2H5v2zm10 0h4v-6h-4v6zM13 3h8v6h-8V3zm2 2v2h4V5h-4z\"/></g></svg>',\n  delete: '<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 24 24\"><g><path fill=\"none\" d=\"M0 0h24v24H0z\"/><path d=\"M17 6h5v2h-2v13a1 1 0 0 1-1 1H5a1 1 0 0 1-1-1V8H2V6h5V3a1 1 0 0 1 1-1h8a1 1 0 0 1 1 1v3zm1 2H6v12h12V8zm-9 3h2v6H9v-6zm4 0h2v6h-2v-6zM9 4v2h6V4H9z\"/></g></svg>',\n  developer: '<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 24 24\"><g><path fill=\"none\" d=\"M0 0h24v24H0z\"/><path d=\"M23 12l-7.071 7.071-1.414-1.414L20.172 12l-5.657-5.657 1.414-1.414L23 12zM3.828 12l5.657 5.657-1.414 1.414L1 12l7.071-7.071 1.414 1.414L3.828 12z\"/></g></svg>',\n  download: '<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 24 24\"><g><path fill=\"none\" d=\"M0 0h24v24H0z\"/><path d=\"M3 19h18v2H3v-2zm10-5.828L19.071 7.1l1.414 1.414L12 17 3.515 8.515 4.929 7.1 11 13.17V2h2v11.172z\"/></g></svg>',\n  dropDown: '<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 24 24\"><g><path fill=\"none\" d=\"M0 0h24v24H0z\"/><path d=\"M12 15l-4.243-4.243 1.415-1.414L12 12.172l2.828-2.829 1.415 1.414z\"/></g></svg>',\n  dropUp: '<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 24 24\"><g><path fill=\"none\" d=\"M0 0h24v24H0z\"/><path d=\"M12 11.828l-2.828 2.829-1.415-1.414L12 9l4.243 4.243-1.415 1.414L12 11.828z\"/></g></svg>',\n  edit: '<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 24 24\"><g><path fill=\"none\" d=\"M0 0h24v24H0z\"/><path d=\"M6.414 16L16.556 5.858l-1.414-1.414L5 14.586V16h1.414zm.829 2H3v-4.243L14.435 2.322a1 1 0 0 1 1.414 0l2.829 2.829a1 1 0 0 1 0 1.414L7.243 18zM3 20h18v2H3v-2z\"/></g></svg>',\n  explore: '<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 24 24\"><g><path fill=\"none\" d=\"M0 0h24v24H0z\"/><path d=\"M12 14v2a6 6 0 0 0-6 6H4a8 8 0 0 1 8-8zm0-1c-3.315 0-6-2.685-6-6s2.685-6 6-6 6 2.685 6 6-2.685 6-6 6zm0-2c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm9.446 9.032l1.504 1.504-1.414 1.414-1.504-1.504a4 4 0 1 1 1.414-1.414zM18 20a2 2 0 1 0 0-4 2 2 0 0 0 0 4z\"/></g></svg>',\n  facebook: '<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 24 24\"><g><path fill=\"none\" d=\"M0 0h24v24H0z\"/><path d=\"M14 13.5h2.5l1-4H14v-2c0-1.03 0-2 2-2h1.5V2.14c-.326-.043-1.557-.14-2.857-.14C11.928 2 10 3.657 10 6.7v2.8H7v4h3V22h4v-8.5z\"/></g></svg>',\n  filter: '<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 24 24\"><g><path fill=\"none\" d=\"M0 0H24V24H0z\"/><path d=\"M21 4v2h-1l-5 7.5V22H9v-8.5L4 6H3V4h18zM6.404 6L11 12.894V20h2v-7.106L17.596 6H6.404z\"/></g></svg>',\n  gatekeeper: '<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 40 19\"><g><path d=\"M11.1214 3.229L8.85495 0.955505L2.94076 6.85283L0 9.8015L2.94076 12.7829L8.85495 18.6803L11.1214 16.4068L4.64877 9.8015L11.1214 3.229Z\"/><path d=\"M19.9259 16.7687C18.6654 16.7687 17.4977 16.4536 16.4226 15.8234C15.3753 15.2025 14.5412 14.3684 13.9203 13.3211C13.2901 12.246 12.975 11.0783 12.975 9.81785C12.975 8.55743 13.2901 7.38968 13.9203 6.31461C14.5412 5.26734 15.3753 4.43324 16.4226 3.81229C17.4977 3.18208 18.6654 2.86697 19.9259 2.86697C21.1863 2.86697 22.354 3.18208 23.4291 3.81229C24.4764 4.43324 25.3105 5.26734 25.9314 6.31461C26.5616 7.38968 26.8767 8.55743 26.8767 9.81785C26.8767 11.0783 26.5616 12.246 25.9314 13.3211C25.3105 14.3684 24.4764 15.2025 23.4291 15.8234C22.354 16.4536 21.1863 16.7687 19.9259 16.7687ZM19.2308 10.3739V12.5982H20.621V10.3739C21.0009 10.2071 21.2836 9.94297 21.469 9.58152C21.6543 9.21081 21.7053 8.82619 21.6219 8.42768C21.5385 8.01989 21.3346 7.68625 21.0102 7.42675C20.6951 7.16725 20.3336 7.0375 19.9259 7.0375C19.5181 7.0375 19.152 7.16725 18.8276 7.42675C18.5125 7.68625 18.3133 8.01989 18.2298 8.42768C18.1464 8.82619 18.1974 9.21081 18.3828 9.58152C18.5681 9.94297 18.8508 10.2071 19.2308 10.3739Z\"/><path d=\"M36.6793 6.85283L30.7977 0.955505L28.4986 3.229L34.9861 9.8015L28.4986 16.4068L30.7977 18.6803L36.6793 12.7829L39.62 9.8015L36.6793 6.85283Z\"/><path d=\"M11.1214 3.229L8.85495 0.955505L2.94076 6.85283L0 9.8015L2.94076 12.7829L8.85495 18.6803L11.1214 16.4068L4.64877 9.8015L11.1214 3.229Z\"/><path d=\"M19.9259 16.7687C18.6654 16.7687 17.4977 16.4536 16.4226 15.8234C15.3753 15.2025 14.5412 14.3684 13.9203 13.3211C13.2901 12.246 12.975 11.0783 12.975 9.81785C12.975 8.55743 13.2901 7.38968 13.9203 6.31461C14.5412 5.26734 15.3753 4.43324 16.4226 3.81229C17.4977 3.18208 18.6654 2.86697 19.9259 2.86697C21.1863 2.86697 22.354 3.18208 23.4291 3.81229C24.4764 4.43324 25.3105 5.26734 25.9314 6.31461C26.5616 7.38968 26.8767 8.55743 26.8767 9.81785C26.8767 11.0783 26.5616 12.246 25.9314 13.3211C25.3105 14.3684 24.4764 15.2025 23.4291 15.8234C22.354 16.4536 21.1863 16.7687 19.9259 16.7687ZM19.2308 10.3739V12.5982H20.621V10.3739C21.0009 10.2071 21.2836 9.94297 21.469 9.58152C21.6543 9.21081 21.7053 8.82619 21.6219 8.42768C21.5385 8.01989 21.3346 7.68625 21.0102 7.42675C20.6951 7.16725 20.3336 7.0375 19.9259 7.0375C19.5181 7.0375 19.152 7.16725 18.8276 7.42675C18.5125 7.68625 18.3133 8.01989 18.2298 8.42768C18.1464 8.82619 18.1974 9.21081 18.3828 9.58152C18.5681 9.94297 18.8508 10.2071 19.2308 10.3739Z\"/><path d=\"M36.6793 6.85283L30.7977 0.955505L28.4986 3.229L34.9861 9.8015L28.4986 16.4068L30.7977 18.6803L36.6793 12.7829L39.62 9.8015L36.6793 6.85283Z\"/></g></svg>',\n  help: '<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 24 24\"><g><path fill=\"none\" d=\"M0 0h24v24H0z\"/><path d=\"M12 22C6.477 22 2 17.523 2 12S6.477 2 12 2s10 4.477 10 10-4.477 10-10 10zm0-2a8 8 0 1 0 0-16 8 8 0 0 0 0 16zm-1-5h2v2h-2v-2zm2-1.645V14h-2v-1.5a1 1 0 0 1 1-1 1.5 1.5 0 1 0-1.471-1.794l-1.962-.393A3.501 3.501 0 1 1 13 13.355z\"/></g></svg>',\n  hr: '<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 24 24\"><g><path fill=\"none\" d=\"M0 0h24v24H0z\"/><path fill-rule=\"nonzero\" d=\"M12 11a5 5 0 0 1 5 5v6h-2v-6a3 3 0 0 0-2.824-2.995L12 13a3 3 0 0 0-2.995 2.824L9 16v6H7v-6a5 5 0 0 1 5-5zm-6.5 3c.279 0 .55.033.81.094a5.947 5.947 0 0 0-.301 1.575L6 16v.086a1.492 1.492 0 0 0-.356-.08L5.5 16a1.5 1.5 0 0 0-1.493 1.356L4 17.5V22H2v-4.5A3.5 3.5 0 0 1 5.5 14zm13 0a3.5 3.5 0 0 1 3.5 3.5V22h-2v-4.5a1.5 1.5 0 0 0-1.356-1.493L18.5 16c-.175 0-.343.03-.5.085V16c0-.666-.108-1.306-.309-1.904.259-.063.53-.096.809-.096zm-13-6a2.5 2.5 0 1 1 0 5 2.5 2.5 0 0 1 0-5zm13 0a2.5 2.5 0 1 1 0 5 2.5 2.5 0 0 1 0-5zm-13 2a.5.5 0 1 0 0 1 .5.5 0 0 0 0-1zm13 0a.5.5 0 1 0 0 1 .5.5 0 0 0 0-1zM12 2a4 4 0 1 1 0 8 4 4 0 0 1 0-8zm0 2a2 2 0 1 0 0 4 2 2 0 0 0 0-4z\"/></g></svg>',\n  info: '<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 24 24\"><g><path fill=\"none\" d=\"M0 0h24v24H0z\"/><path d=\"M12 22C6.477 22 2 17.523 2 12S6.477 2 12 2s10 4.477 10 10-4.477 10-10 10zm0-2a8 8 0 1 0 0-16 8 8 0 0 0 0 16zM11 7h2v2h-2V7zm0 4h2v6h-2v-6z\"/></g></svg>',\n  instagram: '<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 24 24\"><g><path fill=\"none\" d=\"M0 0h24v24H0z\"/><path fill-rule=\"nonzero\" d=\"M12 9a3 3 0 1 0 0 6 3 3 0 0 0 0-6zm0-2a5 5 0 1 1 0 10 5 5 0 0 1 0-10zm6.5-.25a1.25 1.25 0 0 1-2.5 0 1.25 1.25 0 0 1 2.5 0zM12 4c-2.474 0-2.878.007-4.029.058-.784.037-1.31.142-1.798.332-.434.168-.747.369-1.08.703a2.89 2.89 0 0 0-.704 1.08c-.19.49-.295 1.015-.331 1.798C4.006 9.075 4 9.461 4 12c0 2.474.007 2.878.058 4.029.037.783.142 1.31.331 1.797.17.435.37.748.702 1.08.337.336.65.537 1.08.703.494.191 1.02.297 1.8.333C9.075 19.994 9.461 20 12 20c2.474 0 2.878-.007 4.029-.058.782-.037 1.309-.142 1.797-.331.433-.169.748-.37 1.08-.702.337-.337.538-.65.704-1.08.19-.493.296-1.02.332-1.8.052-1.104.058-1.49.058-4.029 0-2.474-.007-2.878-.058-4.029-.037-.782-.142-1.31-.332-1.798a2.911 2.911 0 0 0-.703-1.08 2.884 2.884 0 0 0-1.08-.704c-.49-.19-1.016-.295-1.798-.331C14.925 4.006 14.539 4 12 4zm0-2c2.717 0 3.056.01 4.122.06 1.065.05 1.79.217 2.428.465.66.254 1.216.598 1.772 1.153a4.908 4.908 0 0 1 1.153 1.772c.247.637.415 1.363.465 2.428.047 1.066.06 1.405.06 4.122 0 2.717-.01 3.056-.06 4.122-.05 1.065-.218 1.79-.465 2.428a4.883 4.883 0 0 1-1.153 1.772 4.915 4.915 0 0 1-1.772 1.153c-.637.247-1.363.415-2.428.465-1.066.047-1.405.06-4.122.06-2.717 0-3.056-.01-4.122-.06-1.065-.05-1.79-.218-2.428-.465a4.89 4.89 0 0 1-1.772-1.153 4.904 4.904 0 0 1-1.153-1.772c-.248-.637-.415-1.363-.465-2.428C2.013 15.056 2 14.717 2 12c0-2.717.01-3.056.06-4.122.05-1.066.217-1.79.465-2.428a4.88 4.88 0 0 1 1.153-1.772A4.897 4.897 0 0 1 5.45 2.525c.638-.248 1.362-.415 2.428-.465C8.944 2.013 9.283 2 12 2z\"/></g></svg>',\n  link: '<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 24 24\"><g><path fill=\"none\" d=\"M0 0h24v24H0z\"/><path d=\"M18.364 15.536L16.95 14.12l1.414-1.414a5 5 0 1 0-7.071-7.071L9.879 7.05 8.464 5.636 9.88 4.222a7 7 0 0 1 9.9 9.9l-1.415 1.414zm-2.828 2.828l-1.415 1.414a7 7 0 0 1-9.9-9.9l1.415-1.414L7.05 9.88l-1.414 1.414a5 5 0 1 0 7.071 7.071l1.414-1.414 1.415 1.414zm-.708-10.607l1.415 1.415-7.071 7.07-1.415-1.414 7.071-7.07z\"/></g></svg>',\n  linkedin: '<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 24 24\"><g><path fill=\"none\" d=\"M0 0h24v24H0z\"/><path fill-rule=\"nonzero\" d=\"M6.94 5a2 2 0 1 1-4-.002 2 2 0 0 1 4 .002zM7 8.48H3V21h4V8.48zm6.32 0H9.34V21h3.94v-6.57c0-3.66 4.77-4 4.77 0V21H22v-7.93c0-6.17-7.06-5.94-8.72-2.91l.04-1.68z\"/></g></svg>',\n  logOut: '<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 24 24\"><g><path fill=\"none\" d=\"M0 0h24v24H0z\"/><path d=\"M4 18h2v2h12V4H6v2H4V3a1 1 0 0 1 1-1h14a1 1 0 0 1 1 1v18a1 1 0 0 1-1 1H5a1 1 0 0 1-1-1v-3zm2-7h7v2H6v3l-5-4 5-4v3z\"/></g></svg>',\n  mail: '<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 24 24\"><g><path fill=\"none\" d=\"M0 0h24v24H0z\"/><path d=\"M3 3h18a1 1 0 0 1 1 1v16a1 1 0 0 1-1 1H3a1 1 0 0 1-1-1V4a1 1 0 0 1 1-1zm17 4.238l-7.928 7.1L4 7.216V19h16V7.238zM4.511 5l7.55 6.662L19.502 5H4.511z\"/></g></svg>',\n  menu: '<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 24 24\"><g><path fill=\"none\" d=\"M0 0h24v24H0z\"/><path d=\"M3 4h18v2H3V4zm0 7h18v2H3v-2zm0 7h18v2H3v-2z\"/></g></svg>',\n  more: '<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 24 24\"><g><path fill=\"none\" d=\"M0 0h24v24H0z\"/><path d=\"M12 3c-.825 0-1.5.675-1.5 1.5S11.175 6 12 6s1.5-.675 1.5-1.5S12.825 3 12 3zm0 15c-.825 0-1.5.675-1.5 1.5S11.175 21 12 21s1.5-.675 1.5-1.5S12.825 18 12 18zm0-7.5c-.825 0-1.5.675-1.5 1.5s.675 1.5 1.5 1.5 1.5-.675 1.5-1.5-.675-1.5-1.5-1.5z\"/></g></svg>',\n  points: '<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 24 24\"><g><path fill=\"none\" d=\"M0 0h24v24H0z\"/><path fill-rule=\"nonzero\" d=\"M12 7a8 8 0 1 1 0 16 8 8 0 0 1 0-16zm0 2a6 6 0 1 0 0 12 6 6 0 0 0 0-12zm0 1.5l1.323 2.68 2.957.43-2.14 2.085.505 2.946L12 17.25l-2.645 1.39.505-2.945-2.14-2.086 2.957-.43L12 10.5zM18 2v3l-1.363 1.138A9.935 9.935 0 0 0 13 5.049L13 2 18 2zm-7-.001v3.05a9.935 9.935 0 0 0-3.636 1.088L6 5V2l5-.001z\"/></g></svg>',\n  reorder: '<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 24 24\"><g><path fill=\"none\" d=\"M0 0h24v24H0z\"/><path d=\"M3 4h18v2H3V4zm0 15h18v2H3v-2zm0-5h18v2H3v-2zm0-5h18v2H3V9z\"/></g></svg>',\n  search: '<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 24 24\"><g><path fill=\"none\" d=\"M0 0h24v24H0z\"/><path d=\"M18.031 16.617l4.283 4.282-1.415 1.415-4.282-4.283A8.96 8.96 0 0 1 11 20c-4.968 0-9-4.032-9-9s4.032-9 9-9 9 4.032 9 9a8.96 8.96 0 0 1-1.969 5.617zm-2.006-.742A6.977 6.977 0 0 0 18 11c0-3.868-3.133-7-7-7-3.868 0-7 3.132-7 7 0 3.867 3.132 7 7 7a6.977 6.977 0 0 0 4.875-1.975l.15-.15z\"/></g></svg>',\n  settings: '<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 24 24\"><g><path fill=\"none\" d=\"M0 0h24v24H0z\"/><path d=\"M2 12c0-.865.11-1.703.316-2.504A3 3 0 0 0 4.99 4.867a9.99 9.99 0 0 1 4.335-2.505 3 3 0 0 0 5.348 0 9.99 9.99 0 0 1 4.335 2.505 3 3 0 0 0 2.675 4.63c.206.8.316 1.638.316 2.503 0 .865-.11 1.703-.316 2.504a3 3 0 0 0-2.675 4.629 9.99 9.99 0 0 1-4.335 2.505 3 3 0 0 0-5.348 0 9.99 9.99 0 0 1-4.335-2.505 3 3 0 0 0-2.675-4.63C2.11 13.704 2 12.866 2 12zm4.804 3c.63 1.091.81 2.346.564 3.524.408.29.842.541 1.297.75A4.993 4.993 0 0 1 12 18c1.26 0 2.438.471 3.335 1.274.455-.209.889-.46 1.297-.75A4.993 4.993 0 0 1 17.196 15a4.993 4.993 0 0 1 2.77-2.25 8.126 8.126 0 0 0 0-1.5A4.993 4.993 0 0 1 17.195 9a4.993 4.993 0 0 1-.564-3.524 7.989 7.989 0 0 0-1.297-.75A4.993 4.993 0 0 1 12 6a4.993 4.993 0 0 1-3.335-1.274 7.99 7.99 0 0 0-1.297.75A4.993 4.993 0 0 1 6.804 9a4.993 4.993 0 0 1-2.77 2.25 8.126 8.126 0 0 0 0 1.5A4.993 4.993 0 0 1 6.805 15zM12 15a3 3 0 1 1 0-6 3 3 0 0 1 0 6zm0-2a1 1 0 1 0 0-2 1 1 0 0 0 0 2z\"/></g></svg>',\n  skills: '<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 24 24\"><g><path fill=\"none\" d=\"M0 0h24v24H0z\"/><path d=\"M2 18h7v2H2v-2zm0-7h9v2H2v-2zm0-7h20v2H2V4zm18.674 9.025l1.156-.391 1 1.732-.916.805a4.017 4.017 0 0 1 0 1.658l.916.805-1 1.732-1.156-.391c-.41.37-.898.655-1.435.83L19 21h-2l-.24-1.196a3.996 3.996 0 0 1-1.434-.83l-1.156.392-1-1.732.916-.805a4.017 4.017 0 0 1 0-1.658l-.916-.805 1-1.732 1.156.391c.41-.37.898-.655 1.435-.83L17 11h2l.24 1.196c.536.174 1.024.46 1.434.83zM18 18a2 2 0 1 0 0-4 2 2 0 0 0 0 4z\"/></g></svg>',\n  sort: '<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 24 24\"><g><path fill=\"none\" d=\"M0 0h24v24H0z\"/><path d=\"M11.95 7.95l-1.414 1.414L8 6.828 8 20H6V6.828L3.465 9.364 2.05 7.95 7 3l4.95 4.95zm10 8.1L17 21l-4.95-4.95 1.414-1.414 2.537 2.536L16 4h2v13.172l2.536-2.536 1.414 1.414z\"/></g></svg>',\n  success: '<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 24 24\"><g><path fill=\"none\" d=\"M0 0h24v24H0z\"/><path d=\"M12 22C6.477 22 2 17.523 2 12S6.477 2 12 2s10 4.477 10 10-4.477 10-10 10zm0-2a8 8 0 1 0 0-16 8 8 0 0 0 0 16zm-.997-4L6.76 11.757l1.414-1.414 2.829 2.829 5.656-5.657 1.415 1.414L11.003 16z\"/></g></svg>',\n  thumbUpFill: '<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 24 24\"><g><path fill=\"none\" d=\"M0 0h24v24H0z\"/><path d=\"M2 9h3v12H2a1 1 0 0 1-1-1V10a1 1 0 0 1 1-1zm5.293-1.293l6.4-6.4a.5.5 0 0 1 .654-.047l.853.64a1.5 1.5 0 0 1 .553 1.57L14.6 8H21a2 2 0 0 1 2 2v2.104a2 2 0 0 1-.15.762l-3.095 7.515a1 1 0 0 1-.925.619H8a1 1 0 0 1-1-1V8.414a1 1 0 0 1 .293-.707z\"/></g></svg>',\n  thumbUpLine: '<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 24 24\"><g><path fill=\"none\" d=\"M0 0h24v24H0z\"/><path d=\"M14.6 8H21a2 2 0 0 1 2 2v2.104a2 2 0 0 1-.15.762l-3.095 7.515a1 1 0 0 1-.925.619H2a1 1 0 0 1-1-1V10a1 1 0 0 1 1-1h3.482a1 1 0 0 0 .817-.423L11.752.85a.5.5 0 0 1 .632-.159l1.814.907a2.5 2.5 0 0 1 1.305 2.853L14.6 8zM7 10.588V19h11.16L21 12.104V10h-6.4a2 2 0 0 1-1.938-2.493l.903-3.548a.5.5 0 0 0-.261-.571l-.661-.33-4.71 6.672c-.25.354-.57.644-.933.858zM5 11H3v8h2v-8z\"/></g></svg>',\n  twitter: '<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 24 24\"><g><path fill=\"none\" d=\"M0 0h24v24H0z\"/><path d=\"M22.162 5.656a8.384 8.384 0 0 1-2.402.658A4.196 4.196 0 0 0 21.6 4c-.82.488-1.719.83-2.656 1.015a4.182 4.182 0 0 0-7.126 3.814 11.874 11.874 0 0 1-8.62-4.37 4.168 4.168 0 0 0-.566 2.103c0 1.45.738 2.731 1.86 3.481a4.168 4.168 0 0 1-1.894-.523v.052a4.185 4.185 0 0 0 3.355 4.101 4.21 4.21 0 0 1-1.89.072A4.185 4.185 0 0 0 7.97 16.65a8.394 8.394 0 0 1-6.191 1.732 11.83 11.83 0 0 0 6.41 1.88c7.693 0 11.9-6.373 11.9-11.9 0-.18-.005-.362-.013-.54a8.496 8.496 0 0 0 2.087-2.165z\"/></g></svg>',\n  upload: '<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 24 24\"><g><path fill=\"none\" d=\"M0 0h24v24H0z\"/><path d=\"M3 19h18v2H3v-2zM13 5.828V17h-2V5.828L4.929 11.9l-1.414-1.414L12 2l8.485 8.485-1.414 1.414L13 5.83z\"/></g></svg>',\n  warning: '<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 24 24\"><g><path fill=\"none\" d=\"M0 0h24v24H0z\"/><path d=\"M12 22C6.477 22 2 17.523 2 12S6.477 2 12 2s10 4.477 10 10-4.477 10-10 10zm0-2a8 8 0 1 0 0-16 8 8 0 0 0 0 16zm-1-5h2v2h-2v-2zm0-8h2v6h-2V7z\"/></g></svg>',\n}"
+                "defaultValue": "{\r\n  account: '<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 24 24\"><g><path fill=\"none\" d=\"M0 0h24v24H0z\"/><path d=\"M12 22C6.477 22 2 17.523 2 12S6.477 2 12 2s10 4.477 10 10-4.477 10-10 10zm-4.987-3.744A7.966 7.966 0 0 0 12 20c1.97 0 3.773-.712 5.167-1.892A6.979 6.979 0 0 0 12.16 16a6.981 6.981 0 0 0-5.147 2.256zM5.616 16.82A8.975 8.975 0 0 1 12.16 14a8.972 8.972 0 0 1 6.362 2.634 8 8 0 1 0-12.906.187zM12 13a4 4 0 1 1 0-8 4 4 0 0 1 0 8zm0-2a2 2 0 1 0 0-4 2 2 0 0 0 0 4z\"/></g></svg>',\r\n  add: '<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 24 24\"><g><path fill=\"none\" d=\"M0 0h24v24H0z\"/><path d=\"M19 13h-6v6h-2v-6H5v-2h6V5h2v6h6v2z\"/></g></svg>',\r\n  admin: '<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 24 24\"><g><path fill=\"none\" d=\"M0 0h24v24H0z\"/><path d=\"M12 14v2a6 6 0 0 0-6 6H4a8 8 0 0 1 8-8zm0-1c-3.315 0-6-2.685-6-6s2.685-6 6-6 6 2.685 6 6-2.685 6-6 6zm0-2c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm9 6h1v5h-8v-5h1v-1a3 3 0 0 1 6 0v1zm-2 0v-1a1 1 0 0 0-2 0v1h2z\"/></g></svg>',\r\n  apps: '<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 24 24\"><g><path fill=\"none\" d=\"M0 0h24v24H0z\"/><path d=\"M4 8h4V4H4v4zm6 12h4v-4h-4v4zm-6 0h4v-4H4v4zm0-6h4v-4H4v4zm6 0h4v-4h-4v4zm6-10v4h4V4h-4zm-6 4h4V4h-4v4zm6-6v4h4V4h-4z\"/></g></svg>',\r\n  arrowLeft: '<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 24 24\"><g><path fill=\"none\" d=\"M0 0h24v24H0z\"/><path d=\"M15.41 7.41L14 6l-6 6 6 6 1.41-1.41L10.83 12z\"/></g></svg>',\r\n  arrowRight: '<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 24 24\"><g><path fill=\"none\" d=\"M0 0h24v24H0z\"/><path d=\"M16.172 11l-5.364-5.364 1.414-1.414L20 12l-7.778 7.778-1.414-1.414L16.172 13H4v-2z\"/></g></svg>',\r\n  attachment: '<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 24 24\"><g><path fill=\"none\" d=\"M0 0h24v24H0z\"/><path d=\"M14 13.5V8a4 4 0 1 0-8 0v5.5a6.5 6.5 0 1 0 13 0V4h2v9.5a8.5 8.5 0 1 1-17 0V8a6 6 0 1 1 12 0v5.5a3.5 3.5 0 0 1-7 0V8h2v5.5a1.5 1.5 0 0 0 3 0z\"/></g></svg>',\r\n  awardFill: '<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 24 24\"><g><path fill=\"none\" d=\"M0 0h24v24H0z\"/><path d=\"M17 15.245v6.872a.5.5 0 0 1-.757.429L12 20l-4.243 2.546a.5.5 0 0 1-.757-.43v-6.87a8 8 0 1 1 10 0zM12 15a6 6 0 1 0 0-12 6 6 0 0 0 0 12zm0-2a4 4 0 1 1 0-8 4 4 0 0 1 0 8z\"/></g></svg>',\r\n  awardLine: '<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 24 24\"><g><path fill=\"none\" d=\"M0 0h24v24H0z\"/><path d=\"M17 15.245v6.872a.5.5 0 0 1-.757.429L12 20l-4.243 2.546a.5.5 0 0 1-.757-.43v-6.87a8 8 0 1 1 10 0zm-8 1.173v3.05l3-1.8 3 1.8v-3.05A7.978 7.978 0 0 1 12 17a7.978 7.978 0 0 1-3-.582zM12 15a6 6 0 1 0 0-12 6 6 0 0 0 0 12z\"/></g></svg>',\r\n  calendar: '<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 24 24\"><g><path fill=\"none\" d=\"M0 0h24v24H0z\"/><path d=\"M17 3h4a1 1 0 0 1 1 1v16a1 1 0 0 1-1 1H3a1 1 0 0 1-1-1V4a1 1 0 0 1 1-1h4V1h2v2h6V1h2v2zm-2 2H9v2H7V5H4v4h16V5h-3v2h-2V5zm5 6H4v8h16v-8z\"/></g></svg>',\r\n  camera: '<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 24 24\"><g><path fill=\"none\" d=\"M0 0h24v24H0z\"/><path d=\"M9.828 5l-2 2H4v12h16V7h-3.828l-2-2H9.828zM9 3h6l2 2h4a1 1 0 0 1 1 1v14a1 1 0 0 1-1 1H3a1 1 0 0 1-1-1V6a1 1 0 0 1 1-1h4l2-2zm3 15a5.5 5.5 0 1 1 0-11 5.5 5.5 0 0 1 0 11zm0-2a3.5 3.5 0 1 0 0-7 3.5 3.5 0 0 0 0 7z\"/></g></svg>',\r\n  chevronDown: '<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 24 24\"><g><path fill=\"none\" d=\"M0 0h24v24H0z\"/><path d=\"M12 13.172l4.95-4.95 1.414 1.414L12 16 5.636 9.636 7.05 8.222z\"/></g></svg>',\r\n  chevronLeft: '<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 24 24\"><g><path fill=\"none\" d=\"M0 0h24v24H0z\"/><path d=\"M10.828 12l4.95 4.95-1.414 1.414L8 12l6.364-6.364 1.414 1.414z\"/></g></svg>',\r\n  chevronRight: '<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 24 24\"><g><path fill=\"none\" d=\"M0 0h24v24H0z\"/><path d=\"M13.172 12l-4.95-4.95 1.414-1.414L16 12l-6.364 6.364-1.414-1.414z\"/></g></svg>',\r\n  chevronUp: '<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 24 24\"><g><path fill=\"none\" d=\"M0 0h24v24H0z\"/><path d=\"M12 10.828l-4.95 4.95-1.414-1.414L12 8l6.364 6.364-1.414 1.414z\"/></g></svg>',\r\n  close: '<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 24 24\"><g><path fill=\"none\" d=\"M0 0h24v24H0z\"/><path d=\"M12 10.586l4.95-4.95 1.414 1.414-4.95 4.95 4.95 4.95-1.414 1.414-4.95-4.95-4.95 4.95-1.414-1.414 4.95-4.95-4.95-4.95L7.05 5.636z\"/></g></svg>',\r\n  dashboard: '<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 24 24\"><g><path fill=\"none\" d=\"M0 0h24v24H0z\"/><path d=\"M13 21V11h8v10h-8zM3 13V3h8v10H3zm6-2V5H5v6h4zM3 21v-6h8v6H3zm2-2h4v-2H5v2zm10 0h4v-6h-4v6zM13 3h8v6h-8V3zm2 2v2h4V5h-4z\"/></g></svg>',\r\n  delete: '<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 24 24\"><g><path fill=\"none\" d=\"M0 0h24v24H0z\"/><path d=\"M17 6h5v2h-2v13a1 1 0 0 1-1 1H5a1 1 0 0 1-1-1V8H2V6h5V3a1 1 0 0 1 1-1h8a1 1 0 0 1 1 1v3zm1 2H6v12h12V8zm-9 3h2v6H9v-6zm4 0h2v6h-2v-6zM9 4v2h6V4H9z\"/></g></svg>',\r\n  developer: '<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 24 24\"><g><path fill=\"none\" d=\"M0 0h24v24H0z\"/><path d=\"M23 12l-7.071 7.071-1.414-1.414L20.172 12l-5.657-5.657 1.414-1.414L23 12zM3.828 12l5.657 5.657-1.414 1.414L1 12l7.071-7.071 1.414 1.414L3.828 12z\"/></g></svg>',\r\n  download: '<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 24 24\"><g><path fill=\"none\" d=\"M0 0h24v24H0z\"/><path d=\"M3 19h18v2H3v-2zm10-5.828L19.071 7.1l1.414 1.414L12 17 3.515 8.515 4.929 7.1 11 13.17V2h2v11.172z\"/></g></svg>',\r\n  dropDown: '<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 24 24\"><g><path fill=\"none\" d=\"M0 0h24v24H0z\"/><path d=\"M12 15l-4.243-4.243 1.415-1.414L12 12.172l2.828-2.829 1.415 1.414z\"/></g></svg>',\r\n  dropUp: '<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 24 24\"><g><path fill=\"none\" d=\"M0 0h24v24H0z\"/><path d=\"M12 11.828l-2.828 2.829-1.415-1.414L12 9l4.243 4.243-1.415 1.414L12 11.828z\"/></g></svg>',\r\n  edit: '<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 24 24\"><g><path fill=\"none\" d=\"M0 0h24v24H0z\"/><path d=\"M6.414 16L16.556 5.858l-1.414-1.414L5 14.586V16h1.414zm.829 2H3v-4.243L14.435 2.322a1 1 0 0 1 1.414 0l2.829 2.829a1 1 0 0 1 0 1.414L7.243 18zM3 20h18v2H3v-2z\"/></g></svg>',\r\n  explore: '<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 24 24\"><g><path fill=\"none\" d=\"M0 0h24v24H0z\"/><path d=\"M12 14v2a6 6 0 0 0-6 6H4a8 8 0 0 1 8-8zm0-1c-3.315 0-6-2.685-6-6s2.685-6 6-6 6 2.685 6 6-2.685 6-6 6zm0-2c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm9.446 9.032l1.504 1.504-1.414 1.414-1.504-1.504a4 4 0 1 1 1.414-1.414zM18 20a2 2 0 1 0 0-4 2 2 0 0 0 0 4z\"/></g></svg>',\r\n  facebook: '<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 24 24\"><g><path fill=\"none\" d=\"M0 0h24v24H0z\"/><path d=\"M14 13.5h2.5l1-4H14v-2c0-1.03 0-2 2-2h1.5V2.14c-.326-.043-1.557-.14-2.857-.14C11.928 2 10 3.657 10 6.7v2.8H7v4h3V22h4v-8.5z\"/></g></svg>',\r\n  filter: '<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 24 24\"><g><path fill=\"none\" d=\"M0 0H24V24H0z\"/><path d=\"M21 4v2h-1l-5 7.5V22H9v-8.5L4 6H3V4h18zM6.404 6L11 12.894V20h2v-7.106L17.596 6H6.404z\"/></g></svg>',\r\n  gatekeeper: '<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 40 19\"><g><path d=\"M11.1214 3.229L8.85495 0.955505L2.94076 6.85283L0 9.8015L2.94076 12.7829L8.85495 18.6803L11.1214 16.4068L4.64877 9.8015L11.1214 3.229Z\"/><path d=\"M19.9259 16.7687C18.6654 16.7687 17.4977 16.4536 16.4226 15.8234C15.3753 15.2025 14.5412 14.3684 13.9203 13.3211C13.2901 12.246 12.975 11.0783 12.975 9.81785C12.975 8.55743 13.2901 7.38968 13.9203 6.31461C14.5412 5.26734 15.3753 4.43324 16.4226 3.81229C17.4977 3.18208 18.6654 2.86697 19.9259 2.86697C21.1863 2.86697 22.354 3.18208 23.4291 3.81229C24.4764 4.43324 25.3105 5.26734 25.9314 6.31461C26.5616 7.38968 26.8767 8.55743 26.8767 9.81785C26.8767 11.0783 26.5616 12.246 25.9314 13.3211C25.3105 14.3684 24.4764 15.2025 23.4291 15.8234C22.354 16.4536 21.1863 16.7687 19.9259 16.7687ZM19.2308 10.3739V12.5982H20.621V10.3739C21.0009 10.2071 21.2836 9.94297 21.469 9.58152C21.6543 9.21081 21.7053 8.82619 21.6219 8.42768C21.5385 8.01989 21.3346 7.68625 21.0102 7.42675C20.6951 7.16725 20.3336 7.0375 19.9259 7.0375C19.5181 7.0375 19.152 7.16725 18.8276 7.42675C18.5125 7.68625 18.3133 8.01989 18.2298 8.42768C18.1464 8.82619 18.1974 9.21081 18.3828 9.58152C18.5681 9.94297 18.8508 10.2071 19.2308 10.3739Z\"/><path d=\"M36.6793 6.85283L30.7977 0.955505L28.4986 3.229L34.9861 9.8015L28.4986 16.4068L30.7977 18.6803L36.6793 12.7829L39.62 9.8015L36.6793 6.85283Z\"/><path d=\"M11.1214 3.229L8.85495 0.955505L2.94076 6.85283L0 9.8015L2.94076 12.7829L8.85495 18.6803L11.1214 16.4068L4.64877 9.8015L11.1214 3.229Z\"/><path d=\"M19.9259 16.7687C18.6654 16.7687 17.4977 16.4536 16.4226 15.8234C15.3753 15.2025 14.5412 14.3684 13.9203 13.3211C13.2901 12.246 12.975 11.0783 12.975 9.81785C12.975 8.55743 13.2901 7.38968 13.9203 6.31461C14.5412 5.26734 15.3753 4.43324 16.4226 3.81229C17.4977 3.18208 18.6654 2.86697 19.9259 2.86697C21.1863 2.86697 22.354 3.18208 23.4291 3.81229C24.4764 4.43324 25.3105 5.26734 25.9314 6.31461C26.5616 7.38968 26.8767 8.55743 26.8767 9.81785C26.8767 11.0783 26.5616 12.246 25.9314 13.3211C25.3105 14.3684 24.4764 15.2025 23.4291 15.8234C22.354 16.4536 21.1863 16.7687 19.9259 16.7687ZM19.2308 10.3739V12.5982H20.621V10.3739C21.0009 10.2071 21.2836 9.94297 21.469 9.58152C21.6543 9.21081 21.7053 8.82619 21.6219 8.42768C21.5385 8.01989 21.3346 7.68625 21.0102 7.42675C20.6951 7.16725 20.3336 7.0375 19.9259 7.0375C19.5181 7.0375 19.152 7.16725 18.8276 7.42675C18.5125 7.68625 18.3133 8.01989 18.2298 8.42768C18.1464 8.82619 18.1974 9.21081 18.3828 9.58152C18.5681 9.94297 18.8508 10.2071 19.2308 10.3739Z\"/><path d=\"M36.6793 6.85283L30.7977 0.955505L28.4986 3.229L34.9861 9.8015L28.4986 16.4068L30.7977 18.6803L36.6793 12.7829L39.62 9.8015L36.6793 6.85283Z\"/></g></svg>',\r\n  help: '<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 24 24\"><g><path fill=\"none\" d=\"M0 0h24v24H0z\"/><path d=\"M12 22C6.477 22 2 17.523 2 12S6.477 2 12 2s10 4.477 10 10-4.477 10-10 10zm0-2a8 8 0 1 0 0-16 8 8 0 0 0 0 16zm-1-5h2v2h-2v-2zm2-1.645V14h-2v-1.5a1 1 0 0 1 1-1 1.5 1.5 0 1 0-1.471-1.794l-1.962-.393A3.501 3.501 0 1 1 13 13.355z\"/></g></svg>',\r\n  hr: '<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 24 24\"><g><path fill=\"none\" d=\"M0 0h24v24H0z\"/><path fill-rule=\"nonzero\" d=\"M12 11a5 5 0 0 1 5 5v6h-2v-6a3 3 0 0 0-2.824-2.995L12 13a3 3 0 0 0-2.995 2.824L9 16v6H7v-6a5 5 0 0 1 5-5zm-6.5 3c.279 0 .55.033.81.094a5.947 5.947 0 0 0-.301 1.575L6 16v.086a1.492 1.492 0 0 0-.356-.08L5.5 16a1.5 1.5 0 0 0-1.493 1.356L4 17.5V22H2v-4.5A3.5 3.5 0 0 1 5.5 14zm13 0a3.5 3.5 0 0 1 3.5 3.5V22h-2v-4.5a1.5 1.5 0 0 0-1.356-1.493L18.5 16c-.175 0-.343.03-.5.085V16c0-.666-.108-1.306-.309-1.904.259-.063.53-.096.809-.096zm-13-6a2.5 2.5 0 1 1 0 5 2.5 2.5 0 0 1 0-5zm13 0a2.5 2.5 0 1 1 0 5 2.5 2.5 0 0 1 0-5zm-13 2a.5.5 0 1 0 0 1 .5.5 0 0 0 0-1zm13 0a.5.5 0 1 0 0 1 .5.5 0 0 0 0-1zM12 2a4 4 0 1 1 0 8 4 4 0 0 1 0-8zm0 2a2 2 0 1 0 0 4 2 2 0 0 0 0-4z\"/></g></svg>',\r\n  info: '<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 24 24\"><g><path fill=\"none\" d=\"M0 0h24v24H0z\"/><path d=\"M12 22C6.477 22 2 17.523 2 12S6.477 2 12 2s10 4.477 10 10-4.477 10-10 10zm0-2a8 8 0 1 0 0-16 8 8 0 0 0 0 16zM11 7h2v2h-2V7zm0 4h2v6h-2v-6z\"/></g></svg>',\r\n  instagram: '<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 24 24\"><g><path fill=\"none\" d=\"M0 0h24v24H0z\"/><path fill-rule=\"nonzero\" d=\"M12 9a3 3 0 1 0 0 6 3 3 0 0 0 0-6zm0-2a5 5 0 1 1 0 10 5 5 0 0 1 0-10zm6.5-.25a1.25 1.25 0 0 1-2.5 0 1.25 1.25 0 0 1 2.5 0zM12 4c-2.474 0-2.878.007-4.029.058-.784.037-1.31.142-1.798.332-.434.168-.747.369-1.08.703a2.89 2.89 0 0 0-.704 1.08c-.19.49-.295 1.015-.331 1.798C4.006 9.075 4 9.461 4 12c0 2.474.007 2.878.058 4.029.037.783.142 1.31.331 1.797.17.435.37.748.702 1.08.337.336.65.537 1.08.703.494.191 1.02.297 1.8.333C9.075 19.994 9.461 20 12 20c2.474 0 2.878-.007 4.029-.058.782-.037 1.309-.142 1.797-.331.433-.169.748-.37 1.08-.702.337-.337.538-.65.704-1.08.19-.493.296-1.02.332-1.8.052-1.104.058-1.49.058-4.029 0-2.474-.007-2.878-.058-4.029-.037-.782-.142-1.31-.332-1.798a2.911 2.911 0 0 0-.703-1.08 2.884 2.884 0 0 0-1.08-.704c-.49-.19-1.016-.295-1.798-.331C14.925 4.006 14.539 4 12 4zm0-2c2.717 0 3.056.01 4.122.06 1.065.05 1.79.217 2.428.465.66.254 1.216.598 1.772 1.153a4.908 4.908 0 0 1 1.153 1.772c.247.637.415 1.363.465 2.428.047 1.066.06 1.405.06 4.122 0 2.717-.01 3.056-.06 4.122-.05 1.065-.218 1.79-.465 2.428a4.883 4.883 0 0 1-1.153 1.772 4.915 4.915 0 0 1-1.772 1.153c-.637.247-1.363.415-2.428.465-1.066.047-1.405.06-4.122.06-2.717 0-3.056-.01-4.122-.06-1.065-.05-1.79-.218-2.428-.465a4.89 4.89 0 0 1-1.772-1.153 4.904 4.904 0 0 1-1.153-1.772c-.248-.637-.415-1.363-.465-2.428C2.013 15.056 2 14.717 2 12c0-2.717.01-3.056.06-4.122.05-1.066.217-1.79.465-2.428a4.88 4.88 0 0 1 1.153-1.772A4.897 4.897 0 0 1 5.45 2.525c.638-.248 1.362-.415 2.428-.465C8.944 2.013 9.283 2 12 2z\"/></g></svg>',\r\n  link: '<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 24 24\"><g><path fill=\"none\" d=\"M0 0h24v24H0z\"/><path d=\"M18.364 15.536L16.95 14.12l1.414-1.414a5 5 0 1 0-7.071-7.071L9.879 7.05 8.464 5.636 9.88 4.222a7 7 0 0 1 9.9 9.9l-1.415 1.414zm-2.828 2.828l-1.415 1.414a7 7 0 0 1-9.9-9.9l1.415-1.414L7.05 9.88l-1.414 1.414a5 5 0 1 0 7.071 7.071l1.414-1.414 1.415 1.414zm-.708-10.607l1.415 1.415-7.071 7.07-1.415-1.414 7.071-7.07z\"/></g></svg>',\r\n  linkedin: '<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 24 24\"><g><path fill=\"none\" d=\"M0 0h24v24H0z\"/><path fill-rule=\"nonzero\" d=\"M6.94 5a2 2 0 1 1-4-.002 2 2 0 0 1 4 .002zM7 8.48H3V21h4V8.48zm6.32 0H9.34V21h3.94v-6.57c0-3.66 4.77-4 4.77 0V21H22v-7.93c0-6.17-7.06-5.94-8.72-2.91l.04-1.68z\"/></g></svg>',\r\n  logOut: '<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 24 24\"><g><path fill=\"none\" d=\"M0 0h24v24H0z\"/><path d=\"M4 18h2v2h12V4H6v2H4V3a1 1 0 0 1 1-1h14a1 1 0 0 1 1 1v18a1 1 0 0 1-1 1H5a1 1 0 0 1-1-1v-3zm2-7h7v2H6v3l-5-4 5-4v3z\"/></g></svg>',\r\n  mail: '<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 24 24\"><g><path fill=\"none\" d=\"M0 0h24v24H0z\"/><path d=\"M3 3h18a1 1 0 0 1 1 1v16a1 1 0 0 1-1 1H3a1 1 0 0 1-1-1V4a1 1 0 0 1 1-1zm17 4.238l-7.928 7.1L4 7.216V19h16V7.238zM4.511 5l7.55 6.662L19.502 5H4.511z\"/></g></svg>',\r\n  menu: '<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 24 24\"><g><path fill=\"none\" d=\"M0 0h24v24H0z\"/><path d=\"M3 4h18v2H3V4zm0 7h18v2H3v-2zm0 7h18v2H3v-2z\"/></g></svg>',\r\n  more: '<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 24 24\"><g><path fill=\"none\" d=\"M0 0h24v24H0z\"/><path d=\"M12 3c-.825 0-1.5.675-1.5 1.5S11.175 6 12 6s1.5-.675 1.5-1.5S12.825 3 12 3zm0 15c-.825 0-1.5.675-1.5 1.5S11.175 21 12 21s1.5-.675 1.5-1.5S12.825 18 12 18zm0-7.5c-.825 0-1.5.675-1.5 1.5s.675 1.5 1.5 1.5 1.5-.675 1.5-1.5-.675-1.5-1.5-1.5z\"/></g></svg>',\r\n  points: '<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 24 24\"><g><path fill=\"none\" d=\"M0 0h24v24H0z\"/><path fill-rule=\"nonzero\" d=\"M12 7a8 8 0 1 1 0 16 8 8 0 0 1 0-16zm0 2a6 6 0 1 0 0 12 6 6 0 0 0 0-12zm0 1.5l1.323 2.68 2.957.43-2.14 2.085.505 2.946L12 17.25l-2.645 1.39.505-2.945-2.14-2.086 2.957-.43L12 10.5zM18 2v3l-1.363 1.138A9.935 9.935 0 0 0 13 5.049L13 2 18 2zm-7-.001v3.05a9.935 9.935 0 0 0-3.636 1.088L6 5V2l5-.001z\"/></g></svg>',\r\n  reorder: '<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 24 24\"><g><path fill=\"none\" d=\"M0 0h24v24H0z\"/><path d=\"M3 4h18v2H3V4zm0 15h18v2H3v-2zm0-5h18v2H3v-2zm0-5h18v2H3V9z\"/></g></svg>',\r\n  search: '<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 24 24\"><g><path fill=\"none\" d=\"M0 0h24v24H0z\"/><path d=\"M18.031 16.617l4.283 4.282-1.415 1.415-4.282-4.283A8.96 8.96 0 0 1 11 20c-4.968 0-9-4.032-9-9s4.032-9 9-9 9 4.032 9 9a8.96 8.96 0 0 1-1.969 5.617zm-2.006-.742A6.977 6.977 0 0 0 18 11c0-3.868-3.133-7-7-7-3.868 0-7 3.132-7 7 0 3.867 3.132 7 7 7a6.977 6.977 0 0 0 4.875-1.975l.15-.15z\"/></g></svg>',\r\n  settings: '<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 24 24\"><g><path fill=\"none\" d=\"M0 0h24v24H0z\"/><path d=\"M2 12c0-.865.11-1.703.316-2.504A3 3 0 0 0 4.99 4.867a9.99 9.99 0 0 1 4.335-2.505 3 3 0 0 0 5.348 0 9.99 9.99 0 0 1 4.335 2.505 3 3 0 0 0 2.675 4.63c.206.8.316 1.638.316 2.503 0 .865-.11 1.703-.316 2.504a3 3 0 0 0-2.675 4.629 9.99 9.99 0 0 1-4.335 2.505 3 3 0 0 0-5.348 0 9.99 9.99 0 0 1-4.335-2.505 3 3 0 0 0-2.675-4.63C2.11 13.704 2 12.866 2 12zm4.804 3c.63 1.091.81 2.346.564 3.524.408.29.842.541 1.297.75A4.993 4.993 0 0 1 12 18c1.26 0 2.438.471 3.335 1.274.455-.209.889-.46 1.297-.75A4.993 4.993 0 0 1 17.196 15a4.993 4.993 0 0 1 2.77-2.25 8.126 8.126 0 0 0 0-1.5A4.993 4.993 0 0 1 17.195 9a4.993 4.993 0 0 1-.564-3.524 7.989 7.989 0 0 0-1.297-.75A4.993 4.993 0 0 1 12 6a4.993 4.993 0 0 1-3.335-1.274 7.99 7.99 0 0 0-1.297.75A4.993 4.993 0 0 1 6.804 9a4.993 4.993 0 0 1-2.77 2.25 8.126 8.126 0 0 0 0 1.5A4.993 4.993 0 0 1 6.805 15zM12 15a3 3 0 1 1 0-6 3 3 0 0 1 0 6zm0-2a1 1 0 1 0 0-2 1 1 0 0 0 0 2z\"/></g></svg>',\r\n  skills: '<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 24 24\"><g><path fill=\"none\" d=\"M0 0h24v24H0z\"/><path d=\"M2 18h7v2H2v-2zm0-7h9v2H2v-2zm0-7h20v2H2V4zm18.674 9.025l1.156-.391 1 1.732-.916.805a4.017 4.017 0 0 1 0 1.658l.916.805-1 1.732-1.156-.391c-.41.37-.898.655-1.435.83L19 21h-2l-.24-1.196a3.996 3.996 0 0 1-1.434-.83l-1.156.392-1-1.732.916-.805a4.017 4.017 0 0 1 0-1.658l-.916-.805 1-1.732 1.156.391c.41-.37.898-.655 1.435-.83L17 11h2l.24 1.196c.536.174 1.024.46 1.434.83zM18 18a2 2 0 1 0 0-4 2 2 0 0 0 0 4z\"/></g></svg>',\r\n  sort: '<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 24 24\"><g><path fill=\"none\" d=\"M0 0h24v24H0z\"/><path d=\"M11.95 7.95l-1.414 1.414L8 6.828 8 20H6V6.828L3.465 9.364 2.05 7.95 7 3l4.95 4.95zm10 8.1L17 21l-4.95-4.95 1.414-1.414 2.537 2.536L16 4h2v13.172l2.536-2.536 1.414 1.414z\"/></g></svg>',\r\n  success: '<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 24 24\"><g><path fill=\"none\" d=\"M0 0h24v24H0z\"/><path d=\"M12 22C6.477 22 2 17.523 2 12S6.477 2 12 2s10 4.477 10 10-4.477 10-10 10zm0-2a8 8 0 1 0 0-16 8 8 0 0 0 0 16zm-.997-4L6.76 11.757l1.414-1.414 2.829 2.829 5.656-5.657 1.415 1.414L11.003 16z\"/></g></svg>',\r\n  thumbUpFill: '<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 24 24\"><g><path fill=\"none\" d=\"M0 0h24v24H0z\"/><path d=\"M2 9h3v12H2a1 1 0 0 1-1-1V10a1 1 0 0 1 1-1zm5.293-1.293l6.4-6.4a.5.5 0 0 1 .654-.047l.853.64a1.5 1.5 0 0 1 .553 1.57L14.6 8H21a2 2 0 0 1 2 2v2.104a2 2 0 0 1-.15.762l-3.095 7.515a1 1 0 0 1-.925.619H8a1 1 0 0 1-1-1V8.414a1 1 0 0 1 .293-.707z\"/></g></svg>',\r\n  thumbUpLine: '<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 24 24\"><g><path fill=\"none\" d=\"M0 0h24v24H0z\"/><path d=\"M14.6 8H21a2 2 0 0 1 2 2v2.104a2 2 0 0 1-.15.762l-3.095 7.515a1 1 0 0 1-.925.619H2a1 1 0 0 1-1-1V10a1 1 0 0 1 1-1h3.482a1 1 0 0 0 .817-.423L11.752.85a.5.5 0 0 1 .632-.159l1.814.907a2.5 2.5 0 0 1 1.305 2.853L14.6 8zM7 10.588V19h11.16L21 12.104V10h-6.4a2 2 0 0 1-1.938-2.493l.903-3.548a.5.5 0 0 0-.261-.571l-.661-.33-4.71 6.672c-.25.354-.57.644-.933.858zM5 11H3v8h2v-8z\"/></g></svg>',\r\n  twitter: '<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 24 24\"><g><path fill=\"none\" d=\"M0 0h24v24H0z\"/><path d=\"M22.162 5.656a8.384 8.384 0 0 1-2.402.658A4.196 4.196 0 0 0 21.6 4c-.82.488-1.719.83-2.656 1.015a4.182 4.182 0 0 0-7.126 3.814 11.874 11.874 0 0 1-8.62-4.37 4.168 4.168 0 0 0-.566 2.103c0 1.45.738 2.731 1.86 3.481a4.168 4.168 0 0 1-1.894-.523v.052a4.185 4.185 0 0 0 3.355 4.101 4.21 4.21 0 0 1-1.89.072A4.185 4.185 0 0 0 7.97 16.65a8.394 8.394 0 0 1-6.191 1.732 11.83 11.83 0 0 0 6.41 1.88c7.693 0 11.9-6.373 11.9-11.9 0-.18-.005-.362-.013-.54a8.496 8.496 0 0 0 2.087-2.165z\"/></g></svg>',\r\n  upload: '<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 24 24\"><g><path fill=\"none\" d=\"M0 0h24v24H0z\"/><path d=\"M3 19h18v2H3v-2zM13 5.828V17h-2V5.828L4.929 11.9l-1.414-1.414L12 2l8.485 8.485-1.414 1.414L13 5.83z\"/></g></svg>',\r\n  warning: '<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 24 24\"><g><path fill=\"none\" d=\"M0 0h24v24H0z\"/><path d=\"M12 22C6.477 22 2 17.523 2 12S6.477 2 12 2s10 4.477 10 10-4.477 10-10 10zm0-2a8 8 0 1 0 0-16 8 8 0 0 0 0 16zm-1-5h2v2h-2v-2zm0-8h2v6h-2V7z\"/></g></svg>',\r\n}"
             },
             {
                 "name": "context",
@@ -1347,7 +1531,7 @@
                 "deprecated": false,
                 "deprecationMessage": "",
                 "type": "object",
-                "defaultValue": "{\n  production: true\n}"
+                "defaultValue": "{\r\n  production: true\r\n}"
             },
             {
                 "name": "environment",
@@ -1357,7 +1541,7 @@
                 "deprecated": false,
                 "deprecationMessage": "",
                 "type": "object",
-                "defaultValue": "{\n  production: false\n}"
+                "defaultValue": "{\r\n  production: false\r\n}"
             },
             {
                 "name": "IconFill",
@@ -1366,8 +1550,8 @@
                 "file": "projects/clapp/src/lib/components/svg-icon/clapp-icons.helper.ts",
                 "deprecated": false,
                 "deprecationMessage": "",
-                "type": "object",
-                "defaultValue": "{\n  ApplaudoNavyBlue : 'applaudo-navy-blue',\n  ApplaudoRed : 'applaudo-red',\n  LightGray : 'light-gray',\n  White : 'white',\n  ApplaudoRedPlus : 'applaudo-red-plus',\n  ApplaudoRedMinus : 'applaudo-red-minus',\n  ErrorRed : 'error-red',\n  Green : 'green',\n  MidGray : 'mid-gray',\n  Yellow : 'yellow',\n  Charcoal : 'charcoal',\n  CoolGray : 'cool-gray',\n  Platinum : 'platinum',\n  ApplaudoPurple : 'applaudo-purple',\n  Blue : 'blue',\n  Bronze : 'bronze',\n  LightNavyBlue : 'light-navy-blue',\n}"
+                "type": "",
+                "defaultValue": "{\r\n  ApplaudoNavyBlue : 'applaudo-navy-blue',\r\n  ApplaudoRed : 'applaudo-red',\r\n  LightGray : 'light-gray',\r\n  White : 'white',\r\n  ApplaudoRedPlus : 'applaudo-red-plus',\r\n  ApplaudoRedMinus : 'applaudo-red-minus',\r\n  ErrorRed : 'error-red',\r\n  Green : 'green',\r\n  MidGray : 'mid-gray',\r\n  Yellow : 'yellow',\r\n  Charcoal : 'charcoal',\r\n  CoolGray : 'cool-gray',\r\n  Platinum : 'platinum',\r\n  ApplaudoPurple : 'applaudo-purple',\r\n  Blue : 'blue',\r\n  Bronze : 'bronze',\r\n  LightNavyBlue : 'light-navy-blue',\r\n} as const"
             },
             {
                 "name": "Large",
@@ -1440,6 +1624,16 @@
                 "defaultValue": "Template.bind({})"
             },
             {
+                "name": "Principal",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "src/stories/clapp-lib/components/button.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "",
+                "defaultValue": "Template.bind({})"
+            },
+            {
                 "name": "require",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
@@ -1485,7 +1679,7 @@
                 "deprecated": false,
                 "deprecationMessage": "",
                 "type": "Story<Button>",
-                "defaultValue": "(args: Button) => ({\n  props: args,\n})"
+                "defaultValue": "(args: Button) => ({\r\n  props: args,\r\n})"
             },
             {
                 "name": "Template",
@@ -1495,7 +1689,7 @@
                 "deprecated": false,
                 "deprecationMessage": "",
                 "type": "Story<Header>",
-                "defaultValue": "(args: Header) => ({\n  props: args,\n})"
+                "defaultValue": "(args: Header) => ({\r\n  props: args,\r\n})"
             },
             {
                 "name": "Template",
@@ -1505,7 +1699,7 @@
                 "deprecated": false,
                 "deprecationMessage": "",
                 "type": "Story<Page>",
-                "defaultValue": "(args: Page) => ({\n  props: args,\n})"
+                "defaultValue": "(args: Page) => ({\r\n  props: args,\r\n})"
             },
             {
                 "name": "Template",
@@ -1515,7 +1709,17 @@
                 "deprecated": false,
                 "deprecationMessage": "",
                 "type": "Story<SvgIconComponent>",
-                "defaultValue": "(args: SvgIconComponent) => ({\n  props: args,\n})"
+                "defaultValue": "(args: SvgIconComponent) => ({\r\n  props: args,\r\n})"
+            },
+            {
+                "name": "Template",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "src/stories/clapp-lib/components/button.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "Story<ButtonComponent>",
+                "defaultValue": "(args: ButtonComponent) => ({\r\n  props: args,\r\n})"
             }
         ],
         "functions": [],
@@ -1554,7 +1758,7 @@
                     "deprecated": false,
                     "deprecationMessage": "",
                     "type": "object",
-                    "defaultValue": "{\n  account: '<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 24 24\"><g><path fill=\"none\" d=\"M0 0h24v24H0z\"/><path d=\"M12 22C6.477 22 2 17.523 2 12S6.477 2 12 2s10 4.477 10 10-4.477 10-10 10zm-4.987-3.744A7.966 7.966 0 0 0 12 20c1.97 0 3.773-.712 5.167-1.892A6.979 6.979 0 0 0 12.16 16a6.981 6.981 0 0 0-5.147 2.256zM5.616 16.82A8.975 8.975 0 0 1 12.16 14a8.972 8.972 0 0 1 6.362 2.634 8 8 0 1 0-12.906.187zM12 13a4 4 0 1 1 0-8 4 4 0 0 1 0 8zm0-2a2 2 0 1 0 0-4 2 2 0 0 0 0 4z\"/></g></svg>',\n  add: '<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 24 24\"><g><path fill=\"none\" d=\"M0 0h24v24H0z\"/><path d=\"M19 13h-6v6h-2v-6H5v-2h6V5h2v6h6v2z\"/></g></svg>',\n  admin: '<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 24 24\"><g><path fill=\"none\" d=\"M0 0h24v24H0z\"/><path d=\"M12 14v2a6 6 0 0 0-6 6H4a8 8 0 0 1 8-8zm0-1c-3.315 0-6-2.685-6-6s2.685-6 6-6 6 2.685 6 6-2.685 6-6 6zm0-2c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm9 6h1v5h-8v-5h1v-1a3 3 0 0 1 6 0v1zm-2 0v-1a1 1 0 0 0-2 0v1h2z\"/></g></svg>',\n  apps: '<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 24 24\"><g><path fill=\"none\" d=\"M0 0h24v24H0z\"/><path d=\"M4 8h4V4H4v4zm6 12h4v-4h-4v4zm-6 0h4v-4H4v4zm0-6h4v-4H4v4zm6 0h4v-4h-4v4zm6-10v4h4V4h-4zm-6 4h4V4h-4v4zm6-6v4h4V4h-4z\"/></g></svg>',\n  arrowLeft: '<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 24 24\"><g><path fill=\"none\" d=\"M0 0h24v24H0z\"/><path d=\"M15.41 7.41L14 6l-6 6 6 6 1.41-1.41L10.83 12z\"/></g></svg>',\n  arrowRight: '<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 24 24\"><g><path fill=\"none\" d=\"M0 0h24v24H0z\"/><path d=\"M16.172 11l-5.364-5.364 1.414-1.414L20 12l-7.778 7.778-1.414-1.414L16.172 13H4v-2z\"/></g></svg>',\n  attachment: '<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 24 24\"><g><path fill=\"none\" d=\"M0 0h24v24H0z\"/><path d=\"M14 13.5V8a4 4 0 1 0-8 0v5.5a6.5 6.5 0 1 0 13 0V4h2v9.5a8.5 8.5 0 1 1-17 0V8a6 6 0 1 1 12 0v5.5a3.5 3.5 0 0 1-7 0V8h2v5.5a1.5 1.5 0 0 0 3 0z\"/></g></svg>',\n  awardFill: '<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 24 24\"><g><path fill=\"none\" d=\"M0 0h24v24H0z\"/><path d=\"M17 15.245v6.872a.5.5 0 0 1-.757.429L12 20l-4.243 2.546a.5.5 0 0 1-.757-.43v-6.87a8 8 0 1 1 10 0zM12 15a6 6 0 1 0 0-12 6 6 0 0 0 0 12zm0-2a4 4 0 1 1 0-8 4 4 0 0 1 0 8z\"/></g></svg>',\n  awardLine: '<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 24 24\"><g><path fill=\"none\" d=\"M0 0h24v24H0z\"/><path d=\"M17 15.245v6.872a.5.5 0 0 1-.757.429L12 20l-4.243 2.546a.5.5 0 0 1-.757-.43v-6.87a8 8 0 1 1 10 0zm-8 1.173v3.05l3-1.8 3 1.8v-3.05A7.978 7.978 0 0 1 12 17a7.978 7.978 0 0 1-3-.582zM12 15a6 6 0 1 0 0-12 6 6 0 0 0 0 12z\"/></g></svg>',\n  calendar: '<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 24 24\"><g><path fill=\"none\" d=\"M0 0h24v24H0z\"/><path d=\"M17 3h4a1 1 0 0 1 1 1v16a1 1 0 0 1-1 1H3a1 1 0 0 1-1-1V4a1 1 0 0 1 1-1h4V1h2v2h6V1h2v2zm-2 2H9v2H7V5H4v4h16V5h-3v2h-2V5zm5 6H4v8h16v-8z\"/></g></svg>',\n  camera: '<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 24 24\"><g><path fill=\"none\" d=\"M0 0h24v24H0z\"/><path d=\"M9.828 5l-2 2H4v12h16V7h-3.828l-2-2H9.828zM9 3h6l2 2h4a1 1 0 0 1 1 1v14a1 1 0 0 1-1 1H3a1 1 0 0 1-1-1V6a1 1 0 0 1 1-1h4l2-2zm3 15a5.5 5.5 0 1 1 0-11 5.5 5.5 0 0 1 0 11zm0-2a3.5 3.5 0 1 0 0-7 3.5 3.5 0 0 0 0 7z\"/></g></svg>',\n  chevronDown: '<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 24 24\"><g><path fill=\"none\" d=\"M0 0h24v24H0z\"/><path d=\"M12 13.172l4.95-4.95 1.414 1.414L12 16 5.636 9.636 7.05 8.222z\"/></g></svg>',\n  chevronLeft: '<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 24 24\"><g><path fill=\"none\" d=\"M0 0h24v24H0z\"/><path d=\"M10.828 12l4.95 4.95-1.414 1.414L8 12l6.364-6.364 1.414 1.414z\"/></g></svg>',\n  chevronRight: '<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 24 24\"><g><path fill=\"none\" d=\"M0 0h24v24H0z\"/><path d=\"M13.172 12l-4.95-4.95 1.414-1.414L16 12l-6.364 6.364-1.414-1.414z\"/></g></svg>',\n  chevronUp: '<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 24 24\"><g><path fill=\"none\" d=\"M0 0h24v24H0z\"/><path d=\"M12 10.828l-4.95 4.95-1.414-1.414L12 8l6.364 6.364-1.414 1.414z\"/></g></svg>',\n  close: '<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 24 24\"><g><path fill=\"none\" d=\"M0 0h24v24H0z\"/><path d=\"M12 10.586l4.95-4.95 1.414 1.414-4.95 4.95 4.95 4.95-1.414 1.414-4.95-4.95-4.95 4.95-1.414-1.414 4.95-4.95-4.95-4.95L7.05 5.636z\"/></g></svg>',\n  dashboard: '<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 24 24\"><g><path fill=\"none\" d=\"M0 0h24v24H0z\"/><path d=\"M13 21V11h8v10h-8zM3 13V3h8v10H3zm6-2V5H5v6h4zM3 21v-6h8v6H3zm2-2h4v-2H5v2zm10 0h4v-6h-4v6zM13 3h8v6h-8V3zm2 2v2h4V5h-4z\"/></g></svg>',\n  delete: '<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 24 24\"><g><path fill=\"none\" d=\"M0 0h24v24H0z\"/><path d=\"M17 6h5v2h-2v13a1 1 0 0 1-1 1H5a1 1 0 0 1-1-1V8H2V6h5V3a1 1 0 0 1 1-1h8a1 1 0 0 1 1 1v3zm1 2H6v12h12V8zm-9 3h2v6H9v-6zm4 0h2v6h-2v-6zM9 4v2h6V4H9z\"/></g></svg>',\n  developer: '<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 24 24\"><g><path fill=\"none\" d=\"M0 0h24v24H0z\"/><path d=\"M23 12l-7.071 7.071-1.414-1.414L20.172 12l-5.657-5.657 1.414-1.414L23 12zM3.828 12l5.657 5.657-1.414 1.414L1 12l7.071-7.071 1.414 1.414L3.828 12z\"/></g></svg>',\n  download: '<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 24 24\"><g><path fill=\"none\" d=\"M0 0h24v24H0z\"/><path d=\"M3 19h18v2H3v-2zm10-5.828L19.071 7.1l1.414 1.414L12 17 3.515 8.515 4.929 7.1 11 13.17V2h2v11.172z\"/></g></svg>',\n  dropDown: '<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 24 24\"><g><path fill=\"none\" d=\"M0 0h24v24H0z\"/><path d=\"M12 15l-4.243-4.243 1.415-1.414L12 12.172l2.828-2.829 1.415 1.414z\"/></g></svg>',\n  dropUp: '<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 24 24\"><g><path fill=\"none\" d=\"M0 0h24v24H0z\"/><path d=\"M12 11.828l-2.828 2.829-1.415-1.414L12 9l4.243 4.243-1.415 1.414L12 11.828z\"/></g></svg>',\n  edit: '<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 24 24\"><g><path fill=\"none\" d=\"M0 0h24v24H0z\"/><path d=\"M6.414 16L16.556 5.858l-1.414-1.414L5 14.586V16h1.414zm.829 2H3v-4.243L14.435 2.322a1 1 0 0 1 1.414 0l2.829 2.829a1 1 0 0 1 0 1.414L7.243 18zM3 20h18v2H3v-2z\"/></g></svg>',\n  explore: '<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 24 24\"><g><path fill=\"none\" d=\"M0 0h24v24H0z\"/><path d=\"M12 14v2a6 6 0 0 0-6 6H4a8 8 0 0 1 8-8zm0-1c-3.315 0-6-2.685-6-6s2.685-6 6-6 6 2.685 6 6-2.685 6-6 6zm0-2c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm9.446 9.032l1.504 1.504-1.414 1.414-1.504-1.504a4 4 0 1 1 1.414-1.414zM18 20a2 2 0 1 0 0-4 2 2 0 0 0 0 4z\"/></g></svg>',\n  facebook: '<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 24 24\"><g><path fill=\"none\" d=\"M0 0h24v24H0z\"/><path d=\"M14 13.5h2.5l1-4H14v-2c0-1.03 0-2 2-2h1.5V2.14c-.326-.043-1.557-.14-2.857-.14C11.928 2 10 3.657 10 6.7v2.8H7v4h3V22h4v-8.5z\"/></g></svg>',\n  filter: '<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 24 24\"><g><path fill=\"none\" d=\"M0 0H24V24H0z\"/><path d=\"M21 4v2h-1l-5 7.5V22H9v-8.5L4 6H3V4h18zM6.404 6L11 12.894V20h2v-7.106L17.596 6H6.404z\"/></g></svg>',\n  gatekeeper: '<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 40 19\"><g><path d=\"M11.1214 3.229L8.85495 0.955505L2.94076 6.85283L0 9.8015L2.94076 12.7829L8.85495 18.6803L11.1214 16.4068L4.64877 9.8015L11.1214 3.229Z\"/><path d=\"M19.9259 16.7687C18.6654 16.7687 17.4977 16.4536 16.4226 15.8234C15.3753 15.2025 14.5412 14.3684 13.9203 13.3211C13.2901 12.246 12.975 11.0783 12.975 9.81785C12.975 8.55743 13.2901 7.38968 13.9203 6.31461C14.5412 5.26734 15.3753 4.43324 16.4226 3.81229C17.4977 3.18208 18.6654 2.86697 19.9259 2.86697C21.1863 2.86697 22.354 3.18208 23.4291 3.81229C24.4764 4.43324 25.3105 5.26734 25.9314 6.31461C26.5616 7.38968 26.8767 8.55743 26.8767 9.81785C26.8767 11.0783 26.5616 12.246 25.9314 13.3211C25.3105 14.3684 24.4764 15.2025 23.4291 15.8234C22.354 16.4536 21.1863 16.7687 19.9259 16.7687ZM19.2308 10.3739V12.5982H20.621V10.3739C21.0009 10.2071 21.2836 9.94297 21.469 9.58152C21.6543 9.21081 21.7053 8.82619 21.6219 8.42768C21.5385 8.01989 21.3346 7.68625 21.0102 7.42675C20.6951 7.16725 20.3336 7.0375 19.9259 7.0375C19.5181 7.0375 19.152 7.16725 18.8276 7.42675C18.5125 7.68625 18.3133 8.01989 18.2298 8.42768C18.1464 8.82619 18.1974 9.21081 18.3828 9.58152C18.5681 9.94297 18.8508 10.2071 19.2308 10.3739Z\"/><path d=\"M36.6793 6.85283L30.7977 0.955505L28.4986 3.229L34.9861 9.8015L28.4986 16.4068L30.7977 18.6803L36.6793 12.7829L39.62 9.8015L36.6793 6.85283Z\"/><path d=\"M11.1214 3.229L8.85495 0.955505L2.94076 6.85283L0 9.8015L2.94076 12.7829L8.85495 18.6803L11.1214 16.4068L4.64877 9.8015L11.1214 3.229Z\"/><path d=\"M19.9259 16.7687C18.6654 16.7687 17.4977 16.4536 16.4226 15.8234C15.3753 15.2025 14.5412 14.3684 13.9203 13.3211C13.2901 12.246 12.975 11.0783 12.975 9.81785C12.975 8.55743 13.2901 7.38968 13.9203 6.31461C14.5412 5.26734 15.3753 4.43324 16.4226 3.81229C17.4977 3.18208 18.6654 2.86697 19.9259 2.86697C21.1863 2.86697 22.354 3.18208 23.4291 3.81229C24.4764 4.43324 25.3105 5.26734 25.9314 6.31461C26.5616 7.38968 26.8767 8.55743 26.8767 9.81785C26.8767 11.0783 26.5616 12.246 25.9314 13.3211C25.3105 14.3684 24.4764 15.2025 23.4291 15.8234C22.354 16.4536 21.1863 16.7687 19.9259 16.7687ZM19.2308 10.3739V12.5982H20.621V10.3739C21.0009 10.2071 21.2836 9.94297 21.469 9.58152C21.6543 9.21081 21.7053 8.82619 21.6219 8.42768C21.5385 8.01989 21.3346 7.68625 21.0102 7.42675C20.6951 7.16725 20.3336 7.0375 19.9259 7.0375C19.5181 7.0375 19.152 7.16725 18.8276 7.42675C18.5125 7.68625 18.3133 8.01989 18.2298 8.42768C18.1464 8.82619 18.1974 9.21081 18.3828 9.58152C18.5681 9.94297 18.8508 10.2071 19.2308 10.3739Z\"/><path d=\"M36.6793 6.85283L30.7977 0.955505L28.4986 3.229L34.9861 9.8015L28.4986 16.4068L30.7977 18.6803L36.6793 12.7829L39.62 9.8015L36.6793 6.85283Z\"/></g></svg>',\n  help: '<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 24 24\"><g><path fill=\"none\" d=\"M0 0h24v24H0z\"/><path d=\"M12 22C6.477 22 2 17.523 2 12S6.477 2 12 2s10 4.477 10 10-4.477 10-10 10zm0-2a8 8 0 1 0 0-16 8 8 0 0 0 0 16zm-1-5h2v2h-2v-2zm2-1.645V14h-2v-1.5a1 1 0 0 1 1-1 1.5 1.5 0 1 0-1.471-1.794l-1.962-.393A3.501 3.501 0 1 1 13 13.355z\"/></g></svg>',\n  hr: '<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 24 24\"><g><path fill=\"none\" d=\"M0 0h24v24H0z\"/><path fill-rule=\"nonzero\" d=\"M12 11a5 5 0 0 1 5 5v6h-2v-6a3 3 0 0 0-2.824-2.995L12 13a3 3 0 0 0-2.995 2.824L9 16v6H7v-6a5 5 0 0 1 5-5zm-6.5 3c.279 0 .55.033.81.094a5.947 5.947 0 0 0-.301 1.575L6 16v.086a1.492 1.492 0 0 0-.356-.08L5.5 16a1.5 1.5 0 0 0-1.493 1.356L4 17.5V22H2v-4.5A3.5 3.5 0 0 1 5.5 14zm13 0a3.5 3.5 0 0 1 3.5 3.5V22h-2v-4.5a1.5 1.5 0 0 0-1.356-1.493L18.5 16c-.175 0-.343.03-.5.085V16c0-.666-.108-1.306-.309-1.904.259-.063.53-.096.809-.096zm-13-6a2.5 2.5 0 1 1 0 5 2.5 2.5 0 0 1 0-5zm13 0a2.5 2.5 0 1 1 0 5 2.5 2.5 0 0 1 0-5zm-13 2a.5.5 0 1 0 0 1 .5.5 0 0 0 0-1zm13 0a.5.5 0 1 0 0 1 .5.5 0 0 0 0-1zM12 2a4 4 0 1 1 0 8 4 4 0 0 1 0-8zm0 2a2 2 0 1 0 0 4 2 2 0 0 0 0-4z\"/></g></svg>',\n  info: '<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 24 24\"><g><path fill=\"none\" d=\"M0 0h24v24H0z\"/><path d=\"M12 22C6.477 22 2 17.523 2 12S6.477 2 12 2s10 4.477 10 10-4.477 10-10 10zm0-2a8 8 0 1 0 0-16 8 8 0 0 0 0 16zM11 7h2v2h-2V7zm0 4h2v6h-2v-6z\"/></g></svg>',\n  instagram: '<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 24 24\"><g><path fill=\"none\" d=\"M0 0h24v24H0z\"/><path fill-rule=\"nonzero\" d=\"M12 9a3 3 0 1 0 0 6 3 3 0 0 0 0-6zm0-2a5 5 0 1 1 0 10 5 5 0 0 1 0-10zm6.5-.25a1.25 1.25 0 0 1-2.5 0 1.25 1.25 0 0 1 2.5 0zM12 4c-2.474 0-2.878.007-4.029.058-.784.037-1.31.142-1.798.332-.434.168-.747.369-1.08.703a2.89 2.89 0 0 0-.704 1.08c-.19.49-.295 1.015-.331 1.798C4.006 9.075 4 9.461 4 12c0 2.474.007 2.878.058 4.029.037.783.142 1.31.331 1.797.17.435.37.748.702 1.08.337.336.65.537 1.08.703.494.191 1.02.297 1.8.333C9.075 19.994 9.461 20 12 20c2.474 0 2.878-.007 4.029-.058.782-.037 1.309-.142 1.797-.331.433-.169.748-.37 1.08-.702.337-.337.538-.65.704-1.08.19-.493.296-1.02.332-1.8.052-1.104.058-1.49.058-4.029 0-2.474-.007-2.878-.058-4.029-.037-.782-.142-1.31-.332-1.798a2.911 2.911 0 0 0-.703-1.08 2.884 2.884 0 0 0-1.08-.704c-.49-.19-1.016-.295-1.798-.331C14.925 4.006 14.539 4 12 4zm0-2c2.717 0 3.056.01 4.122.06 1.065.05 1.79.217 2.428.465.66.254 1.216.598 1.772 1.153a4.908 4.908 0 0 1 1.153 1.772c.247.637.415 1.363.465 2.428.047 1.066.06 1.405.06 4.122 0 2.717-.01 3.056-.06 4.122-.05 1.065-.218 1.79-.465 2.428a4.883 4.883 0 0 1-1.153 1.772 4.915 4.915 0 0 1-1.772 1.153c-.637.247-1.363.415-2.428.465-1.066.047-1.405.06-4.122.06-2.717 0-3.056-.01-4.122-.06-1.065-.05-1.79-.218-2.428-.465a4.89 4.89 0 0 1-1.772-1.153 4.904 4.904 0 0 1-1.153-1.772c-.248-.637-.415-1.363-.465-2.428C2.013 15.056 2 14.717 2 12c0-2.717.01-3.056.06-4.122.05-1.066.217-1.79.465-2.428a4.88 4.88 0 0 1 1.153-1.772A4.897 4.897 0 0 1 5.45 2.525c.638-.248 1.362-.415 2.428-.465C8.944 2.013 9.283 2 12 2z\"/></g></svg>',\n  link: '<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 24 24\"><g><path fill=\"none\" d=\"M0 0h24v24H0z\"/><path d=\"M18.364 15.536L16.95 14.12l1.414-1.414a5 5 0 1 0-7.071-7.071L9.879 7.05 8.464 5.636 9.88 4.222a7 7 0 0 1 9.9 9.9l-1.415 1.414zm-2.828 2.828l-1.415 1.414a7 7 0 0 1-9.9-9.9l1.415-1.414L7.05 9.88l-1.414 1.414a5 5 0 1 0 7.071 7.071l1.414-1.414 1.415 1.414zm-.708-10.607l1.415 1.415-7.071 7.07-1.415-1.414 7.071-7.07z\"/></g></svg>',\n  linkedin: '<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 24 24\"><g><path fill=\"none\" d=\"M0 0h24v24H0z\"/><path fill-rule=\"nonzero\" d=\"M6.94 5a2 2 0 1 1-4-.002 2 2 0 0 1 4 .002zM7 8.48H3V21h4V8.48zm6.32 0H9.34V21h3.94v-6.57c0-3.66 4.77-4 4.77 0V21H22v-7.93c0-6.17-7.06-5.94-8.72-2.91l.04-1.68z\"/></g></svg>',\n  logOut: '<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 24 24\"><g><path fill=\"none\" d=\"M0 0h24v24H0z\"/><path d=\"M4 18h2v2h12V4H6v2H4V3a1 1 0 0 1 1-1h14a1 1 0 0 1 1 1v18a1 1 0 0 1-1 1H5a1 1 0 0 1-1-1v-3zm2-7h7v2H6v3l-5-4 5-4v3z\"/></g></svg>',\n  mail: '<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 24 24\"><g><path fill=\"none\" d=\"M0 0h24v24H0z\"/><path d=\"M3 3h18a1 1 0 0 1 1 1v16a1 1 0 0 1-1 1H3a1 1 0 0 1-1-1V4a1 1 0 0 1 1-1zm17 4.238l-7.928 7.1L4 7.216V19h16V7.238zM4.511 5l7.55 6.662L19.502 5H4.511z\"/></g></svg>',\n  menu: '<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 24 24\"><g><path fill=\"none\" d=\"M0 0h24v24H0z\"/><path d=\"M3 4h18v2H3V4zm0 7h18v2H3v-2zm0 7h18v2H3v-2z\"/></g></svg>',\n  more: '<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 24 24\"><g><path fill=\"none\" d=\"M0 0h24v24H0z\"/><path d=\"M12 3c-.825 0-1.5.675-1.5 1.5S11.175 6 12 6s1.5-.675 1.5-1.5S12.825 3 12 3zm0 15c-.825 0-1.5.675-1.5 1.5S11.175 21 12 21s1.5-.675 1.5-1.5S12.825 18 12 18zm0-7.5c-.825 0-1.5.675-1.5 1.5s.675 1.5 1.5 1.5 1.5-.675 1.5-1.5-.675-1.5-1.5-1.5z\"/></g></svg>',\n  points: '<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 24 24\"><g><path fill=\"none\" d=\"M0 0h24v24H0z\"/><path fill-rule=\"nonzero\" d=\"M12 7a8 8 0 1 1 0 16 8 8 0 0 1 0-16zm0 2a6 6 0 1 0 0 12 6 6 0 0 0 0-12zm0 1.5l1.323 2.68 2.957.43-2.14 2.085.505 2.946L12 17.25l-2.645 1.39.505-2.945-2.14-2.086 2.957-.43L12 10.5zM18 2v3l-1.363 1.138A9.935 9.935 0 0 0 13 5.049L13 2 18 2zm-7-.001v3.05a9.935 9.935 0 0 0-3.636 1.088L6 5V2l5-.001z\"/></g></svg>',\n  reorder: '<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 24 24\"><g><path fill=\"none\" d=\"M0 0h24v24H0z\"/><path d=\"M3 4h18v2H3V4zm0 15h18v2H3v-2zm0-5h18v2H3v-2zm0-5h18v2H3V9z\"/></g></svg>',\n  search: '<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 24 24\"><g><path fill=\"none\" d=\"M0 0h24v24H0z\"/><path d=\"M18.031 16.617l4.283 4.282-1.415 1.415-4.282-4.283A8.96 8.96 0 0 1 11 20c-4.968 0-9-4.032-9-9s4.032-9 9-9 9 4.032 9 9a8.96 8.96 0 0 1-1.969 5.617zm-2.006-.742A6.977 6.977 0 0 0 18 11c0-3.868-3.133-7-7-7-3.868 0-7 3.132-7 7 0 3.867 3.132 7 7 7a6.977 6.977 0 0 0 4.875-1.975l.15-.15z\"/></g></svg>',\n  settings: '<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 24 24\"><g><path fill=\"none\" d=\"M0 0h24v24H0z\"/><path d=\"M2 12c0-.865.11-1.703.316-2.504A3 3 0 0 0 4.99 4.867a9.99 9.99 0 0 1 4.335-2.505 3 3 0 0 0 5.348 0 9.99 9.99 0 0 1 4.335 2.505 3 3 0 0 0 2.675 4.63c.206.8.316 1.638.316 2.503 0 .865-.11 1.703-.316 2.504a3 3 0 0 0-2.675 4.629 9.99 9.99 0 0 1-4.335 2.505 3 3 0 0 0-5.348 0 9.99 9.99 0 0 1-4.335-2.505 3 3 0 0 0-2.675-4.63C2.11 13.704 2 12.866 2 12zm4.804 3c.63 1.091.81 2.346.564 3.524.408.29.842.541 1.297.75A4.993 4.993 0 0 1 12 18c1.26 0 2.438.471 3.335 1.274.455-.209.889-.46 1.297-.75A4.993 4.993 0 0 1 17.196 15a4.993 4.993 0 0 1 2.77-2.25 8.126 8.126 0 0 0 0-1.5A4.993 4.993 0 0 1 17.195 9a4.993 4.993 0 0 1-.564-3.524 7.989 7.989 0 0 0-1.297-.75A4.993 4.993 0 0 1 12 6a4.993 4.993 0 0 1-3.335-1.274 7.99 7.99 0 0 0-1.297.75A4.993 4.993 0 0 1 6.804 9a4.993 4.993 0 0 1-2.77 2.25 8.126 8.126 0 0 0 0 1.5A4.993 4.993 0 0 1 6.805 15zM12 15a3 3 0 1 1 0-6 3 3 0 0 1 0 6zm0-2a1 1 0 1 0 0-2 1 1 0 0 0 0 2z\"/></g></svg>',\n  skills: '<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 24 24\"><g><path fill=\"none\" d=\"M0 0h24v24H0z\"/><path d=\"M2 18h7v2H2v-2zm0-7h9v2H2v-2zm0-7h20v2H2V4zm18.674 9.025l1.156-.391 1 1.732-.916.805a4.017 4.017 0 0 1 0 1.658l.916.805-1 1.732-1.156-.391c-.41.37-.898.655-1.435.83L19 21h-2l-.24-1.196a3.996 3.996 0 0 1-1.434-.83l-1.156.392-1-1.732.916-.805a4.017 4.017 0 0 1 0-1.658l-.916-.805 1-1.732 1.156.391c.41-.37.898-.655 1.435-.83L17 11h2l.24 1.196c.536.174 1.024.46 1.434.83zM18 18a2 2 0 1 0 0-4 2 2 0 0 0 0 4z\"/></g></svg>',\n  sort: '<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 24 24\"><g><path fill=\"none\" d=\"M0 0h24v24H0z\"/><path d=\"M11.95 7.95l-1.414 1.414L8 6.828 8 20H6V6.828L3.465 9.364 2.05 7.95 7 3l4.95 4.95zm10 8.1L17 21l-4.95-4.95 1.414-1.414 2.537 2.536L16 4h2v13.172l2.536-2.536 1.414 1.414z\"/></g></svg>',\n  success: '<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 24 24\"><g><path fill=\"none\" d=\"M0 0h24v24H0z\"/><path d=\"M12 22C6.477 22 2 17.523 2 12S6.477 2 12 2s10 4.477 10 10-4.477 10-10 10zm0-2a8 8 0 1 0 0-16 8 8 0 0 0 0 16zm-.997-4L6.76 11.757l1.414-1.414 2.829 2.829 5.656-5.657 1.415 1.414L11.003 16z\"/></g></svg>',\n  thumbUpFill: '<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 24 24\"><g><path fill=\"none\" d=\"M0 0h24v24H0z\"/><path d=\"M2 9h3v12H2a1 1 0 0 1-1-1V10a1 1 0 0 1 1-1zm5.293-1.293l6.4-6.4a.5.5 0 0 1 .654-.047l.853.64a1.5 1.5 0 0 1 .553 1.57L14.6 8H21a2 2 0 0 1 2 2v2.104a2 2 0 0 1-.15.762l-3.095 7.515a1 1 0 0 1-.925.619H8a1 1 0 0 1-1-1V8.414a1 1 0 0 1 .293-.707z\"/></g></svg>',\n  thumbUpLine: '<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 24 24\"><g><path fill=\"none\" d=\"M0 0h24v24H0z\"/><path d=\"M14.6 8H21a2 2 0 0 1 2 2v2.104a2 2 0 0 1-.15.762l-3.095 7.515a1 1 0 0 1-.925.619H2a1 1 0 0 1-1-1V10a1 1 0 0 1 1-1h3.482a1 1 0 0 0 .817-.423L11.752.85a.5.5 0 0 1 .632-.159l1.814.907a2.5 2.5 0 0 1 1.305 2.853L14.6 8zM7 10.588V19h11.16L21 12.104V10h-6.4a2 2 0 0 1-1.938-2.493l.903-3.548a.5.5 0 0 0-.261-.571l-.661-.33-4.71 6.672c-.25.354-.57.644-.933.858zM5 11H3v8h2v-8z\"/></g></svg>',\n  twitter: '<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 24 24\"><g><path fill=\"none\" d=\"M0 0h24v24H0z\"/><path d=\"M22.162 5.656a8.384 8.384 0 0 1-2.402.658A4.196 4.196 0 0 0 21.6 4c-.82.488-1.719.83-2.656 1.015a4.182 4.182 0 0 0-7.126 3.814 11.874 11.874 0 0 1-8.62-4.37 4.168 4.168 0 0 0-.566 2.103c0 1.45.738 2.731 1.86 3.481a4.168 4.168 0 0 1-1.894-.523v.052a4.185 4.185 0 0 0 3.355 4.101 4.21 4.21 0 0 1-1.89.072A4.185 4.185 0 0 0 7.97 16.65a8.394 8.394 0 0 1-6.191 1.732 11.83 11.83 0 0 0 6.41 1.88c7.693 0 11.9-6.373 11.9-11.9 0-.18-.005-.362-.013-.54a8.496 8.496 0 0 0 2.087-2.165z\"/></g></svg>',\n  upload: '<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 24 24\"><g><path fill=\"none\" d=\"M0 0h24v24H0z\"/><path d=\"M3 19h18v2H3v-2zM13 5.828V17h-2V5.828L4.929 11.9l-1.414-1.414L12 2l8.485 8.485-1.414 1.414L13 5.83z\"/></g></svg>',\n  warning: '<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 24 24\"><g><path fill=\"none\" d=\"M0 0h24v24H0z\"/><path d=\"M12 22C6.477 22 2 17.523 2 12S6.477 2 12 2s10 4.477 10 10-4.477 10-10 10zm0-2a8 8 0 1 0 0-16 8 8 0 0 0 0 16zm-1-5h2v2h-2v-2zm0-8h2v6h-2V7z\"/></g></svg>',\n}"
+                    "defaultValue": "{\r\n  account: '<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 24 24\"><g><path fill=\"none\" d=\"M0 0h24v24H0z\"/><path d=\"M12 22C6.477 22 2 17.523 2 12S6.477 2 12 2s10 4.477 10 10-4.477 10-10 10zm-4.987-3.744A7.966 7.966 0 0 0 12 20c1.97 0 3.773-.712 5.167-1.892A6.979 6.979 0 0 0 12.16 16a6.981 6.981 0 0 0-5.147 2.256zM5.616 16.82A8.975 8.975 0 0 1 12.16 14a8.972 8.972 0 0 1 6.362 2.634 8 8 0 1 0-12.906.187zM12 13a4 4 0 1 1 0-8 4 4 0 0 1 0 8zm0-2a2 2 0 1 0 0-4 2 2 0 0 0 0 4z\"/></g></svg>',\r\n  add: '<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 24 24\"><g><path fill=\"none\" d=\"M0 0h24v24H0z\"/><path d=\"M19 13h-6v6h-2v-6H5v-2h6V5h2v6h6v2z\"/></g></svg>',\r\n  admin: '<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 24 24\"><g><path fill=\"none\" d=\"M0 0h24v24H0z\"/><path d=\"M12 14v2a6 6 0 0 0-6 6H4a8 8 0 0 1 8-8zm0-1c-3.315 0-6-2.685-6-6s2.685-6 6-6 6 2.685 6 6-2.685 6-6 6zm0-2c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm9 6h1v5h-8v-5h1v-1a3 3 0 0 1 6 0v1zm-2 0v-1a1 1 0 0 0-2 0v1h2z\"/></g></svg>',\r\n  apps: '<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 24 24\"><g><path fill=\"none\" d=\"M0 0h24v24H0z\"/><path d=\"M4 8h4V4H4v4zm6 12h4v-4h-4v4zm-6 0h4v-4H4v4zm0-6h4v-4H4v4zm6 0h4v-4h-4v4zm6-10v4h4V4h-4zm-6 4h4V4h-4v4zm6-6v4h4V4h-4z\"/></g></svg>',\r\n  arrowLeft: '<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 24 24\"><g><path fill=\"none\" d=\"M0 0h24v24H0z\"/><path d=\"M15.41 7.41L14 6l-6 6 6 6 1.41-1.41L10.83 12z\"/></g></svg>',\r\n  arrowRight: '<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 24 24\"><g><path fill=\"none\" d=\"M0 0h24v24H0z\"/><path d=\"M16.172 11l-5.364-5.364 1.414-1.414L20 12l-7.778 7.778-1.414-1.414L16.172 13H4v-2z\"/></g></svg>',\r\n  attachment: '<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 24 24\"><g><path fill=\"none\" d=\"M0 0h24v24H0z\"/><path d=\"M14 13.5V8a4 4 0 1 0-8 0v5.5a6.5 6.5 0 1 0 13 0V4h2v9.5a8.5 8.5 0 1 1-17 0V8a6 6 0 1 1 12 0v5.5a3.5 3.5 0 0 1-7 0V8h2v5.5a1.5 1.5 0 0 0 3 0z\"/></g></svg>',\r\n  awardFill: '<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 24 24\"><g><path fill=\"none\" d=\"M0 0h24v24H0z\"/><path d=\"M17 15.245v6.872a.5.5 0 0 1-.757.429L12 20l-4.243 2.546a.5.5 0 0 1-.757-.43v-6.87a8 8 0 1 1 10 0zM12 15a6 6 0 1 0 0-12 6 6 0 0 0 0 12zm0-2a4 4 0 1 1 0-8 4 4 0 0 1 0 8z\"/></g></svg>',\r\n  awardLine: '<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 24 24\"><g><path fill=\"none\" d=\"M0 0h24v24H0z\"/><path d=\"M17 15.245v6.872a.5.5 0 0 1-.757.429L12 20l-4.243 2.546a.5.5 0 0 1-.757-.43v-6.87a8 8 0 1 1 10 0zm-8 1.173v3.05l3-1.8 3 1.8v-3.05A7.978 7.978 0 0 1 12 17a7.978 7.978 0 0 1-3-.582zM12 15a6 6 0 1 0 0-12 6 6 0 0 0 0 12z\"/></g></svg>',\r\n  calendar: '<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 24 24\"><g><path fill=\"none\" d=\"M0 0h24v24H0z\"/><path d=\"M17 3h4a1 1 0 0 1 1 1v16a1 1 0 0 1-1 1H3a1 1 0 0 1-1-1V4a1 1 0 0 1 1-1h4V1h2v2h6V1h2v2zm-2 2H9v2H7V5H4v4h16V5h-3v2h-2V5zm5 6H4v8h16v-8z\"/></g></svg>',\r\n  camera: '<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 24 24\"><g><path fill=\"none\" d=\"M0 0h24v24H0z\"/><path d=\"M9.828 5l-2 2H4v12h16V7h-3.828l-2-2H9.828zM9 3h6l2 2h4a1 1 0 0 1 1 1v14a1 1 0 0 1-1 1H3a1 1 0 0 1-1-1V6a1 1 0 0 1 1-1h4l2-2zm3 15a5.5 5.5 0 1 1 0-11 5.5 5.5 0 0 1 0 11zm0-2a3.5 3.5 0 1 0 0-7 3.5 3.5 0 0 0 0 7z\"/></g></svg>',\r\n  chevronDown: '<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 24 24\"><g><path fill=\"none\" d=\"M0 0h24v24H0z\"/><path d=\"M12 13.172l4.95-4.95 1.414 1.414L12 16 5.636 9.636 7.05 8.222z\"/></g></svg>',\r\n  chevronLeft: '<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 24 24\"><g><path fill=\"none\" d=\"M0 0h24v24H0z\"/><path d=\"M10.828 12l4.95 4.95-1.414 1.414L8 12l6.364-6.364 1.414 1.414z\"/></g></svg>',\r\n  chevronRight: '<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 24 24\"><g><path fill=\"none\" d=\"M0 0h24v24H0z\"/><path d=\"M13.172 12l-4.95-4.95 1.414-1.414L16 12l-6.364 6.364-1.414-1.414z\"/></g></svg>',\r\n  chevronUp: '<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 24 24\"><g><path fill=\"none\" d=\"M0 0h24v24H0z\"/><path d=\"M12 10.828l-4.95 4.95-1.414-1.414L12 8l6.364 6.364-1.414 1.414z\"/></g></svg>',\r\n  close: '<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 24 24\"><g><path fill=\"none\" d=\"M0 0h24v24H0z\"/><path d=\"M12 10.586l4.95-4.95 1.414 1.414-4.95 4.95 4.95 4.95-1.414 1.414-4.95-4.95-4.95 4.95-1.414-1.414 4.95-4.95-4.95-4.95L7.05 5.636z\"/></g></svg>',\r\n  dashboard: '<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 24 24\"><g><path fill=\"none\" d=\"M0 0h24v24H0z\"/><path d=\"M13 21V11h8v10h-8zM3 13V3h8v10H3zm6-2V5H5v6h4zM3 21v-6h8v6H3zm2-2h4v-2H5v2zm10 0h4v-6h-4v6zM13 3h8v6h-8V3zm2 2v2h4V5h-4z\"/></g></svg>',\r\n  delete: '<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 24 24\"><g><path fill=\"none\" d=\"M0 0h24v24H0z\"/><path d=\"M17 6h5v2h-2v13a1 1 0 0 1-1 1H5a1 1 0 0 1-1-1V8H2V6h5V3a1 1 0 0 1 1-1h8a1 1 0 0 1 1 1v3zm1 2H6v12h12V8zm-9 3h2v6H9v-6zm4 0h2v6h-2v-6zM9 4v2h6V4H9z\"/></g></svg>',\r\n  developer: '<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 24 24\"><g><path fill=\"none\" d=\"M0 0h24v24H0z\"/><path d=\"M23 12l-7.071 7.071-1.414-1.414L20.172 12l-5.657-5.657 1.414-1.414L23 12zM3.828 12l5.657 5.657-1.414 1.414L1 12l7.071-7.071 1.414 1.414L3.828 12z\"/></g></svg>',\r\n  download: '<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 24 24\"><g><path fill=\"none\" d=\"M0 0h24v24H0z\"/><path d=\"M3 19h18v2H3v-2zm10-5.828L19.071 7.1l1.414 1.414L12 17 3.515 8.515 4.929 7.1 11 13.17V2h2v11.172z\"/></g></svg>',\r\n  dropDown: '<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 24 24\"><g><path fill=\"none\" d=\"M0 0h24v24H0z\"/><path d=\"M12 15l-4.243-4.243 1.415-1.414L12 12.172l2.828-2.829 1.415 1.414z\"/></g></svg>',\r\n  dropUp: '<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 24 24\"><g><path fill=\"none\" d=\"M0 0h24v24H0z\"/><path d=\"M12 11.828l-2.828 2.829-1.415-1.414L12 9l4.243 4.243-1.415 1.414L12 11.828z\"/></g></svg>',\r\n  edit: '<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 24 24\"><g><path fill=\"none\" d=\"M0 0h24v24H0z\"/><path d=\"M6.414 16L16.556 5.858l-1.414-1.414L5 14.586V16h1.414zm.829 2H3v-4.243L14.435 2.322a1 1 0 0 1 1.414 0l2.829 2.829a1 1 0 0 1 0 1.414L7.243 18zM3 20h18v2H3v-2z\"/></g></svg>',\r\n  explore: '<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 24 24\"><g><path fill=\"none\" d=\"M0 0h24v24H0z\"/><path d=\"M12 14v2a6 6 0 0 0-6 6H4a8 8 0 0 1 8-8zm0-1c-3.315 0-6-2.685-6-6s2.685-6 6-6 6 2.685 6 6-2.685 6-6 6zm0-2c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm9.446 9.032l1.504 1.504-1.414 1.414-1.504-1.504a4 4 0 1 1 1.414-1.414zM18 20a2 2 0 1 0 0-4 2 2 0 0 0 0 4z\"/></g></svg>',\r\n  facebook: '<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 24 24\"><g><path fill=\"none\" d=\"M0 0h24v24H0z\"/><path d=\"M14 13.5h2.5l1-4H14v-2c0-1.03 0-2 2-2h1.5V2.14c-.326-.043-1.557-.14-2.857-.14C11.928 2 10 3.657 10 6.7v2.8H7v4h3V22h4v-8.5z\"/></g></svg>',\r\n  filter: '<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 24 24\"><g><path fill=\"none\" d=\"M0 0H24V24H0z\"/><path d=\"M21 4v2h-1l-5 7.5V22H9v-8.5L4 6H3V4h18zM6.404 6L11 12.894V20h2v-7.106L17.596 6H6.404z\"/></g></svg>',\r\n  gatekeeper: '<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 40 19\"><g><path d=\"M11.1214 3.229L8.85495 0.955505L2.94076 6.85283L0 9.8015L2.94076 12.7829L8.85495 18.6803L11.1214 16.4068L4.64877 9.8015L11.1214 3.229Z\"/><path d=\"M19.9259 16.7687C18.6654 16.7687 17.4977 16.4536 16.4226 15.8234C15.3753 15.2025 14.5412 14.3684 13.9203 13.3211C13.2901 12.246 12.975 11.0783 12.975 9.81785C12.975 8.55743 13.2901 7.38968 13.9203 6.31461C14.5412 5.26734 15.3753 4.43324 16.4226 3.81229C17.4977 3.18208 18.6654 2.86697 19.9259 2.86697C21.1863 2.86697 22.354 3.18208 23.4291 3.81229C24.4764 4.43324 25.3105 5.26734 25.9314 6.31461C26.5616 7.38968 26.8767 8.55743 26.8767 9.81785C26.8767 11.0783 26.5616 12.246 25.9314 13.3211C25.3105 14.3684 24.4764 15.2025 23.4291 15.8234C22.354 16.4536 21.1863 16.7687 19.9259 16.7687ZM19.2308 10.3739V12.5982H20.621V10.3739C21.0009 10.2071 21.2836 9.94297 21.469 9.58152C21.6543 9.21081 21.7053 8.82619 21.6219 8.42768C21.5385 8.01989 21.3346 7.68625 21.0102 7.42675C20.6951 7.16725 20.3336 7.0375 19.9259 7.0375C19.5181 7.0375 19.152 7.16725 18.8276 7.42675C18.5125 7.68625 18.3133 8.01989 18.2298 8.42768C18.1464 8.82619 18.1974 9.21081 18.3828 9.58152C18.5681 9.94297 18.8508 10.2071 19.2308 10.3739Z\"/><path d=\"M36.6793 6.85283L30.7977 0.955505L28.4986 3.229L34.9861 9.8015L28.4986 16.4068L30.7977 18.6803L36.6793 12.7829L39.62 9.8015L36.6793 6.85283Z\"/><path d=\"M11.1214 3.229L8.85495 0.955505L2.94076 6.85283L0 9.8015L2.94076 12.7829L8.85495 18.6803L11.1214 16.4068L4.64877 9.8015L11.1214 3.229Z\"/><path d=\"M19.9259 16.7687C18.6654 16.7687 17.4977 16.4536 16.4226 15.8234C15.3753 15.2025 14.5412 14.3684 13.9203 13.3211C13.2901 12.246 12.975 11.0783 12.975 9.81785C12.975 8.55743 13.2901 7.38968 13.9203 6.31461C14.5412 5.26734 15.3753 4.43324 16.4226 3.81229C17.4977 3.18208 18.6654 2.86697 19.9259 2.86697C21.1863 2.86697 22.354 3.18208 23.4291 3.81229C24.4764 4.43324 25.3105 5.26734 25.9314 6.31461C26.5616 7.38968 26.8767 8.55743 26.8767 9.81785C26.8767 11.0783 26.5616 12.246 25.9314 13.3211C25.3105 14.3684 24.4764 15.2025 23.4291 15.8234C22.354 16.4536 21.1863 16.7687 19.9259 16.7687ZM19.2308 10.3739V12.5982H20.621V10.3739C21.0009 10.2071 21.2836 9.94297 21.469 9.58152C21.6543 9.21081 21.7053 8.82619 21.6219 8.42768C21.5385 8.01989 21.3346 7.68625 21.0102 7.42675C20.6951 7.16725 20.3336 7.0375 19.9259 7.0375C19.5181 7.0375 19.152 7.16725 18.8276 7.42675C18.5125 7.68625 18.3133 8.01989 18.2298 8.42768C18.1464 8.82619 18.1974 9.21081 18.3828 9.58152C18.5681 9.94297 18.8508 10.2071 19.2308 10.3739Z\"/><path d=\"M36.6793 6.85283L30.7977 0.955505L28.4986 3.229L34.9861 9.8015L28.4986 16.4068L30.7977 18.6803L36.6793 12.7829L39.62 9.8015L36.6793 6.85283Z\"/></g></svg>',\r\n  help: '<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 24 24\"><g><path fill=\"none\" d=\"M0 0h24v24H0z\"/><path d=\"M12 22C6.477 22 2 17.523 2 12S6.477 2 12 2s10 4.477 10 10-4.477 10-10 10zm0-2a8 8 0 1 0 0-16 8 8 0 0 0 0 16zm-1-5h2v2h-2v-2zm2-1.645V14h-2v-1.5a1 1 0 0 1 1-1 1.5 1.5 0 1 0-1.471-1.794l-1.962-.393A3.501 3.501 0 1 1 13 13.355z\"/></g></svg>',\r\n  hr: '<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 24 24\"><g><path fill=\"none\" d=\"M0 0h24v24H0z\"/><path fill-rule=\"nonzero\" d=\"M12 11a5 5 0 0 1 5 5v6h-2v-6a3 3 0 0 0-2.824-2.995L12 13a3 3 0 0 0-2.995 2.824L9 16v6H7v-6a5 5 0 0 1 5-5zm-6.5 3c.279 0 .55.033.81.094a5.947 5.947 0 0 0-.301 1.575L6 16v.086a1.492 1.492 0 0 0-.356-.08L5.5 16a1.5 1.5 0 0 0-1.493 1.356L4 17.5V22H2v-4.5A3.5 3.5 0 0 1 5.5 14zm13 0a3.5 3.5 0 0 1 3.5 3.5V22h-2v-4.5a1.5 1.5 0 0 0-1.356-1.493L18.5 16c-.175 0-.343.03-.5.085V16c0-.666-.108-1.306-.309-1.904.259-.063.53-.096.809-.096zm-13-6a2.5 2.5 0 1 1 0 5 2.5 2.5 0 0 1 0-5zm13 0a2.5 2.5 0 1 1 0 5 2.5 2.5 0 0 1 0-5zm-13 2a.5.5 0 1 0 0 1 .5.5 0 0 0 0-1zm13 0a.5.5 0 1 0 0 1 .5.5 0 0 0 0-1zM12 2a4 4 0 1 1 0 8 4 4 0 0 1 0-8zm0 2a2 2 0 1 0 0 4 2 2 0 0 0 0-4z\"/></g></svg>',\r\n  info: '<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 24 24\"><g><path fill=\"none\" d=\"M0 0h24v24H0z\"/><path d=\"M12 22C6.477 22 2 17.523 2 12S6.477 2 12 2s10 4.477 10 10-4.477 10-10 10zm0-2a8 8 0 1 0 0-16 8 8 0 0 0 0 16zM11 7h2v2h-2V7zm0 4h2v6h-2v-6z\"/></g></svg>',\r\n  instagram: '<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 24 24\"><g><path fill=\"none\" d=\"M0 0h24v24H0z\"/><path fill-rule=\"nonzero\" d=\"M12 9a3 3 0 1 0 0 6 3 3 0 0 0 0-6zm0-2a5 5 0 1 1 0 10 5 5 0 0 1 0-10zm6.5-.25a1.25 1.25 0 0 1-2.5 0 1.25 1.25 0 0 1 2.5 0zM12 4c-2.474 0-2.878.007-4.029.058-.784.037-1.31.142-1.798.332-.434.168-.747.369-1.08.703a2.89 2.89 0 0 0-.704 1.08c-.19.49-.295 1.015-.331 1.798C4.006 9.075 4 9.461 4 12c0 2.474.007 2.878.058 4.029.037.783.142 1.31.331 1.797.17.435.37.748.702 1.08.337.336.65.537 1.08.703.494.191 1.02.297 1.8.333C9.075 19.994 9.461 20 12 20c2.474 0 2.878-.007 4.029-.058.782-.037 1.309-.142 1.797-.331.433-.169.748-.37 1.08-.702.337-.337.538-.65.704-1.08.19-.493.296-1.02.332-1.8.052-1.104.058-1.49.058-4.029 0-2.474-.007-2.878-.058-4.029-.037-.782-.142-1.31-.332-1.798a2.911 2.911 0 0 0-.703-1.08 2.884 2.884 0 0 0-1.08-.704c-.49-.19-1.016-.295-1.798-.331C14.925 4.006 14.539 4 12 4zm0-2c2.717 0 3.056.01 4.122.06 1.065.05 1.79.217 2.428.465.66.254 1.216.598 1.772 1.153a4.908 4.908 0 0 1 1.153 1.772c.247.637.415 1.363.465 2.428.047 1.066.06 1.405.06 4.122 0 2.717-.01 3.056-.06 4.122-.05 1.065-.218 1.79-.465 2.428a4.883 4.883 0 0 1-1.153 1.772 4.915 4.915 0 0 1-1.772 1.153c-.637.247-1.363.415-2.428.465-1.066.047-1.405.06-4.122.06-2.717 0-3.056-.01-4.122-.06-1.065-.05-1.79-.218-2.428-.465a4.89 4.89 0 0 1-1.772-1.153 4.904 4.904 0 0 1-1.153-1.772c-.248-.637-.415-1.363-.465-2.428C2.013 15.056 2 14.717 2 12c0-2.717.01-3.056.06-4.122.05-1.066.217-1.79.465-2.428a4.88 4.88 0 0 1 1.153-1.772A4.897 4.897 0 0 1 5.45 2.525c.638-.248 1.362-.415 2.428-.465C8.944 2.013 9.283 2 12 2z\"/></g></svg>',\r\n  link: '<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 24 24\"><g><path fill=\"none\" d=\"M0 0h24v24H0z\"/><path d=\"M18.364 15.536L16.95 14.12l1.414-1.414a5 5 0 1 0-7.071-7.071L9.879 7.05 8.464 5.636 9.88 4.222a7 7 0 0 1 9.9 9.9l-1.415 1.414zm-2.828 2.828l-1.415 1.414a7 7 0 0 1-9.9-9.9l1.415-1.414L7.05 9.88l-1.414 1.414a5 5 0 1 0 7.071 7.071l1.414-1.414 1.415 1.414zm-.708-10.607l1.415 1.415-7.071 7.07-1.415-1.414 7.071-7.07z\"/></g></svg>',\r\n  linkedin: '<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 24 24\"><g><path fill=\"none\" d=\"M0 0h24v24H0z\"/><path fill-rule=\"nonzero\" d=\"M6.94 5a2 2 0 1 1-4-.002 2 2 0 0 1 4 .002zM7 8.48H3V21h4V8.48zm6.32 0H9.34V21h3.94v-6.57c0-3.66 4.77-4 4.77 0V21H22v-7.93c0-6.17-7.06-5.94-8.72-2.91l.04-1.68z\"/></g></svg>',\r\n  logOut: '<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 24 24\"><g><path fill=\"none\" d=\"M0 0h24v24H0z\"/><path d=\"M4 18h2v2h12V4H6v2H4V3a1 1 0 0 1 1-1h14a1 1 0 0 1 1 1v18a1 1 0 0 1-1 1H5a1 1 0 0 1-1-1v-3zm2-7h7v2H6v3l-5-4 5-4v3z\"/></g></svg>',\r\n  mail: '<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 24 24\"><g><path fill=\"none\" d=\"M0 0h24v24H0z\"/><path d=\"M3 3h18a1 1 0 0 1 1 1v16a1 1 0 0 1-1 1H3a1 1 0 0 1-1-1V4a1 1 0 0 1 1-1zm17 4.238l-7.928 7.1L4 7.216V19h16V7.238zM4.511 5l7.55 6.662L19.502 5H4.511z\"/></g></svg>',\r\n  menu: '<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 24 24\"><g><path fill=\"none\" d=\"M0 0h24v24H0z\"/><path d=\"M3 4h18v2H3V4zm0 7h18v2H3v-2zm0 7h18v2H3v-2z\"/></g></svg>',\r\n  more: '<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 24 24\"><g><path fill=\"none\" d=\"M0 0h24v24H0z\"/><path d=\"M12 3c-.825 0-1.5.675-1.5 1.5S11.175 6 12 6s1.5-.675 1.5-1.5S12.825 3 12 3zm0 15c-.825 0-1.5.675-1.5 1.5S11.175 21 12 21s1.5-.675 1.5-1.5S12.825 18 12 18zm0-7.5c-.825 0-1.5.675-1.5 1.5s.675 1.5 1.5 1.5 1.5-.675 1.5-1.5-.675-1.5-1.5-1.5z\"/></g></svg>',\r\n  points: '<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 24 24\"><g><path fill=\"none\" d=\"M0 0h24v24H0z\"/><path fill-rule=\"nonzero\" d=\"M12 7a8 8 0 1 1 0 16 8 8 0 0 1 0-16zm0 2a6 6 0 1 0 0 12 6 6 0 0 0 0-12zm0 1.5l1.323 2.68 2.957.43-2.14 2.085.505 2.946L12 17.25l-2.645 1.39.505-2.945-2.14-2.086 2.957-.43L12 10.5zM18 2v3l-1.363 1.138A9.935 9.935 0 0 0 13 5.049L13 2 18 2zm-7-.001v3.05a9.935 9.935 0 0 0-3.636 1.088L6 5V2l5-.001z\"/></g></svg>',\r\n  reorder: '<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 24 24\"><g><path fill=\"none\" d=\"M0 0h24v24H0z\"/><path d=\"M3 4h18v2H3V4zm0 15h18v2H3v-2zm0-5h18v2H3v-2zm0-5h18v2H3V9z\"/></g></svg>',\r\n  search: '<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 24 24\"><g><path fill=\"none\" d=\"M0 0h24v24H0z\"/><path d=\"M18.031 16.617l4.283 4.282-1.415 1.415-4.282-4.283A8.96 8.96 0 0 1 11 20c-4.968 0-9-4.032-9-9s4.032-9 9-9 9 4.032 9 9a8.96 8.96 0 0 1-1.969 5.617zm-2.006-.742A6.977 6.977 0 0 0 18 11c0-3.868-3.133-7-7-7-3.868 0-7 3.132-7 7 0 3.867 3.132 7 7 7a6.977 6.977 0 0 0 4.875-1.975l.15-.15z\"/></g></svg>',\r\n  settings: '<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 24 24\"><g><path fill=\"none\" d=\"M0 0h24v24H0z\"/><path d=\"M2 12c0-.865.11-1.703.316-2.504A3 3 0 0 0 4.99 4.867a9.99 9.99 0 0 1 4.335-2.505 3 3 0 0 0 5.348 0 9.99 9.99 0 0 1 4.335 2.505 3 3 0 0 0 2.675 4.63c.206.8.316 1.638.316 2.503 0 .865-.11 1.703-.316 2.504a3 3 0 0 0-2.675 4.629 9.99 9.99 0 0 1-4.335 2.505 3 3 0 0 0-5.348 0 9.99 9.99 0 0 1-4.335-2.505 3 3 0 0 0-2.675-4.63C2.11 13.704 2 12.866 2 12zm4.804 3c.63 1.091.81 2.346.564 3.524.408.29.842.541 1.297.75A4.993 4.993 0 0 1 12 18c1.26 0 2.438.471 3.335 1.274.455-.209.889-.46 1.297-.75A4.993 4.993 0 0 1 17.196 15a4.993 4.993 0 0 1 2.77-2.25 8.126 8.126 0 0 0 0-1.5A4.993 4.993 0 0 1 17.195 9a4.993 4.993 0 0 1-.564-3.524 7.989 7.989 0 0 0-1.297-.75A4.993 4.993 0 0 1 12 6a4.993 4.993 0 0 1-3.335-1.274 7.99 7.99 0 0 0-1.297.75A4.993 4.993 0 0 1 6.804 9a4.993 4.993 0 0 1-2.77 2.25 8.126 8.126 0 0 0 0 1.5A4.993 4.993 0 0 1 6.805 15zM12 15a3 3 0 1 1 0-6 3 3 0 0 1 0 6zm0-2a1 1 0 1 0 0-2 1 1 0 0 0 0 2z\"/></g></svg>',\r\n  skills: '<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 24 24\"><g><path fill=\"none\" d=\"M0 0h24v24H0z\"/><path d=\"M2 18h7v2H2v-2zm0-7h9v2H2v-2zm0-7h20v2H2V4zm18.674 9.025l1.156-.391 1 1.732-.916.805a4.017 4.017 0 0 1 0 1.658l.916.805-1 1.732-1.156-.391c-.41.37-.898.655-1.435.83L19 21h-2l-.24-1.196a3.996 3.996 0 0 1-1.434-.83l-1.156.392-1-1.732.916-.805a4.017 4.017 0 0 1 0-1.658l-.916-.805 1-1.732 1.156.391c.41-.37.898-.655 1.435-.83L17 11h2l.24 1.196c.536.174 1.024.46 1.434.83zM18 18a2 2 0 1 0 0-4 2 2 0 0 0 0 4z\"/></g></svg>',\r\n  sort: '<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 24 24\"><g><path fill=\"none\" d=\"M0 0h24v24H0z\"/><path d=\"M11.95 7.95l-1.414 1.414L8 6.828 8 20H6V6.828L3.465 9.364 2.05 7.95 7 3l4.95 4.95zm10 8.1L17 21l-4.95-4.95 1.414-1.414 2.537 2.536L16 4h2v13.172l2.536-2.536 1.414 1.414z\"/></g></svg>',\r\n  success: '<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 24 24\"><g><path fill=\"none\" d=\"M0 0h24v24H0z\"/><path d=\"M12 22C6.477 22 2 17.523 2 12S6.477 2 12 2s10 4.477 10 10-4.477 10-10 10zm0-2a8 8 0 1 0 0-16 8 8 0 0 0 0 16zm-.997-4L6.76 11.757l1.414-1.414 2.829 2.829 5.656-5.657 1.415 1.414L11.003 16z\"/></g></svg>',\r\n  thumbUpFill: '<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 24 24\"><g><path fill=\"none\" d=\"M0 0h24v24H0z\"/><path d=\"M2 9h3v12H2a1 1 0 0 1-1-1V10a1 1 0 0 1 1-1zm5.293-1.293l6.4-6.4a.5.5 0 0 1 .654-.047l.853.64a1.5 1.5 0 0 1 .553 1.57L14.6 8H21a2 2 0 0 1 2 2v2.104a2 2 0 0 1-.15.762l-3.095 7.515a1 1 0 0 1-.925.619H8a1 1 0 0 1-1-1V8.414a1 1 0 0 1 .293-.707z\"/></g></svg>',\r\n  thumbUpLine: '<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 24 24\"><g><path fill=\"none\" d=\"M0 0h24v24H0z\"/><path d=\"M14.6 8H21a2 2 0 0 1 2 2v2.104a2 2 0 0 1-.15.762l-3.095 7.515a1 1 0 0 1-.925.619H2a1 1 0 0 1-1-1V10a1 1 0 0 1 1-1h3.482a1 1 0 0 0 .817-.423L11.752.85a.5.5 0 0 1 .632-.159l1.814.907a2.5 2.5 0 0 1 1.305 2.853L14.6 8zM7 10.588V19h11.16L21 12.104V10h-6.4a2 2 0 0 1-1.938-2.493l.903-3.548a.5.5 0 0 0-.261-.571l-.661-.33-4.71 6.672c-.25.354-.57.644-.933.858zM5 11H3v8h2v-8z\"/></g></svg>',\r\n  twitter: '<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 24 24\"><g><path fill=\"none\" d=\"M0 0h24v24H0z\"/><path d=\"M22.162 5.656a8.384 8.384 0 0 1-2.402.658A4.196 4.196 0 0 0 21.6 4c-.82.488-1.719.83-2.656 1.015a4.182 4.182 0 0 0-7.126 3.814 11.874 11.874 0 0 1-8.62-4.37 4.168 4.168 0 0 0-.566 2.103c0 1.45.738 2.731 1.86 3.481a4.168 4.168 0 0 1-1.894-.523v.052a4.185 4.185 0 0 0 3.355 4.101 4.21 4.21 0 0 1-1.89.072A4.185 4.185 0 0 0 7.97 16.65a8.394 8.394 0 0 1-6.191 1.732 11.83 11.83 0 0 0 6.41 1.88c7.693 0 11.9-6.373 11.9-11.9 0-.18-.005-.362-.013-.54a8.496 8.496 0 0 0 2.087-2.165z\"/></g></svg>',\r\n  upload: '<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 24 24\"><g><path fill=\"none\" d=\"M0 0h24v24H0z\"/><path d=\"M3 19h18v2H3v-2zM13 5.828V17h-2V5.828L4.929 11.9l-1.414-1.414L12 2l8.485 8.485-1.414 1.414L13 5.83z\"/></g></svg>',\r\n  warning: '<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 24 24\"><g><path fill=\"none\" d=\"M0 0h24v24H0z\"/><path d=\"M12 22C6.477 22 2 17.523 2 12S6.477 2 12 2s10 4.477 10 10-4.477 10-10 10zm0-2a8 8 0 1 0 0-16 8 8 0 0 0 0 16zm-1-5h2v2h-2v-2zm0-8h2v6h-2V7z\"/></g></svg>',\r\n}"
                 },
                 {
                     "name": "IconFill",
@@ -1563,8 +1767,8 @@
                     "file": "projects/clapp/src/lib/components/svg-icon/clapp-icons.helper.ts",
                     "deprecated": false,
                     "deprecationMessage": "",
-                    "type": "object",
-                    "defaultValue": "{\n  ApplaudoNavyBlue : 'applaudo-navy-blue',\n  ApplaudoRed : 'applaudo-red',\n  LightGray : 'light-gray',\n  White : 'white',\n  ApplaudoRedPlus : 'applaudo-red-plus',\n  ApplaudoRedMinus : 'applaudo-red-minus',\n  ErrorRed : 'error-red',\n  Green : 'green',\n  MidGray : 'mid-gray',\n  Yellow : 'yellow',\n  Charcoal : 'charcoal',\n  CoolGray : 'cool-gray',\n  Platinum : 'platinum',\n  ApplaudoPurple : 'applaudo-purple',\n  Blue : 'blue',\n  Bronze : 'bronze',\n  LightNavyBlue : 'light-navy-blue',\n}"
+                    "type": "",
+                    "defaultValue": "{\r\n  ApplaudoNavyBlue : 'applaudo-navy-blue',\r\n  ApplaudoRed : 'applaudo-red',\r\n  LightGray : 'light-gray',\r\n  White : 'white',\r\n  ApplaudoRedPlus : 'applaudo-red-plus',\r\n  ApplaudoRedMinus : 'applaudo-red-minus',\r\n  ErrorRed : 'error-red',\r\n  Green : 'green',\r\n  MidGray : 'mid-gray',\r\n  Yellow : 'yellow',\r\n  Charcoal : 'charcoal',\r\n  CoolGray : 'cool-gray',\r\n  Platinum : 'platinum',\r\n  ApplaudoPurple : 'applaudo-purple',\r\n  Blue : 'blue',\r\n  Bronze : 'bronze',\r\n  LightNavyBlue : 'light-navy-blue',\r\n} as const"
                 }
             ],
             "src/test.ts": [
@@ -1618,7 +1822,7 @@
                     "deprecated": false,
                     "deprecationMessage": "",
                     "type": "object",
-                    "defaultValue": "{\n  production: true\n}"
+                    "defaultValue": "{\r\n  production: true\r\n}"
                 }
             ],
             "src/environments/environment.ts": [
@@ -1630,7 +1834,7 @@
                     "deprecated": false,
                     "deprecationMessage": "",
                     "type": "object",
-                    "defaultValue": "{\n  production: false\n}"
+                    "defaultValue": "{\r\n  production: false\r\n}"
                 }
             ],
             "src/stories/Button.stories.ts": [
@@ -1682,7 +1886,7 @@
                     "deprecated": false,
                     "deprecationMessage": "",
                     "type": "Story<Button>",
-                    "defaultValue": "(args: Button) => ({\n  props: args,\n})"
+                    "defaultValue": "(args: Button) => ({\r\n  props: args,\r\n})"
                 }
             ],
             "src/stories/Header.stories.ts": [
@@ -1714,7 +1918,7 @@
                     "deprecated": false,
                     "deprecationMessage": "",
                     "type": "Story<Header>",
-                    "defaultValue": "(args: Header) => ({\n  props: args,\n})"
+                    "defaultValue": "(args: Header) => ({\r\n  props: args,\r\n})"
                 }
             ],
             "src/stories/Page.stories.ts": [
@@ -1746,7 +1950,7 @@
                     "deprecated": false,
                     "deprecationMessage": "",
                     "type": "Story<Page>",
-                    "defaultValue": "(args: Page) => ({\n  props: args,\n})"
+                    "defaultValue": "(args: Page) => ({\r\n  props: args,\r\n})"
                 }
             ],
             "src/stories/clapp-lib/components/svg-icon.stories.ts": [
@@ -1768,7 +1972,29 @@
                     "deprecated": false,
                     "deprecationMessage": "",
                     "type": "Story<SvgIconComponent>",
-                    "defaultValue": "(args: SvgIconComponent) => ({\n  props: args,\n})"
+                    "defaultValue": "(args: SvgIconComponent) => ({\r\n  props: args,\r\n})"
+                }
+            ],
+            "src/stories/clapp-lib/components/button.stories.ts": [
+                {
+                    "name": "Principal",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "src/stories/clapp-lib/components/button.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "",
+                    "defaultValue": "Template.bind({})"
+                },
+                {
+                    "name": "Template",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "src/stories/clapp-lib/components/button.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "Story<ButtonComponent>",
+                    "defaultValue": "(args: ButtonComponent) => ({\r\n  props: args,\r\n})"
                 }
             ]
         },
@@ -1899,12 +2125,30 @@
                 "status": "low"
             },
             {
+                "filePath": "projects/clapp/src/lib/components/button/button.component.ts",
+                "type": "component",
+                "linktype": "component",
+                "name": "ButtonComponent",
+                "coveragePercent": 0,
+                "coverageCount": "0/5",
+                "status": "low"
+            },
+            {
                 "filePath": "projects/clapp/src/lib/components/buttons/icon-button/icon-button.component.ts",
                 "type": "component",
                 "linktype": "component",
                 "name": "IconButtonComponent",
                 "coveragePercent": 0,
                 "coverageCount": "0/3",
+                "status": "low"
+            },
+            {
+                "filePath": "projects/clapp/src/lib/components/buttons/primary-button/primary-button.component.ts",
+                "type": "component",
+                "linktype": "component",
+                "name": "PrimaryButtonComponent",
+                "coveragePercent": 0,
+                "coverageCount": "0/5",
                 "status": "low"
             },
             {
@@ -2016,7 +2260,7 @@
                 "linktype": "component",
                 "name": "GatekeeperComponent",
                 "coveragePercent": 0,
-                "coverageCount": "0/3",
+                "coverageCount": "0/4",
                 "status": "low"
             },
             {
@@ -2166,6 +2410,26 @@
                 "coveragePercent": 83,
                 "coverageCount": "5/6",
                 "status": "very-good"
+            },
+            {
+                "filePath": "src/stories/clapp-lib/components/button.stories.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "Principal",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "src/stories/clapp-lib/components/button.stories.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "Template",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
             },
             {
                 "filePath": "src/stories/clapp-lib/components/svg-icon.stories.ts",
