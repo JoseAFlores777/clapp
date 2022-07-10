@@ -3,6 +3,7 @@ import { ClappComponent } from './clapp.component';
 import { IconButtonComponent } from './components/buttons/icon-button/icon-button.component';
 import { SidebarComponent } from './patterns/sidebar/sidebar.component';
 import { SvgIconComponent } from './components/svg-icon/svg-icon.component';
+import { AvatarComponent } from './components/avatar/avatar.component';
 
 
 
@@ -12,6 +13,7 @@ import { SvgIconComponent } from './components/svg-icon/svg-icon.component';
     IconButtonComponent,
     SidebarComponent,
     SvgIconComponent,
+    AvatarComponent,
 
   ],
   imports: [
