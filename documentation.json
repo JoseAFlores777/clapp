@@ -219,7 +219,7 @@
         },
         {
             "name": "ButtonComponent",
-            "id": "component-ButtonComponent-7f7d2627ff86868a8e6769aa3589a4d8ea5e0844cd2f217d2986111c49653e0b9327bea42fe6473d040d3c9453ee8dc211748d9af6204d6267c84f58907f258e-1",
+            "id": "component-ButtonComponent-20a5f4eb1ba2fe3cc976fa47c183de5202ddbe4b92f9bc4c97b59f2a6e15945dee80eae1ff2a3f45ce821082705cc3a5db3f14e8984f8c7c1c478873627dc7ba-1",
             "file": "projects/clapp/src/lib/components/button/button.component.ts",
             "encapsulation": [],
             "entryComponents": [],
@@ -246,6 +246,15 @@
                     "decorators": []
                 },
                 {
+                    "name": "label",
+                    "defaultValue": "''",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "line": 11,
+                    "type": "string",
+                    "decorators": []
+                },
+                {
                     "name": "type",
                     "defaultValue": "'primary'",
                     "deprecated": false,
@@ -264,7 +273,7 @@
                     "optional": false,
                     "returnType": "void",
                     "typeParameters": [],
-                    "line": 14,
+                    "line": 15,
                     "deprecated": false,
                     "deprecationMessage": ""
                 }
@@ -276,7 +285,7 @@
             "description": "",
             "rawdescription": "\n",
             "type": "component",
-            "sourceCode": "import { Component, Input, OnInit } from '@angular/core';\n\n@Component({\n  selector: 'cl-button',\n  templateUrl: './button.component.html',\n  styleUrls: ['./button.component.scss'],\n})\nexport class ButtonComponent implements OnInit {\n  @Input('disabled') disabled = false;\n  @Input('type') type = 'primary';\n\n  constructor() {}\n\n  ngOnInit(): void {}\n}\n",
+            "sourceCode": "import { Component, Input, OnInit } from '@angular/core';\n\n@Component({\n  selector: 'cl-button',\n  templateUrl: './button.component.html',\n  styleUrls: ['./button.component.scss'],\n})\nexport class ButtonComponent implements OnInit {\n  @Input('disabled') disabled = false;\n  @Input('type') type = 'primary';\n  @Input('label') label = '';\n\n  constructor() {}\n\n  ngOnInit(): void {}\n}\n",
             "assetsDirs": [],
             "styleUrlsData": [
                 {
@@ -291,7 +300,7 @@
                 "deprecated": false,
                 "deprecationMessage": "",
                 "args": [],
-                "line": 10
+                "line": 11
             },
             "implements": [
                 "OnInit"
@@ -299,7 +308,7 @@
             "isDuplicate": true,
             "duplicateId": 1,
             "duplicateName": "ButtonComponent-1",
-            "templateData": "<button [disabled]=\"disabled\" [ngClass]=\"type\">\n  <ng-content></ng-content>\n</button>"
+            "templateData": "<button [innerText]=\"label\" [disabled]=\"disabled\" [ngClass]=\"type\">\n  <ng-content></ng-content>\n</button>"
         },
         {
             "name": "ClappComponent",
@@ -418,7 +427,7 @@
         },
         {
             "name": "GatekeeperComponent",
-            "id": "component-GatekeeperComponent-2dd38c86c08498ea42348a4b551f6da4c84b36ba2c8d92e1d476ef825f68087614d1102039491bfb4bf7881fe7d4c1a8770a1e6007d453fa2a8e35825bec4d2b",
+            "id": "component-GatekeeperComponent-d8cc209845f67113e185ecd7f5a12e1a9f046de9946cef2bddbae5049bace7024c39171ffbd384dea4dc8525ff54e1867bf26ad84ecf80d888568f1106556596",
             "file": "src/app/modules/login/pages/gatekeeper/gatekeeper.component.ts",
             "encapsulation": [],
             "entryComponents": [],
@@ -439,16 +448,6 @@
             "propertiesClass": [],
             "methodsClass": [
                 {
-                    "name": "hola",
-                    "args": [],
-                    "optional": false,
-                    "returnType": "void",
-                    "typeParameters": [],
-                    "line": 13,
-                    "deprecated": false,
-                    "deprecationMessage": ""
-                },
-                {
                     "name": "ngOnInit",
                     "args": [],
                     "optional": false,
@@ -466,7 +465,7 @@
             "description": "",
             "rawdescription": "\n",
             "type": "component",
-            "sourceCode": "import { Component, OnInit } from '@angular/core';\r\n\r\n@Component({\r\n  selector: 'app-gatekeeper',\r\n  templateUrl: './gatekeeper.component.html',\r\n  styleUrls: ['./gatekeeper.component.scss'],\r\n})\r\nexport class GatekeeperComponent implements OnInit {\r\n  constructor() {}\r\n\r\n  ngOnInit(): void {}\r\n\r\n  hola(){\r\n    console.log('hola');\r\n  }\r\n}\r\n",
+            "sourceCode": "import { Component, OnInit } from '@angular/core';\r\n\r\n@Component({\r\n  selector: 'app-gatekeeper',\r\n  templateUrl: './gatekeeper.component.html',\r\n  styleUrls: ['./gatekeeper.component.scss'],\r\n})\r\nexport class GatekeeperComponent implements OnInit {\r\n  constructor() {}\r\n\r\n  ngOnInit(): void {}\r\n}\r\n",
             "assetsDirs": [],
             "styleUrlsData": [
                 {
@@ -486,7 +485,7 @@
             "implements": [
                 "OnInit"
             ],
-            "templateData": "<p>gatekeeper works!</p>\r\n\r\n<cl-button icon=\"gatekeeper\" type=\"icon\" [disabled]=\"true\" (click)=\"hola()\">\r\n  <cl-svg-icon icon=\"camera\"></cl-svg-icon>\r\n</cl-button>\r\n"
+            "templateData": "<p>gatekeeper works!</p>\r\n\r\n<cl-button label=\"hola\" type=\"primary\" [disabled]=\"false\">\r\n</cl-button>\r\n"
         },
         {
             "name": "HeaderComponent",
@@ -1544,6 +1543,16 @@
                 "defaultValue": "{\r\n  production: false\r\n}"
             },
             {
+                "name": "Icon",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "src/stories/clapp-lib/components/button.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "",
+                "defaultValue": "Template.bind({})"
+            },
+            {
                 "name": "IconFill",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
@@ -1614,10 +1623,10 @@
                 "defaultValue": "Template.bind({})"
             },
             {
-                "name": "Principal",
+                "name": "Primary",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
-                "file": "src/stories/clapp-lib/components/svg-icon.stories.ts",
+                "file": "src/stories/clapp-lib/components/button.stories.ts",
                 "deprecated": false,
                 "deprecationMessage": "",
                 "type": "",
@@ -1627,7 +1636,7 @@
                 "name": "Principal",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
-                "file": "src/stories/clapp-lib/components/button.stories.ts",
+                "file": "src/stories/clapp-lib/components/svg-icon.stories.ts",
                 "deprecated": false,
                 "deprecationMessage": "",
                 "type": "",
@@ -1656,6 +1665,16 @@
                 "ctype": "miscellaneous",
                 "subtype": "variable",
                 "file": "src/stories/Button.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "",
+                "defaultValue": "Template.bind({})"
+            },
+            {
+                "name": "Secondary",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "src/stories/clapp-lib/components/button.stories.ts",
                 "deprecated": false,
                 "deprecationMessage": "",
                 "type": "",
@@ -1705,6 +1724,16 @@
                 "name": "Template",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
+                "file": "src/stories/clapp-lib/components/button.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "Story<ButtonComponent>",
+                "defaultValue": "(args: ButtonComponent) => ({\r\n  props: args,\r\n})"
+            },
+            {
+                "name": "Template",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
                 "file": "src/stories/clapp-lib/components/svg-icon.stories.ts",
                 "deprecated": false,
                 "deprecationMessage": "",
@@ -1712,14 +1741,24 @@
                 "defaultValue": "(args: SvgIconComponent) => ({\r\n  props: args,\r\n})"
             },
             {
-                "name": "Template",
+                "name": "Tertiary",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
                 "file": "src/stories/clapp-lib/components/button.stories.ts",
                 "deprecated": false,
                 "deprecationMessage": "",
-                "type": "Story<ButtonComponent>",
-                "defaultValue": "(args: ButtonComponent) => ({\r\n  props: args,\r\n})"
+                "type": "",
+                "defaultValue": "Template.bind({})"
+            },
+            {
+                "name": "Text",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "src/stories/clapp-lib/components/button.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "",
+                "defaultValue": "Template.bind({})"
             }
         ],
         "functions": [],
@@ -1835,6 +1874,68 @@
                     "deprecationMessage": "",
                     "type": "object",
                     "defaultValue": "{\r\n  production: false\r\n}"
+                }
+            ],
+            "src/stories/clapp-lib/components/button.stories.ts": [
+                {
+                    "name": "Icon",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "src/stories/clapp-lib/components/button.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "",
+                    "defaultValue": "Template.bind({})"
+                },
+                {
+                    "name": "Primary",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "src/stories/clapp-lib/components/button.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "",
+                    "defaultValue": "Template.bind({})"
+                },
+                {
+                    "name": "Secondary",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "src/stories/clapp-lib/components/button.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "",
+                    "defaultValue": "Template.bind({})"
+                },
+                {
+                    "name": "Template",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "src/stories/clapp-lib/components/button.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "Story<ButtonComponent>",
+                    "defaultValue": "(args: ButtonComponent) => ({\r\n  props: args,\r\n})"
+                },
+                {
+                    "name": "Tertiary",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "src/stories/clapp-lib/components/button.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "",
+                    "defaultValue": "Template.bind({})"
+                },
+                {
+                    "name": "Text",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "src/stories/clapp-lib/components/button.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "",
+                    "defaultValue": "Template.bind({})"
                 }
             ],
             "src/stories/Button.stories.ts": [
@@ -1974,28 +2075,6 @@
                     "type": "Story<SvgIconComponent>",
                     "defaultValue": "(args: SvgIconComponent) => ({\r\n  props: args,\r\n})"
                 }
-            ],
-            "src/stories/clapp-lib/components/button.stories.ts": [
-                {
-                    "name": "Principal",
-                    "ctype": "miscellaneous",
-                    "subtype": "variable",
-                    "file": "src/stories/clapp-lib/components/button.stories.ts",
-                    "deprecated": false,
-                    "deprecationMessage": "",
-                    "type": "",
-                    "defaultValue": "Template.bind({})"
-                },
-                {
-                    "name": "Template",
-                    "ctype": "miscellaneous",
-                    "subtype": "variable",
-                    "file": "src/stories/clapp-lib/components/button.stories.ts",
-                    "deprecated": false,
-                    "deprecationMessage": "",
-                    "type": "Story<ButtonComponent>",
-                    "defaultValue": "(args: ButtonComponent) => ({\r\n  props: args,\r\n})"
-                }
             ]
         },
         "groupedFunctions": {},
@@ -2103,7 +2182,7 @@
         ]
     },
     "coverage": {
-        "count": 2,
+        "count": 1,
         "status": "low",
         "files": [
             {
@@ -2130,7 +2209,7 @@
                 "linktype": "component",
                 "name": "ButtonComponent",
                 "coveragePercent": 0,
-                "coverageCount": "0/5",
+                "coverageCount": "0/6",
                 "status": "low"
             },
             {
@@ -2260,7 +2339,7 @@
                 "linktype": "component",
                 "name": "GatekeeperComponent",
                 "coveragePercent": 0,
-                "coverageCount": "0/4",
+                "coverageCount": "0/3",
                 "status": "low"
             },
             {
@@ -2416,7 +2495,27 @@
                 "type": "variable",
                 "linktype": "miscellaneous",
                 "linksubtype": "variable",
-                "name": "Principal",
+                "name": "Icon",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "src/stories/clapp-lib/components/button.stories.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "Primary",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "src/stories/clapp-lib/components/button.stories.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "Secondary",
                 "coveragePercent": 0,
                 "coverageCount": "0/1",
                 "status": "low"
@@ -2427,6 +2526,26 @@
                 "linktype": "miscellaneous",
                 "linksubtype": "variable",
                 "name": "Template",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "src/stories/clapp-lib/components/button.stories.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "Tertiary",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "src/stories/clapp-lib/components/button.stories.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "Text",
                 "coveragePercent": 0,
                 "coverageCount": "0/1",
                 "status": "low"

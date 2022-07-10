@@ -8,9 +8,8 @@ describe('ButtonComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ ButtonComponent ]
-    })
-    .compileComponents();
+      declarations: [ButtonComponent],
+    }).compileComponents();
   });
 
   beforeEach(() => {
@@ -27,16 +26,22 @@ describe('ButtonComponent', () => {
     const compiled = fixture.debugElement.nativeElement;
     expect(compiled.querySelector('button')).toBeTruthy();
   });
-  
+
   it('should have a property disabled', () => {
     expect(component.disabled).toBeDefined();
     component.disabled = true;
     expect(component.disabled).toBeTruthy();
-  })
-  
+  });
+
   it('should have a property type', () => {
     expect(component.type).toBeDefined();
     component.type = 'primary';
     expect(component.type).toBeTruthy();
-  })
+  });
+
+  it('should have a property label', () => {
+    expect(component.label).toBeDefined();
+    component.label = 'label';
+    expect(component.label).toBeTruthy();
+  });
 });
