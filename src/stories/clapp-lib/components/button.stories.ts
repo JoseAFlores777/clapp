@@ -18,11 +18,6 @@ export default {
       options: [true, false],
       control: { type: 'boolean' },
     },
-
-    type: {
-      options: ['primary', 'secondary', 'tertiary', 'text', 'icon'],
-      control: { type: 'select' },
-    },
   },
 } as Meta;
 
