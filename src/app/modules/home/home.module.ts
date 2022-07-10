@@ -6,6 +6,7 @@ import { ProfileSimpleComponent } from './pages/profile-simple/profile-simple.co
 import { ProfileWithCommentsComponent } from './pages/profile-with-comments/profile-with-comments.component';
 import { HomeMainComponent } from './pages/home-main/home-main.component';
 import { ClappModule } from 'clapp';
+import { NoopAnimationsModule } from '@angular/platform-browser/animations';
 
 
 @NgModule({
@@ -15,7 +16,7 @@ import { ClappModule } from 'clapp';
     HomeMainComponent
   ],
   imports: [
-    CommonModule,
+     CommonModule,
     HomeRoutingModule,
     ClappModule
   ],

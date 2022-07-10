@@ -1,39 +1,58 @@
 @import 'clapp-base';
 
-#content{
-   background-color: rgb(13, 255, 0)
+#content {
+  background-color: rgb(13, 255, 0)
 }
 
-p{
+p {
   @include clapp-body-demi();
   font-size: 1.5rem;
   font-weight: bold;
   color: $applaudo-purple;
 }
 
-.prueba{
-width: 100%;
-background-color: rgb(186, 10, 186);
+#sideBar-logo {
+
+  width: auto;
+  height: 19px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  #isotype {
+    height: 15px;
+    display: flex;
+  }
+
+  #logo {
+    height: 19px;
+    justify-content: center;
+    align-items: flex-end;
+  }
+
+}
+
+.prueba {
+  width: 100%;
   display: flex;
   justify-content: flex-start;
   align-items: center;
   text-decoration: none;
   gap: 10px;
-  height: 40px;
-  border-left: 2px solid $white;
+  height: 56px;
+  border-left: 1px solid $white;
   padding: 5px;
   margin-top: 2px;
-  margin-left: 5px;
   @include clapp-body-demi();
-  
 
-.uno{
-  margin-left: 10px;
 
-}
+  .uno {
+    margin-left: 10px;
 
-.dos{
-  @include clapp-body-demi();
-  color: $white;
-}
+  }
+
+  .dos {
+    @include clapp-body-demi();
+    color: $white;
+  }
 }

@@ -1,5 +1,5 @@
 <div id="sidebar-context">
-    <div id="sidebar">
+    <div [@sidebarToogle]="isCollapsed ? 'close':'open'" id="sidebar">
         <div id="sidebar-header">
             <ng-content select="[sidebarHeader]"></ng-content>
         </div>
@@ -7,14 +7,16 @@
             <ng-content select="[sidebarContent]"></ng-content>
         </div>
         <div id="sidebar-footer">
-            <!-- <cl-svg-icon id="icon-toogle" (click)="toogleSideBar()" [icon]=" isCollapsed ? 'arrowRight' : 'arrowLeft'" fill="ApplaudoRed"></cl-svg-icon> -->
-            <!-- <cl-svg-icon id="icon-toogle" (click)="toogleSideBar()" [icon]="'arrowLeft'" [fill]="isCollapsed ? 'ApplaudoPurple' : 'Green'"></cl-svg-icon> -->
-            <cl-svg-icon id="icon-toogle" (click)="toogleSideBar()" [icon]=" isCollapsed ? 'arrowRight' : 'arrowLeft'" [fill]="isCollapsed ? 'Bronze' : 'Green'"></cl-svg-icon>
+            <div id="footer-content">
+                <ng-content select="[sidebarFooter]"></ng-content>
+            </div>
+            <div id="toogleBtn">
+                <cl-svg-icon id="icon-toogle" (click)="toogleSideBar()"
+                    [icon]=" isCollapsed ? 'arrowRight' : 'arrowLeft'" fill="ApplaudoRed"></cl-svg-icon>
+            </div>
         </div>
     </div>
     <div id="content">
         <ng-content select="[content]"></ng-content>
-        
     </div>
-
 </div>

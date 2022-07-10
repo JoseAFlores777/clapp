@@ -4,7 +4,7 @@ import { ClappComponent } from './clapp.component';
 import { IconButtonComponent } from './components/buttons/icon-button/icon-button.component';
 import { SvgIconComponent } from './components/svg-icon/svg-icon.component';
 import { SidebarContextComponent } from './patterns/sidebar-context/sidebar-context.component';
-
+import { BrowserAnimationsModule, NoopAnimationsModule } from '@angular/platform-browser/animations';
 
 
 @NgModule({
@@ -16,7 +16,8 @@ import { SidebarContextComponent } from './patterns/sidebar-context/sidebar-cont
 
   ],
   imports: [
-    CommonModule
+     CommonModule,
+    
   ],
   exports: [
     ClappComponent,

@@ -1,61 +1,56 @@
-<!-- <p>profile-simple works!</p>
 
-<cl-sidebar></cl-sidebar>
-
-
-<a href="" id="prueba">
-    <div id="uno">
-        <cl-svg-icon icon="apps" fill="ApplaudoPurple"></cl-svg-icon>
-    </div>
-    <div id="dos"><span>Este es un Enlace</span></div>
-</a> -->
-
-<cl-sidebar-context>
+<cl-sidebar-context (isCollapsedSidebar)="isCollapsedSidebar = $event">
     <ng-container sidebarHeader>
-        <p>
-            minima unde harum. Illum, doloremque architecto.
-        </p>
-
+        <div id="sideBar-logo">
+            <img id="isotype" src="../../../../../assets/images/logos/gatekeeper/gatekeeper_Isotype.png">
+            <img id="logo" *ngIf="!isCollapsedSidebar"
+                src="../../../../../assets/images/logos/gatekeeper/gatekeeper_Logo.png">
+        </div>
     </ng-container>
     <ng-container sidebarContent>
 
         <a href="" class="prueba">
             <div class="uno">
-                <cl-svg-icon icon="add" fill="White"></cl-svg-icon>
+                <cl-svg-icon icon="hr" fill="White"></cl-svg-icon>
             </div>
-            <div class="dos">Applications</div>
+            <div class="dos" *ngIf="!isCollapsedSidebar">Users</div>
         </a>
 
         <a href="" class="prueba">
             <div class="uno">
                 <cl-svg-icon icon="apps" fill="White"></cl-svg-icon>
             </div>
-            <div class="dos">Applications</div>
+            <div class="dos" *ngIf="!isCollapsedSidebar">Applications</div>
         </a>
 
         <a href="" class="prueba">
             <div class="uno">
-                <cl-svg-icon icon="developer" fill="White"></cl-svg-icon>
+                <cl-svg-icon icon="settings" fill="White"></cl-svg-icon>
             </div>
-            <div class="dos">Applications</div>
+            <div class="dos" *ngIf="!isCollapsedSidebar">Settings</div>
         </a>
+
+    </ng-container>
+
+    <ng-container sidebarFooter>
 
         <a href="" class="prueba">
             <div class="uno">
-                <cl-svg-icon icon="gatekeeper" fill="White"></cl-svg-icon>
+                <cl-svg-icon icon="logOut" fill="White"></cl-svg-icon>
             </div>
-            <div class="dos">Applications</div>
+            <div class="dos" *ngIf="!isCollapsedSidebar">Log out</div>
         </a>
-
     </ng-container>
     <ng-container content>
 
         <div id="content">
             <p>
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. Autem, quaerat? Nihil corporis totam dolorum quisquam doloribus labore, eum tempore, a necessitatibus id omnis magnam minima unde harum. Illum, doloremque architecto.
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Autem, quaerat? Nihil corporis totam dolorum
+                quisquam doloribus labore, eum tempore, a necessitatibus id omnis magnam minima unde harum. Illum,
+                doloremque architecto.
             </p>
         </div>
     </ng-container>
-    
+
 
 </cl-sidebar-context>
