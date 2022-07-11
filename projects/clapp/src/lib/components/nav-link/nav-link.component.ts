@@ -18,9 +18,8 @@ export class NavLinkComponent implements OnInit {
   @Input('icon') icon: TYPE_ICONS_NAMES = 'account';
   @Input('fill') fill: TYPE_ICON_FILLS = 'White';
 
-  isHover: boolean = false;
 
-  constructor(private sanitizer: DomSanitizer, private render: Renderer2) {}
+  constructor(private render: Renderer2) {}
 
   ngOnInit(): void {}
 
@@ -28,10 +27,6 @@ export class NavLinkComponent implements OnInit {
     if (changes['isActivated'] && !changes['isActivated'].isFirstChange()) {
         this.classActivateHandler();
     }
-  }
-
-  getSantizeUrl(url: string) {
-    return this.sanitizer.bypassSecurityTrustUrl(url);
   }
 
   classActivateHandler(hover?: boolean) {
