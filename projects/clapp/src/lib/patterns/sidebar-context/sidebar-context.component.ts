@@ -22,7 +22,7 @@ import { Component, OnInit, Output, EventEmitter } from '@angular/core';
 export class SidebarContextComponent implements OnInit {
   @Output() isCollapsedSidebar : EventEmitter<boolean> = new EventEmitter<boolean>();
 
-  isCollapsed = false;
+  isCollapsed:boolean = false;
 
   constructor() { }
 
