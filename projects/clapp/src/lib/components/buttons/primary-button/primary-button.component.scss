@@ -1,0 +1,41 @@
+$applaudo-red : #FF4040;
+$white: #FFFFFF;
+$applaudo-red-plus: #FF6060;
+$applaudo-red-minus: #E60000;
+$light-gray: #F6F6F6;
+$mid-gray:#C4C4C4;
+
+.buttons-primary-button {
+  width: 100%;
+  height: 3rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 12px 32px;
+  justify-content: center;
+  border-style: none;
+  cursor: pointer;
+  outline: none;
+  font-family: Avenir Next;
+  font-style: normal;
+  font-size: 16px;
+  font-weight: 600;
+  line-height: 24px;
+  letter-spacing: 0em;
+  text-align: center;
+  background-color: $applaudo-red;
+  color: $white;
+
+  &:hover {
+    background-color: $applaudo-red-plus;
+  }
+
+  &:active {
+    background-color: $applaudo-red-minus;
+  }
+
+  &:disabled {
+    background-color: $light-gray;
+    color: $mid-gray;
+  }
+}

@@ -1,0 +1,4 @@
+<button [disabled]="disabled" [ngClass]="type">
+  <ng-content></ng-content>
+  <span *ngIf="label" [innerText]="label"></span>
+</button>
