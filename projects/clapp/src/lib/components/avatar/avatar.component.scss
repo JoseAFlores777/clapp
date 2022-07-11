@@ -1,0 +1,40 @@
+@import '../../../../assets/scss/partials/clapp-base';
+
+:host {
+  display: flex;
+  justify-content: center;
+}
+
+img[alt="avatar"] {
+  border-radius: 100%;
+  border: 2px solid $platinum;
+}
+
+@mixin type($type) {
+  @if $type=='small' {
+    width: 40px;
+    height: 40px;
+  }
+
+  @else if $type=='medium' {
+    width: 64px;
+    height: 64px;
+  }
+
+  @else {
+    width: 120px;
+    height: 120px;
+  }
+}
+
+.small {
+  @include type('small');
+}
+
+.medium {
+  @include type('medium');
+}
+
+.large {
+  @include type('large');
+}

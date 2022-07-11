@@ -4,6 +4,7 @@ import { IconButtonComponent } from './components/buttons/icon-button/icon-butto
 import { SidebarComponent } from './patterns/sidebar/sidebar.component';
 import { SvgIconComponent } from './components/svg-icon/svg-icon.component';
 import { AvatarComponent } from './components/avatar/avatar.component';
+import { CommonModule } from '@angular/common';
 
 
 
@@ -17,6 +18,7 @@ import { AvatarComponent } from './components/avatar/avatar.component';
 
   ],
   imports: [
+    CommonModule,
   ],
   exports: [
     ClappComponent,
