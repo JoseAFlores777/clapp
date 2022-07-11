@@ -18,9 +18,6 @@ export class SvgIconComponent implements OnInit, AfterViewInit, OnChanges {
   @Input('height') height: number = 24;
   @Input('fill') fill: TYPE_ICON_FILLS = 'ApplaudoNavyBlue';
 
-  propertiesSubs$: Subject<any> = new Subject();
-  changeLog: any = [];
-
   constructor(private renderer: Renderer2) {}
 
   ngAfterViewInit(): void {
