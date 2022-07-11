@@ -1,24 +1,23 @@
 // also exported from '@storybook/angular' if you can deal with breaking changes in 6.1
-import { Story, Meta } from '@storybook/angular/types-6-0';
-import { componentWrapperDecorator, moduleMetadata } from '@storybook/angular';
+import { moduleMetadata } from '@storybook/angular';
+import { Meta, Story } from '@storybook/angular/types-6-0';
 
-import { ClappIcons, IconFill } from '../../../../projects/clapp/src/lib/components/svg-icon/clapp-icons.helper';
-import { SidebarContextComponent } from '../../../../projects/clapp/src/lib/patterns/sidebar-context/sidebar-context.component';
-import { SvgIconComponent } from '../../../../projects/clapp/src/lib/components/svg-icon/svg-icon.component';
 import { CommonModule } from '@angular/common';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { NavLinkComponent } from '../../../../projects/clapp/src/lib/components/nav-link/nav-link.component';
+import { SvgIconComponent } from '../../../../projects/clapp/src/lib/components/svg-icon/svg-icon.component';
+import { SidebarContextComponent } from '../../../../projects/clapp/src/lib/patterns/sidebar-context/sidebar-context.component';
 
-// More on default export: https://storybook.js.org/docs/angular/writing-stories/introduction#default-export
+
 export default {
   title: 'Clapp-Lib/patterns/cl-sidebar-context',
   component: SidebarContextComponent,
   decorators: [
     moduleMetadata({
-      declarations: [SvgIconComponent],
+      declarations: [SvgIconComponent, NavLinkComponent],
       imports: [CommonModule, BrowserAnimationsModule],
     }),
   ],
-  // More on argTypes: https://storybook.js.org/docs/angular/api/argtypes
   argTypes: {
     isCollapsed: {
       options: [true, false],
@@ -27,11 +26,27 @@ export default {
   },
 } as Meta;
 
-// More on component templates: https://storybook.js.org/docs/angular/writing-stories/introduction#using-args
 const Template: Story<SidebarContextComponent> = (args: SidebarContextComponent) => ({
   props: args,
-  template: `<cl-sidebar-context>
-    <ng-container content>
+  template: `
+  <cl-sidebar-context>
+
+  <ng-container sidebarHeader>
+    <cl-svg-icon [icon]="'gatekeeper'" [fill]="'ApplaudoRed'"></cl-svg-icon>
+  </ng-container>
+
+  <ng-container sidebarContent>
+    <cl-nav-link [icon]="'account'" text="account" [showText]="!isCollapsed"></cl-nav-link>
+    <cl-nav-link [icon]="'admin'" text="admin" [showText]="!isCollapsed"></cl-nav-link>
+    <cl-nav-link [icon]="'awardFill'" text="awardFill" [showText]="!isCollapsed"></cl-nav-link>
+    <cl-nav-link [icon]="'calendar'" text="calendar" [showText]="!isCollapsed"></cl-nav-link>
+  </ng-container>
+
+  <ng-container sidebarFooter>
+    <cl-nav-link [icon]="'logOut'" text="Log Out" [showText]="!isCollapsed"></cl-nav-link>
+  </ng-container>
+
+  <ng-container content>
     Lorem Ipsum is simply dummy text of the printing and typesetting industry. 
     Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, 
     when an unknown printer took a galley of type and scrambled it to make a type 
@@ -40,7 +55,8 @@ const Template: Story<SidebarContextComponent> = (args: SidebarContextComponent)
     the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, 
     and more recently with desktop publishing software like Aldus PageMaker including 
     versions of Lorem Ipsum.
-    </ng-container>
+  </ng-container>
+
   </cl-sidebar-context>`,
   styles: [
     `
@@ -49,13 +65,14 @@ const Template: Story<SidebarContextComponent> = (args: SidebarContextComponent)
       font-weight: 600;
       font-size: 16px;
       line-height: 24px;
+      min-height: 200px;
     }
     `,
   ],
 });
 
 export const Principal = Template.bind({});
-// More on args: https://storybook.js.org/docs/angular/writing-stories/args
+
 Principal.args = {
   isCollapsed: false,
 };
