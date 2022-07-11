@@ -98,7 +98,7 @@
     }
   }
 
-  @else if $type =='icon' {
+  @else if $type =='icon-default' {
     background-color: $white;
 
     @include button-states($light-gray, $light-gray);
@@ -152,7 +152,7 @@
   @include type('text');
 }
 
-.icon {
+.icon-default {
   @include button-creator();
-  @include type('icon');
+  @include type('icon-default');
 }
