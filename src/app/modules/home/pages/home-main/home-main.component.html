@@ -1,1 +1,33 @@
-<router-outlet></router-outlet>
+<cl-sidebar-context (isCollapsedSidebar)="isCollapsedSidebar = $event">
+    
+    <ng-container sidebarHeader>
+        <div id="sideBar-logo">
+            <img id="isotype" src="../../../../../assets/images/logos/gatekeeper/gatekeeper_Isotype.png">
+            <img id="logo" *ngIf="!isCollapsedSidebar"
+                src="../../../../../assets/images/logos/gatekeeper/gatekeeper_Logo.png">
+        </div>
+    </ng-container>
+
+    <ng-container sidebarContent>
+
+        <cl-nav-link [icon]="'account'" text="Users" [showText]="!isCollapsedSidebar" routerLink="/home/profile-simple"
+            routerLinkActive #navOne="routerLinkActive" [isActivated]="navOne.isActive"></cl-nav-link>
+
+        <cl-nav-link [icon]="'apps'" text="Aplications" [showText]="!isCollapsedSidebar"
+            routerLink="/home/profile-with-comments" routerLinkActive #navTwo="routerLinkActive"
+            [isActivated]="navTwo.isActive"></cl-nav-link>
+
+    </ng-container>
+
+    <ng-container sidebarFooter>
+        <cl-nav-link [icon]="'logOut'" text="Log Out" [showText]="!isCollapsedSidebar"></cl-nav-link>
+    </ng-container>
+
+    <ng-container content>
+        <div id="content">
+            <router-outlet></router-outlet>
+        </div>
+    </ng-container>
+
+
+</cl-sidebar-context>

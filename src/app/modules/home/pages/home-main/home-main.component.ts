@@ -7,6 +7,8 @@ import { Component, OnInit } from '@angular/core';
 })
 export class HomeMainComponent implements OnInit {
 
+  isCollapsedSidebar = false;
+
   constructor() { }
 
   ngOnInit(): void {
