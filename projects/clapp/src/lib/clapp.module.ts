@@ -22,7 +22,8 @@ import { AvatarComponent } from './components/avatar/avatar.component';
     ClappComponent,
     IconButtonComponent,
     SidebarComponent,
-    SvgIconComponent
+    SvgIconComponent,
+    AvatarComponent,
   ]
 })
 export class ClappModule { }

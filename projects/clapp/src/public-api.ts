@@ -10,3 +10,4 @@ export * from './lib/clapp.module';
 export * from './lib/patterns/sidebar/sidebar.component';
  
 export * from './lib/components/svg-icon/svg-icon.component';
+export * from './lib/components/avatar/avatar.component';
