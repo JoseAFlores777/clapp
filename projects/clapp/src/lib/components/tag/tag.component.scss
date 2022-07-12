@@ -1,0 +1,65 @@
+@import '../../../../assets/scss/partials/clapp-base';
+
+@mixin colors ($background, $color) {
+  background-color: $background;
+  color: $color;
+}
+
+@mixin type ($type) {
+  @if $type =='normal' {
+    @include colors($platinum, $cool-gray);
+  }
+
+  @else if $type =='approved' {
+    @include colors($green, $white);
+  }
+
+  @else if $type =='failed' {
+    @include colors($error-red, $white);
+  }
+
+  @else if $type =='purple' {
+    @include colors($applaudo-purple, $white);
+  }
+
+  @else if $type =='light-navy-blue' {
+    @include colors($light-navy-blue, $white);
+  }
+
+  @else if $type =='cyan' {
+    @include colors($cyan, $white);
+  }
+}
+
+span {
+  @include clapp-label-demi;
+  width: fit-content;
+  height: 32px;
+  margin: 0;
+  padding: 8px 16px;
+  border-radius: 16px;
+}
+
+.normal {
+  @include type('normal');
+}
+
+.approved {
+  @include type('approved');
+}
+
+.failed {
+  @include type('failed');
+}
+
+.purple {
+  @include type('purple');
+}
+
+.light-navy-blue {
+  @include type('light-navy-blue');
+}
+
+.cyan {
+  @include type('cyan');
+}
