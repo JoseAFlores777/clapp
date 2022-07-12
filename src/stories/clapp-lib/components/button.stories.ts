@@ -54,5 +54,5 @@ Text.args = {
 export const Icon = Template.bind({});
 Icon.args = {
   disabled: false,
-  type: 'icon',
+  type: 'icon-default',
 };
