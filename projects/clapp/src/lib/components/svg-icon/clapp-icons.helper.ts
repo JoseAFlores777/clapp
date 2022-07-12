@@ -69,6 +69,7 @@ export const IconFill = {
   Blue : 'blue',
   Bronze : 'bronze',
   LightNavyBlue : 'light-navy-blue',
+  Cyan: 'cyan',
 } as const;
 
 
