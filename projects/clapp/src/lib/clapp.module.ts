@@ -28,6 +28,7 @@ import { TagComponent } from './components/tag/tag.component';
     SidebarContextComponent,
     NavLinkComponent,
     ButtonComponent,
+    TagComponent,
   ]
 })
 export class ClappModule { }
