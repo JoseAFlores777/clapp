@@ -1,0 +1,7 @@
+<div #navLink id="nav-Link"  (mouseenter)="classActivateHandler(true)" (mouseleave)="classActivateHandler(false)" >
+    <div id="nav-Link-icon">
+        <cl-svg-icon [icon]="icon" [fill]="fill"></cl-svg-icon>
+    </div>
+    <div id="nav-Link-text" *ngIf="showText">{{text}}</div>
+</div>
+

@@ -1,0 +1,158 @@
+@import '../../../../assets/scss/partials/clapp-base';
+
+:host {
+  display: flex;
+  justify-content: center;
+}
+
+@mixin button-creator() {
+  @include clapp-body-demi;
+  width: 100%;
+  height: 3rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 12px 32px;
+  justify-content: center;
+  border-style: none;
+  cursor: pointer;
+  outline: none;
+  font-style: normal;
+  letter-spacing: 0em;
+  text-align: center;
+}
+
+@mixin button-states ($hover, $active) {
+
+  &:hover,
+  &:focus {
+    background-color: $hover;
+  }
+
+  &:active {
+    background-color: $active;
+  }
+}
+
+@mixin colors ($background, $color, $border-color) {
+  background-color: $background;
+  color: $color;
+  border-color: $border-color;
+}
+
+@mixin type ($type) {
+  @if $type =='primary' {
+    @include colors($applaudo-red, $white, $applaudo-red);
+    @include button-states($applaudo-red-plus, $applaudo-red-minus);
+
+    &:disabled {
+      @include disabled();
+    }
+  }
+
+  @else if $type =='secondary' {
+    @include clapp-body-regular;
+    @include colors($white, $applaudo-red, $platinum);
+    border: 2px solid;
+
+    &:hover,
+    &:focus {
+      border: 2px solid $applaudo-red-plus;
+      color: $applaudo-red-plus;
+    }
+
+    &:active {
+      border: 2px solid $applaudo-red-minus;
+      color: $applaudo-red-minus;
+    }
+
+    &:disabled {
+      @include disabled();
+    }
+  }
+
+  @else if $type =='tertiary' {
+    @include colors($applaudo-navy-blue, $white, $applaudo-navy-blue);
+    @include button-states($applaudo-red, $applaudo-red-minus);
+
+    &:disabled {
+      @include disabled();
+    }
+  }
+
+  @else if $type =='text' {
+    @include colors($white, $applaudo-red, $white);
+
+    &:hover,
+    &:focus {
+      color: $applaudo-red-plus;
+    }
+
+    &:active {
+      color: $applaudo-red-minus;
+    }
+
+    &:disabled {
+      @include disabled();
+      background-color: $white;
+    }
+  }
+
+  @else if $type =='icon-default' {
+    background-color: $white;
+
+    @include button-states($light-gray, $light-gray);
+  }
+}
+
+@mixin small() {
+  padding: 8px 16px;
+  height: 40px;
+}
+
+@mixin disabled() {
+  background-color: $light-gray;
+  color: $mid-gray;
+  cursor: auto;
+  border: none;
+}
+
+.primary {
+  @include button-creator();
+  @include type('primary');
+}
+
+.primary-small {
+  @extend .primary;
+  @include small();
+}
+
+.secondary {
+  @include button-creator();
+  @include type('secondary');
+}
+
+.secondary-small {
+  @extend .secondary;
+  @include small();
+}
+
+.tertiary {
+  @include button-creator();
+  @include type('tertiary');
+}
+
+.tertiary-small {
+  @extend .tertiary;
+  @include small();
+}
+
+.text {
+  @include button-creator();
+  @include type('text');
+}
+
+.icon-default {
+  @include button-creator();
+  @include type('icon-default');
+}
