@@ -3,12 +3,12 @@
     "interfaces": [
         {
             "name": "User",
-            "id": "interface-User-dcc5c3137cd472dd0002d85b562efd23162e3eff53ca4438a6251e6c46e3b8299076255380d1d42f386510cb6f2cbaab49fa5b5f253be459cdc3869428c5c400",
+            "id": "interface-User-9c7e5f1bbbab702cb032307d130876cb68969b0cd4eedef32a0c8cad8081a54e5f8f577ed6ad4539c1b99a1d246cb34031d198c2ea8eba440e64e91b14f01fdc",
             "file": "src/stories/User.ts",
             "deprecated": false,
             "deprecationMessage": "",
             "type": "interface",
-            "sourceCode": "export interface User {}\r\n",
+            "sourceCode": "export interface User {}\n",
             "properties": [],
             "indexSignatures": [],
             "methods": []
@@ -17,7 +17,7 @@
     "injectables": [
         {
             "name": "ClappService",
-            "id": "injectable-ClappService-f2f895e0f4df226da0f5165d2f8625d53586925662fec3b1a6cae310accfd9cf4c3abc2baf38510559d4f1b2b0c70196167c3b43db96024e3fea2e7244cf7d1b",
+            "id": "injectable-ClappService-3dec9d10355f9f3c6e75801276c06aeabaf7b35e453a025f0efd549ff229a319c691db7ffa7b3b0be513199765d6ef85edd80c8f16e4592ad8c13956359599f1",
             "file": "projects/clapp/src/lib/clapp.service.ts",
             "properties": [],
             "methods": [],
@@ -25,7 +25,7 @@
             "deprecationMessage": "",
             "description": "",
             "rawdescription": "\n",
-            "sourceCode": "import { Injectable } from '@angular/core';\r\n\r\n@Injectable({\r\n  providedIn: 'root'\r\n})\r\nexport class ClappService {\r\n\r\n  constructor() { }\r\n}\r\n",
+            "sourceCode": "import { Injectable } from '@angular/core';\n\n@Injectable({\n  providedIn: 'root'\n})\nexport class ClappService {\n\n  constructor() { }\n}\n",
             "constructorObj": {
                 "name": "constructor",
                 "description": "",
@@ -44,7 +44,7 @@
     "components": [
         {
             "name": "AppComponent",
-            "id": "component-AppComponent-be01bfb88b70a177977d7c21fce1e2e60f8d47d9402bc010e2bd06016eb56f6ea38f2f83ecb541c8fc41ae47e349cdccac3c799e9eefc8278afbbe49f8b7fac1",
+            "id": "component-AppComponent-f86cb96c844ea6d3d3e8eef8b1665b65332d073c2a26c7486efa3f38984a8b213aec33e03b51523910b76613436eb154bab28cfa6b37cd5d92fc1d1a3f7d7367",
             "file": "src/app/app.component.ts",
             "encapsulation": [],
             "entryComponents": [],
@@ -82,7 +82,7 @@
             "description": "",
             "rawdescription": "\n",
             "type": "component",
-            "sourceCode": "import { Component } from '@angular/core';\r\n\r\n@Component({\r\n  selector: 'app-root',\r\n  templateUrl: './app.component.html',\r\n  styleUrls: ['./app.component.scss']\r\n})\r\nexport class AppComponent {\r\n  title = 'clapp-components';\r\n}\r\n",
+            "sourceCode": "import { Component } from '@angular/core';\n\n@Component({\n  selector: 'app-root',\n  templateUrl: './app.component.html',\n  styleUrls: ['./app.component.scss']\n})\nexport class AppComponent {\n  title = 'clapp-components';\n}\n",
             "assetsDirs": [],
             "styleUrlsData": [
                 {
@@ -95,7 +95,7 @@
         },
         {
             "name": "ButtonComponent",
-            "id": "component-ButtonComponent-8ceaf520f96e5437b08eeda244d84efb29effe62ddca4fc38eaa229085c2a1126c5715e61445bae741505aca1e4d377b350cb05fadd1dc45d9b2bbf7527029f1",
+            "id": "component-ButtonComponent-4ef205c97a334c309aa4001c8ab4a6d9571dcae18d0e85aaf0d367467ab5d3a9f13ab3573726f1fcb409bc9b49894dadfb80b1bbe1b6ba7041455ad9d4922004",
             "file": "src/stories/button.component.ts",
             "encapsulation": [],
             "entryComponents": [],
@@ -128,15 +128,15 @@
                     "deprecationMessage": "",
                     "jsdoctags": [
                         {
-                            "pos": 747,
-                            "end": 761,
+                            "pos": 711,
+                            "end": 724,
                             "flags": 4227072,
                             "modifierFlagsCache": 0,
                             "transformFlags": 0,
                             "kind": 325,
                             "tagName": {
-                                "pos": 748,
-                                "end": 756,
+                                "pos": 712,
+                                "end": 720,
                                 "flags": 4227072,
                                 "modifierFlagsCache": 0,
                                 "transformFlags": 0,
@@ -196,11 +196,11 @@
             "description": "",
             "rawdescription": "\n",
             "type": "component",
-            "sourceCode": "import { Component, Input, Output, EventEmitter } from '@angular/core';\r\n\r\n@Component({\r\n  selector: 'storybook-button',\r\n  template: ` <button\r\n    type=\"button\"\r\n    (click)=\"onClick.emit($event)\"\r\n    [ngClass]=\"classes\"\r\n    [ngStyle]=\"{ 'background-color': backgroundColor }\"\r\n  >\r\n    {{ label }}\r\n  </button>`,\r\n  styleUrls: ['./button.css'],\r\n})\r\nexport default class ButtonComponent {\r\n  /**\r\n   * Is this the principal call to action on the page?\r\n   */\r\n  @Input()\r\n  primary = false;\r\n\r\n  /**\r\n   * What background color to use\r\n   */\r\n  @Input()\r\n  backgroundColor?: string;\r\n\r\n  /**\r\n   * How large should the button be?\r\n   */\r\n  @Input()\r\n  size: 'small' | 'medium' | 'large' = 'medium';\r\n\r\n  /**\r\n   * Button contents\r\n   *\r\n   * @required\r\n   */\r\n  @Input()\r\n  label = 'Button';\r\n\r\n  /**\r\n   * Optional click handler\r\n   */\r\n  @Output()\r\n  onClick = new EventEmitter<Event>();\r\n\r\n  public get classes(): string[] {\r\n    const mode = this.primary ? 'storybook-button--primary' : 'storybook-button--secondary';\r\n\r\n    return ['storybook-button', `storybook-button--${this.size}`, mode];\r\n  }\r\n}\r\n",
+            "sourceCode": "import { Component, Input, Output, EventEmitter } from '@angular/core';\n\n@Component({\n  selector: 'storybook-button',\n  template: ` <button\n    type=\"button\"\n    (click)=\"onClick.emit($event)\"\n    [ngClass]=\"classes\"\n    [ngStyle]=\"{ 'background-color': backgroundColor }\"\n  >\n    {{ label }}\n  </button>`,\n  styleUrls: ['./button.css'],\n})\nexport default class ButtonComponent {\n  /**\n   * Is this the principal call to action on the page?\n   */\n  @Input()\n  primary = false;\n\n  /**\n   * What background color to use\n   */\n  @Input()\n  backgroundColor?: string;\n\n  /**\n   * How large should the button be?\n   */\n  @Input()\n  size: 'small' | 'medium' | 'large' = 'medium';\n\n  /**\n   * Button contents\n   *\n   * @required\n   */\n  @Input()\n  label = 'Button';\n\n  /**\n   * Optional click handler\n   */\n  @Output()\n  onClick = new EventEmitter<Event>();\n\n  public get classes(): string[] {\n    const mode = this.primary ? 'storybook-button--primary' : 'storybook-button--secondary';\n\n    return ['storybook-button', `storybook-button--${this.size}`, mode];\n  }\n}\n",
             "assetsDirs": [],
             "styleUrlsData": [
                 {
-                    "data": ".storybook-button {\r\n  font-family: 'Nunito Sans', 'Helvetica Neue', Helvetica, Arial, sans-serif;\r\n  font-weight: 700;\r\n  border: 0;\r\n  border-radius: 3em;\r\n  cursor: pointer;\r\n  display: inline-block;\r\n  line-height: 1;\r\n}\r\n.storybook-button--primary {\r\n  color: white;\r\n  background-color: #1ea7fd;\r\n}\r\n.storybook-button--secondary {\r\n  color: #333;\r\n  background-color: transparent;\r\n  box-shadow: rgba(0, 0, 0, 0.15) 0px 0px 0px 1px inset;\r\n}\r\n.storybook-button--small {\r\n  font-size: 12px;\r\n  padding: 10px 16px;\r\n}\r\n.storybook-button--medium {\r\n  font-size: 14px;\r\n  padding: 11px 20px;\r\n}\r\n.storybook-button--large {\r\n  font-size: 16px;\r\n  padding: 12px 24px;\r\n}\r\n",
+                    "data": ".storybook-button {\n  font-family: 'Nunito Sans', 'Helvetica Neue', Helvetica, Arial, sans-serif;\n  font-weight: 700;\n  border: 0;\n  border-radius: 3em;\n  cursor: pointer;\n  display: inline-block;\n  line-height: 1;\n}\n.storybook-button--primary {\n  color: white;\n  background-color: #1ea7fd;\n}\n.storybook-button--secondary {\n  color: #333;\n  background-color: transparent;\n  box-shadow: rgba(0, 0, 0, 0.15) 0px 0px 0px 1px inset;\n}\n.storybook-button--small {\n  font-size: 12px;\n  padding: 10px 16px;\n}\n.storybook-button--medium {\n  font-size: 14px;\n  padding: 11px 20px;\n}\n.storybook-button--large {\n  font-size: 16px;\n  padding: 12px 24px;\n}\n",
                     "styleUrl": "./button.css"
                 }
             ],
@@ -219,7 +219,7 @@
         },
         {
             "name": "ButtonComponent",
-            "id": "component-ButtonComponent-20a5f4eb1ba2fe3cc976fa47c183de5202ddbe4b92f9bc4c97b59f2a6e15945dee80eae1ff2a3f45ce821082705cc3a5db3f14e8984f8c7c1c478873627dc7ba-1",
+            "id": "component-ButtonComponent-6b0b2a4f2ff19eb0d208786483e0791b8a25807382206919074918abfb17cb5f3b395b1b869d2e20cf0c7f504254a157895ace583a46d6e065cdf76140bb19be-1",
             "file": "projects/clapp/src/lib/components/button/button.component.ts",
             "encapsulation": [],
             "entryComponents": [],
@@ -247,7 +247,6 @@
                 },
                 {
                     "name": "label",
-                    "defaultValue": "''",
                     "deprecated": false,
                     "deprecationMessage": "",
                     "line": 11,
@@ -285,11 +284,11 @@
             "description": "",
             "rawdescription": "\n",
             "type": "component",
-            "sourceCode": "import { Component, Input, OnInit } from '@angular/core';\n\n@Component({\n  selector: 'cl-button',\n  templateUrl: './button.component.html',\n  styleUrls: ['./button.component.scss'],\n})\nexport class ButtonComponent implements OnInit {\n  @Input('disabled') disabled = false;\n  @Input('type') type = 'primary';\n  @Input('label') label = '';\n\n  constructor() {}\n\n  ngOnInit(): void {}\n}\n",
+            "sourceCode": "import { Component, Input, OnInit } from '@angular/core';\n\n@Component({\n  selector: 'cl-button',\n  templateUrl: './button.component.html',\n  styleUrls: ['./button.component.scss'],\n})\nexport class ButtonComponent implements OnInit {\n  @Input('disabled') disabled = false;\n  @Input('type') type = 'primary';\n  @Input('label') label!: string;\n\n  constructor() {}\n\n  ngOnInit(): void {}\n}\n",
             "assetsDirs": [],
             "styleUrlsData": [
                 {
-                    "data": "@import '../../../../assets/scss/partials/clapp-base';\r\n\r\n:host {\r\n  display: flex;\r\n  justify-content: center;\r\n}\r\n\r\n@mixin button-creator() {\r\n  @include clapp-body-demi;\r\n  width: 100%;\r\n  height: 3rem;\r\n  display: flex;\r\n  flex-direction: column;\r\n  align-items: center;\r\n  padding: 12px 32px;\r\n  justify-content: center;\r\n  border-style: none;\r\n  cursor: pointer;\r\n  outline: none;\r\n  font-style: normal;\r\n  letter-spacing: 0em;\r\n  text-align: center;\r\n}\r\n\r\n@mixin button-states ($hover, $active) {\r\n\r\n  &:hover,\r\n  &:focus {\r\n    background-color: $hover;\r\n  }\r\n\r\n  &:active {\r\n    background-color: $active;\r\n  }\r\n}\r\n\r\n@mixin colors ($background, $color, $border-color) {\r\n  background-color: $background;\r\n  color: $color;\r\n  border-color: $border-color;\r\n}\r\n\r\n@mixin type ($type) {\r\n  @if $type =='primary' {\r\n    @include colors($applaudo-red, $white, $applaudo-red);\r\n    @include button-states($applaudo-red-plus, $applaudo-red-minus);\r\n\r\n    &:disabled {\r\n      @include disabled();\r\n    }\r\n  }\r\n\r\n  @else if $type =='secondary' {\r\n    @include clapp-body-regular;\r\n    @include colors($white, $applaudo-red, $platinum);\r\n    border: 2px solid;\r\n\r\n    &:hover,\r\n    &:focus {\r\n      border: 2px solid $applaudo-red-plus;\r\n      color: $applaudo-red-plus;\r\n    }\r\n\r\n    &:active {\r\n      border: 2px solid $applaudo-red-minus;\r\n      color: $applaudo-red-minus;\r\n    }\r\n\r\n    &:disabled {\r\n      @include disabled();\r\n    }\r\n  }\r\n\r\n  @else if $type =='tertiary' {\r\n    @include colors($applaudo-navy-blue, $white, $applaudo-navy-blue);\r\n    @include button-states($applaudo-red, $applaudo-red-minus);\r\n\r\n    &:disabled {\r\n      @include disabled();\r\n    }\r\n  }\r\n\r\n  @else if $type =='text' {\r\n    @include colors($white, $applaudo-red, $white);\r\n\r\n    &:hover,\r\n    &:focus {\r\n      color: $applaudo-red-plus;\r\n    }\r\n\r\n    &:active {\r\n      color: $applaudo-red-minus;\r\n    }\r\n\r\n    &:disabled {\r\n      @include disabled();\r\n      background-color: $white;\r\n    }\r\n  }\r\n\r\n  @else if $type =='icon' {\r\n    background-color: $white;\r\n\r\n    @include button-states($light-gray, $light-gray);\r\n  }\r\n}\r\n\r\n@mixin small() {\r\n  padding: 8px 16px;\r\n  height: 40px;\r\n}\r\n\r\n@mixin disabled() {\r\n  background-color: $light-gray;\r\n  color: $mid-gray;\r\n  cursor: auto;\r\n  border: none;\r\n}\r\n\r\n.primary {\r\n  @include button-creator();\r\n  @include type('primary');\r\n}\r\n\r\n.primary-small {\r\n  @extend .primary;\r\n  @include small();\r\n}\r\n\r\n.secondary {\r\n  @include button-creator();\r\n  @include type('secondary');\r\n}\r\n\r\n.secondary-small {\r\n  @extend .secondary;\r\n  @include small();\r\n}\r\n\r\n.tertiary {\r\n  @include button-creator();\r\n  @include type('tertiary');\r\n}\r\n\r\n.tertiary-small {\r\n  @extend .tertiary;\r\n  @include small();\r\n}\r\n\r\n.text {\r\n  @include button-creator();\r\n  @include type('text');\r\n}\r\n\r\n.icon {\r\n  @include button-creator();\r\n  @include type('icon');\r\n}",
+                    "data": "@import '../../../../assets/scss/partials/clapp-base';\n\n:host {\n  display: flex;\n  justify-content: center;\n}\n\n@mixin button-creator() {\n  @include clapp-body-demi;\n  width: 100%;\n  height: 3rem;\n  display: flex;\n  flex-direction: column;\n  align-items: center;\n  padding: 12px 32px;\n  justify-content: center;\n  border-style: none;\n  cursor: pointer;\n  outline: none;\n  font-style: normal;\n  letter-spacing: 0em;\n  text-align: center;\n}\n\n@mixin button-states ($hover, $active) {\n\n  &:hover,\n  &:focus {\n    background-color: $hover;\n  }\n\n  &:active {\n    background-color: $active;\n  }\n}\n\n@mixin colors ($background, $color, $border-color) {\n  background-color: $background;\n  color: $color;\n  border-color: $border-color;\n}\n\n@mixin type ($type) {\n  @if $type =='primary' {\n    @include colors($applaudo-red, $white, $applaudo-red);\n    @include button-states($applaudo-red-plus, $applaudo-red-minus);\n\n    &:disabled {\n      @include disabled();\n    }\n  }\n\n  @else if $type =='secondary' {\n    @include clapp-body-regular;\n    @include colors($white, $applaudo-red, $platinum);\n    border: 2px solid;\n\n    &:hover,\n    &:focus {\n      border: 2px solid $applaudo-red-plus;\n      color: $applaudo-red-plus;\n    }\n\n    &:active {\n      border: 2px solid $applaudo-red-minus;\n      color: $applaudo-red-minus;\n    }\n\n    &:disabled {\n      @include disabled();\n    }\n  }\n\n  @else if $type =='tertiary' {\n    @include colors($applaudo-navy-blue, $white, $applaudo-navy-blue);\n    @include button-states($applaudo-red, $applaudo-red-minus);\n\n    &:disabled {\n      @include disabled();\n    }\n  }\n\n  @else if $type =='text' {\n    @include colors($white, $applaudo-red, $white);\n\n    &:hover,\n    &:focus {\n      color: $applaudo-red-plus;\n    }\n\n    &:active {\n      color: $applaudo-red-minus;\n    }\n\n    &:disabled {\n      @include disabled();\n      background-color: $white;\n    }\n  }\n\n  @else if $type =='icon-default' {\n    background-color: $white;\n\n    @include button-states($light-gray, $light-gray);\n  }\n}\n\n@mixin small() {\n  padding: 8px 16px;\n  height: 40px;\n}\n\n@mixin disabled() {\n  background-color: $light-gray;\n  color: $mid-gray;\n  cursor: auto;\n  border: none;\n}\n\n.primary {\n  @include button-creator();\n  @include type('primary');\n}\n\n.primary-small {\n  @extend .primary;\n  @include small();\n}\n\n.secondary {\n  @include button-creator();\n  @include type('secondary');\n}\n\n.secondary-small {\n  @extend .secondary;\n  @include small();\n}\n\n.tertiary {\n  @include button-creator();\n  @include type('tertiary');\n}\n\n.tertiary-small {\n  @extend .tertiary;\n  @include small();\n}\n\n.text {\n  @include button-creator();\n  @include type('text');\n}\n\n.icon-default {\n  @include button-creator();\n  @include type('icon-default');\n}",
                     "styleUrl": "./button.component.scss"
                 }
             ],
@@ -308,11 +307,11 @@
             "isDuplicate": true,
             "duplicateId": 1,
             "duplicateName": "ButtonComponent-1",
-            "templateData": "<button [innerText]=\"label\" [disabled]=\"disabled\" [ngClass]=\"type\">\n  <ng-content></ng-content>\n</button>"
+            "templateData": "<button [disabled]=\"disabled\" [ngClass]=\"type\">\n  <ng-content></ng-content>\n  <span *ngIf=\"label\" [innerText]=\"label\"></span>\n</button>"
         },
         {
             "name": "ClappComponent",
-            "id": "component-ClappComponent-547c41e2ff1414e4fdd25f01df989ffb0d65fc94f34f74b147637da737fbca2889ac8b286b437907b56fc5adb27eba73e759b07ae9f5d00e357a93b30032d2c2",
+            "id": "component-ClappComponent-5b5b45aa4665e271ab17e6ce19cff2106937b3cbb8e8906a678462922431e1da41adae47b0643d6295e3444ba3274602c8353fb3d7a1da7357e200bf344b047d",
             "file": "projects/clapp/src/lib/clapp.component.ts",
             "encapsulation": [],
             "entryComponents": [],
@@ -347,7 +346,7 @@
             "description": "",
             "rawdescription": "\n",
             "type": "component",
-            "sourceCode": "import { Component, OnInit } from '@angular/core';\r\n\r\n@Component({\r\n  selector: 'cl-clapp',\r\n  template: `\r\n    <p>\r\n      clapp works!\r\n    </p>\r\n  `,\r\n  styles: [\r\n  ]\r\n})\r\nexport class ClappComponent implements OnInit {\r\n\r\n  constructor() { }\r\n\r\n  ngOnInit(): void {\r\n  }\r\n\r\n}\r\n",
+            "sourceCode": "import { Component, OnInit } from '@angular/core';\n\n@Component({\n  selector: 'cl-clapp',\n  template: `\n    <p>\n      clapp works!\n    </p>\n  `,\n  styles: [\n  ]\n})\nexport class ClappComponent implements OnInit {\n\n  constructor() { }\n\n  ngOnInit(): void {\n  }\n\n}\n",
             "assetsDirs": [],
             "styleUrlsData": "",
             "stylesData": "",
@@ -365,7 +364,7 @@
         },
         {
             "name": "EndorsementComponent",
-            "id": "component-EndorsementComponent-d16409a6831ec08c2fa49962c47d7c70f2a15e1ead6e269f9562cf0af9e876cc8a505b1a2d5c3b0542007ba5aab13c7fca3d234a68883bf982833ed815d5e5ba",
+            "id": "component-EndorsementComponent-3b7a7a2ffc178f204bbad53731e1784ea5fe086b5307cd49e7f9725ce67de907356c45414f61b9d6e4961686aa129bbf3ca4429b29d36a38e9e6e773a1dd7aac",
             "file": "src/app/modules/login/pages/endorsement/endorsement.component.ts",
             "encapsulation": [],
             "entryComponents": [],
@@ -403,11 +402,11 @@
             "description": "",
             "rawdescription": "\n",
             "type": "component",
-            "sourceCode": "import { Component, OnInit } from '@angular/core';\r\n\r\n@Component({\r\n  selector: 'app-endorsement',\r\n  templateUrl: './endorsement.component.html',\r\n  styleUrls: ['./endorsement.component.scss']\r\n})\r\nexport class EndorsementComponent implements OnInit {\r\n\r\n  constructor() { }\r\n\r\n  ngOnInit(): void {\r\n  }\r\n\r\n}\r\n",
+            "sourceCode": "import { Component, OnInit } from '@angular/core';\n\n@Component({\n  selector: 'app-endorsement',\n  templateUrl: './endorsement.component.html',\n  styleUrls: ['./endorsement.component.scss']\n})\nexport class EndorsementComponent implements OnInit {\n\n  constructor() { }\n\n  ngOnInit(): void {\n  }\n\n}\n",
             "assetsDirs": [],
             "styleUrlsData": [
                 {
-                    "data": "\r\n",
+                    "data": "\n",
                     "styleUrl": "./endorsement.component.scss"
                 }
             ],
@@ -427,7 +426,7 @@
         },
         {
             "name": "GatekeeperComponent",
-            "id": "component-GatekeeperComponent-d8cc209845f67113e185ecd7f5a12e1a9f046de9946cef2bddbae5049bace7024c39171ffbd384dea4dc8525ff54e1867bf26ad84ecf80d888568f1106556596",
+            "id": "component-GatekeeperComponent-fed43b1f17cd5335268be299c412df27afcfc1427717e36b3b16dc9edbb90f8025121ca9ff18076e495367107585f8f450e8f8ef1f7eae1347a1a4d16064c38f",
             "file": "src/app/modules/login/pages/gatekeeper/gatekeeper.component.ts",
             "encapsulation": [],
             "entryComponents": [],
@@ -465,7 +464,7 @@
             "description": "",
             "rawdescription": "\n",
             "type": "component",
-            "sourceCode": "import { Component, OnInit } from '@angular/core';\r\n\r\n@Component({\r\n  selector: 'app-gatekeeper',\r\n  templateUrl: './gatekeeper.component.html',\r\n  styleUrls: ['./gatekeeper.component.scss'],\r\n})\r\nexport class GatekeeperComponent implements OnInit {\r\n  constructor() {}\r\n\r\n  ngOnInit(): void {}\r\n}\r\n",
+            "sourceCode": "import { Component, OnInit } from '@angular/core';\n\n@Component({\n  selector: 'app-gatekeeper',\n  templateUrl: './gatekeeper.component.html',\n  styleUrls: ['./gatekeeper.component.scss'],\n})\nexport class GatekeeperComponent implements OnInit {\n  constructor() {}\n\n  ngOnInit(): void {}\n}\n",
             "assetsDirs": [],
             "styleUrlsData": [
                 {
@@ -485,11 +484,11 @@
             "implements": [
                 "OnInit"
             ],
-            "templateData": "<p>gatekeeper works!</p>\r\n\r\n<cl-button label=\"hola\" type=\"primary\" [disabled]=\"false\">\r\n</cl-button>\r\n"
+            "templateData": "<p>gatekeeper works!</p>\n\n<cl-button label=\"hola\" type=\"primary\" [disabled]=\"false\">\n</cl-button>\n"
         },
         {
             "name": "HeaderComponent",
-            "id": "component-HeaderComponent-bda17aa3451a9f731685153f2587877b8267c32007f05e7abad3581336e6bc02346a1b660e8c69c4d90b4526b6e047b3ac1f4246252c9dc83985c9148aab5e97",
+            "id": "component-HeaderComponent-a557eec14f72c438a8033301f4d6ce023e0a1844a3b06ec2b38794a612acc31735ae78a5ee10071b230c8c20d699eb914554e69d07ade54adb371da8efb464cc",
             "file": "src/stories/header.component.ts",
             "encapsulation": [],
             "entryComponents": [],
@@ -550,11 +549,11 @@
             "description": "",
             "rawdescription": "\n",
             "type": "component",
-            "sourceCode": "import { Component, Input, Output, EventEmitter } from '@angular/core';\r\nimport { User } from './User';\r\n\r\n@Component({\r\n  selector: 'storybook-header',\r\n  template: `<header>\r\n    <div class=\"wrapper\">\r\n      <div>\r\n        <svg width=\"32\" height=\"32\" viewBox=\"0 0 32 32\" xmlns=\"http://www.w3.org/2000/svg\">\r\n          <g fill=\"none\" fillRule=\"evenodd\">\r\n            <path\r\n              d=\"M10 0h12a10 10 0 0110 10v12a10 10 0 01-10 10H10A10 10 0 010 22V10A10 10 0 0110 0z\"\r\n              fill=\"#FFF\"\r\n            />\r\n            <path\r\n              d=\"M5.3 10.6l10.4 6v11.1l-10.4-6v-11zm11.4-6.2l9.7 5.5-9.7 5.6V4.4z\"\r\n              fill=\"#555AB9\"\r\n            />\r\n            <path\r\n              d=\"M27.2 10.6v11.2l-10.5 6V16.5l10.5-6zM15.7 4.4v11L6 10l9.7-5.5z\"\r\n              fill=\"#91BAF8\"\r\n            />\r\n          </g>\r\n        </svg>\r\n        <h1>Acme</h1>\r\n      </div>\r\n      <div>\r\n        <div *ngIf=\"user\">\r\n          <span class=\"welcome\">\r\n            Welcome, <b>{{ user.name }}</b\r\n            >!\r\n          </span>\r\n          <storybook-button\r\n            *ngIf=\"user\"\r\n            size=\"small\"\r\n            (onClick)=\"onLogout.emit($event)\"\r\n            label=\"Log out\"\r\n          ></storybook-button>\r\n        </div>\r\n        <div *ngIf=\"!user\">\r\n          <storybook-button\r\n            *ngIf=\"!user\"\r\n            size=\"small\"\r\n            class=\"margin-left\"\r\n            (onClick)=\"onLogin.emit($event)\"\r\n            label=\"Log in\"\r\n          ></storybook-button>\r\n          <storybook-button\r\n            *ngIf=\"!user\"\r\n            primary\r\n            size=\"small\"\r\n            primary=\"true\"\r\n            class=\"margin-left\"\r\n            (onClick)=\"onCreateAccount.emit($event)\"\r\n            label=\"Sign up\"\r\n          ></storybook-button>\r\n        </div>\r\n      </div>\r\n    </div>\r\n  </header>`,\r\n  styleUrls: ['./header.css'],\r\n})\r\nexport default class HeaderComponent {\r\n  @Input()\r\n  user: User | null = null;\r\n\r\n  @Output()\r\n  onLogin = new EventEmitter<Event>();\r\n\r\n  @Output()\r\n  onLogout = new EventEmitter<Event>();\r\n\r\n  @Output()\r\n  onCreateAccount = new EventEmitter<Event>();\r\n}\r\n",
+            "sourceCode": "import { Component, Input, Output, EventEmitter } from '@angular/core';\nimport { User } from './User';\n\n@Component({\n  selector: 'storybook-header',\n  template: `<header>\n    <div class=\"wrapper\">\n      <div>\n        <svg width=\"32\" height=\"32\" viewBox=\"0 0 32 32\" xmlns=\"http://www.w3.org/2000/svg\">\n          <g fill=\"none\" fillRule=\"evenodd\">\n            <path\n              d=\"M10 0h12a10 10 0 0110 10v12a10 10 0 01-10 10H10A10 10 0 010 22V10A10 10 0 0110 0z\"\n              fill=\"#FFF\"\n            />\n            <path\n              d=\"M5.3 10.6l10.4 6v11.1l-10.4-6v-11zm11.4-6.2l9.7 5.5-9.7 5.6V4.4z\"\n              fill=\"#555AB9\"\n            />\n            <path\n              d=\"M27.2 10.6v11.2l-10.5 6V16.5l10.5-6zM15.7 4.4v11L6 10l9.7-5.5z\"\n              fill=\"#91BAF8\"\n            />\n          </g>\n        </svg>\n        <h1>Acme</h1>\n      </div>\n      <div>\n        <div *ngIf=\"user\">\n          <span class=\"welcome\">\n            Welcome, <b>{{ user.name }}</b\n            >!\n          </span>\n          <storybook-button\n            *ngIf=\"user\"\n            size=\"small\"\n            (onClick)=\"onLogout.emit($event)\"\n            label=\"Log out\"\n          ></storybook-button>\n        </div>\n        <div *ngIf=\"!user\">\n          <storybook-button\n            *ngIf=\"!user\"\n            size=\"small\"\n            class=\"margin-left\"\n            (onClick)=\"onLogin.emit($event)\"\n            label=\"Log in\"\n          ></storybook-button>\n          <storybook-button\n            *ngIf=\"!user\"\n            primary\n            size=\"small\"\n            primary=\"true\"\n            class=\"margin-left\"\n            (onClick)=\"onCreateAccount.emit($event)\"\n            label=\"Sign up\"\n          ></storybook-button>\n        </div>\n      </div>\n    </div>\n  </header>`,\n  styleUrls: ['./header.css'],\n})\nexport default class HeaderComponent {\n  @Input()\n  user: User | null = null;\n\n  @Output()\n  onLogin = new EventEmitter<Event>();\n\n  @Output()\n  onLogout = new EventEmitter<Event>();\n\n  @Output()\n  onCreateAccount = new EventEmitter<Event>();\n}\n",
             "assetsDirs": [],
             "styleUrlsData": [
                 {
-                    "data": ".wrapper {\r\n  font-family: 'Nunito Sans', 'Helvetica Neue', Helvetica, Arial, sans-serif;\r\n  border-bottom: 1px solid rgba(0, 0, 0, 0.1);\r\n  padding: 15px 20px;\r\n  display: flex;\r\n  align-items: center;\r\n  justify-content: space-between;\r\n}\r\n\r\nsvg {\r\n  display: inline-block;\r\n  vertical-align: top;\r\n}\r\n\r\nh1 {\r\n  font-weight: 900;\r\n  font-size: 20px;\r\n  line-height: 1;\r\n  margin: 6px 0 6px 10px;\r\n  display: inline-block;\r\n  vertical-align: top;\r\n}\r\n\r\nbutton + button {\r\n  margin-left: 10px;\r\n}\r\n\r\n.welcome {\r\n  color: #333;\r\n  font-size: 14px;\r\n  margin-right: 10px;\r\n}\r\n",
+                    "data": ".wrapper {\n  font-family: 'Nunito Sans', 'Helvetica Neue', Helvetica, Arial, sans-serif;\n  border-bottom: 1px solid rgba(0, 0, 0, 0.1);\n  padding: 15px 20px;\n  display: flex;\n  align-items: center;\n  justify-content: space-between;\n}\n\nsvg {\n  display: inline-block;\n  vertical-align: top;\n}\n\nh1 {\n  font-weight: 900;\n  font-size: 20px;\n  line-height: 1;\n  margin: 6px 0 6px 10px;\n  display: inline-block;\n  vertical-align: top;\n}\n\nbutton + button {\n  margin-left: 10px;\n}\n\n.welcome {\n  color: #333;\n  font-size: 14px;\n  margin-right: 10px;\n}\n",
                     "styleUrl": "./header.css"
                 }
             ],
@@ -632,68 +631,6 @@
                 "OnInit"
             ],
             "templateData": "<cl-sidebar-context (isCollapsedSidebar)=\"isCollapsedSidebar = $event\">\n    \n    <ng-container sidebarHeader>\n        <div id=\"sideBar-logo\">\n            <img id=\"isotype\" src=\"../../../../../assets/images/logos/gatekeeper/gatekeeper_Isotype.png\">\n            <img id=\"logo\" *ngIf=\"!isCollapsedSidebar\"\n                src=\"../../../../../assets/images/logos/gatekeeper/gatekeeper_Logo.png\">\n        </div>\n    </ng-container>\n\n    <ng-container sidebarContent>\n\n        <cl-nav-link [icon]=\"'account'\" text=\"Users\" [showText]=\"!isCollapsedSidebar\" routerLink=\"/home/profile-simple\"\n            routerLinkActive #navOne=\"routerLinkActive\" [isActivated]=\"navOne.isActive\"></cl-nav-link>\n\n        <cl-nav-link [icon]=\"'apps'\" text=\"Aplications\" [showText]=\"!isCollapsedSidebar\"\n            routerLink=\"/home/profile-with-comments\" routerLinkActive #navTwo=\"routerLinkActive\"\n            [isActivated]=\"navTwo.isActive\"></cl-nav-link>\n\n    </ng-container>\n\n    <ng-container sidebarFooter>\n        <cl-nav-link [icon]=\"'logOut'\" text=\"Log Out\" [showText]=\"!isCollapsedSidebar\"></cl-nav-link>\n    </ng-container>\n\n    <ng-container content>\n        <div id=\"content\">\n            <router-outlet></router-outlet>\n        </div>\n    </ng-container>\n\n\n</cl-sidebar-context>"
-        },
-        {
-            "name": "IconButtonComponent",
-            "id": "component-IconButtonComponent-50db2ae3195bcda4a038922a6d36a81c5eafb89df844940db685f25f46e9024d688d0cd6815455349ae8c46449c20e247fd90af7772988af9ce29d51e1197339",
-            "file": "projects/clapp/src/lib/components/buttons/icon-button/icon-button.component.ts",
-            "encapsulation": [],
-            "entryComponents": [],
-            "inputs": [],
-            "outputs": [],
-            "providers": [],
-            "selector": "cl-icon-button",
-            "styleUrls": [
-                "./icon-button.component.scss"
-            ],
-            "styles": [],
-            "templateUrl": [
-                "./icon-button.component.html"
-            ],
-            "viewProviders": [],
-            "inputsClass": [],
-            "outputsClass": [],
-            "propertiesClass": [],
-            "methodsClass": [
-                {
-                    "name": "ngOnInit",
-                    "args": [],
-                    "optional": false,
-                    "returnType": "void",
-                    "typeParameters": [],
-                    "line": 12,
-                    "deprecated": false,
-                    "deprecationMessage": ""
-                }
-            ],
-            "deprecated": false,
-            "deprecationMessage": "",
-            "hostBindings": [],
-            "hostListeners": [],
-            "description": "",
-            "rawdescription": "\n",
-            "type": "component",
-            "sourceCode": "import { Component, OnInit } from '@angular/core';\r\n\r\n@Component({\r\n  selector: 'cl-icon-button',\r\n  templateUrl: './icon-button.component.html',\r\n  styleUrls: ['./icon-button.component.scss']\r\n})\r\nexport class IconButtonComponent implements OnInit {\r\n\r\n  constructor() { }\r\n\r\n  ngOnInit(): void {\r\n  }\r\n\r\n}\r\n",
-            "assetsDirs": [],
-            "styleUrlsData": [
-                {
-                    "data": "\r\n#button-container{\r\n\r\n    .btn{\r\n        width: 100%;\r\n        height: 100%;\r\n        border-radius: 0;\r\n        border: none;\r\n        background-color: #00bcd4;\r\n        color: #fff;\r\n        font-size: 1.2rem;\r\n        font-weight: bold;\r\n        cursor: pointer;\r\n        &:hover{\r\n            background-color: #3d7076;\r\n        }\r\n    }\r\n}",
-                    "styleUrl": "./icon-button.component.scss"
-                }
-            ],
-            "stylesData": "",
-            "constructorObj": {
-                "name": "constructor",
-                "description": "",
-                "deprecated": false,
-                "deprecationMessage": "",
-                "args": [],
-                "line": 8
-            },
-            "implements": [
-                "OnInit"
-            ],
-            "templateData": "<div id=\"button-container\">\r\n    <button class=\"btn\">Hola</button>\r\n    </div>"
         },
         {
             "name": "NavLinkComponent",
@@ -895,7 +832,7 @@
         },
         {
             "name": "PageComponent",
-            "id": "component-PageComponent-1fc7c24c98b4f0b0f413d91f5a6126f11ad55647457f5a7f372b7f83fe8ecd6dbe67b5ca4b826ed20b9bfbc04d5606b15f82a203b1311f98b18bd28ec9f4fc7c",
+            "id": "component-PageComponent-7126d8c2607c946741c651482413b43feb72b2d63cac9d3ac173fde206a5e635eb4cdbf7ca7ac9327c7d4d05cf7ef619144c34c11609ad677081d0ee4e855064",
             "file": "src/stories/page.component.ts",
             "encapsulation": [],
             "entryComponents": [],
@@ -963,96 +900,15 @@
             "description": "",
             "rawdescription": "\n",
             "type": "component",
-            "sourceCode": "import { Component } from '@angular/core';\r\nimport { User } from './User';\r\n\r\n@Component({\r\n  selector: 'storybook-page',\r\n  template: `<article>\r\n    <storybook-header\r\n      [user]=\"user\"\r\n      (onLogout)=\"doLogout()\"\r\n      (onLogin)=\"doLogin()\"\r\n      (onCreateAccount)=\"doCreateAccount()\"\r\n    ></storybook-header>\r\n    <section>\r\n      <h2>Pages in Storybook</h2>\r\n      <p>\r\n        We recommend building UIs with a\r\n        <a href=\"https://componentdriven.org\" target=\"_blank\" rel=\"noopener noreferrer\">\r\n          <strong>component-driven</strong>\r\n        </a>\r\n        process starting with atomic components and ending with pages.\r\n      </p>\r\n      <p>\r\n        Render pages with mock data. This makes it easy to build and review page states without\r\n        needing to navigate to them in your app. Here are some handy patterns for managing page data\r\n        in Storybook:\r\n      </p>\r\n      <ul>\r\n        <li>\r\n          Use a higher-level connected component. Storybook helps you compose such data from the\r\n          \"args\" of child component stories\r\n        </li>\r\n        <li>\r\n          Assemble data in the page component from your services. You can mock these services out\r\n          using Storybook.\r\n        </li>\r\n      </ul>\r\n      <p>\r\n        Get a guided tutorial on component-driven development at\r\n        <a href=\"https://storybook.js.org/tutorials/\" target=\"_blank\" rel=\"noopener noreferrer\">\r\n          Storybook tutorials\r\n        </a>\r\n        . Read more in the\r\n        <a href=\"https://storybook.js.org/docs\" target=\"_blank\" rel=\"noopener noreferrer\"> docs </a>\r\n        .\r\n      </p>\r\n      <div class=\"tip-wrapper\">\r\n        <span class=\"tip\">Tip</span> Adjust the width of the canvas with the\r\n        <svg width=\"10\" height=\"10\" viewBox=\"0 0 12 12\" xmlns=\"http://www.w3.org/2000/svg\">\r\n          <g fill=\"none\" fillRule=\"evenodd\">\r\n            <path\r\n              d=\"M1.5 5.2h4.8c.3 0 .5.2.5.4v5.1c-.1.2-.3.3-.4.3H1.4a.5.5 0 01-.5-.4V5.7c0-.3.2-.5.5-.5zm0-2.1h6.9c.3 0 .5.2.5.4v7a.5.5 0 01-1 0V4H1.5a.5.5 0 010-1zm0-2.1h9c.3 0 .5.2.5.4v9.1a.5.5 0 01-1 0V2H1.5a.5.5 0 010-1zm4.3 5.2H2V10h3.8V6.2z\"\r\n              id=\"a\"\r\n              fill=\"#999\"\r\n            />\r\n          </g>\r\n        </svg>\r\n        Viewports addon in the toolbar\r\n      </div>\r\n    </section>\r\n  </article>`,\r\n  styleUrls: ['./page.css'],\r\n})\r\nexport default class PageComponent {\r\n  user: User | null = null;\r\n\r\n  doLogout() {\r\n    this.user = null;\r\n  }\r\n\r\n  doLogin() {\r\n    this.user = { name: 'Jane Doe' };\r\n  }\r\n\r\n  doCreateAccount() {\r\n    this.user = { name: 'Jane Doe' };\r\n  }\r\n}\r\n",
+            "sourceCode": "import { Component } from '@angular/core';\nimport { User } from './User';\n\n@Component({\n  selector: 'storybook-page',\n  template: `<article>\n    <storybook-header\n      [user]=\"user\"\n      (onLogout)=\"doLogout()\"\n      (onLogin)=\"doLogin()\"\n      (onCreateAccount)=\"doCreateAccount()\"\n    ></storybook-header>\n    <section>\n      <h2>Pages in Storybook</h2>\n      <p>\n        We recommend building UIs with a\n        <a href=\"https://componentdriven.org\" target=\"_blank\" rel=\"noopener noreferrer\">\n          <strong>component-driven</strong>\n        </a>\n        process starting with atomic components and ending with pages.\n      </p>\n      <p>\n        Render pages with mock data. This makes it easy to build and review page states without\n        needing to navigate to them in your app. Here are some handy patterns for managing page data\n        in Storybook:\n      </p>\n      <ul>\n        <li>\n          Use a higher-level connected component. Storybook helps you compose such data from the\n          \"args\" of child component stories\n        </li>\n        <li>\n          Assemble data in the page component from your services. You can mock these services out\n          using Storybook.\n        </li>\n      </ul>\n      <p>\n        Get a guided tutorial on component-driven development at\n        <a href=\"https://storybook.js.org/tutorials/\" target=\"_blank\" rel=\"noopener noreferrer\">\n          Storybook tutorials\n        </a>\n        . Read more in the\n        <a href=\"https://storybook.js.org/docs\" target=\"_blank\" rel=\"noopener noreferrer\"> docs </a>\n        .\n      </p>\n      <div class=\"tip-wrapper\">\n        <span class=\"tip\">Tip</span> Adjust the width of the canvas with the\n        <svg width=\"10\" height=\"10\" viewBox=\"0 0 12 12\" xmlns=\"http://www.w3.org/2000/svg\">\n          <g fill=\"none\" fillRule=\"evenodd\">\n            <path\n              d=\"M1.5 5.2h4.8c.3 0 .5.2.5.4v5.1c-.1.2-.3.3-.4.3H1.4a.5.5 0 01-.5-.4V5.7c0-.3.2-.5.5-.5zm0-2.1h6.9c.3 0 .5.2.5.4v7a.5.5 0 01-1 0V4H1.5a.5.5 0 010-1zm0-2.1h9c.3 0 .5.2.5.4v9.1a.5.5 0 01-1 0V2H1.5a.5.5 0 010-1zm4.3 5.2H2V10h3.8V6.2z\"\n              id=\"a\"\n              fill=\"#999\"\n            />\n          </g>\n        </svg>\n        Viewports addon in the toolbar\n      </div>\n    </section>\n  </article>`,\n  styleUrls: ['./page.css'],\n})\nexport default class PageComponent {\n  user: User | null = null;\n\n  doLogout() {\n    this.user = null;\n  }\n\n  doLogin() {\n    this.user = { name: 'Jane Doe' };\n  }\n\n  doCreateAccount() {\n    this.user = { name: 'Jane Doe' };\n  }\n}\n",
             "assetsDirs": [],
             "styleUrlsData": [
                 {
-                    "data": "section {\r\n  font-family: 'Nunito Sans', 'Helvetica Neue', Helvetica, Arial, sans-serif;\r\n  font-size: 14px;\r\n  line-height: 24px;\r\n  padding: 48px 20px;\r\n  margin: 0 auto;\r\n  max-width: 600px;\r\n  color: #333;\r\n}\r\n\r\nsection h2 {\r\n  font-weight: 900;\r\n  font-size: 32px;\r\n  line-height: 1;\r\n  margin: 0 0 4px;\r\n  display: inline-block;\r\n  vertical-align: top;\r\n}\r\n\r\nsection p {\r\n  margin: 1em 0;\r\n}\r\n\r\nsection a {\r\n  text-decoration: none;\r\n  color: #1ea7fd;\r\n}\r\n\r\nsection ul {\r\n  padding-left: 30px;\r\n  margin: 1em 0;\r\n}\r\n\r\nsection li {\r\n  margin-bottom: 8px;\r\n}\r\n\r\nsection .tip {\r\n  display: inline-block;\r\n  border-radius: 1em;\r\n  font-size: 11px;\r\n  line-height: 12px;\r\n  font-weight: 700;\r\n  background: #e7fdd8;\r\n  color: #66bf3c;\r\n  padding: 4px 12px;\r\n  margin-right: 10px;\r\n  vertical-align: top;\r\n}\r\n\r\nsection .tip-wrapper {\r\n  font-size: 13px;\r\n  line-height: 20px;\r\n  margin-top: 40px;\r\n  margin-bottom: 40px;\r\n}\r\n\r\nsection .tip-wrapper svg {\r\n  display: inline-block;\r\n  height: 12px;\r\n  width: 12px;\r\n  margin-right: 4px;\r\n  vertical-align: top;\r\n  margin-top: 3px;\r\n}\r\n\r\nsection .tip-wrapper svg path {\r\n  fill: #1ea7fd;\r\n}\r\n",
+                    "data": "section {\n  font-family: 'Nunito Sans', 'Helvetica Neue', Helvetica, Arial, sans-serif;\n  font-size: 14px;\n  line-height: 24px;\n  padding: 48px 20px;\n  margin: 0 auto;\n  max-width: 600px;\n  color: #333;\n}\n\nsection h2 {\n  font-weight: 900;\n  font-size: 32px;\n  line-height: 1;\n  margin: 0 0 4px;\n  display: inline-block;\n  vertical-align: top;\n}\n\nsection p {\n  margin: 1em 0;\n}\n\nsection a {\n  text-decoration: none;\n  color: #1ea7fd;\n}\n\nsection ul {\n  padding-left: 30px;\n  margin: 1em 0;\n}\n\nsection li {\n  margin-bottom: 8px;\n}\n\nsection .tip {\n  display: inline-block;\n  border-radius: 1em;\n  font-size: 11px;\n  line-height: 12px;\n  font-weight: 700;\n  background: #e7fdd8;\n  color: #66bf3c;\n  padding: 4px 12px;\n  margin-right: 10px;\n  vertical-align: top;\n}\n\nsection .tip-wrapper {\n  font-size: 13px;\n  line-height: 20px;\n  margin-top: 40px;\n  margin-bottom: 40px;\n}\n\nsection .tip-wrapper svg {\n  display: inline-block;\n  height: 12px;\n  width: 12px;\n  margin-right: 4px;\n  vertical-align: top;\n  margin-top: 3px;\n}\n\nsection .tip-wrapper svg path {\n  fill: #1ea7fd;\n}\n",
                     "styleUrl": "./page.css"
                 }
             ],
             "stylesData": ""
-        },
-        {
-            "name": "PrimaryButtonComponent",
-            "id": "component-PrimaryButtonComponent-5909c7ded80b5213a76deb9bfa1dc9a67d42a2a7fb59d194f6fe49d606ef9f0df5d8d520eea082710ec65fd8d6fc625c7995a3cc3252c33951667ff4aea2390c",
-            "file": "projects/clapp/src/lib/components/buttons/primary-button/primary-button.component.ts",
-            "encapsulation": [],
-            "entryComponents": [],
-            "inputs": [],
-            "outputs": [],
-            "providers": [],
-            "selector": "cl-primary-button",
-            "styleUrls": [
-                "./primary-button.component.scss"
-            ],
-            "styles": [],
-            "templateUrl": [
-                "./primary-button.component.html"
-            ],
-            "viewProviders": [],
-            "inputsClass": [
-                {
-                    "name": "disabled",
-                    "defaultValue": "false",
-                    "deprecated": false,
-                    "deprecationMessage": "",
-                    "line": 9,
-                    "type": "boolean",
-                    "decorators": []
-                },
-                {
-                    "name": "text",
-                    "defaultValue": "'Primary'",
-                    "deprecated": false,
-                    "deprecationMessage": "",
-                    "line": 10,
-                    "type": "string",
-                    "decorators": []
-                }
-            ],
-            "outputsClass": [],
-            "propertiesClass": [],
-            "methodsClass": [
-                {
-                    "name": "ngOnInit",
-                    "args": [],
-                    "optional": false,
-                    "returnType": "void",
-                    "typeParameters": [],
-                    "line": 14,
-                    "deprecated": false,
-                    "deprecationMessage": ""
-                }
-            ],
-            "deprecated": false,
-            "deprecationMessage": "",
-            "hostBindings": [],
-            "hostListeners": [],
-            "description": "",
-            "rawdescription": "\n",
-            "type": "component",
-            "sourceCode": "import { AfterViewInit, Component, ElementRef, Input, OnInit, ViewChild } from '@angular/core';\r\n\r\n@Component({\r\n  selector: 'cl-primary-button',\r\n  templateUrl: './primary-button.component.html',\r\n  styleUrls: ['./primary-button.component.scss'],\r\n})\r\nexport class PrimaryButtonComponent implements OnInit {\r\n  @Input('disabled') disabled = false;\r\n  @Input('text') text = 'Primary';\r\n\r\n  constructor() {}\r\n\r\n  ngOnInit(): void {}\r\n}\r\n",
-            "assetsDirs": [],
-            "styleUrlsData": [
-                {
-                    "data": "$applaudo-red : #FF4040;\r\n$white: #FFFFFF;\r\n$applaudo-red-plus: #FF6060;\r\n$applaudo-red-minus: #E60000;\r\n$light-gray: #F6F6F6;\r\n$mid-gray:#C4C4C4;\r\n\r\n.buttons-primary-button {\r\n  width: 100%;\r\n  height: 3rem;\r\n  display: flex;\r\n  flex-direction: column;\r\n  align-items: center;\r\n  padding: 12px 32px;\r\n  justify-content: center;\r\n  border-style: none;\r\n  cursor: pointer;\r\n  outline: none;\r\n  font-family: Avenir Next;\r\n  font-style: normal;\r\n  font-size: 16px;\r\n  font-weight: 600;\r\n  line-height: 24px;\r\n  letter-spacing: 0em;\r\n  text-align: center;\r\n  background-color: $applaudo-red;\r\n  color: $white;\r\n\r\n  &:hover {\r\n    background-color: $applaudo-red-plus;\r\n  }\r\n\r\n  &:active {\r\n    background-color: $applaudo-red-minus;\r\n  }\r\n\r\n  &:disabled {\r\n    background-color: $light-gray;\r\n    color: $mid-gray;\r\n  }\r\n}",
-                    "styleUrl": "./primary-button.component.scss"
-                }
-            ],
-            "stylesData": "",
-            "constructorObj": {
-                "name": "constructor",
-                "description": "",
-                "deprecated": false,
-                "deprecationMessage": "",
-                "args": [],
-                "line": 10
-            },
-            "implements": [
-                "OnInit"
-            ],
-            "templateData": "<button #primaryButton class=\"buttons-primary-button\" [disabled]=\"disabled\" [innerText]=\"text\">\r\n  <ng-content></ng-content>\r\n</button>"
         },
         {
             "name": "ProfileSimpleComponent",
@@ -1118,7 +974,7 @@
         },
         {
             "name": "ProfileWithCommentsComponent",
-            "id": "component-ProfileWithCommentsComponent-a710074b20f4f7ecff82304fd7ef3bcc28789df43a0d2c8e9cd6a5d7235c7d2e3bcc6464864dada46163c7398f97412a0b75710cc9a01880cea2d4c8df2e139c",
+            "id": "component-ProfileWithCommentsComponent-9acaaef9e7b23aba659f89969e5399e7bf4c5acbf6b8f58790e614de9db1e813bc6fb8705611152964ddac285707ca33f0034a968ea0dc1abbc1cdbafddd2c98",
             "file": "src/app/modules/home/pages/profile-with-comments/profile-with-comments.component.ts",
             "encapsulation": [],
             "entryComponents": [],
@@ -1156,7 +1012,7 @@
             "description": "",
             "rawdescription": "\n",
             "type": "component",
-            "sourceCode": "import { Component, OnInit } from '@angular/core';\r\n\r\n@Component({\r\n  selector: 'app-profile-with-comments',\r\n  templateUrl: './profile-with-comments.component.html',\r\n  styleUrls: ['./profile-with-comments.component.scss']\r\n})\r\nexport class ProfileWithCommentsComponent implements OnInit {\r\n\r\n  constructor() { }\r\n\r\n  ngOnInit(): void {\r\n  }\r\n\r\n}\r\n",
+            "sourceCode": "import { Component, OnInit } from '@angular/core';\n\n@Component({\n  selector: 'app-profile-with-comments',\n  templateUrl: './profile-with-comments.component.html',\n  styleUrls: ['./profile-with-comments.component.scss']\n})\nexport class ProfileWithCommentsComponent implements OnInit {\n\n  constructor() { }\n\n  ngOnInit(): void {\n  }\n\n}\n",
             "assetsDirs": [],
             "styleUrlsData": [
                 {
@@ -1176,7 +1032,7 @@
             "implements": [
                 "OnInit"
             ],
-            "templateData": "<p>profile-with-comments works!</p>\r\n"
+            "templateData": "<p>profile-with-comments works!</p>\n"
         },
         {
             "name": "SidebarContextComponent",
@@ -1272,7 +1128,7 @@
         },
         {
             "name": "SvgIconComponent",
-            "id": "component-SvgIconComponent-c6559e4f7e66097605f82821807e0b657f5363edfeb349a0b7b6e4b496c2b53593164767b18c2a5bd873900bdc19fb44e9532cddb677f5ba022e39f5b5f34034",
+            "id": "component-SvgIconComponent-e97fbd37319a2db0b098931aec8fdacdee26f09d3181f4c1a47a5e2e0201d46fbeecf70491399ad400ec3604ffa1e45f1b32c4fbe053b7132459a3ffaecab8d6",
             "file": "projects/clapp/src/lib/components/svg-icon/svg-icon.component.ts",
             "encapsulation": [],
             "entryComponents": [],
@@ -1328,16 +1184,6 @@
             "outputsClass": [],
             "propertiesClass": [
                 {
-                    "name": "changeLog",
-                    "defaultValue": "[]",
-                    "deprecated": false,
-                    "deprecationMessage": "",
-                    "type": "any",
-                    "optional": false,
-                    "description": "",
-                    "line": 22
-                },
-                {
                     "name": "iconContainer",
                     "deprecated": false,
                     "deprecationMessage": "",
@@ -1351,16 +1197,6 @@
                             "stringifiedArguments": "'iconContainer'"
                         }
                     ]
-                },
-                {
-                    "name": "propertiesSubs$",
-                    "defaultValue": "new Subject()",
-                    "deprecated": false,
-                    "deprecationMessage": "",
-                    "type": "Subject<any>",
-                    "optional": false,
-                    "description": "",
-                    "line": 21
                 }
             ],
             "methodsClass": [
@@ -1370,7 +1206,7 @@
                     "optional": false,
                     "returnType": "void",
                     "typeParameters": [],
-                    "line": 44,
+                    "line": 41,
                     "deprecated": false,
                     "deprecationMessage": ""
                 },
@@ -1380,7 +1216,7 @@
                     "optional": false,
                     "returnType": "void",
                     "typeParameters": [],
-                    "line": 26,
+                    "line": 23,
                     "deprecated": false,
                     "deprecationMessage": ""
                 },
@@ -1397,7 +1233,7 @@
                     "optional": false,
                     "returnType": "void",
                     "typeParameters": [],
-                    "line": 30,
+                    "line": 27,
                     "deprecated": false,
                     "deprecationMessage": "",
                     "jsdoctags": [
@@ -1418,7 +1254,7 @@
                     "optional": false,
                     "returnType": "void",
                     "typeParameters": [],
-                    "line": 42,
+                    "line": 39,
                     "deprecated": false,
                     "deprecationMessage": ""
                 }
@@ -1430,7 +1266,7 @@
             "description": "",
             "rawdescription": "\n",
             "type": "component",
-            "sourceCode": "import { AfterViewChecked, AfterViewInit, ChangeDetectionStrategy, Component, ElementRef, Input, OnChanges, OnInit, Renderer2, SimpleChanges, ViewChild } from '@angular/core';\nimport { Subject } from 'rxjs';\n\nimport { ClappIcons, IconFill } from './clapp-icons.helper';\n\ntype TYPE_ICON_FILLS = keyof typeof IconFill;\ntype TYPE_ICONS_NAMES = keyof typeof ClappIcons;\n\n@Component({\n  selector: 'cl-svg-icon',\n  template: `<div #iconContainer id=\"iconContainer\"></div>`,\n  styleUrls: ['./svg-icon.component.scss'],\n})\nexport class SvgIconComponent implements OnInit, AfterViewInit, OnChanges {\n  @ViewChild('iconContainer') iconContainer!: ElementRef;\n  @Input('icon') icon: TYPE_ICONS_NAMES = 'account';\n  @Input('width') width: number = 24;\n  @Input('height') height: number = 24;\n  @Input('fill') fill: TYPE_ICON_FILLS = 'ApplaudoNavyBlue';\n\n  propertiesSubs$: Subject<any> = new Subject();\n  changeLog: any = [];\n\n  constructor(private renderer: Renderer2) {}\n\n  ngAfterViewInit(): void {\n    this.buildIcon();\n  }\n\n  ngOnChanges(changes: SimpleChanges) {\n    let changesCant = 0;\n    for (let propName in changes) {\n      if (!changes[propName].isFirstChange()) {\n        changesCant++;\n      }\n    }\n    if (changesCant > 0) {\n      this.buildIcon();\n    }\n  }\n\n  ngOnInit(): void {}\n\n  buildIcon(): void {\n    let templateTmp = this.renderer.createElement('template');\n    templateTmp.innerHTML = ClappIcons[this.icon];\n    let svg = templateTmp.content.firstChild as SVGElement;\n    this.renderer.setAttribute(svg, 'width', `${this.width}px`);\n    this.renderer.setAttribute(svg, 'height', `${this.height}px`);\n    this.iconContainer.nativeElement.setAttribute('class', `${IconFill[this.fill]}`);\n    this.iconContainer.nativeElement.innerHTML = '';\n    this.renderer.appendChild(this.iconContainer.nativeElement, svg);\n  }\n}\n",
+            "sourceCode": "import { AfterViewChecked, AfterViewInit, ChangeDetectionStrategy, Component, ElementRef, Input, OnChanges, OnInit, Renderer2, SimpleChanges, ViewChild } from '@angular/core';\nimport { Subject } from 'rxjs';\n\nimport { ClappIcons, IconFill } from './clapp-icons.helper';\n\ntype TYPE_ICON_FILLS = keyof typeof IconFill;\ntype TYPE_ICONS_NAMES = keyof typeof ClappIcons;\n\n@Component({\n  selector: 'cl-svg-icon',\n  template: `<div #iconContainer id=\"iconContainer\"></div>`,\n  styleUrls: ['./svg-icon.component.scss'],\n})\nexport class SvgIconComponent implements OnInit, AfterViewInit, OnChanges {\n  @ViewChild('iconContainer') iconContainer!: ElementRef;\n  @Input('icon') icon: TYPE_ICONS_NAMES = 'account';\n  @Input('width') width: number = 24;\n  @Input('height') height: number = 24;\n  @Input('fill') fill: TYPE_ICON_FILLS = 'ApplaudoNavyBlue';\n\n  constructor(private renderer: Renderer2) {}\n\n  ngAfterViewInit(): void {\n    this.buildIcon();\n  }\n\n  ngOnChanges(changes: SimpleChanges) {\n    let changesCant = 0;\n    for (let propName in changes) {\n      if (!changes[propName].isFirstChange()) {\n        changesCant++;\n      }\n    }\n    if (changesCant > 0) {\n      this.buildIcon();\n    }\n  }\n\n  ngOnInit(): void {}\n\n  buildIcon(): void {\n    let templateTmp = this.renderer.createElement('template');\n    templateTmp.innerHTML = ClappIcons[this.icon];\n    let svg = templateTmp.content.firstChild as SVGElement;\n    this.renderer.setAttribute(svg, 'width', `${this.width}px`);\n    this.renderer.setAttribute(svg, 'height', `${this.height}px`);\n    this.iconContainer.nativeElement.setAttribute('class', `${IconFill[this.fill]}`);\n    this.iconContainer.nativeElement.innerHTML = '';\n    this.renderer.appendChild(this.iconContainer.nativeElement, svg);\n  }\n}\n",
             "assetsDirs": [],
             "styleUrlsData": [
                 {
@@ -1452,7 +1288,7 @@
                         "deprecationMessage": ""
                     }
                 ],
-                "line": 22,
+                "line": 19,
                 "jsdoctags": [
                     {
                         "name": "renderer",
@@ -1475,13 +1311,13 @@
     "modules": [
         {
             "name": "AppModule",
-            "id": "module-AppModule-b4e3a57e121fe0663347cc5184861418082c191b4e16bd3b865eeb9e0aecdbdd1080bdb7967243b96ba33da40d6023fbe43c055526cb09d9256babbf49aeaf4b",
+            "id": "module-AppModule-2857e1c9685a609a0150050146c4eee36f12b2411104da33cbc7c0f5c6dd92ff50c89099d08dd5d4ef81d3f2050f7aed05d55ae4b458940cf7df3e07d5c9d556",
             "description": "",
             "deprecationMessage": "",
             "deprecated": false,
             "file": "src/app/app.module.ts",
             "methods": [],
-            "sourceCode": "import { NgModule } from '@angular/core';\nimport { BrowserModule } from '@angular/platform-browser';\n\nimport { CommonModule } from '@angular/common';\nimport { BrowserAnimationsModule } from '@angular/platform-browser/animations';\nimport { ClappModule } from 'clapp';\nimport { AppRoutingModule } from './app-routing.module';\nimport { AppComponent } from './app.component';\nimport { LoginModule } from './modules/login/login.module';\n\n\n@NgModule({\n  declarations: [\n    AppComponent\n  ],\n  imports: [\n     CommonModule,\n    BrowserAnimationsModule,\n    BrowserModule,\n    AppRoutingModule,\n    ClappModule,\n    LoginModule\n  ],\n  providers: [],\n  bootstrap: [AppComponent]\n})\nexport class AppModule { }\n",
+            "sourceCode": "import { NgModule } from '@angular/core';\nimport { BrowserModule } from '@angular/platform-browser';\nimport { ClappModule } from 'clapp';\n\nimport { CommonModule } from '@angular/common';\nimport { BrowserAnimationsModule } from '@angular/platform-browser/animations';\nimport { AppRoutingModule } from './app-routing.module';\nimport { AppComponent } from './app.component';\nimport { LoginModule } from './modules/login/login.module';\n\n\n@NgModule({\n  declarations: [\n    AppComponent\n  ],\n  imports: [\n    CommonModule,\n    BrowserAnimationsModule,\n    BrowserModule,\n    AppRoutingModule,\n    ClappModule,\n    LoginModule\n  ],\n  providers: [],\n  bootstrap: [AppComponent]\n})\nexport class AppModule { }\n",
             "children": [
                 {
                     "type": "providers",
@@ -1529,13 +1365,13 @@
         },
         {
             "name": "AppRoutingModule",
-            "id": "module-AppRoutingModule-6c0fce5e3d17590d5291ebf3c47aabf587270a8c08d5d7d7d53e34744cdc9fe8e7dbbb4f293ddb3fec69be88d353858d1be5f6d516746044526a38868e8a556d",
+            "id": "module-AppRoutingModule-805f77f64fc3e310a4a9b242378a6b03326b316045bd0e8e4a7c5bb4680d71143eed322b386bd4880c6fa0e0b7d528e10b5b68f83ddc2e17c9974a3468c51818",
             "description": "",
             "deprecationMessage": "",
             "deprecated": false,
             "file": "src/app/app-routing.module.ts",
             "methods": [],
-            "sourceCode": "import { NgModule } from '@angular/core';\r\nimport { RouterModule, Routes } from '@angular/router';\r\nimport { GatekeeperComponent } from './modules/login/pages/gatekeeper/gatekeeper.component';\r\nimport { EndorsementComponent } from './modules/login/pages/endorsement/endorsement.component';\r\n\r\nconst routes: Routes = [\r\n  {\r\n    path: 'gatekeeper',\r\n    component: GatekeeperComponent,\r\n  },\r\n  {\r\n    path: 'endorsement',\r\n    component: EndorsementComponent\r\n  },\r\n  {\r\n    path: 'home',\r\n    loadChildren: () => \"import('./modules/home/home.module').then(m => m.HomeModule)\"\r\n  },\r\n  {\r\n    path: '',\r\n    redirectTo: 'gatekeeper',\r\n    pathMatch: 'full'\r\n  },\r\n  {\r\n    path: '**',\r\n    redirectTo: 'gatekeeper'\r\n  }\r\n];\r\n\r\n@NgModule({\r\n  imports: [RouterModule.forRoot(routes)],\r\n  exports: [RouterModule]\r\n})\r\nexport class AppRoutingModule { }\r\n",
+            "sourceCode": "import { NgModule } from '@angular/core';\nimport { RouterModule, Routes } from '@angular/router';\nimport { GatekeeperComponent } from './modules/login/pages/gatekeeper/gatekeeper.component';\nimport { EndorsementComponent } from './modules/login/pages/endorsement/endorsement.component';\n\nconst routes: Routes = [\n  {\n    path: 'gatekeeper',\n    component: GatekeeperComponent,\n  },\n  {\n    path: 'endorsement',\n    component: EndorsementComponent\n  },\n  {\n    path: 'home',\n    loadChildren: () => \"import('./modules/home/home.module').then(m => m.HomeModule)\"\n  },\n  {\n    path: '',\n    redirectTo: 'gatekeeper',\n    pathMatch: 'full'\n  },\n  {\n    path: '**',\n    redirectTo: 'gatekeeper'\n  }\n];\n\n@NgModule({\n  imports: [RouterModule.forRoot(routes)],\n  exports: [RouterModule]\n})\nexport class AppRoutingModule { }\n",
             "children": [
                 {
                     "type": "providers",
@@ -1565,13 +1401,13 @@
         },
         {
             "name": "ClappModule",
-            "id": "module-ClappModule-c9eb02171bf013a2f9c56aec1263d5d4921657256fc77a6b922a12402a7af14a24f5783f87c925a7fa055df38fadc91087f9a30c0e42fa303b5ffaa2a64efc32",
+            "id": "module-ClappModule-ac9e2d8b17c904476ccabb0ee07aaa6c41cee0e95c1204411bbd0017e1b3f4b5e3e90648a802d0d2627b8be44d95d45d586af8c9904abbbca0cad92a16ca781c",
             "description": "",
             "deprecationMessage": "",
             "deprecated": false,
             "file": "projects/clapp/src/lib/clapp.module.ts",
             "methods": [],
-            "sourceCode": "import { CommonModule } from '@angular/common';\nimport { NgModule } from '@angular/core';\nimport { ClappComponent } from './clapp.component';\nimport { IconButtonComponent } from './components/buttons/icon-button/icon-button.component';\nimport { SvgIconComponent } from './components/svg-icon/svg-icon.component';\nimport { SidebarContextComponent } from './patterns/sidebar-context/sidebar-context.component';\nimport { BrowserAnimationsModule, NoopAnimationsModule } from '@angular/platform-browser/animations';\nimport { NavLinkComponent } from './components/nav-link/nav-link.component';\nimport { RouterModule } from '@angular/router';\n\n\n@NgModule({\n  declarations: [\n    ClappComponent,\n    IconButtonComponent,\n    SvgIconComponent,\n    SidebarContextComponent,\n    NavLinkComponent,\n\n  ],\n  imports: [\n     CommonModule,\n     RouterModule\n  ],\n  exports: [\n    ClappComponent,\n    IconButtonComponent,\n    SvgIconComponent,\n    SidebarContextComponent,\n    NavLinkComponent,\n  ]\n})\nexport class ClappModule { }\n",
+            "sourceCode": "import { CommonModule } from '@angular/common';\nimport { NgModule } from '@angular/core';\nimport { ClappComponent } from './clapp.component';\nimport { ButtonComponent } from './components/button/button.component';\nimport { SvgIconComponent } from './components/svg-icon/svg-icon.component';\nimport { SidebarContextComponent } from './patterns/sidebar-context/sidebar-context.component';\nimport { NavLinkComponent } from './components/nav-link/nav-link.component';\nimport { RouterModule } from '@angular/router';\n\n\n@NgModule({\n  declarations: [\n    ClappComponent,\n    SvgIconComponent,\n    SidebarContextComponent,\n    NavLinkComponent,\n    ButtonComponent,\n  ],\n  imports: [\n    CommonModule,\n    RouterModule,\n  ],\n  exports: [\n    ClappComponent,\n    SvgIconComponent,\n    SidebarContextComponent,\n    NavLinkComponent,\n    ButtonComponent,\n  ]\n})\nexport class ClappModule { }\n",
             "children": [
                 {
                     "type": "providers",
@@ -1585,9 +1421,6 @@
                         },
                         {
                             "name": "ClappComponent"
-                        },
-                        {
-                            "name": "IconButtonComponent"
                         },
                         {
                             "name": "NavLinkComponent"
@@ -1609,9 +1442,6 @@
                     "elements": [
                         {
                             "name": "ClappComponent"
-                        },
-                        {
-                            "name": "IconButtonComponent"
                         },
                         {
                             "name": "NavLinkComponent"
@@ -1689,13 +1519,13 @@
         },
         {
             "name": "HomeRoutingModule",
-            "id": "module-HomeRoutingModule-7b7344dd565ba55c7d46ebacf0a3f63576f4f57e241b8245c2c972f4313d9d63b42f0f1f1950bac07d805d32fdeb6daffe9deefb6b5c96e80de9cc58f7d1c152",
+            "id": "module-HomeRoutingModule-b2d1af8e94915b1d0a5eed297128ecb5f65c21d6142f2dd1437fdcbc76fdce49818816faf1500882789bfc5c0213cbc0021570ebd31fdf5f0b8c10200b24a5ae",
             "description": "",
             "deprecationMessage": "",
             "deprecated": false,
             "file": "src/app/modules/home/home-routing.module.ts",
             "methods": [],
-            "sourceCode": "import { NgModule } from '@angular/core';\r\nimport { RouterModule, Routes } from '@angular/router';\r\nimport { HomeMainComponent } from './pages/home-main/home-main.component';\r\nimport { ProfileSimpleComponent } from './pages/profile-simple/profile-simple.component';\r\nimport { ProfileWithCommentsComponent } from './pages/profile-with-comments/profile-with-comments.component';\r\n\r\nconst routes: Routes = [\r\n  {\r\n    path: '',\r\n    component: HomeMainComponent,\r\n    children: [\r\n      {\r\n        path: 'profile-simple',\r\n        component: ProfileSimpleComponent\r\n      },\r\n      {\r\n        path: 'profile-with-comments',\r\n        component: ProfileWithCommentsComponent\r\n      },\r\n      {\r\n        path: '',\r\n        redirectTo: 'profile-simple',\r\n        pathMatch: 'full'\r\n      },\r\n      {\r\n        path: '**',\r\n        redirectTo: 'profile-simple'\r\n      }\r\n    ]\r\n  }\r\n];\r\n\r\n@NgModule({\r\n  imports: [RouterModule.forChild(routes)],\r\n  exports: [RouterModule]\r\n})\r\nexport class HomeRoutingModule { }\r\n",
+            "sourceCode": "import { NgModule } from '@angular/core';\nimport { RouterModule, Routes } from '@angular/router';\nimport { HomeMainComponent } from './pages/home-main/home-main.component';\nimport { ProfileSimpleComponent } from './pages/profile-simple/profile-simple.component';\nimport { ProfileWithCommentsComponent } from './pages/profile-with-comments/profile-with-comments.component';\n\nconst routes: Routes = [\n  {\n    path: '',\n    component: HomeMainComponent,\n    children: [\n      {\n        path: 'profile-simple',\n        component: ProfileSimpleComponent\n      },\n      {\n        path: 'profile-with-comments',\n        component: ProfileWithCommentsComponent\n      },\n      {\n        path: '',\n        redirectTo: 'profile-simple',\n        pathMatch: 'full'\n      },\n      {\n        path: '**',\n        redirectTo: 'profile-simple'\n      }\n    ]\n  }\n];\n\n@NgModule({\n  imports: [RouterModule.forChild(routes)],\n  exports: [RouterModule]\n})\nexport class HomeRoutingModule { }\n",
             "children": [
                 {
                     "type": "providers",
@@ -1725,13 +1555,13 @@
         },
         {
             "name": "LoginModule",
-            "id": "module-LoginModule-727e7f7f7c0983a90a984094c53547a353f795476eaca239948acb2bad3b59263a51482c38330a07f3851845e8d2b4feb224ae3e6c18cf838c5f338d4f4266e4",
+            "id": "module-LoginModule-5bcdbdec87db44fa0a00c326529e80f635e02fc4e2bdd5f954b165a561ad0e815a866a6cbe10c6eaf687c57f9ba17bc9c69ed581fe7ac6b9710066391def5e13",
             "description": "",
             "deprecationMessage": "",
             "deprecated": false,
             "file": "src/app/modules/login/login.module.ts",
             "methods": [],
-            "sourceCode": "import { CUSTOM_ELEMENTS_SCHEMA, NgModule } from '@angular/core';\r\nimport { CommonModule } from '@angular/common';\r\nimport { GatekeeperComponent } from './pages/gatekeeper/gatekeeper.component';\r\nimport { EndorsementComponent } from './pages/endorsement/endorsement.component';\r\nimport { ClappModule } from 'clapp';\r\n\r\n\r\n\r\n\r\n@NgModule({\r\n  declarations: [\r\n    GatekeeperComponent,\r\n    EndorsementComponent\r\n  ],\r\n  imports: [\r\n    CommonModule,\r\n    ClappModule\r\n  ],\r\n  exports: [\r\n    GatekeeperComponent,\r\n    EndorsementComponent\r\n  ]\r\n})\r\nexport class LoginModule { }\r\n",
+            "sourceCode": "import { CUSTOM_ELEMENTS_SCHEMA, NgModule } from '@angular/core';\nimport { CommonModule } from '@angular/common';\nimport { GatekeeperComponent } from './pages/gatekeeper/gatekeeper.component';\nimport { EndorsementComponent } from './pages/endorsement/endorsement.component';\nimport { ClappModule } from 'clapp';\n\n\n\n\n@NgModule({\n  declarations: [\n    GatekeeperComponent,\n    EndorsementComponent\n  ],\n  imports: [\n    CommonModule,\n    ClappModule\n  ],\n  exports: [\n    GatekeeperComponent,\n    EndorsementComponent\n  ]\n})\nexport class LoginModule { }\n",
             "children": [
                 {
                     "type": "providers",
@@ -1814,11 +1644,21 @@
                 "name": "environment",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
+                "file": "src/environments/environment.prod.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "object",
+                "defaultValue": "{\n  production: true\n}"
+            },
+            {
+                "name": "environment",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
                 "file": "src/environments/environment.ts",
                 "deprecated": false,
                 "deprecationMessage": "",
                 "type": "object",
-                "defaultValue": "{\r\n  production: false\r\n}"
+                "defaultValue": "{\n  production: false\n}"
             },
             {
                 "name": "Icon",
@@ -1829,16 +1669,6 @@
                 "deprecationMessage": "",
                 "type": "",
                 "defaultValue": "Template.bind({})"
-            },
-            {
-                "name": "environment",
-                "ctype": "miscellaneous",
-                "subtype": "variable",
-                "file": "src/environments/environment.prod.ts",
-                "deprecated": false,
-                "deprecationMessage": "",
-                "type": "object",
-                "defaultValue": "{\n  production: true\n}"
             },
             {
                 "name": "IconFill",
@@ -2006,7 +1836,7 @@
                 "deprecated": false,
                 "deprecationMessage": "",
                 "type": "Story<Button>",
-                "defaultValue": "(args: Button) => ({\r\n  props: args,\r\n})"
+                "defaultValue": "(args: Button) => ({\n  props: args,\n})"
             },
             {
                 "name": "Template",
@@ -2016,7 +1846,7 @@
                 "deprecated": false,
                 "deprecationMessage": "",
                 "type": "Story<Header>",
-                "defaultValue": "(args: Header) => ({\r\n  props: args,\r\n})"
+                "defaultValue": "(args: Header) => ({\n  props: args,\n})"
             },
             {
                 "name": "Template",
@@ -2026,7 +1856,7 @@
                 "deprecated": false,
                 "deprecationMessage": "",
                 "type": "Story<Page>",
-                "defaultValue": "(args: Page) => ({\r\n  props: args,\r\n})"
+                "defaultValue": "(args: Page) => ({\n  props: args,\n})"
             },
             {
                 "name": "Template",
@@ -2036,7 +1866,7 @@
                 "deprecated": false,
                 "deprecationMessage": "",
                 "type": "Story<ButtonComponent>",
-                "defaultValue": "(args: ButtonComponent) => ({\r\n  props: args,\r\n})"
+                "defaultValue": "(args: ButtonComponent) => ({\n  props: args,\n})"
             },
             {
                 "name": "Template",
@@ -2045,8 +1875,8 @@
                 "file": "src/stories/clapp-lib/components/nav-link.stories.ts",
                 "deprecated": false,
                 "deprecationMessage": "",
-                "type": "Story<SvgIconComponent>",
-                "defaultValue": "(args: SvgIconComponent) => ({\n  props: args,\n})"
+                "type": "Story<NavLinkComponent>",
+                "defaultValue": "(args: NavLinkComponent) => ({\n  props: args,\n})"
             },
             {
                 "name": "Template",
@@ -2066,7 +1896,27 @@
                 "deprecated": false,
                 "deprecationMessage": "",
                 "type": "Story<SidebarContextComponent>",
-                "defaultValue": "(args: SidebarContextComponent) => ({\n  props: args,\n  template: `<cl-sidebar-context>\n    <ng-container content>\n    Lorem Ipsum is simply dummy text of the printing and typesetting industry. \n    Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, \n    when an unknown printer took a galley of type and scrambled it to make a type \n    specimen book. It has survived not only five centuries, but also the leap into \n    electronic typesetting, remaining essentially unchanged. It was popularised in \n    the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, \n    and more recently with desktop publishing software like Aldus PageMaker including \n    versions of Lorem Ipsum.\n    </ng-container>\n  </cl-sidebar-context>`,\n  styles: [\n    `\n    :host {\n      font-family: 'Avenir Next';\n      font-weight: 600;\n      font-size: 16px;\n      line-height: 24px;\n    }\n    `,\n  ],\n})"
+                "defaultValue": "(args: SidebarContextComponent) => ({\n  props: args,\n  template: `\n  <cl-sidebar-context>\n\n  <ng-container sidebarHeader>\n    <cl-svg-icon [icon]=\"'gatekeeper'\" [fill]=\"'ApplaudoRed'\"></cl-svg-icon>\n  </ng-container>\n\n  <ng-container sidebarContent>\n    <cl-nav-link [icon]=\"'account'\" text=\"account\" [showText]=\"!isCollapsed\"></cl-nav-link>\n    <cl-nav-link [icon]=\"'admin'\" text=\"admin\" [showText]=\"!isCollapsed\"></cl-nav-link>\n    <cl-nav-link [icon]=\"'awardFill'\" text=\"awardFill\" [showText]=\"!isCollapsed\"></cl-nav-link>\n    <cl-nav-link [icon]=\"'calendar'\" text=\"calendar\" [showText]=\"!isCollapsed\"></cl-nav-link>\n  </ng-container>\n\n  <ng-container sidebarFooter>\n    <cl-nav-link [icon]=\"'logOut'\" text=\"Log Out\" [showText]=\"!isCollapsed\"></cl-nav-link>\n  </ng-container>\n\n  <ng-container content>\n    Lorem Ipsum is simply dummy text of the printing and typesetting industry. \n    Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, \n    when an unknown printer took a galley of type and scrambled it to make a type \n    specimen book. It has survived not only five centuries, but also the leap into \n    electronic typesetting, remaining essentially unchanged. It was popularised in \n    the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, \n    and more recently with desktop publishing software like Aldus PageMaker including \n    versions of Lorem Ipsum.\n  </ng-container>\n\n  </cl-sidebar-context>`,\n  styles: [\n    `\n    :host {\n      font-family: 'Avenir Next';\n      font-weight: 600;\n      font-size: 16px;\n      line-height: 24px;\n      min-height: 200px;\n    }\n    `,\n  ],\n})"
+            },
+            {
+                "name": "Tertiary",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "src/stories/clapp-lib/components/button.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "",
+                "defaultValue": "Template.bind({})"
+            },
+            {
+                "name": "Text",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "src/stories/clapp-lib/components/button.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "",
+                "defaultValue": "Template.bind({})"
             }
         ],
         "functions": [],
@@ -2182,6 +2032,18 @@
                     "type": "literal type"
                 }
             ],
+            "src/environments/environment.prod.ts": [
+                {
+                    "name": "environment",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "src/environments/environment.prod.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "object",
+                    "defaultValue": "{\n  production: true\n}"
+                }
+            ],
             "src/environments/environment.ts": [
                 {
                     "name": "environment",
@@ -2191,7 +2053,7 @@
                     "deprecated": false,
                     "deprecationMessage": "",
                     "type": "object",
-                    "defaultValue": "{\r\n  production: false\r\n}"
+                    "defaultValue": "{\n  production: false\n}"
                 }
             ],
             "src/stories/clapp-lib/components/button.stories.ts": [
@@ -2233,7 +2095,7 @@
                     "deprecated": false,
                     "deprecationMessage": "",
                     "type": "Story<ButtonComponent>",
-                    "defaultValue": "(args: ButtonComponent) => ({\r\n  props: args,\r\n})"
+                    "defaultValue": "(args: ButtonComponent) => ({\n  props: args,\n})"
                 },
                 {
                     "name": "Tertiary",
@@ -2254,18 +2116,6 @@
                     "deprecationMessage": "",
                     "type": "",
                     "defaultValue": "Template.bind({})"
-                }
-            ],
-            "src/environments/environment.prod.ts": [
-                {
-                    "name": "environment",
-                    "ctype": "miscellaneous",
-                    "subtype": "variable",
-                    "file": "src/environments/environment.prod.ts",
-                    "deprecated": false,
-                    "deprecationMessage": "",
-                    "type": "object",
-                    "defaultValue": "{\n  production: true\n}"
                 }
             ],
             "src/stories/Button.stories.ts": [
@@ -2317,7 +2167,7 @@
                     "deprecated": false,
                     "deprecationMessage": "",
                     "type": "Story<Button>",
-                    "defaultValue": "(args: Button) => ({\r\n  props: args,\r\n})"
+                    "defaultValue": "(args: Button) => ({\n  props: args,\n})"
                 }
             ],
             "src/stories/Header.stories.ts": [
@@ -2349,7 +2199,7 @@
                     "deprecated": false,
                     "deprecationMessage": "",
                     "type": "Story<Header>",
-                    "defaultValue": "(args: Header) => ({\r\n  props: args,\r\n})"
+                    "defaultValue": "(args: Header) => ({\n  props: args,\n})"
                 }
             ],
             "src/stories/Page.stories.ts": [
@@ -2381,7 +2231,7 @@
                     "deprecated": false,
                     "deprecationMessage": "",
                     "type": "Story<Page>",
-                    "defaultValue": "(args: Page) => ({\r\n  props: args,\r\n})"
+                    "defaultValue": "(args: Page) => ({\n  props: args,\n})"
                 }
             ],
             "src/stories/clapp-lib/components/nav-link.stories.ts": [
@@ -2402,8 +2252,8 @@
                     "file": "src/stories/clapp-lib/components/nav-link.stories.ts",
                     "deprecated": false,
                     "deprecationMessage": "",
-                    "type": "Story<SvgIconComponent>",
-                    "defaultValue": "(args: SvgIconComponent) => ({\n  props: args,\n})"
+                    "type": "Story<NavLinkComponent>",
+                    "defaultValue": "(args: NavLinkComponent) => ({\n  props: args,\n})"
                 }
             ],
             "src/stories/clapp-lib/components/svg-icon.stories.ts": [
@@ -2425,7 +2275,7 @@
                     "deprecated": false,
                     "deprecationMessage": "",
                     "type": "Story<SvgIconComponent>",
-                    "defaultValue": "(args: SvgIconComponent) => ({\r\n  props: args,\r\n})"
+                    "defaultValue": "(args: SvgIconComponent) => ({\n  props: args,\n})"
                 }
             ],
             "src/stories/clapp-lib/patterns/Sidebar-context.stories.ts": [
@@ -2447,7 +2297,7 @@
                     "deprecated": false,
                     "deprecationMessage": "",
                     "type": "Story<SidebarContextComponent>",
-                    "defaultValue": "(args: SidebarContextComponent) => ({\n  props: args,\n  template: `<cl-sidebar-context>\n    <ng-container content>\n    Lorem Ipsum is simply dummy text of the printing and typesetting industry. \n    Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, \n    when an unknown printer took a galley of type and scrambled it to make a type \n    specimen book. It has survived not only five centuries, but also the leap into \n    electronic typesetting, remaining essentially unchanged. It was popularised in \n    the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, \n    and more recently with desktop publishing software like Aldus PageMaker including \n    versions of Lorem Ipsum.\n    </ng-container>\n  </cl-sidebar-context>`,\n  styles: [\n    `\n    :host {\n      font-family: 'Avenir Next';\n      font-weight: 600;\n      font-size: 16px;\n      line-height: 24px;\n    }\n    `,\n  ],\n})"
+                    "defaultValue": "(args: SidebarContextComponent) => ({\n  props: args,\n  template: `\n  <cl-sidebar-context>\n\n  <ng-container sidebarHeader>\n    <cl-svg-icon [icon]=\"'gatekeeper'\" [fill]=\"'ApplaudoRed'\"></cl-svg-icon>\n  </ng-container>\n\n  <ng-container sidebarContent>\n    <cl-nav-link [icon]=\"'account'\" text=\"account\" [showText]=\"!isCollapsed\"></cl-nav-link>\n    <cl-nav-link [icon]=\"'admin'\" text=\"admin\" [showText]=\"!isCollapsed\"></cl-nav-link>\n    <cl-nav-link [icon]=\"'awardFill'\" text=\"awardFill\" [showText]=\"!isCollapsed\"></cl-nav-link>\n    <cl-nav-link [icon]=\"'calendar'\" text=\"calendar\" [showText]=\"!isCollapsed\"></cl-nav-link>\n  </ng-container>\n\n  <ng-container sidebarFooter>\n    <cl-nav-link [icon]=\"'logOut'\" text=\"Log Out\" [showText]=\"!isCollapsed\"></cl-nav-link>\n  </ng-container>\n\n  <ng-container content>\n    Lorem Ipsum is simply dummy text of the printing and typesetting industry. \n    Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, \n    when an unknown printer took a galley of type and scrambled it to make a type \n    specimen book. It has survived not only five centuries, but also the leap into \n    electronic typesetting, remaining essentially unchanged. It was popularised in \n    the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, \n    and more recently with desktop publishing software like Aldus PageMaker including \n    versions of Lorem Ipsum.\n  </ng-container>\n\n  </cl-sidebar-context>`,\n  styles: [\n    `\n    :host {\n      font-family: 'Avenir Next';\n      font-weight: 600;\n      font-size: 16px;\n      line-height: 24px;\n      min-height: 200px;\n    }\n    `,\n  ],\n})"
                 }
             ]
         },
@@ -2611,15 +2461,6 @@
                 "status": "low"
             },
             {
-                "filePath": "projects/clapp/src/lib/components/buttons/icon-button/icon-button.component.ts",
-                "type": "component",
-                "linktype": "component",
-                "name": "IconButtonComponent",
-                "coveragePercent": 0,
-                "coverageCount": "0/3",
-                "status": "low"
-            },
-            {
                 "filePath": "projects/clapp/src/lib/components/nav-link/nav-link.component.ts",
                 "type": "component",
                 "linktype": "component",
@@ -2654,7 +2495,7 @@
                 "linktype": "component",
                 "name": "SvgIconComponent",
                 "coveragePercent": 0,
-                "coverageCount": "0/13",
+                "coverageCount": "0/11",
                 "status": "low"
             },
             {
@@ -2887,6 +2728,66 @@
                 "coveragePercent": 83,
                 "coverageCount": "5/6",
                 "status": "very-good"
+            },
+            {
+                "filePath": "src/stories/clapp-lib/components/button.stories.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "Icon",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "src/stories/clapp-lib/components/button.stories.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "Primary",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "src/stories/clapp-lib/components/button.stories.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "Secondary",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "src/stories/clapp-lib/components/button.stories.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "Template",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "src/stories/clapp-lib/components/button.stories.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "Tertiary",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "src/stories/clapp-lib/components/button.stories.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "Text",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
             },
             {
                 "filePath": "src/stories/clapp-lib/components/nav-link.stories.ts",
