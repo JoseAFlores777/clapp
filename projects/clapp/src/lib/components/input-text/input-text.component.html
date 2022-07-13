@@ -1,10 +1,15 @@
-
 <div id="input-container">
-  <input type="text" name="text" autocomplete="off" class="" required [disabled]="disabled" [placeholder]="(type == 'noLabel') ? placeholder : ''" />
+
+  <input type="text" name="text" autocomplete="off" (keyup)="changeText($event)" (blur)="onBlur()" [disabled]="disabled"
+    [value]="inputValue" [ngClass]="{'error': isInvalidAndTouched}" required
+    [placeholder]="(type == 'noLabel') ? placeholder : ''" />
+
   <label *ngIf="type == 'plusLabel'" for="text" class="label-name">
     <span class="content-name" [innerText]="label"></span>
   </label>
+
 </div>
+
 <span class="error-message">
-  <!-- Please enter your text -->
+  <ng-content select="[err-mgs]"></ng-content>
 </span>

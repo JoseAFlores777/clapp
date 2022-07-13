@@ -7,6 +7,7 @@ import { ProfileWithCommentsComponent } from './pages/profile-with-comments/prof
 import { HomeMainComponent } from './pages/home-main/home-main.component';
 import { ClappModule } from 'clapp';
 import { NoopAnimationsModule } from '@angular/platform-browser/animations';
+import { ReactiveFormsModule } from '@angular/forms';
 
 
 @NgModule({
@@ -18,7 +19,8 @@ import { NoopAnimationsModule } from '@angular/platform-browser/animations';
   imports: [
      CommonModule,
     HomeRoutingModule,
-    ClappModule
+    ClappModule,
+    ReactiveFormsModule
   ],
   exports: []
 })

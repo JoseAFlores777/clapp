@@ -1,8 +1,62 @@
-<p>
-    Lorem ipsum dolor sit amet consectetur adipisicing elit. Autem, quaerat? Nihil corporis totam dolorum
-    quisquam doloribus labore, eum tempore, a necessitatibus id omnis magnam minima unde harum. Illum,
-    doloremque architecto.
-</p>
+<form [formGroup]="myForm" (ngSubmit)="seeValues()">
 
-<cl-input-text type="noLabel" placeholder="sdfsd" label="asdasd" [disabled]="false"></cl-input-text>
-<cl-input-text type="plusLabel" placeholder="sdfsd" label="asdasd" [disabled]="false"></cl-input-text>
+    <cl-input-text formControlName="firstName" type="noLabel" placeholder="firstName" label="firstName"
+        [isInvalidAndTouched]="myForm.controls['firstName'].invalid && myForm.controls['firstName'].touched">
+
+        <ng-container err-mgs>
+            <div *ngIf="myForm.controls['firstName'].invalid && myForm.controls['firstName'].touched">
+                <div *ngIf="myForm.controls['firstName'].hasError('required')">First Name is required.</div>
+                <div *ngIf="myForm.controls['firstName'].hasError('minlength')">First Name must be at least 4
+                    characters.</div>
+            </div>
+        </ng-container>
+
+    </cl-input-text>
+
+    <cl-input-text formControlName="lastName" type="noLabel" placeholder="lastName" label="lastName"
+        [isInvalidAndTouched]="myForm.controls['lastName'].invalid && myForm.controls['lastName'].touched">
+
+        <ng-container err-mgs>
+            <div *ngIf="myForm.controls['lastName'].invalid && myForm.controls['lastName'].touched">
+                <div *ngIf="myForm.controls['lastName'].hasError('required')">lastName is required.</div>
+                <div *ngIf="myForm.controls['lastName'].hasError('minlength')">lastName must be at least 4
+                    characters.</div>
+            </div>
+        </ng-container>
+
+    </cl-input-text>
+
+    <cl-input-text formControlName="email" type="plusLabel" placeholder="email" label="email"
+        [isInvalidAndTouched]="myForm.controls['email'].invalid && myForm.controls['email'].touched">
+
+        <ng-container err-mgs>
+            <div *ngIf="myForm.controls['email'].invalid && myForm.controls['email'].touched">
+                <div *ngIf="myForm.controls['email'].hasError('required')">First Name is required.</div>
+                <div *ngIf="myForm.controls['email'].hasError('email')"> Email is invalid.</div>
+            </div>
+        </ng-container>
+
+    </cl-input-text>
+
+
+    <button type="submit">Submit</button>
+
+</form>
+
+
+<h1>My Form</h1>
+<pre>{{myForm.value | json}}</pre>
+<br><br>
+<hr>
+<br><br>
+<br>
+
+<pre><strong>firstName -> dirty:</strong> {{myForm.controls['firstName'].dirty| json}}</pre><br>
+<pre><strong>firstName -> enabled:</strong> {{myForm.controls['firstName'].enabled| json}}</pre><br>
+<pre><strong>firstName -> disabled:</strong> {{myForm.controls['firstName'].disabled| json}}</pre><br>
+<pre><strong>firstName -> errors:</strong> {{myForm.controls['firstName'].errors | json}}</pre><br>
+<pre><strong>firstName -> invalid:</strong> {{myForm.controls['firstName'].invalid| json}}</pre><br>
+<pre><strong>firstName -> pristine:</strong> {{myForm.controls['firstName'].pristine| json}}</pre><br>
+<pre><strong>firstName -> touched:</strong> {{myForm.controls['firstName'].touched| json}}</pre><br>
+<pre><strong>firstName -> valid:</strong> {{myForm.controls['firstName'].valid| json}}</pre><br>
+<pre><strong>firstName -> value:</strong> {{myForm.controls['firstName'].value| json}}</pre><br>

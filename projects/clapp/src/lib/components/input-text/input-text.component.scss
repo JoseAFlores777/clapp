@@ -1,11 +1,7 @@
 @import '../../../../assets/scss/partials/clapp-base';
 
-:host {
-  margin: 100px;
-}
-
 #input-container {
-  width: 80%;
+  width: 100%;
   position: relative;
   height: 60px;
   overflow: hidden;
@@ -19,7 +15,7 @@
     padding-top: 20px;
     border: none;
     border-bottom: 2px solid $cool-gray;
-    
+
     &::placeholder {
       @include clapp-body-regular;
       color: $cool-gray;
@@ -39,8 +35,10 @@
 
     }
 
-
-
+    &.error,
+    &:not(:focus).error {
+      border-color: $error-red;
+    }
   }
 
   label {
@@ -52,7 +50,6 @@
     height: 100%;
     pointer-events: none;
 
-
     .content-name {
       @include clapp-body-regular;
       color: $applaudo-navy-blue;
@@ -63,17 +60,13 @@
       padding-bottom: 5px;
       transition: all 0.3s ease;
     }
-
-
   }
 
   input:focus+.label-name .content-name,
   input:valid+.label-name .content-name {
     transform: translateY(-100%);
     @include clapp-label-regular;
-
   }
-
 
   input:disabled+.label-name .content-name {
     color: $mid-gray;
@@ -82,6 +75,7 @@
   input:disabled {
     background-color: transparent;
     border-color: $mid-gray;
+
     &::placeholder {
       color: $mid-gray;
     }
@@ -91,14 +85,9 @@
   input:disabled.error {
     border-color: $error-red;
   }
-
-  .error {
-    border-color: $error-red;
-  }
 }
 
-
-.error-message {
+.error-message ::ng-deep>* {
   @include clapp-body-regular();
   color: $error-red;
   padding: 0px 8px 0px 8px;
