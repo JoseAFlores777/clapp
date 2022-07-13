@@ -1,3 +1,47 @@
 @import '../../../../assets/scss/partials/clapp-base';
 
+:host {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
 
+@mixin type($type) {
+  @if $type =='horizontal' {
+    margin: 0;
+    border: 1px solid $platinum;
+    height: 90vw;
+    transform: rotate(90deg);
+  }
+
+  @else if $type =='vertical' {
+    border: 1px solid $platinum;
+    height: 90vh;
+  }
+
+  @else if $type =='horizontal-dark' {
+    border: 1px solid $charcoal;
+    height: 90vw;
+  }
+
+  @else if $type =='vertical-dark' {
+    border: 1px solid $charcoal;
+    height: 90vh;
+  }
+}
+
+.horizontal {
+  @include type('horizontal');
+}
+
+.vertical {
+  @include type('vertical');
+}
+
+.horizontal-dark {
+  @include type('horizontal-dark');
+}
+
+.vertical-dark {
+  @include type('vertical-dark');
+}
