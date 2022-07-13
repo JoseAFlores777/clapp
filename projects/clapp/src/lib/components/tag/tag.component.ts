@@ -6,7 +6,7 @@ import { Component, Input, OnInit } from '@angular/core';
   styleUrls: ['./tag.component.scss'],
 })
 export class TagComponent implements OnInit {
-  @Input() type = 'normal';
+  @Input('type') type = 'normal';
   @Input('label') label = 'Tag';
 
   constructor() {}

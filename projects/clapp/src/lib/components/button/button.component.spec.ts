@@ -38,10 +38,4 @@ describe('ButtonComponent', () => {
     component.type = 'primary';
     expect(component.type).toBeTruthy();
   });
-
-  it('should have a property label', () => {
-    expect(component.label).toBeDefined();
-    component.label = 'label';
-    expect(component.label).toBeTruthy();
-  });
 });
