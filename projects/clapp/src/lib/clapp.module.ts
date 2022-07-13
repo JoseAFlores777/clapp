@@ -8,6 +8,7 @@ import { NavLinkComponent } from './components/nav-link/nav-link.component';
 import { RouterModule } from '@angular/router';
 import { TagComponent } from './components/tag/tag.component';
 import { DividerComponent } from './components/divider/divider.component';
+import { CommentsComponent } from './patterns/comments/comments.component';
 
 
 @NgModule({
@@ -19,6 +20,7 @@ import { DividerComponent } from './components/divider/divider.component';
     ButtonComponent,
     TagComponent,
     DividerComponent,
+    CommentsComponent,
   ],
   imports: [
     CommonModule,
@@ -32,6 +34,7 @@ import { DividerComponent } from './components/divider/divider.component';
     ButtonComponent,
     TagComponent,
     DividerComponent,
+    CommentsComponent,
   ]
 })
 export class ClappModule { }
