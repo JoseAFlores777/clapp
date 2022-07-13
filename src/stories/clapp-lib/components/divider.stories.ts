@@ -1,38 +1,37 @@
 // also exported from '@storybook/angular' if you can deal with breaking changes in 6.1
 import { Story, Meta } from '@storybook/angular/types-6-0';
-import { ButtonComponent } from '../../../../projects/clapp/src/lib/components/button/button.component';
+import { DividerComponent } from '../../../../projects/clapp/src/lib/components/divider/divider.component';
 import { componentWrapperDecorator } from '@storybook/angular';
 
 // More on default export: https://storybook.js.org/docs/angular/writing-stories/introduction#default-export
 export default {
-  title: 'Clapp-Lib/Components/cl-button',
-  component: ButtonComponent,
+  title: 'Clapp-Lib/Components/cl-divider',
+  component: DividerComponent,
   decorators: [
     componentWrapperDecorator(
-      (story) => `<div style="min-height: 200px; display: flex; justify-content: center;"><div style="align-self: center; justify-self: center;">${story}</div></div>`
+      (story) =>
+        `
+        <div style="display:flex; justify-content: center; align-items: center; height: 90vh;">
+          ${story}
+        </div>`
     ),
   ],
   // More on argTypes: https://storybook.js.org/docs/angular/api/argtypes
   argTypes: {
-    disabled: {
-      options: [true, false],
-      control: { type: 'boolean' },
-    },
     type: {
-      options: ['primary', 'secondary', 'tertiary', 'text'],
+      options: ['horizontal', 'vertical', 'horizontal-dark', 'vertical-dark'],
       control: { type: 'select' },
-    }
+    },
   },
 } as Meta;
 
 // More on component templates: https://storybook.js.org/docs/angular/writing-stories/introduction#using-args
-const Template: Story<ButtonComponent> = (args: ButtonComponent) => ({
+const Template: Story<DividerComponent> = (args: DividerComponent) => ({
   props: args,
 });
 
-export const Primary = Template.bind({});
+export const Principal = Template.bind({});
 // More on args: https://storybook.js.org/docs/angular/writing-stories/args
-Primary.args = {
-  disabled: false,
-  type: 'primary',
+Principal.args = {
+  type: 'horizontal',
 };

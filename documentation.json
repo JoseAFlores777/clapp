@@ -363,6 +363,78 @@
             ]
         },
         {
+            "name": "DividerComponent",
+            "id": "component-DividerComponent-95f80d5607daf439f79689f030681e71a966b5b50ae3387909a15fe6808c03add091c5e43f5754aac10a73ff53d540e90037529c3d9e3d2ba0972fb38a0eee27",
+            "file": "projects/clapp/src/lib/components/divider/divider.component.ts",
+            "encapsulation": [],
+            "entryComponents": [],
+            "inputs": [],
+            "outputs": [],
+            "providers": [],
+            "selector": "cl-divider",
+            "styleUrls": [
+                "./divider.component.scss"
+            ],
+            "styles": [],
+            "templateUrl": [
+                "./divider.component.html"
+            ],
+            "viewProviders": [],
+            "inputsClass": [
+                {
+                    "name": "type",
+                    "defaultValue": "'horizontal'",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "line": 9,
+                    "type": "string",
+                    "decorators": []
+                }
+            ],
+            "outputsClass": [],
+            "propertiesClass": [],
+            "methodsClass": [
+                {
+                    "name": "ngOnInit",
+                    "args": [],
+                    "optional": false,
+                    "returnType": "void",
+                    "typeParameters": [],
+                    "line": 13,
+                    "deprecated": false,
+                    "deprecationMessage": ""
+                }
+            ],
+            "deprecated": false,
+            "deprecationMessage": "",
+            "hostBindings": [],
+            "hostListeners": [],
+            "description": "",
+            "rawdescription": "\n",
+            "type": "component",
+            "sourceCode": "import { Component, Input, OnInit } from '@angular/core';\n\n@Component({\n  selector: 'cl-divider',\n  templateUrl: './divider.component.html',\n  styleUrls: ['./divider.component.scss'],\n})\nexport class DividerComponent implements OnInit {\n  @Input('type') type = 'horizontal';\n\n  constructor() {}\n\n  ngOnInit(): void {}\n}\n",
+            "assetsDirs": [],
+            "styleUrlsData": [
+                {
+                    "data": "@import '../../../../assets/scss/partials/clapp-base';\r\n\r\n:host {\r\n  display: flex;\r\n  justify-content: center;\r\n  align-items: center;\r\n}\r\n\r\n@mixin type($type) {\r\n  @if $type =='horizontal' {\r\n    border: 1px solid $platinum;\r\n    width: 100%;\r\n  }\r\n\r\n  @else if $type =='vertical' {\r\n    border: 1px solid $platinum;\r\n    height: 100%;\r\n  }\r\n\r\n  @else if $type =='horizontal-dark' {\r\n    border: 1px solid $charcoal;\r\n    width: 100%;\r\n  }\r\n\r\n  @else if $type =='vertical-dark' {\r\n    border: 1px solid $charcoal;\r\n    height: 100%;\r\n  }\r\n}\r\n\r\n.horizontal {\r\n  @include type('horizontal');\r\n}\r\n\r\n.vertical {\r\n  @include type('vertical');\r\n}\r\n\r\n.horizontal-dark {\r\n  @include type('horizontal-dark');\r\n}\r\n\r\n.vertical-dark {\r\n  @include type('vertical-dark');\r\n}",
+                    "styleUrl": "./divider.component.scss"
+                }
+            ],
+            "stylesData": "",
+            "constructorObj": {
+                "name": "constructor",
+                "description": "",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "args": [],
+                "line": 9
+            },
+            "implements": [
+                "OnInit"
+            ],
+            "templateData": "<hr class=\"cl-hr\" [ngClass]=\"type\">\n"
+        },
+        {
             "name": "EndorsementComponent",
             "id": "component-EndorsementComponent-d16409a6831ec08c2fa49962c47d7c70f2a15e1ead6e269f9562cf0af9e876cc8a505b1a2d5c3b0542007ba5aab13c7fca3d234a68883bf982833ed815d5e5ba",
             "file": "src/app/modules/login/pages/endorsement/endorsement.component.ts",
@@ -484,7 +556,7 @@
             "implements": [
                 "OnInit"
             ],
-            "templateData": "<p>gatekeeper works!</p>\r\n\r\n<cl-button label=\"hola\" type=\"primary\" [disabled]=\"false\">\r\n</cl-button>\r\n\r\n<cl-tag type=\"cyan\" label=\"aslfkjalsfkdjalsdfjalkj\"></cl-tag>\r\n<cl-tag type=\"light-navy-blue\"></cl-tag>"
+            "templateData": "<p>gatekeeper works!</p>\r\n\r\n<cl-button label=\"hola\" type=\"primary\" [disabled]=\"false\">\r\n</cl-button>\r\n\r\n<div style=\"display:flex; max-height: 30px;\">\r\n  <cl-button label=\"hola\" type=\"primary\" [disabled]=\"false\">\r\n  </cl-button>\r\n  <cl-divider type=\"vertical-dark\"></cl-divider>\r\n  <cl-button label=\"hola\" type=\"primary\" [disabled]=\"false\">\r\n  </cl-button>\r\n</div>\r\n"
         },
         {
             "name": "HeaderComponent",
@@ -1309,7 +1381,7 @@
         },
         {
             "name": "TagComponent",
-            "id": "component-TagComponent-c864d7f517cfbf0075b6c87d7ca11423bf268612f433db7064aeed5ecb6665a560c4c754d82d6ca65f8661623199aca1b75275ea9e322d44ed28d69ab0d73517",
+            "id": "component-TagComponent-49f3dd1bca6ac2ab553a2fc1e652a7e1414726cadb1b15538712cc9612671a39fa8b4ef309ef5bd883557eadeeae0fb4a59882f3240e47b99be7cc190de34f77",
             "file": "projects/clapp/src/lib/components/tag/tag.component.ts",
             "encapsulation": [],
             "entryComponents": [],
@@ -1366,11 +1438,11 @@
             "description": "",
             "rawdescription": "\n",
             "type": "component",
-            "sourceCode": "import { Component, Input, OnInit } from '@angular/core';\n\n@Component({\n  selector: 'cl-tag',\n  templateUrl: './tag.component.html',\n  styleUrls: ['./tag.component.scss'],\n})\nexport class TagComponent implements OnInit {\n  @Input('type') type = 'normal';\n  @Input('label') label = 'Tag';\n\n  constructor() {}\n\n  ngOnInit(): void {}\n}\n",
+            "sourceCode": "import { Component, Input, OnInit } from '@angular/core';\r\n\r\n@Component({\r\n  selector: 'cl-tag',\r\n  templateUrl: './tag.component.html',\r\n  styleUrls: ['./tag.component.scss'],\r\n})\r\nexport class TagComponent implements OnInit {\r\n  @Input('type') type = 'normal';\r\n  @Input('label') label = 'Tag';\r\n\r\n  constructor() {}\r\n\r\n  ngOnInit(): void {}\r\n}\r\n",
             "assetsDirs": [],
             "styleUrlsData": [
                 {
-                    "data": "@import '../../../../assets/scss/partials/clapp-base';\r\n\r\n@mixin colors ($background, $color) {\r\n  background-color: $background;\r\n  color: $color;\r\n}\r\n\r\n@mixin type ($type) {\r\n  @if $type =='normal' {\r\n    @include colors($platinum, $cool-gray);\r\n  }\r\n\r\n  @else if $type =='approved' {\r\n    @include colors($green, $white);\r\n  }\r\n\r\n  @else if $type =='failed' {\r\n    @include colors($error-red, $white);\r\n  }\r\n\r\n  @else if $type =='purple' {\r\n    @include colors($applaudo-purple, $white);\r\n  }\r\n\r\n  @else if $type =='light-navy-blue' {\r\n    @include colors($light-navy-blue, $white);\r\n  }\r\n\r\n  @else if $type =='cyan' {\r\n    @include colors($cyan, $white);\r\n  }\r\n}\r\n\r\nspan {\r\n  @include clapp-label-demi;\r\n  width: fit-content;\r\n  height: 32px;\r\n  margin: 0;\r\n  padding: 8px 16px;\r\n  border-radius: 16px;\r\n}\r\n\r\n.normal {\r\n  @include type('normal');\r\n}\r\n\r\n.approved {\r\n  @include type('approved');\r\n}\r\n\r\n.failed {\r\n  @include type('failed');\r\n}\r\n\r\n.purple {\r\n  @include type('purple');\r\n}\r\n\r\n.light-navy-blue {\r\n  @include type('light-navy-blue');\r\n}\r\n\r\n.cyan {\r\n  @include type('cyan');\r\n}",
+                    "data": "@import '../../../../assets/scss/partials/clapp-base';\r\n\r\n@mixin colors ($background, $color) {\r\n  background-color: $background;\r\n  color: $color;\r\n}\r\n\r\n@mixin type ($type) {\r\n  @if $type =='normal' {\r\n    @include colors($platinum, $cool-gray);\r\n  }\r\n\r\n  @else if $type =='approved' {\r\n    @include colors($green, $white);\r\n  }\r\n\r\n  @else if $type =='failed' {\r\n    @include colors($error-red, $white);\r\n  }\r\n\r\n  @else if $type =='purple' {\r\n    @include colors($applaudo-purple, $white);\r\n  }\r\n\r\n  @else if $type =='light-navy-blue' {\r\n    @include colors($light-navy-blue, $white);\r\n  }\r\n\r\n  @else if $type =='cyan' {\r\n    @include colors($cyan, $white);\r\n  }\r\n}\r\n\r\n.span {\r\n  @include clapp-label-demi;\r\n  width: fit-content;\r\n  height: 32px;\r\n  margin: 0;\r\n  padding: 8px 16px;\r\n  border-radius: 16px;\r\n}\r\n\r\n.normal {\r\n  @include type('normal');\r\n}\r\n\r\n.approved {\r\n  @include type('approved');\r\n}\r\n\r\n.failed {\r\n  @include type('failed');\r\n}\r\n\r\n.purple {\r\n  @include type('purple');\r\n}\r\n\r\n.light-navy-blue {\r\n  @include type('light-navy-blue');\r\n}\r\n\r\n.cyan {\r\n  @include type('cyan');\r\n}",
                     "styleUrl": "./tag.component.scss"
                 }
             ],
@@ -1482,13 +1554,13 @@
         },
         {
             "name": "ClappModule",
-            "id": "module-ClappModule-95c5030163c80f772e820e2e8c79ea4c1185be158275641bf31be742e3ea2fca86b1c849e3e94634342158c0b55c5523612d3e57a77fa0b20a5975b43f8368bf",
+            "id": "module-ClappModule-02ecf07152f49e4557d970fa90c8bb230be9db1b86470c63a2f6165166e4d1437fff490e4f7e503a993925f38b4a0563ba2a6539e33e7fa87e4f4d2e4a99a46f",
             "description": "",
             "deprecationMessage": "",
             "deprecated": false,
             "file": "projects/clapp/src/lib/clapp.module.ts",
             "methods": [],
-            "sourceCode": "import { CommonModule } from '@angular/common';\r\nimport { NgModule } from '@angular/core';\r\nimport { ClappComponent } from './clapp.component';\r\nimport { ButtonComponent } from './components/button/button.component';\r\nimport { SvgIconComponent } from './components/svg-icon/svg-icon.component';\r\nimport { SidebarContextComponent } from './patterns/sidebar-context/sidebar-context.component';\r\nimport { NavLinkComponent } from './components/nav-link/nav-link.component';\r\nimport { RouterModule } from '@angular/router';\r\nimport { TagComponent } from './components/tag/tag.component';\r\n\r\n\r\n@NgModule({\r\n  declarations: [\r\n    ClappComponent,\r\n    SvgIconComponent,\r\n    SidebarContextComponent,\r\n    NavLinkComponent,\r\n    ButtonComponent,\r\n    TagComponent,\r\n  ],\r\n  imports: [\r\n    CommonModule,\r\n    RouterModule,\r\n  ],\r\n  exports: [\r\n    ClappComponent,\r\n    SvgIconComponent,\r\n    SidebarContextComponent,\r\n    NavLinkComponent,\r\n    ButtonComponent,\r\n    TagComponent,\r\n  ]\r\n})\r\nexport class ClappModule { }\r\n",
+            "sourceCode": "import { CommonModule } from '@angular/common';\r\nimport { NgModule } from '@angular/core';\r\nimport { ClappComponent } from './clapp.component';\r\nimport { ButtonComponent } from './components/button/button.component';\r\nimport { SvgIconComponent } from './components/svg-icon/svg-icon.component';\r\nimport { SidebarContextComponent } from './patterns/sidebar-context/sidebar-context.component';\r\nimport { NavLinkComponent } from './components/nav-link/nav-link.component';\r\nimport { RouterModule } from '@angular/router';\r\nimport { TagComponent } from './components/tag/tag.component';\r\nimport { DividerComponent } from './components/divider/divider.component';\r\n\r\n\r\n@NgModule({\r\n  declarations: [\r\n    ClappComponent,\r\n    SvgIconComponent,\r\n    SidebarContextComponent,\r\n    NavLinkComponent,\r\n    ButtonComponent,\r\n    TagComponent,\r\n    DividerComponent,\r\n  ],\r\n  imports: [\r\n    CommonModule,\r\n    RouterModule,\r\n  ],\r\n  exports: [\r\n    ClappComponent,\r\n    SvgIconComponent,\r\n    SidebarContextComponent,\r\n    NavLinkComponent,\r\n    ButtonComponent,\r\n    TagComponent,\r\n    DividerComponent,\r\n  ]\r\n})\r\nexport class ClappModule { }\r\n",
             "children": [
                 {
                     "type": "providers",
@@ -1502,6 +1574,9 @@
                         },
                         {
                             "name": "ClappComponent"
+                        },
+                        {
+                            "name": "DividerComponent"
                         },
                         {
                             "name": "NavLinkComponent"
@@ -1526,6 +1601,9 @@
                     "elements": [
                         {
                             "name": "ClappComponent"
+                        },
+                        {
+                            "name": "DividerComponent"
                         },
                         {
                             "name": "NavLinkComponent"
@@ -1841,6 +1919,26 @@
                 "name": "Principal",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
+                "file": "src/stories/clapp-lib/patterns/Sidebar-context.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "",
+                "defaultValue": "Template.bind({})"
+            },
+            {
+                "name": "Principal",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "src/stories/clapp-lib/components/divider.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "",
+                "defaultValue": "Template.bind({})"
+            },
+            {
+                "name": "Principal",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
                 "file": "src/stories/clapp-lib/components/nav-link.stories.ts",
                 "deprecated": false,
                 "deprecationMessage": "",
@@ -1852,16 +1950,6 @@
                 "ctype": "miscellaneous",
                 "subtype": "variable",
                 "file": "src/stories/clapp-lib/components/svg-icon.stories.ts",
-                "deprecated": false,
-                "deprecationMessage": "",
-                "type": "",
-                "defaultValue": "Template.bind({})"
-            },
-            {
-                "name": "Principal",
-                "ctype": "miscellaneous",
-                "subtype": "variable",
-                "file": "src/stories/clapp-lib/patterns/Sidebar-context.stories.ts",
                 "deprecated": false,
                 "deprecationMessage": "",
                 "type": "",
@@ -1959,11 +2047,31 @@
                 "name": "Template",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
+                "file": "src/stories/clapp-lib/patterns/Sidebar-context.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "Story<SidebarContextComponent>",
+                "defaultValue": "(args: SidebarContextComponent) => ({\r\n  props: args,\r\n  template: `\r\n  <cl-sidebar-context>\r\n\r\n  <ng-container sidebarHeader>\r\n    <cl-svg-icon [icon]=\"'gatekeeper'\" [fill]=\"'ApplaudoRed'\"></cl-svg-icon>\r\n  </ng-container>\r\n\r\n  <ng-container sidebarContent>\r\n    <cl-nav-link [icon]=\"'account'\" text=\"account\" [showText]=\"!isCollapsed\"></cl-nav-link>\r\n    <cl-nav-link [icon]=\"'admin'\" text=\"admin\" [showText]=\"!isCollapsed\"></cl-nav-link>\r\n    <cl-nav-link [icon]=\"'awardFill'\" text=\"awardFill\" [showText]=\"!isCollapsed\"></cl-nav-link>\r\n    <cl-nav-link [icon]=\"'calendar'\" text=\"calendar\" [showText]=\"!isCollapsed\"></cl-nav-link>\r\n  </ng-container>\r\n\r\n  <ng-container sidebarFooter>\r\n    <cl-nav-link [icon]=\"'logOut'\" text=\"Log Out\" [showText]=\"!isCollapsed\"></cl-nav-link>\r\n  </ng-container>\r\n\r\n  <ng-container content>\r\n    Lorem Ipsum is simply dummy text of the printing and typesetting industry. \r\n    Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, \r\n    when an unknown printer took a galley of type and scrambled it to make a type \r\n    specimen book. It has survived not only five centuries, but also the leap into \r\n    electronic typesetting, remaining essentially unchanged. It was popularised in \r\n    the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, \r\n    and more recently with desktop publishing software like Aldus PageMaker including \r\n    versions of Lorem Ipsum.\r\n  </ng-container>\r\n\r\n  </cl-sidebar-context>`,\r\n  styles: [\r\n    `\r\n    :host {\r\n      font-family: 'Avenir Next';\r\n      font-weight: 600;\r\n      font-size: 16px;\r\n      line-height: 24px;\r\n      min-height: 200px;\r\n    }\r\n    `,\r\n  ],\r\n})"
+            },
+            {
+                "name": "Template",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
                 "file": "src/stories/clapp-lib/components/button.stories.ts",
                 "deprecated": false,
                 "deprecationMessage": "",
                 "type": "Story<ButtonComponent>",
                 "defaultValue": "(args: ButtonComponent) => ({\r\n  props: args,\r\n})"
+            },
+            {
+                "name": "Template",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "src/stories/clapp-lib/components/divider.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "Story<DividerComponent>",
+                "defaultValue": "(args: DividerComponent) => ({\r\n  props: args,\r\n})"
             },
             {
                 "name": "Template",
@@ -1984,16 +2092,6 @@
                 "deprecationMessage": "",
                 "type": "Story<SvgIconComponent>",
                 "defaultValue": "(args: SvgIconComponent) => ({\r\n  props: args,\r\n})"
-            },
-            {
-                "name": "Template",
-                "ctype": "miscellaneous",
-                "subtype": "variable",
-                "file": "src/stories/clapp-lib/patterns/Sidebar-context.stories.ts",
-                "deprecated": false,
-                "deprecationMessage": "",
-                "type": "Story<SidebarContextComponent>",
-                "defaultValue": "(args: SidebarContextComponent) => ({\r\n  props: args,\r\n  template: `\r\n  <cl-sidebar-context>\r\n\r\n  <ng-container sidebarHeader>\r\n    <cl-svg-icon [icon]=\"'gatekeeper'\" [fill]=\"'ApplaudoRed'\"></cl-svg-icon>\r\n  </ng-container>\r\n\r\n  <ng-container sidebarContent>\r\n    <cl-nav-link [icon]=\"'account'\" text=\"account\" [showText]=\"!isCollapsed\"></cl-nav-link>\r\n    <cl-nav-link [icon]=\"'admin'\" text=\"admin\" [showText]=\"!isCollapsed\"></cl-nav-link>\r\n    <cl-nav-link [icon]=\"'awardFill'\" text=\"awardFill\" [showText]=\"!isCollapsed\"></cl-nav-link>\r\n    <cl-nav-link [icon]=\"'calendar'\" text=\"calendar\" [showText]=\"!isCollapsed\"></cl-nav-link>\r\n  </ng-container>\r\n\r\n  <ng-container sidebarFooter>\r\n    <cl-nav-link [icon]=\"'logOut'\" text=\"Log Out\" [showText]=\"!isCollapsed\"></cl-nav-link>\r\n  </ng-container>\r\n\r\n  <ng-container content>\r\n    Lorem Ipsum is simply dummy text of the printing and typesetting industry. \r\n    Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, \r\n    when an unknown printer took a galley of type and scrambled it to make a type \r\n    specimen book. It has survived not only five centuries, but also the leap into \r\n    electronic typesetting, remaining essentially unchanged. It was popularised in \r\n    the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, \r\n    and more recently with desktop publishing software like Aldus PageMaker including \r\n    versions of Lorem Ipsum.\r\n  </ng-container>\r\n\r\n  </cl-sidebar-context>`,\r\n  styles: [\r\n    `\r\n    :host {\r\n      font-family: 'Avenir Next';\r\n      font-weight: 600;\r\n      font-size: 16px;\r\n      line-height: 24px;\r\n      min-height: 200px;\r\n    }\r\n    `,\r\n  ],\r\n})"
             },
             {
                 "name": "Template",
@@ -2341,6 +2439,50 @@
                     "defaultValue": "(args: Page) => ({\r\n  props: args,\r\n})"
                 }
             ],
+            "src/stories/clapp-lib/patterns/Sidebar-context.stories.ts": [
+                {
+                    "name": "Principal",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "src/stories/clapp-lib/patterns/Sidebar-context.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "",
+                    "defaultValue": "Template.bind({})"
+                },
+                {
+                    "name": "Template",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "src/stories/clapp-lib/patterns/Sidebar-context.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "Story<SidebarContextComponent>",
+                    "defaultValue": "(args: SidebarContextComponent) => ({\r\n  props: args,\r\n  template: `\r\n  <cl-sidebar-context>\r\n\r\n  <ng-container sidebarHeader>\r\n    <cl-svg-icon [icon]=\"'gatekeeper'\" [fill]=\"'ApplaudoRed'\"></cl-svg-icon>\r\n  </ng-container>\r\n\r\n  <ng-container sidebarContent>\r\n    <cl-nav-link [icon]=\"'account'\" text=\"account\" [showText]=\"!isCollapsed\"></cl-nav-link>\r\n    <cl-nav-link [icon]=\"'admin'\" text=\"admin\" [showText]=\"!isCollapsed\"></cl-nav-link>\r\n    <cl-nav-link [icon]=\"'awardFill'\" text=\"awardFill\" [showText]=\"!isCollapsed\"></cl-nav-link>\r\n    <cl-nav-link [icon]=\"'calendar'\" text=\"calendar\" [showText]=\"!isCollapsed\"></cl-nav-link>\r\n  </ng-container>\r\n\r\n  <ng-container sidebarFooter>\r\n    <cl-nav-link [icon]=\"'logOut'\" text=\"Log Out\" [showText]=\"!isCollapsed\"></cl-nav-link>\r\n  </ng-container>\r\n\r\n  <ng-container content>\r\n    Lorem Ipsum is simply dummy text of the printing and typesetting industry. \r\n    Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, \r\n    when an unknown printer took a galley of type and scrambled it to make a type \r\n    specimen book. It has survived not only five centuries, but also the leap into \r\n    electronic typesetting, remaining essentially unchanged. It was popularised in \r\n    the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, \r\n    and more recently with desktop publishing software like Aldus PageMaker including \r\n    versions of Lorem Ipsum.\r\n  </ng-container>\r\n\r\n  </cl-sidebar-context>`,\r\n  styles: [\r\n    `\r\n    :host {\r\n      font-family: 'Avenir Next';\r\n      font-weight: 600;\r\n      font-size: 16px;\r\n      line-height: 24px;\r\n      min-height: 200px;\r\n    }\r\n    `,\r\n  ],\r\n})"
+                }
+            ],
+            "src/stories/clapp-lib/components/divider.stories.ts": [
+                {
+                    "name": "Principal",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "src/stories/clapp-lib/components/divider.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "",
+                    "defaultValue": "Template.bind({})"
+                },
+                {
+                    "name": "Template",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "src/stories/clapp-lib/components/divider.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "Story<DividerComponent>",
+                    "defaultValue": "(args: DividerComponent) => ({\r\n  props: args,\r\n})"
+                }
+            ],
             "src/stories/clapp-lib/components/nav-link.stories.ts": [
                 {
                     "name": "Principal",
@@ -2383,28 +2525,6 @@
                     "deprecationMessage": "",
                     "type": "Story<SvgIconComponent>",
                     "defaultValue": "(args: SvgIconComponent) => ({\r\n  props: args,\r\n})"
-                }
-            ],
-            "src/stories/clapp-lib/patterns/Sidebar-context.stories.ts": [
-                {
-                    "name": "Principal",
-                    "ctype": "miscellaneous",
-                    "subtype": "variable",
-                    "file": "src/stories/clapp-lib/patterns/Sidebar-context.stories.ts",
-                    "deprecated": false,
-                    "deprecationMessage": "",
-                    "type": "",
-                    "defaultValue": "Template.bind({})"
-                },
-                {
-                    "name": "Template",
-                    "ctype": "miscellaneous",
-                    "subtype": "variable",
-                    "file": "src/stories/clapp-lib/patterns/Sidebar-context.stories.ts",
-                    "deprecated": false,
-                    "deprecationMessage": "",
-                    "type": "Story<SidebarContextComponent>",
-                    "defaultValue": "(args: SidebarContextComponent) => ({\r\n  props: args,\r\n  template: `\r\n  <cl-sidebar-context>\r\n\r\n  <ng-container sidebarHeader>\r\n    <cl-svg-icon [icon]=\"'gatekeeper'\" [fill]=\"'ApplaudoRed'\"></cl-svg-icon>\r\n  </ng-container>\r\n\r\n  <ng-container sidebarContent>\r\n    <cl-nav-link [icon]=\"'account'\" text=\"account\" [showText]=\"!isCollapsed\"></cl-nav-link>\r\n    <cl-nav-link [icon]=\"'admin'\" text=\"admin\" [showText]=\"!isCollapsed\"></cl-nav-link>\r\n    <cl-nav-link [icon]=\"'awardFill'\" text=\"awardFill\" [showText]=\"!isCollapsed\"></cl-nav-link>\r\n    <cl-nav-link [icon]=\"'calendar'\" text=\"calendar\" [showText]=\"!isCollapsed\"></cl-nav-link>\r\n  </ng-container>\r\n\r\n  <ng-container sidebarFooter>\r\n    <cl-nav-link [icon]=\"'logOut'\" text=\"Log Out\" [showText]=\"!isCollapsed\"></cl-nav-link>\r\n  </ng-container>\r\n\r\n  <ng-container content>\r\n    Lorem Ipsum is simply dummy text of the printing and typesetting industry. \r\n    Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, \r\n    when an unknown printer took a galley of type and scrambled it to make a type \r\n    specimen book. It has survived not only five centuries, but also the leap into \r\n    electronic typesetting, remaining essentially unchanged. It was popularised in \r\n    the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, \r\n    and more recently with desktop publishing software like Aldus PageMaker including \r\n    versions of Lorem Ipsum.\r\n  </ng-container>\r\n\r\n  </cl-sidebar-context>`,\r\n  styles: [\r\n    `\r\n    :host {\r\n      font-family: 'Avenir Next';\r\n      font-weight: 600;\r\n      font-size: 16px;\r\n      line-height: 24px;\r\n      min-height: 200px;\r\n    }\r\n    `,\r\n  ],\r\n})"
                 }
             ],
             "src/stories/clapp-lib/components/tag.stories.ts": [
@@ -2587,6 +2707,15 @@
                 "name": "ButtonComponent",
                 "coveragePercent": 0,
                 "coverageCount": "0/6",
+                "status": "low"
+            },
+            {
+                "filePath": "projects/clapp/src/lib/components/divider/divider.component.ts",
+                "type": "component",
+                "linktype": "component",
+                "name": "DividerComponent",
+                "coveragePercent": 0,
+                "coverageCount": "0/4",
                 "status": "low"
             },
             {
@@ -2923,6 +3052,26 @@
                 "linktype": "miscellaneous",
                 "linksubtype": "variable",
                 "name": "Text",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "src/stories/clapp-lib/components/divider.stories.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "Principal",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "src/stories/clapp-lib/components/divider.stories.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "Template",
                 "coveragePercent": 0,
                 "coverageCount": "0/1",
                 "status": "low"
