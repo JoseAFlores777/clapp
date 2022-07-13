@@ -8,25 +8,23 @@
 
 @mixin type($type) {
   @if $type =='horizontal' {
-    margin: 0;
     border: 1px solid $platinum;
-    height: 90vw;
-    transform: rotate(90deg);
+    width: 100%;
   }
 
   @else if $type =='vertical' {
     border: 1px solid $platinum;
-    height: 90vh;
+    height: 100%;
   }
 
   @else if $type =='horizontal-dark' {
     border: 1px solid $charcoal;
-    height: 90vw;
+    width: 100%;
   }
 
   @else if $type =='vertical-dark' {
     border: 1px solid $charcoal;
-    height: 90vh;
+    height: 100%;
   }
 }
 
