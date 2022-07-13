@@ -7,6 +7,7 @@ import { SidebarContextComponent } from './patterns/sidebar-context/sidebar-cont
 import { NavLinkComponent } from './components/nav-link/nav-link.component';
 import { RouterModule } from '@angular/router';
 import { TagComponent } from './components/tag/tag.component';
+import { DividerComponent } from './components/divider/divider.component';
 
 
 @NgModule({
@@ -17,6 +18,7 @@ import { TagComponent } from './components/tag/tag.component';
     NavLinkComponent,
     ButtonComponent,
     TagComponent,
+    DividerComponent,
   ],
   imports: [
     CommonModule,
@@ -29,6 +31,7 @@ import { TagComponent } from './components/tag/tag.component';
     NavLinkComponent,
     ButtonComponent,
     TagComponent,
+    DividerComponent,
   ]
 })
 export class ClappModule { }

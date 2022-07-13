@@ -11,3 +11,4 @@ export * from './lib/components/nav-link/nav-link.component';
 export * from './lib/components/button/button.component';
 export * from './lib/components/svg-icon/svg-icon.component';
 export * from './lib/components/tag/tag.component';
+export * from './lib/components/divider/divider.component';
