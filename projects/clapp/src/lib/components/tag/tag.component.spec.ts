@@ -27,7 +27,7 @@ describe('TagComponent', () => {
     expect(compiled.querySelector('span')).toBeTruthy();
   });
 
-  it('should correctly render the passed @Input label value', () => {
+  it('should correctly insert a class with the passed @Input label value', () => {
     const label = 'Enter a new label';
     component.label = label;
     fixture.detectChanges();
@@ -37,7 +37,7 @@ describe('TagComponent', () => {
     expect(span).toBe(label);
   });
 
-  it('should correctly render the passed @Input type value', () => {
+  it('should correctly insert a class with the passed @Input type value', () => {
     const type = 'normal';
     component.type = type;
     fixture.detectChanges();
