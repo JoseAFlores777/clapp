@@ -219,7 +219,7 @@
         },
         {
             "name": "ButtonComponent",
-            "id": "component-ButtonComponent-20a5f4eb1ba2fe3cc976fa47c183de5202ddbe4b92f9bc4c97b59f2a6e15945dee80eae1ff2a3f45ce821082705cc3a5db3f14e8984f8c7c1c478873627dc7ba-1",
+            "id": "component-ButtonComponent-dca17b63d0249a6bd67abd40daee508cafb3713ae1592f0feb726dc77ba67329c61fc9fea838eafe2c41852a588665ef530c4aa3205fcafbc527f8dfd38f410a-1",
             "file": "projects/clapp/src/lib/components/button/button.component.ts",
             "encapsulation": [],
             "entryComponents": [],
@@ -247,7 +247,6 @@
                 },
                 {
                     "name": "label",
-                    "defaultValue": "''",
                     "deprecated": false,
                     "deprecationMessage": "",
                     "line": 11,
@@ -285,11 +284,11 @@
             "description": "",
             "rawdescription": "\n",
             "type": "component",
-            "sourceCode": "import { Component, Input, OnInit } from '@angular/core';\n\n@Component({\n  selector: 'cl-button',\n  templateUrl: './button.component.html',\n  styleUrls: ['./button.component.scss'],\n})\nexport class ButtonComponent implements OnInit {\n  @Input('disabled') disabled = false;\n  @Input('type') type = 'primary';\n  @Input('label') label = '';\n\n  constructor() {}\n\n  ngOnInit(): void {}\n}\n",
+            "sourceCode": "import { Component, Input, OnInit } from '@angular/core';\r\n\r\n@Component({\r\n  selector: 'cl-button',\r\n  templateUrl: './button.component.html',\r\n  styleUrls: ['./button.component.scss'],\r\n})\r\nexport class ButtonComponent implements OnInit {\r\n  @Input('disabled') disabled = false;\r\n  @Input('type') type = 'primary';\r\n  @Input('label') label!: string;\r\n\r\n  constructor() {}\r\n\r\n  ngOnInit(): void {}\r\n}\r\n",
             "assetsDirs": [],
             "styleUrlsData": [
                 {
-                    "data": "@import '../../../../assets/scss/partials/clapp-base';\r\n\r\n:host {\r\n  display: flex;\r\n  justify-content: center;\r\n}\r\n\r\n@mixin button-creator() {\r\n  @include clapp-body-demi;\r\n  width: 100%;\r\n  height: 3rem;\r\n  display: flex;\r\n  flex-direction: column;\r\n  align-items: center;\r\n  padding: 12px 32px;\r\n  justify-content: center;\r\n  border-style: none;\r\n  cursor: pointer;\r\n  outline: none;\r\n  font-style: normal;\r\n  letter-spacing: 0em;\r\n  text-align: center;\r\n}\r\n\r\n@mixin button-states ($hover, $active) {\r\n\r\n  &:hover,\r\n  &:focus {\r\n    background-color: $hover;\r\n  }\r\n\r\n  &:active {\r\n    background-color: $active;\r\n  }\r\n}\r\n\r\n@mixin colors ($background, $color, $border-color) {\r\n  background-color: $background;\r\n  color: $color;\r\n  border-color: $border-color;\r\n}\r\n\r\n@mixin type ($type) {\r\n  @if $type =='primary' {\r\n    @include colors($applaudo-red, $white, $applaudo-red);\r\n    @include button-states($applaudo-red-plus, $applaudo-red-minus);\r\n\r\n    &:disabled {\r\n      @include disabled();\r\n    }\r\n  }\r\n\r\n  @else if $type =='secondary' {\r\n    @include clapp-body-regular;\r\n    @include colors($white, $applaudo-red, $platinum);\r\n    border: 2px solid;\r\n\r\n    &:hover,\r\n    &:focus {\r\n      border: 2px solid $applaudo-red-plus;\r\n      color: $applaudo-red-plus;\r\n    }\r\n\r\n    &:active {\r\n      border: 2px solid $applaudo-red-minus;\r\n      color: $applaudo-red-minus;\r\n    }\r\n\r\n    &:disabled {\r\n      @include disabled();\r\n    }\r\n  }\r\n\r\n  @else if $type =='tertiary' {\r\n    @include colors($applaudo-navy-blue, $white, $applaudo-navy-blue);\r\n    @include button-states($applaudo-red, $applaudo-red-minus);\r\n\r\n    &:disabled {\r\n      @include disabled();\r\n    }\r\n  }\r\n\r\n  @else if $type =='text' {\r\n    @include colors($white, $applaudo-red, $white);\r\n\r\n    &:hover,\r\n    &:focus {\r\n      color: $applaudo-red-plus;\r\n    }\r\n\r\n    &:active {\r\n      color: $applaudo-red-minus;\r\n    }\r\n\r\n    &:disabled {\r\n      @include disabled();\r\n      background-color: $white;\r\n    }\r\n  }\r\n\r\n  @else if $type =='icon' {\r\n    background-color: $white;\r\n\r\n    @include button-states($light-gray, $light-gray);\r\n  }\r\n}\r\n\r\n@mixin small() {\r\n  padding: 8px 16px;\r\n  height: 40px;\r\n}\r\n\r\n@mixin disabled() {\r\n  background-color: $light-gray;\r\n  color: $mid-gray;\r\n  cursor: auto;\r\n  border: none;\r\n}\r\n\r\n.primary {\r\n  @include button-creator();\r\n  @include type('primary');\r\n}\r\n\r\n.primary-small {\r\n  @extend .primary;\r\n  @include small();\r\n}\r\n\r\n.secondary {\r\n  @include button-creator();\r\n  @include type('secondary');\r\n}\r\n\r\n.secondary-small {\r\n  @extend .secondary;\r\n  @include small();\r\n}\r\n\r\n.tertiary {\r\n  @include button-creator();\r\n  @include type('tertiary');\r\n}\r\n\r\n.tertiary-small {\r\n  @extend .tertiary;\r\n  @include small();\r\n}\r\n\r\n.text {\r\n  @include button-creator();\r\n  @include type('text');\r\n}\r\n\r\n.icon {\r\n  @include button-creator();\r\n  @include type('icon');\r\n}",
+                    "data": "@import '../../../../assets/scss/partials/clapp-base';\r\n\r\n:host {\r\n  display: flex;\r\n  justify-content: center;\r\n}\r\n\r\n@mixin button-creator() {\r\n  @include clapp-body-demi;\r\n  width: 100%;\r\n  height: 3rem;\r\n  display: flex;\r\n  flex-direction: column;\r\n  align-items: center;\r\n  padding: 12px 32px;\r\n  justify-content: center;\r\n  border-style: none;\r\n  cursor: pointer;\r\n  outline: none;\r\n  font-style: normal;\r\n  letter-spacing: 0em;\r\n  text-align: center;\r\n}\r\n\r\n@mixin button-states ($hover, $active) {\r\n\r\n  &:hover,\r\n  &:focus {\r\n    background-color: $hover;\r\n  }\r\n\r\n  &:active {\r\n    background-color: $active;\r\n  }\r\n}\r\n\r\n@mixin colors ($background, $color, $border-color) {\r\n  background-color: $background;\r\n  color: $color;\r\n  border-color: $border-color;\r\n}\r\n\r\n@mixin type ($type) {\r\n  @if $type =='primary' {\r\n    @include colors($applaudo-red, $white, $applaudo-red);\r\n    @include button-states($applaudo-red-plus, $applaudo-red-minus);\r\n\r\n    &:disabled {\r\n      @include disabled();\r\n    }\r\n  }\r\n\r\n  @else if $type =='secondary' {\r\n    @include clapp-body-regular;\r\n    @include colors($white, $applaudo-red, $platinum);\r\n    border: 2px solid;\r\n\r\n    &:hover,\r\n    &:focus {\r\n      border: 2px solid $applaudo-red-plus;\r\n      color: $applaudo-red-plus;\r\n    }\r\n\r\n    &:active {\r\n      border: 2px solid $applaudo-red-minus;\r\n      color: $applaudo-red-minus;\r\n    }\r\n\r\n    &:disabled {\r\n      @include disabled();\r\n    }\r\n  }\r\n\r\n  @else if $type =='tertiary' {\r\n    @include colors($applaudo-navy-blue, $white, $applaudo-navy-blue);\r\n    @include button-states($applaudo-red, $applaudo-red-minus);\r\n\r\n    &:disabled {\r\n      @include disabled();\r\n    }\r\n  }\r\n\r\n  @else if $type =='text' {\r\n    @include colors($white, $applaudo-red, $white);\r\n\r\n    &:hover,\r\n    &:focus {\r\n      color: $applaudo-red-plus;\r\n    }\r\n\r\n    &:active {\r\n      color: $applaudo-red-minus;\r\n    }\r\n\r\n    &:disabled {\r\n      @include disabled();\r\n      background-color: $white;\r\n    }\r\n  }\r\n\r\n  @else if $type =='icon-default' {\r\n    background-color: $white;\r\n\r\n    @include button-states($light-gray, $light-gray);\r\n  }\r\n}\r\n\r\n@mixin small() {\r\n  padding: 8px 16px;\r\n  height: 40px;\r\n}\r\n\r\n@mixin disabled() {\r\n  background-color: $light-gray;\r\n  color: $mid-gray;\r\n  cursor: auto;\r\n  border: none;\r\n}\r\n\r\n.primary {\r\n  @include button-creator();\r\n  @include type('primary');\r\n}\r\n\r\n.primary-small {\r\n  @extend .primary;\r\n  @include small();\r\n}\r\n\r\n.secondary {\r\n  @include button-creator();\r\n  @include type('secondary');\r\n}\r\n\r\n.secondary-small {\r\n  @extend .secondary;\r\n  @include small();\r\n}\r\n\r\n.tertiary {\r\n  @include button-creator();\r\n  @include type('tertiary');\r\n}\r\n\r\n.tertiary-small {\r\n  @extend .tertiary;\r\n  @include small();\r\n}\r\n\r\n.text {\r\n  @include button-creator();\r\n  @include type('text');\r\n}\r\n\r\n.icon-default {\r\n  @include button-creator();\r\n  @include type('icon-default');\r\n}",
                     "styleUrl": "./button.component.scss"
                 }
             ],
@@ -308,7 +307,7 @@
             "isDuplicate": true,
             "duplicateId": 1,
             "duplicateName": "ButtonComponent-1",
-            "templateData": "<button [innerText]=\"label\" [disabled]=\"disabled\" [ngClass]=\"type\">\n  <ng-content></ng-content>\n</button>"
+            "templateData": "<button [disabled]=\"disabled\" [ngClass]=\"type\">\r\n  <ng-content></ng-content>\r\n  <span *ngIf=\"label\" [innerText]=\"label\"></span>\r\n</button>"
         },
         {
             "name": "ClappComponent",
@@ -485,7 +484,7 @@
             "implements": [
                 "OnInit"
             ],
-            "templateData": "<p>gatekeeper works!</p>\r\n\r\n<cl-button label=\"hola\" type=\"primary\" [disabled]=\"false\">\r\n</cl-button>\r\n"
+            "templateData": "<p>gatekeeper works!</p>\r\n\r\n<cl-button label=\"hola\" type=\"primary\" [disabled]=\"false\">\r\n</cl-button>\r\n\r\n<cl-tag type=\"cyan\" label=\"aslfkjalsfkdjalsdfjalkj\"></cl-tag>\r\n<cl-tag type=\"light-navy-blue\"></cl-tag>"
         },
         {
             "name": "HeaderComponent",
@@ -562,7 +561,7 @@
         },
         {
             "name": "HomeMainComponent",
-            "id": "component-HomeMainComponent-74829a40524da65dd17612eb24b4e5981607ec2dea1e51c8b3c59deba738a722d2c200c6a665694911e86674390215fa7ea59cfd2ac4a5482ca2bc4cc4145169",
+            "id": "component-HomeMainComponent-ac3a40c9b59a7a9ba790218026ee5cf2987c03787167b6d51d6f6133bf43e041fa155d2867a0810b6b45bbd3554063f9473bf65034a96611e206560200e4be74",
             "file": "src/app/modules/home/pages/home-main/home-main.component.ts",
             "encapsulation": [],
             "entryComponents": [],
@@ -611,11 +610,11 @@
             "description": "",
             "rawdescription": "\n",
             "type": "component",
-            "sourceCode": "import { Component, OnInit } from '@angular/core';\n\n@Component({\n  selector: 'app-home-main',\n  templateUrl: './home-main.component.html',\n  styleUrls: ['./home-main.component.scss']\n})\nexport class HomeMainComponent implements OnInit {\n\n  isCollapsedSidebar = false;\n\n  constructor() { }\n\n  ngOnInit(): void {\n  }\n\n}\n",
+            "sourceCode": "import { Component, OnInit } from '@angular/core';\r\n\r\n@Component({\r\n  selector: 'app-home-main',\r\n  templateUrl: './home-main.component.html',\r\n  styleUrls: ['./home-main.component.scss']\r\n})\r\nexport class HomeMainComponent implements OnInit {\r\n\r\n  isCollapsedSidebar = false;\r\n\r\n  constructor() { }\r\n\r\n  ngOnInit(): void {\r\n  }\r\n\r\n}\r\n",
             "assetsDirs": [],
             "styleUrlsData": [
                 {
-                    "data": "@import 'clapp-base';\n\n#content {\n  background-color: rgb(13, 255, 0)\n}\n\np {\n  @include clapp-body-demi();\n  font-size: 1.5rem;\n  font-weight: bold;\n  color: $applaudo-purple;\n}\n\n#sideBar-logo {\n\n  width: auto;\n  height: 19px;\n  display: flex;\n  justify-content: center;\n  align-items: center;\n\n  #isotype {\n    height: 15px;\n    display: flex;\n  }\n\n  #logo {\n    height: 19px;\n    justify-content: center;\n    align-items: flex-end;\n  }\n\n}\n\n",
+                    "data": "@import 'clapp-base';\r\n\r\n#content {\r\n  background-color: rgb(13, 255, 0)\r\n}\r\n\r\np {\r\n  @include clapp-body-demi();\r\n  font-size: 1.5rem;\r\n  font-weight: bold;\r\n  color: $applaudo-purple;\r\n}\r\n\r\n#sideBar-logo {\r\n\r\n  width: auto;\r\n  height: 19px;\r\n  display: flex;\r\n  justify-content: center;\r\n  align-items: center;\r\n\r\n  #isotype {\r\n    height: 15px;\r\n    display: flex;\r\n  }\r\n\r\n  #logo {\r\n    height: 19px;\r\n    justify-content: center;\r\n    align-items: flex-end;\r\n  }\r\n\r\n}\r\n\r\n",
                     "styleUrl": "./home-main.component.scss"
                 }
             ],
@@ -631,73 +630,11 @@
             "implements": [
                 "OnInit"
             ],
-            "templateData": "<cl-sidebar-context (isCollapsedSidebar)=\"isCollapsedSidebar = $event\">\n    \n    <ng-container sidebarHeader>\n        <div id=\"sideBar-logo\">\n            <img id=\"isotype\" src=\"../../../../../assets/images/logos/gatekeeper/gatekeeper_Isotype.png\">\n            <img id=\"logo\" *ngIf=\"!isCollapsedSidebar\"\n                src=\"../../../../../assets/images/logos/gatekeeper/gatekeeper_Logo.png\">\n        </div>\n    </ng-container>\n\n    <ng-container sidebarContent>\n\n        <cl-nav-link [icon]=\"'account'\" text=\"Users\" [showText]=\"!isCollapsedSidebar\" routerLink=\"/home/profile-simple\"\n            routerLinkActive #navOne=\"routerLinkActive\" [isActivated]=\"navOne.isActive\"></cl-nav-link>\n\n        <cl-nav-link [icon]=\"'apps'\" text=\"Aplications\" [showText]=\"!isCollapsedSidebar\"\n            routerLink=\"/home/profile-with-comments\" routerLinkActive #navTwo=\"routerLinkActive\"\n            [isActivated]=\"navTwo.isActive\"></cl-nav-link>\n\n    </ng-container>\n\n    <ng-container sidebarFooter>\n        <cl-nav-link [icon]=\"'logOut'\" text=\"Log Out\" [showText]=\"!isCollapsedSidebar\"></cl-nav-link>\n    </ng-container>\n\n    <ng-container content>\n        <div id=\"content\">\n            <router-outlet></router-outlet>\n        </div>\n    </ng-container>\n\n\n</cl-sidebar-context>"
-        },
-        {
-            "name": "IconButtonComponent",
-            "id": "component-IconButtonComponent-50db2ae3195bcda4a038922a6d36a81c5eafb89df844940db685f25f46e9024d688d0cd6815455349ae8c46449c20e247fd90af7772988af9ce29d51e1197339",
-            "file": "projects/clapp/src/lib/components/buttons/icon-button/icon-button.component.ts",
-            "encapsulation": [],
-            "entryComponents": [],
-            "inputs": [],
-            "outputs": [],
-            "providers": [],
-            "selector": "cl-icon-button",
-            "styleUrls": [
-                "./icon-button.component.scss"
-            ],
-            "styles": [],
-            "templateUrl": [
-                "./icon-button.component.html"
-            ],
-            "viewProviders": [],
-            "inputsClass": [],
-            "outputsClass": [],
-            "propertiesClass": [],
-            "methodsClass": [
-                {
-                    "name": "ngOnInit",
-                    "args": [],
-                    "optional": false,
-                    "returnType": "void",
-                    "typeParameters": [],
-                    "line": 12,
-                    "deprecated": false,
-                    "deprecationMessage": ""
-                }
-            ],
-            "deprecated": false,
-            "deprecationMessage": "",
-            "hostBindings": [],
-            "hostListeners": [],
-            "description": "",
-            "rawdescription": "\n",
-            "type": "component",
-            "sourceCode": "import { Component, OnInit } from '@angular/core';\r\n\r\n@Component({\r\n  selector: 'cl-icon-button',\r\n  templateUrl: './icon-button.component.html',\r\n  styleUrls: ['./icon-button.component.scss']\r\n})\r\nexport class IconButtonComponent implements OnInit {\r\n\r\n  constructor() { }\r\n\r\n  ngOnInit(): void {\r\n  }\r\n\r\n}\r\n",
-            "assetsDirs": [],
-            "styleUrlsData": [
-                {
-                    "data": "\r\n#button-container{\r\n\r\n    .btn{\r\n        width: 100%;\r\n        height: 100%;\r\n        border-radius: 0;\r\n        border: none;\r\n        background-color: #00bcd4;\r\n        color: #fff;\r\n        font-size: 1.2rem;\r\n        font-weight: bold;\r\n        cursor: pointer;\r\n        &:hover{\r\n            background-color: #3d7076;\r\n        }\r\n    }\r\n}",
-                    "styleUrl": "./icon-button.component.scss"
-                }
-            ],
-            "stylesData": "",
-            "constructorObj": {
-                "name": "constructor",
-                "description": "",
-                "deprecated": false,
-                "deprecationMessage": "",
-                "args": [],
-                "line": 8
-            },
-            "implements": [
-                "OnInit"
-            ],
-            "templateData": "<div id=\"button-container\">\r\n    <button class=\"btn\">Hola</button>\r\n    </div>"
+            "templateData": "<cl-sidebar-context (isCollapsedSidebar)=\"isCollapsedSidebar = $event\">\r\n    \r\n    <ng-container sidebarHeader>\r\n        <div id=\"sideBar-logo\">\r\n            <img id=\"isotype\" src=\"../../../../../assets/images/logos/gatekeeper/gatekeeper_Isotype.png\">\r\n            <img id=\"logo\" *ngIf=\"!isCollapsedSidebar\"\r\n                src=\"../../../../../assets/images/logos/gatekeeper/gatekeeper_Logo.png\">\r\n        </div>\r\n    </ng-container>\r\n\r\n    <ng-container sidebarContent>\r\n\r\n        <cl-nav-link [icon]=\"'account'\" text=\"Users\" [showText]=\"!isCollapsedSidebar\" routerLink=\"/home/profile-simple\"\r\n            routerLinkActive #navOne=\"routerLinkActive\" [isActivated]=\"navOne.isActive\"></cl-nav-link>\r\n\r\n        <cl-nav-link [icon]=\"'apps'\" text=\"Aplications\" [showText]=\"!isCollapsedSidebar\"\r\n            routerLink=\"/home/profile-with-comments\" routerLinkActive #navTwo=\"routerLinkActive\"\r\n            [isActivated]=\"navTwo.isActive\"></cl-nav-link>\r\n\r\n    </ng-container>\r\n\r\n    <ng-container sidebarFooter>\r\n        <cl-nav-link [icon]=\"'logOut'\" text=\"Log Out\" [showText]=\"!isCollapsedSidebar\"></cl-nav-link>\r\n    </ng-container>\r\n\r\n    <ng-container content>\r\n        <div id=\"content\">\r\n            <router-outlet></router-outlet>\r\n        </div>\r\n    </ng-container>\r\n\r\n\r\n</cl-sidebar-context>"
         },
         {
             "name": "NavLinkComponent",
-            "id": "component-NavLinkComponent-6d064ff491401fa3dada2152882083ea25f17070db7d7a1b0ea0ed26abe8029084848c132eb694b26e80e8d488db5acb5f52512b4ec8d51fe9a9228aa3c3cd6b",
+            "id": "component-NavLinkComponent-b73e36301a69d429b966768383bf83eaf54f507c656a737657b95ec7757b7fa05d709fd833fcae65a6ca78a6ea7e63c846db144950c3b13f535ab518fa58c3a9",
             "file": "projects/clapp/src/lib/components/nav-link/nav-link.component.ts",
             "encapsulation": [],
             "entryComponents": [],
@@ -853,11 +790,11 @@
             "description": "",
             "rawdescription": "\n",
             "type": "component",
-            "sourceCode": "import { Component, Input, OnInit, Renderer2, ViewChild, ElementRef, AfterViewChecked, AfterViewInit, SimpleChanges } from '@angular/core';\nimport { DomSanitizer } from '@angular/platform-browser';\nimport { ClappIcons, IconFill } from '../svg-icon/clapp-icons.helper';\n\ntype TYPE_ICON_FILLS = keyof typeof IconFill;\ntype TYPE_ICONS_NAMES = keyof typeof ClappIcons;\n\n@Component({\n  selector: 'cl-nav-link',\n  templateUrl: './nav-link.component.html',\n  styleUrls: ['./nav-link.component.scss'],\n})\nexport class NavLinkComponent implements OnInit {\n  @ViewChild('navLink') navLink!: ElementRef;\n  @Input('showText') showText: boolean = true;\n  @Input('text') text!: string;\n  @Input('isActivated') isActivated!: boolean;\n  @Input('icon') icon: TYPE_ICONS_NAMES = 'account';\n  @Input('fill') fill: TYPE_ICON_FILLS = 'White';\n\n\n  constructor(private render: Renderer2) {}\n\n  ngOnInit(): void {}\n\n  ngOnChanges(changes: SimpleChanges): void {\n    if (changes['isActivated'] && !changes['isActivated'].isFirstChange()) {\n        this.classActivateHandler();\n    }\n  }\n\n  classActivateHandler(hover?: boolean) {\n    if (this.isActivated || hover) {\n      this.render.removeClass(this.navLink.nativeElement, 'inactive');\n      this.render.addClass(this.navLink.nativeElement, 'active');\n      this.fill = 'ApplaudoRed';\n    } else {\n      this.render.removeClass(this.navLink.nativeElement, 'active');\n      this.render.addClass(this.navLink.nativeElement, 'inactive');\n      this.fill = 'White';\n    }\n  }\n}\n",
+            "sourceCode": "import { Component, Input, OnInit, Renderer2, ViewChild, ElementRef, AfterViewChecked, AfterViewInit, SimpleChanges } from '@angular/core';\r\nimport { DomSanitizer } from '@angular/platform-browser';\r\nimport { ClappIcons, IconFill } from '../svg-icon/clapp-icons.helper';\r\n\r\ntype TYPE_ICON_FILLS = keyof typeof IconFill;\r\ntype TYPE_ICONS_NAMES = keyof typeof ClappIcons;\r\n\r\n@Component({\r\n  selector: 'cl-nav-link',\r\n  templateUrl: './nav-link.component.html',\r\n  styleUrls: ['./nav-link.component.scss'],\r\n})\r\nexport class NavLinkComponent implements OnInit {\r\n  @ViewChild('navLink') navLink!: ElementRef;\r\n  @Input('showText') showText: boolean = true;\r\n  @Input('text') text!: string;\r\n  @Input('isActivated') isActivated!: boolean;\r\n  @Input('icon') icon: TYPE_ICONS_NAMES = 'account';\r\n  @Input('fill') fill: TYPE_ICON_FILLS = 'White';\r\n\r\n\r\n  constructor(private render: Renderer2) {}\r\n\r\n  ngOnInit(): void {}\r\n\r\n  ngOnChanges(changes: SimpleChanges): void {\r\n    if (changes['isActivated'] && !changes['isActivated'].isFirstChange()) {\r\n        this.classActivateHandler();\r\n    }\r\n  }\r\n\r\n  classActivateHandler(hover?: boolean) {\r\n    if (this.isActivated || hover) {\r\n      this.render.removeClass(this.navLink.nativeElement, 'inactive');\r\n      this.render.addClass(this.navLink.nativeElement, 'active');\r\n      this.fill = 'ApplaudoRed';\r\n    } else {\r\n      this.render.removeClass(this.navLink.nativeElement, 'active');\r\n      this.render.addClass(this.navLink.nativeElement, 'inactive');\r\n      this.fill = 'White';\r\n    }\r\n  }\r\n}\r\n",
             "assetsDirs": [],
             "styleUrlsData": [
                 {
-                    "data": "@import '../../../../assets/scss/partials/clapp-base';\n\n:host{\n  cursor: pointer;\n}\n\n#nav-Link {\n    width: 100%;\n    display: flex;\n    justify-content: flex-start;\n    align-items: center;\n    gap: 10px;\n    height: 56px;\n    padding: 5px;\n    margin-top: 2px;\n    margin-left: 1px;\n    @include clapp-body-demi();\n  \n  \n    #nav-Link-icon {\n      margin-left: 10px;\n  \n    }\n  \n    #nav-Link-text {\n      @include clapp-body-demi();\n      color: $white;\n    }\n  }\n\n  .active {\n    border-left: 1px solid $applaudo-red;\n  }\n\n  .inactive {\n    border-left: 1px solid transparent;\n  }",
+                    "data": "@import '../../../../assets/scss/partials/clapp-base';\r\n\r\n:host{\r\n  cursor: pointer;\r\n}\r\n\r\n#nav-Link {\r\n    width: 100%;\r\n    display: flex;\r\n    justify-content: flex-start;\r\n    align-items: center;\r\n    gap: 10px;\r\n    height: 56px;\r\n    padding: 5px;\r\n    margin-top: 2px;\r\n    margin-left: 1px;\r\n    @include clapp-body-demi();\r\n  \r\n  \r\n    #nav-Link-icon {\r\n      margin-left: 10px;\r\n  \r\n    }\r\n  \r\n    #nav-Link-text {\r\n      @include clapp-body-demi();\r\n      color: $white;\r\n    }\r\n  }\r\n\r\n  .active {\r\n    border-left: 1px solid $applaudo-red;\r\n  }\r\n\r\n  .inactive {\r\n    border-left: 1px solid transparent;\r\n  }",
                     "styleUrl": "./nav-link.component.scss"
                 }
             ],
@@ -891,7 +828,7 @@
             "implements": [
                 "OnInit"
             ],
-            "templateData": "<div #navLink id=\"nav-Link\"  (mouseenter)=\"classActivateHandler(true)\" (mouseleave)=\"classActivateHandler(false)\" >\n    <div id=\"nav-Link-icon\">\n        <cl-svg-icon [icon]=\"icon\" [fill]=\"fill\"></cl-svg-icon>\n    </div>\n    <div id=\"nav-Link-text\" *ngIf=\"showText\">{{text}}</div>\n</div>\n\n"
+            "templateData": "<div #navLink id=\"nav-Link\"  (mouseenter)=\"classActivateHandler(true)\" (mouseleave)=\"classActivateHandler(false)\" >\r\n    <div id=\"nav-Link-icon\">\r\n        <cl-svg-icon [icon]=\"icon\" [fill]=\"fill\"></cl-svg-icon>\r\n    </div>\r\n    <div id=\"nav-Link-text\" *ngIf=\"showText\">{{text}}</div>\r\n</div>\r\n\r\n"
         },
         {
             "name": "PageComponent",
@@ -974,89 +911,8 @@
             "stylesData": ""
         },
         {
-            "name": "PrimaryButtonComponent",
-            "id": "component-PrimaryButtonComponent-5909c7ded80b5213a76deb9bfa1dc9a67d42a2a7fb59d194f6fe49d606ef9f0df5d8d520eea082710ec65fd8d6fc625c7995a3cc3252c33951667ff4aea2390c",
-            "file": "projects/clapp/src/lib/components/buttons/primary-button/primary-button.component.ts",
-            "encapsulation": [],
-            "entryComponents": [],
-            "inputs": [],
-            "outputs": [],
-            "providers": [],
-            "selector": "cl-primary-button",
-            "styleUrls": [
-                "./primary-button.component.scss"
-            ],
-            "styles": [],
-            "templateUrl": [
-                "./primary-button.component.html"
-            ],
-            "viewProviders": [],
-            "inputsClass": [
-                {
-                    "name": "disabled",
-                    "defaultValue": "false",
-                    "deprecated": false,
-                    "deprecationMessage": "",
-                    "line": 9,
-                    "type": "boolean",
-                    "decorators": []
-                },
-                {
-                    "name": "text",
-                    "defaultValue": "'Primary'",
-                    "deprecated": false,
-                    "deprecationMessage": "",
-                    "line": 10,
-                    "type": "string",
-                    "decorators": []
-                }
-            ],
-            "outputsClass": [],
-            "propertiesClass": [],
-            "methodsClass": [
-                {
-                    "name": "ngOnInit",
-                    "args": [],
-                    "optional": false,
-                    "returnType": "void",
-                    "typeParameters": [],
-                    "line": 14,
-                    "deprecated": false,
-                    "deprecationMessage": ""
-                }
-            ],
-            "deprecated": false,
-            "deprecationMessage": "",
-            "hostBindings": [],
-            "hostListeners": [],
-            "description": "",
-            "rawdescription": "\n",
-            "type": "component",
-            "sourceCode": "import { AfterViewInit, Component, ElementRef, Input, OnInit, ViewChild } from '@angular/core';\r\n\r\n@Component({\r\n  selector: 'cl-primary-button',\r\n  templateUrl: './primary-button.component.html',\r\n  styleUrls: ['./primary-button.component.scss'],\r\n})\r\nexport class PrimaryButtonComponent implements OnInit {\r\n  @Input('disabled') disabled = false;\r\n  @Input('text') text = 'Primary';\r\n\r\n  constructor() {}\r\n\r\n  ngOnInit(): void {}\r\n}\r\n",
-            "assetsDirs": [],
-            "styleUrlsData": [
-                {
-                    "data": "$applaudo-red : #FF4040;\r\n$white: #FFFFFF;\r\n$applaudo-red-plus: #FF6060;\r\n$applaudo-red-minus: #E60000;\r\n$light-gray: #F6F6F6;\r\n$mid-gray:#C4C4C4;\r\n\r\n.buttons-primary-button {\r\n  width: 100%;\r\n  height: 3rem;\r\n  display: flex;\r\n  flex-direction: column;\r\n  align-items: center;\r\n  padding: 12px 32px;\r\n  justify-content: center;\r\n  border-style: none;\r\n  cursor: pointer;\r\n  outline: none;\r\n  font-family: Avenir Next;\r\n  font-style: normal;\r\n  font-size: 16px;\r\n  font-weight: 600;\r\n  line-height: 24px;\r\n  letter-spacing: 0em;\r\n  text-align: center;\r\n  background-color: $applaudo-red;\r\n  color: $white;\r\n\r\n  &:hover {\r\n    background-color: $applaudo-red-plus;\r\n  }\r\n\r\n  &:active {\r\n    background-color: $applaudo-red-minus;\r\n  }\r\n\r\n  &:disabled {\r\n    background-color: $light-gray;\r\n    color: $mid-gray;\r\n  }\r\n}",
-                    "styleUrl": "./primary-button.component.scss"
-                }
-            ],
-            "stylesData": "",
-            "constructorObj": {
-                "name": "constructor",
-                "description": "",
-                "deprecated": false,
-                "deprecationMessage": "",
-                "args": [],
-                "line": 10
-            },
-            "implements": [
-                "OnInit"
-            ],
-            "templateData": "<button #primaryButton class=\"buttons-primary-button\" [disabled]=\"disabled\" [innerText]=\"text\">\r\n  <ng-content></ng-content>\r\n</button>"
-        },
-        {
             "name": "ProfileSimpleComponent",
-            "id": "component-ProfileSimpleComponent-a2b7a8040fb29376d649e657f3ca6407c7c299960c8689f33eb8626b37a85a0e18966f284c003f5d9f70d7b10fb5d699a5bfab5e48dc39d810cd76a49bb10d5c",
+            "id": "component-ProfileSimpleComponent-5a4d330c4ebc2d772579e18ec69b39a35b4d70cc0cf01b5fc96f09f0241bc263e0f66a43987316331611d7f9000fb69ae9516c897812422dedfe09320e980eb6",
             "file": "src/app/modules/home/pages/profile-simple/profile-simple.component.ts",
             "encapsulation": [],
             "entryComponents": [],
@@ -1094,11 +950,11 @@
             "description": "",
             "rawdescription": "\n",
             "type": "component",
-            "sourceCode": "import { Component, OnInit } from '@angular/core';\n\n@Component({\n  selector: 'app-profile-simple',\n  templateUrl: './profile-simple.component.html',\n  styleUrls: ['./profile-simple.component.scss']\n})\nexport class ProfileSimpleComponent implements OnInit {\n\n\n\n  constructor() { }\n\n  ngOnInit(): void {\n  }\n\n}\n",
+            "sourceCode": "import { Component, OnInit } from '@angular/core';\r\n\r\n@Component({\r\n  selector: 'app-profile-simple',\r\n  templateUrl: './profile-simple.component.html',\r\n  styleUrls: ['./profile-simple.component.scss']\r\n})\r\nexport class ProfileSimpleComponent implements OnInit {\r\n\r\n\r\n\r\n  constructor() { }\r\n\r\n  ngOnInit(): void {\r\n  }\r\n\r\n}\r\n",
             "assetsDirs": [],
             "styleUrlsData": [
                 {
-                    "data": "@import 'clapp-base';\n\n\n\np {\n  @include clapp-body-demi();\n  font-size: 1.5rem;\n  font-weight: bold;\n  color: $applaudo-purple;\n}",
+                    "data": "@import 'clapp-base';\r\n\r\n\r\n\r\np {\r\n  @include clapp-body-demi();\r\n  font-size: 1.5rem;\r\n  font-weight: bold;\r\n  color: $applaudo-purple;\r\n}",
                     "styleUrl": "./profile-simple.component.scss"
                 }
             ],
@@ -1114,7 +970,7 @@
             "implements": [
                 "OnInit"
             ],
-            "templateData": "<p>\n    Lorem ipsum dolor sit amet consectetur adipisicing elit. Autem, quaerat? Nihil corporis totam dolorum\n    quisquam doloribus labore, eum tempore, a necessitatibus id omnis magnam minima unde harum. Illum,\n    doloremque architecto.\n</p>"
+            "templateData": "<p>\r\n    Lorem ipsum dolor sit amet consectetur adipisicing elit. Autem, quaerat? Nihil corporis totam dolorum\r\n    quisquam doloribus labore, eum tempore, a necessitatibus id omnis magnam minima unde harum. Illum,\r\n    doloremque architecto.\r\n</p>"
         },
         {
             "name": "ProfileWithCommentsComponent",
@@ -1180,7 +1036,7 @@
         },
         {
             "name": "SidebarContextComponent",
-            "id": "component-SidebarContextComponent-e99a3e7ba652b1849912a417c321255ed54775b8d8500518c42555b822eca58f95ba6f3ac93bdd68a16c3a29ddfa3de1a7974ed09d076b949a891a94f16dc136",
+            "id": "component-SidebarContextComponent-b88e50dec77f02f0b802961074fa509ffcd80d87aaf59728e27ee7e8cac70646ea0b406c15013339df75085ee7c2509145d71ba7766bee983d35c4ea0f6d3c99",
             "file": "projects/clapp/src/lib/patterns/sidebar-context/sidebar-context.component.ts",
             "encapsulation": [],
             "entryComponents": [],
@@ -1248,11 +1104,11 @@
             "description": "",
             "rawdescription": "\n",
             "type": "component",
-            "sourceCode": "import { state, style, transition, trigger, animate } from '@angular/animations';\nimport { Component, OnInit, Output, EventEmitter } from '@angular/core';\n\n@Component({\n  selector: 'cl-sidebar-context',\n  templateUrl: './sidebar-context.component.html',\n  styleUrls: ['./sidebar-context.component.scss'],\n  animations: [\n    trigger('sidebarToogle', [\n      state('open', style({\n        width: '216px',\n      })),\n      state('close', style({\n        width: '64px',\n      })),\n      transition('close <=> open', [\n        animate('0.7s ease-in-out')\n      ]),\n    ])\n  ]\n})\nexport class SidebarContextComponent implements OnInit {\n  @Output() isCollapsedSidebar : EventEmitter<boolean> = new EventEmitter<boolean>();\n\n  isCollapsed:boolean = false;\n\n  constructor() { }\n\n  ngOnInit(): void {\n  }\n\n  toogleSideBar() {\n    this.isCollapsed = !this.isCollapsed;\n    this.isCollapsedSidebar.emit(this.isCollapsed);\n  }\n\n}\n",
+            "sourceCode": "import { state, style, transition, trigger, animate } from '@angular/animations';\r\nimport { Component, OnInit, Output, EventEmitter } from '@angular/core';\r\n\r\n@Component({\r\n  selector: 'cl-sidebar-context',\r\n  templateUrl: './sidebar-context.component.html',\r\n  styleUrls: ['./sidebar-context.component.scss'],\r\n  animations: [\r\n    trigger('sidebarToogle', [\r\n      state('open', style({\r\n        width: '216px',\r\n      })),\r\n      state('close', style({\r\n        width: '64px',\r\n      })),\r\n      transition('close <=> open', [\r\n        animate('0.7s ease-in-out')\r\n      ]),\r\n    ])\r\n  ]\r\n})\r\nexport class SidebarContextComponent implements OnInit {\r\n  @Output() isCollapsedSidebar : EventEmitter<boolean> = new EventEmitter<boolean>();\r\n\r\n  isCollapsed:boolean = false;\r\n\r\n  constructor() { }\r\n\r\n  ngOnInit(): void {\r\n  }\r\n\r\n  toogleSideBar() {\r\n    this.isCollapsed = !this.isCollapsed;\r\n    this.isCollapsedSidebar.emit(this.isCollapsed);\r\n  }\r\n\r\n}\r\n",
             "assetsDirs": [],
             "styleUrlsData": [
                 {
-                    "data": "@import '../../../../assets/scss/partials/clapp-base';\n\n#sidebar-context {\n\n    min-height: 100vh;\n    display: flex;\n\n    #sidebar {\n        display: grid;\n        grid-template-columns: 1fr;\n        grid-template-rows: auto 1fr auto;\n        gap: 10px;\n        background-color: $applaudo-navy-blue;\n        width: 216px;\n        min-height: 100vh;\n\n\n        #sidebar-header {\n\n            display: flex;\n            justify-content: center;\n            align-items: center;\n            min-height: 60px;\n\n        }\n\n\n        #sidebar-footer {\n\n            display: flex;\n            flex-direction: column;\n\n            #toogleBtn {\n\n                display: flex;\n                justify-content: flex-start;\n                align-items: center;\n                width: 100%;\n                height: 56px;\n\n\n                #icon-toogle {\n                    margin-left: 15px;\n                    cursor: pointer;\n                }\n            }\n        }\n\n    }\n\n    #content {\n\n        width: 100%;\n    }\n}",
+                    "data": "@import '../../../../assets/scss/partials/clapp-base';\r\n\r\n#sidebar-context {\r\n\r\n    min-height: 100vh;\r\n    display: flex;\r\n\r\n    #sidebar {\r\n        display: grid;\r\n        grid-template-columns: 1fr;\r\n        grid-template-rows: auto 1fr auto;\r\n        gap: 10px;\r\n        background-color: $applaudo-navy-blue;\r\n        width: 216px;\r\n        min-height: 100vh;\r\n\r\n\r\n        #sidebar-header {\r\n\r\n            display: flex;\r\n            justify-content: center;\r\n            align-items: center;\r\n            min-height: 60px;\r\n\r\n        }\r\n\r\n\r\n        #sidebar-footer {\r\n\r\n            display: flex;\r\n            flex-direction: column;\r\n\r\n            #toogleBtn {\r\n\r\n                display: flex;\r\n                justify-content: flex-start;\r\n                align-items: center;\r\n                width: 100%;\r\n                height: 56px;\r\n\r\n\r\n                #icon-toogle {\r\n                    margin-left: 15px;\r\n                    cursor: pointer;\r\n                }\r\n            }\r\n        }\r\n\r\n    }\r\n\r\n    #content {\r\n\r\n        width: 100%;\r\n    }\r\n}",
                     "styleUrl": "./sidebar-context.component.scss"
                 }
             ],
@@ -1268,11 +1124,11 @@
             "implements": [
                 "OnInit"
             ],
-            "templateData": "<div id=\"sidebar-context\">\n    <div [@sidebarToogle]=\"isCollapsed ? 'close':'open'\" id=\"sidebar\">\n        <div id=\"sidebar-header\">\n            <ng-content select=\"[sidebarHeader]\"></ng-content>\n        </div>\n        <div id=\"sidebar-content\">\n            <ng-content select=\"[sidebarContent]\"></ng-content>\n        </div>\n        <div id=\"sidebar-footer\">\n            <div id=\"footer-content\">\n                <ng-content select=\"[sidebarFooter]\"></ng-content>\n            </div>\n            <div id=\"toogleBtn\">\n                <cl-svg-icon id=\"icon-toogle\" (click)=\"toogleSideBar()\"\n                    [icon]=\" isCollapsed ? 'arrowRight' : 'arrowLeft'\" fill=\"ApplaudoRed\"></cl-svg-icon>\n            </div>\n        </div>\n    </div>\n    <div id=\"content\">\n        <ng-content select=\"[content]\"></ng-content>\n    </div>\n</div>"
+            "templateData": "<div id=\"sidebar-context\">\r\n    <div [@sidebarToogle]=\"isCollapsed ? 'close':'open'\" id=\"sidebar\">\r\n        <div id=\"sidebar-header\">\r\n            <ng-content select=\"[sidebarHeader]\"></ng-content>\r\n        </div>\r\n        <div id=\"sidebar-content\">\r\n            <ng-content select=\"[sidebarContent]\"></ng-content>\r\n        </div>\r\n        <div id=\"sidebar-footer\">\r\n            <div id=\"footer-content\">\r\n                <ng-content select=\"[sidebarFooter]\"></ng-content>\r\n            </div>\r\n            <div id=\"toogleBtn\">\r\n                <cl-svg-icon id=\"icon-toogle\" (click)=\"toogleSideBar()\"\r\n                    [icon]=\" isCollapsed ? 'arrowRight' : 'arrowLeft'\" fill=\"ApplaudoRed\"></cl-svg-icon>\r\n            </div>\r\n        </div>\r\n    </div>\r\n    <div id=\"content\">\r\n        <ng-content select=\"[content]\"></ng-content>\r\n    </div>\r\n</div>"
         },
         {
             "name": "SvgIconComponent",
-            "id": "component-SvgIconComponent-c6559e4f7e66097605f82821807e0b657f5363edfeb349a0b7b6e4b496c2b53593164767b18c2a5bd873900bdc19fb44e9532cddb677f5ba022e39f5b5f34034",
+            "id": "component-SvgIconComponent-2a7f2c70685242299291056f2b57a51d4d07d2f293d46599030e55fdf338cbcb24e2a468063699204593221c4a2eb525abb84e50e57f0c5ed22170d1ddf6c1a9",
             "file": "projects/clapp/src/lib/components/svg-icon/svg-icon.component.ts",
             "encapsulation": [],
             "entryComponents": [],
@@ -1328,16 +1184,6 @@
             "outputsClass": [],
             "propertiesClass": [
                 {
-                    "name": "changeLog",
-                    "defaultValue": "[]",
-                    "deprecated": false,
-                    "deprecationMessage": "",
-                    "type": "any",
-                    "optional": false,
-                    "description": "",
-                    "line": 22
-                },
-                {
                     "name": "iconContainer",
                     "deprecated": false,
                     "deprecationMessage": "",
@@ -1351,16 +1197,6 @@
                             "stringifiedArguments": "'iconContainer'"
                         }
                     ]
-                },
-                {
-                    "name": "propertiesSubs$",
-                    "defaultValue": "new Subject()",
-                    "deprecated": false,
-                    "deprecationMessage": "",
-                    "type": "Subject<any>",
-                    "optional": false,
-                    "description": "",
-                    "line": 21
                 }
             ],
             "methodsClass": [
@@ -1370,7 +1206,7 @@
                     "optional": false,
                     "returnType": "void",
                     "typeParameters": [],
-                    "line": 44,
+                    "line": 41,
                     "deprecated": false,
                     "deprecationMessage": ""
                 },
@@ -1380,7 +1216,7 @@
                     "optional": false,
                     "returnType": "void",
                     "typeParameters": [],
-                    "line": 26,
+                    "line": 23,
                     "deprecated": false,
                     "deprecationMessage": ""
                 },
@@ -1397,7 +1233,7 @@
                     "optional": false,
                     "returnType": "void",
                     "typeParameters": [],
-                    "line": 30,
+                    "line": 27,
                     "deprecated": false,
                     "deprecationMessage": "",
                     "jsdoctags": [
@@ -1418,7 +1254,7 @@
                     "optional": false,
                     "returnType": "void",
                     "typeParameters": [],
-                    "line": 42,
+                    "line": 39,
                     "deprecated": false,
                     "deprecationMessage": ""
                 }
@@ -1430,11 +1266,11 @@
             "description": "",
             "rawdescription": "\n",
             "type": "component",
-            "sourceCode": "import { AfterViewChecked, AfterViewInit, ChangeDetectionStrategy, Component, ElementRef, Input, OnChanges, OnInit, Renderer2, SimpleChanges, ViewChild } from '@angular/core';\nimport { Subject } from 'rxjs';\n\nimport { ClappIcons, IconFill } from './clapp-icons.helper';\n\ntype TYPE_ICON_FILLS = keyof typeof IconFill;\ntype TYPE_ICONS_NAMES = keyof typeof ClappIcons;\n\n@Component({\n  selector: 'cl-svg-icon',\n  template: `<div #iconContainer id=\"iconContainer\"></div>`,\n  styleUrls: ['./svg-icon.component.scss'],\n})\nexport class SvgIconComponent implements OnInit, AfterViewInit, OnChanges {\n  @ViewChild('iconContainer') iconContainer!: ElementRef;\n  @Input('icon') icon: TYPE_ICONS_NAMES = 'account';\n  @Input('width') width: number = 24;\n  @Input('height') height: number = 24;\n  @Input('fill') fill: TYPE_ICON_FILLS = 'ApplaudoNavyBlue';\n\n  propertiesSubs$: Subject<any> = new Subject();\n  changeLog: any = [];\n\n  constructor(private renderer: Renderer2) {}\n\n  ngAfterViewInit(): void {\n    this.buildIcon();\n  }\n\n  ngOnChanges(changes: SimpleChanges) {\n    let changesCant = 0;\n    for (let propName in changes) {\n      if (!changes[propName].isFirstChange()) {\n        changesCant++;\n      }\n    }\n    if (changesCant > 0) {\n      this.buildIcon();\n    }\n  }\n\n  ngOnInit(): void {}\n\n  buildIcon(): void {\n    let templateTmp = this.renderer.createElement('template');\n    templateTmp.innerHTML = ClappIcons[this.icon];\n    let svg = templateTmp.content.firstChild as SVGElement;\n    this.renderer.setAttribute(svg, 'width', `${this.width}px`);\n    this.renderer.setAttribute(svg, 'height', `${this.height}px`);\n    this.iconContainer.nativeElement.setAttribute('class', `${IconFill[this.fill]}`);\n    this.iconContainer.nativeElement.innerHTML = '';\n    this.renderer.appendChild(this.iconContainer.nativeElement, svg);\n  }\n}\n",
+            "sourceCode": "import { AfterViewChecked, AfterViewInit, ChangeDetectionStrategy, Component, ElementRef, Input, OnChanges, OnInit, Renderer2, SimpleChanges, ViewChild } from '@angular/core';\r\nimport { Subject } from 'rxjs';\r\n\r\nimport { ClappIcons, IconFill } from './clapp-icons.helper';\r\n\r\ntype TYPE_ICON_FILLS = keyof typeof IconFill;\r\ntype TYPE_ICONS_NAMES = keyof typeof ClappIcons;\r\n\r\n@Component({\r\n  selector: 'cl-svg-icon',\r\n  template: `<div #iconContainer id=\"iconContainer\"></div>`,\r\n  styleUrls: ['./svg-icon.component.scss'],\r\n})\r\nexport class SvgIconComponent implements OnInit, AfterViewInit, OnChanges {\r\n  @ViewChild('iconContainer') iconContainer!: ElementRef;\r\n  @Input('icon') icon: TYPE_ICONS_NAMES = 'account';\r\n  @Input('width') width: number = 24;\r\n  @Input('height') height: number = 24;\r\n  @Input('fill') fill: TYPE_ICON_FILLS = 'ApplaudoNavyBlue';\r\n\r\n  constructor(private renderer: Renderer2) {}\r\n\r\n  ngAfterViewInit(): void {\r\n    this.buildIcon();\r\n  }\r\n\r\n  ngOnChanges(changes: SimpleChanges) {\r\n    let changesCant = 0;\r\n    for (let propName in changes) {\r\n      if (!changes[propName].isFirstChange()) {\r\n        changesCant++;\r\n      }\r\n    }\r\n    if (changesCant > 0) {\r\n      this.buildIcon();\r\n    }\r\n  }\r\n\r\n  ngOnInit(): void {}\r\n\r\n  buildIcon(): void {\r\n    let templateTmp = this.renderer.createElement('template');\r\n    templateTmp.innerHTML = ClappIcons[this.icon];\r\n    let svg = templateTmp.content.firstChild as SVGElement;\r\n    this.renderer.setAttribute(svg, 'width', `${this.width}px`);\r\n    this.renderer.setAttribute(svg, 'height', `${this.height}px`);\r\n    this.iconContainer.nativeElement.setAttribute('class', `${IconFill[this.fill]}`);\r\n    this.iconContainer.nativeElement.innerHTML = '';\r\n    this.renderer.appendChild(this.iconContainer.nativeElement, svg);\r\n  }\r\n}\r\n",
             "assetsDirs": [],
             "styleUrlsData": [
                 {
-                    "data": "@import '../../../../assets/scss/partials/clapp-base';\n\n:host{\n    display: flex;\n    justify-content: center;\n\n    #iconContainer{\n        display: flex;\n        justify-content: center;\n\n        svg{\n            align-self: center;\n        }\n    }\n}\n\n@mixin iconPainter($color) {\n    fill: $color;\n\n}\n\n.applaudo-navy-blue {\n    @include iconPainter($applaudo-navy-blue);\n}\n\n.applaudo-red {\n    @include iconPainter($applaudo-red);\n}\n\n.light-gray {\n    @include iconPainter($light-gray);\n}\n\n.white {\n    @include iconPainter($white);\n}\n\n.applaudo-red-plus {\n    @include iconPainter($applaudo-red-plus);\n\n\n}\n\n.applaudo-red-minus {\n    @include iconPainter($applaudo-red-minus);\n}\n\n.error-red {\n    @include iconPainter($error-red);\n}\n\n.green {\n    @include iconPainter($green);\n}\n\n.mid-gray {\n    @include iconPainter($mid-gray);\n}\n\n.yellow {\n    @include iconPainter($yellow);\n}\n\n.charcoal {\n    @include iconPainter($charcoal);\n}\n\n.cool-gray {\n    @include iconPainter($cool-gray);\n}\n\n.platinum {\n    @include iconPainter($platinum);\n}\n\n.applaudo-purple {\n    @include iconPainter($applaudo-purple);\n}\n\n.blue{\n    @include iconPainter($blue);\n}\n.bronze {\n    @include iconPainter($bronze);\n}\n\n.light-navy-blue {\n    @include iconPainter($light-navy-blue);\n}",
+                    "data": "@import '../../../../assets/scss/partials/clapp-base';\r\n\r\n:host{\r\n    display: flex;\r\n    justify-content: center;\r\n\r\n    #iconContainer{\r\n        display: flex;\r\n        justify-content: center;\r\n\r\n        svg{\r\n            align-self: center;\r\n        }\r\n    }\r\n}\r\n\r\n@mixin iconPainter($color) {\r\n    fill: $color;\r\n\r\n}\r\n\r\n.applaudo-navy-blue {\r\n    @include iconPainter($applaudo-navy-blue);\r\n}\r\n\r\n.applaudo-red {\r\n    @include iconPainter($applaudo-red);\r\n}\r\n\r\n.light-gray {\r\n    @include iconPainter($light-gray);\r\n}\r\n\r\n.white {\r\n    @include iconPainter($white);\r\n}\r\n\r\n.applaudo-red-plus {\r\n    @include iconPainter($applaudo-red-plus);\r\n\r\n\r\n}\r\n\r\n.applaudo-red-minus {\r\n    @include iconPainter($applaudo-red-minus);\r\n}\r\n\r\n.error-red {\r\n    @include iconPainter($error-red);\r\n}\r\n\r\n.green {\r\n    @include iconPainter($green);\r\n}\r\n\r\n.mid-gray {\r\n    @include iconPainter($mid-gray);\r\n}\r\n\r\n.yellow {\r\n    @include iconPainter($yellow);\r\n}\r\n\r\n.charcoal {\r\n    @include iconPainter($charcoal);\r\n}\r\n\r\n.cool-gray {\r\n    @include iconPainter($cool-gray);\r\n}\r\n\r\n.platinum {\r\n    @include iconPainter($platinum);\r\n}\r\n\r\n.applaudo-purple {\r\n    @include iconPainter($applaudo-purple);\r\n}\r\n\r\n.blue{\r\n    @include iconPainter($blue);\r\n}\r\n.bronze {\r\n    @include iconPainter($bronze);\r\n}\r\n\r\n.light-navy-blue {\r\n    @include iconPainter($light-navy-blue);\r\n}",
                     "styleUrl": "./svg-icon.component.scss"
                 }
             ],
@@ -1452,7 +1288,7 @@
                         "deprecationMessage": ""
                     }
                 ],
-                "line": 22,
+                "line": 19,
                 "jsdoctags": [
                     {
                         "name": "renderer",
@@ -1470,18 +1306,99 @@
                 "AfterViewInit",
                 "OnChanges"
             ]
+        },
+        {
+            "name": "TagComponent",
+            "id": "component-TagComponent-c864d7f517cfbf0075b6c87d7ca11423bf268612f433db7064aeed5ecb6665a560c4c754d82d6ca65f8661623199aca1b75275ea9e322d44ed28d69ab0d73517",
+            "file": "projects/clapp/src/lib/components/tag/tag.component.ts",
+            "encapsulation": [],
+            "entryComponents": [],
+            "inputs": [],
+            "outputs": [],
+            "providers": [],
+            "selector": "cl-tag",
+            "styleUrls": [
+                "./tag.component.scss"
+            ],
+            "styles": [],
+            "templateUrl": [
+                "./tag.component.html"
+            ],
+            "viewProviders": [],
+            "inputsClass": [
+                {
+                    "name": "label",
+                    "defaultValue": "'Tag'",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "line": 10,
+                    "type": "string",
+                    "decorators": []
+                },
+                {
+                    "name": "type",
+                    "defaultValue": "'normal'",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "line": 9,
+                    "type": "string",
+                    "decorators": []
+                }
+            ],
+            "outputsClass": [],
+            "propertiesClass": [],
+            "methodsClass": [
+                {
+                    "name": "ngOnInit",
+                    "args": [],
+                    "optional": false,
+                    "returnType": "void",
+                    "typeParameters": [],
+                    "line": 14,
+                    "deprecated": false,
+                    "deprecationMessage": ""
+                }
+            ],
+            "deprecated": false,
+            "deprecationMessage": "",
+            "hostBindings": [],
+            "hostListeners": [],
+            "description": "",
+            "rawdescription": "\n",
+            "type": "component",
+            "sourceCode": "import { Component, Input, OnInit } from '@angular/core';\n\n@Component({\n  selector: 'cl-tag',\n  templateUrl: './tag.component.html',\n  styleUrls: ['./tag.component.scss'],\n})\nexport class TagComponent implements OnInit {\n  @Input('type') type = 'normal';\n  @Input('label') label = 'Tag';\n\n  constructor() {}\n\n  ngOnInit(): void {}\n}\n",
+            "assetsDirs": [],
+            "styleUrlsData": [
+                {
+                    "data": "@import '../../../../assets/scss/partials/clapp-base';\r\n\r\n@mixin colors ($background, $color) {\r\n  background-color: $background;\r\n  color: $color;\r\n}\r\n\r\n@mixin type ($type) {\r\n  @if $type =='normal' {\r\n    @include colors($platinum, $cool-gray);\r\n  }\r\n\r\n  @else if $type =='approved' {\r\n    @include colors($green, $white);\r\n  }\r\n\r\n  @else if $type =='failed' {\r\n    @include colors($error-red, $white);\r\n  }\r\n\r\n  @else if $type =='purple' {\r\n    @include colors($applaudo-purple, $white);\r\n  }\r\n\r\n  @else if $type =='light-navy-blue' {\r\n    @include colors($light-navy-blue, $white);\r\n  }\r\n\r\n  @else if $type =='cyan' {\r\n    @include colors($cyan, $white);\r\n  }\r\n}\r\n\r\nspan {\r\n  @include clapp-label-demi;\r\n  width: fit-content;\r\n  height: 32px;\r\n  margin: 0;\r\n  padding: 8px 16px;\r\n  border-radius: 16px;\r\n}\r\n\r\n.normal {\r\n  @include type('normal');\r\n}\r\n\r\n.approved {\r\n  @include type('approved');\r\n}\r\n\r\n.failed {\r\n  @include type('failed');\r\n}\r\n\r\n.purple {\r\n  @include type('purple');\r\n}\r\n\r\n.light-navy-blue {\r\n  @include type('light-navy-blue');\r\n}\r\n\r\n.cyan {\r\n  @include type('cyan');\r\n}",
+                    "styleUrl": "./tag.component.scss"
+                }
+            ],
+            "stylesData": "",
+            "constructorObj": {
+                "name": "constructor",
+                "description": "",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "args": [],
+                "line": 10
+            },
+            "implements": [
+                "OnInit"
+            ],
+            "templateData": "<span class=\"span\" [ngClass]=\"type\" [innerText]=\"label\"></span>"
         }
     ],
     "modules": [
         {
             "name": "AppModule",
-            "id": "module-AppModule-b4e3a57e121fe0663347cc5184861418082c191b4e16bd3b865eeb9e0aecdbdd1080bdb7967243b96ba33da40d6023fbe43c055526cb09d9256babbf49aeaf4b",
+            "id": "module-AppModule-b2a222e69f4ec8e801993d2ee27726a6679edede7646f4e7ba2c178e10cbc67ef5a3d75a05c4fa5bf7818f6fa412a4078c947e633d0e4dd9266aad5216abe62f",
             "description": "",
             "deprecationMessage": "",
             "deprecated": false,
             "file": "src/app/app.module.ts",
             "methods": [],
-            "sourceCode": "import { NgModule } from '@angular/core';\nimport { BrowserModule } from '@angular/platform-browser';\n\nimport { CommonModule } from '@angular/common';\nimport { BrowserAnimationsModule } from '@angular/platform-browser/animations';\nimport { ClappModule } from 'clapp';\nimport { AppRoutingModule } from './app-routing.module';\nimport { AppComponent } from './app.component';\nimport { LoginModule } from './modules/login/login.module';\n\n\n@NgModule({\n  declarations: [\n    AppComponent\n  ],\n  imports: [\n     CommonModule,\n    BrowserAnimationsModule,\n    BrowserModule,\n    AppRoutingModule,\n    ClappModule,\n    LoginModule\n  ],\n  providers: [],\n  bootstrap: [AppComponent]\n})\nexport class AppModule { }\n",
+            "sourceCode": "import { NgModule } from '@angular/core';\r\nimport { BrowserModule } from '@angular/platform-browser';\r\nimport { ClappModule } from 'clapp';\r\n\r\nimport { CommonModule } from '@angular/common';\r\nimport { BrowserAnimationsModule } from '@angular/platform-browser/animations';\r\nimport { AppRoutingModule } from './app-routing.module';\r\nimport { AppComponent } from './app.component';\r\nimport { LoginModule } from './modules/login/login.module';\r\n\r\n\r\n@NgModule({\r\n  declarations: [\r\n    AppComponent\r\n  ],\r\n  imports: [\r\n    CommonModule,\r\n    BrowserAnimationsModule,\r\n    BrowserModule,\r\n    AppRoutingModule,\r\n    ClappModule,\r\n    LoginModule\r\n  ],\r\n  providers: [],\r\n  bootstrap: [AppComponent]\r\n})\r\nexport class AppModule { }\r\n",
             "children": [
                 {
                     "type": "providers",
@@ -1565,13 +1482,13 @@
         },
         {
             "name": "ClappModule",
-            "id": "module-ClappModule-c9eb02171bf013a2f9c56aec1263d5d4921657256fc77a6b922a12402a7af14a24f5783f87c925a7fa055df38fadc91087f9a30c0e42fa303b5ffaa2a64efc32",
+            "id": "module-ClappModule-95c5030163c80f772e820e2e8c79ea4c1185be158275641bf31be742e3ea2fca86b1c849e3e94634342158c0b55c5523612d3e57a77fa0b20a5975b43f8368bf",
             "description": "",
             "deprecationMessage": "",
             "deprecated": false,
             "file": "projects/clapp/src/lib/clapp.module.ts",
             "methods": [],
-            "sourceCode": "import { CommonModule } from '@angular/common';\nimport { NgModule } from '@angular/core';\nimport { ClappComponent } from './clapp.component';\nimport { IconButtonComponent } from './components/buttons/icon-button/icon-button.component';\nimport { SvgIconComponent } from './components/svg-icon/svg-icon.component';\nimport { SidebarContextComponent } from './patterns/sidebar-context/sidebar-context.component';\nimport { BrowserAnimationsModule, NoopAnimationsModule } from '@angular/platform-browser/animations';\nimport { NavLinkComponent } from './components/nav-link/nav-link.component';\nimport { RouterModule } from '@angular/router';\n\n\n@NgModule({\n  declarations: [\n    ClappComponent,\n    IconButtonComponent,\n    SvgIconComponent,\n    SidebarContextComponent,\n    NavLinkComponent,\n\n  ],\n  imports: [\n     CommonModule,\n     RouterModule\n  ],\n  exports: [\n    ClappComponent,\n    IconButtonComponent,\n    SvgIconComponent,\n    SidebarContextComponent,\n    NavLinkComponent,\n  ]\n})\nexport class ClappModule { }\n",
+            "sourceCode": "import { CommonModule } from '@angular/common';\r\nimport { NgModule } from '@angular/core';\r\nimport { ClappComponent } from './clapp.component';\r\nimport { ButtonComponent } from './components/button/button.component';\r\nimport { SvgIconComponent } from './components/svg-icon/svg-icon.component';\r\nimport { SidebarContextComponent } from './patterns/sidebar-context/sidebar-context.component';\r\nimport { NavLinkComponent } from './components/nav-link/nav-link.component';\r\nimport { RouterModule } from '@angular/router';\r\nimport { TagComponent } from './components/tag/tag.component';\r\n\r\n\r\n@NgModule({\r\n  declarations: [\r\n    ClappComponent,\r\n    SvgIconComponent,\r\n    SidebarContextComponent,\r\n    NavLinkComponent,\r\n    ButtonComponent,\r\n    TagComponent,\r\n  ],\r\n  imports: [\r\n    CommonModule,\r\n    RouterModule,\r\n  ],\r\n  exports: [\r\n    ClappComponent,\r\n    SvgIconComponent,\r\n    SidebarContextComponent,\r\n    NavLinkComponent,\r\n    ButtonComponent,\r\n    TagComponent,\r\n  ]\r\n})\r\nexport class ClappModule { }\r\n",
             "children": [
                 {
                     "type": "providers",
@@ -1587,9 +1504,6 @@
                             "name": "ClappComponent"
                         },
                         {
-                            "name": "IconButtonComponent"
-                        },
-                        {
                             "name": "NavLinkComponent"
                         },
                         {
@@ -1597,6 +1511,9 @@
                         },
                         {
                             "name": "SvgIconComponent"
+                        },
+                        {
+                            "name": "TagComponent"
                         }
                     ]
                 },
@@ -1611,9 +1528,6 @@
                             "name": "ClappComponent"
                         },
                         {
-                            "name": "IconButtonComponent"
-                        },
-                        {
                             "name": "NavLinkComponent"
                         },
                         {
@@ -1621,6 +1535,9 @@
                         },
                         {
                             "name": "SvgIconComponent"
+                        },
+                        {
+                            "name": "TagComponent"
                         }
                     ]
                 },
@@ -1636,13 +1553,13 @@
         },
         {
             "name": "HomeModule",
-            "id": "module-HomeModule-cd50a39f63d5aa21c9c9c05fd68bd53f205bd11cd0873c4eb0d290c0e0dabf61f9aae9d01824c75fd72e5e6af20c923a1e5cbe5dd5d88081bf4368c53fdee193",
+            "id": "module-HomeModule-1f6185050bf66f32261073692f3b9777675204b131b166abc160a04f0466083d8d964760dcb8b49314ea2e1e33cba5bac02ae7b418fdfdbf13ad794e1d47787a",
             "description": "",
             "deprecationMessage": "",
             "deprecated": false,
             "file": "src/app/modules/home/home.module.ts",
             "methods": [],
-            "sourceCode": "import { NgModule } from '@angular/core';\nimport { CommonModule } from '@angular/common';\n\nimport { HomeRoutingModule } from './home-routing.module';\nimport { ProfileSimpleComponent } from './pages/profile-simple/profile-simple.component';\nimport { ProfileWithCommentsComponent } from './pages/profile-with-comments/profile-with-comments.component';\nimport { HomeMainComponent } from './pages/home-main/home-main.component';\nimport { ClappModule } from 'clapp';\nimport { NoopAnimationsModule } from '@angular/platform-browser/animations';\n\n\n@NgModule({\n  declarations: [\n    ProfileSimpleComponent,\n    ProfileWithCommentsComponent,\n    HomeMainComponent\n  ],\n  imports: [\n     CommonModule,\n    HomeRoutingModule,\n    ClappModule\n  ],\n  exports: []\n})\nexport class HomeModule { }\n",
+            "sourceCode": "import { NgModule } from '@angular/core';\r\nimport { CommonModule } from '@angular/common';\r\n\r\nimport { HomeRoutingModule } from './home-routing.module';\r\nimport { ProfileSimpleComponent } from './pages/profile-simple/profile-simple.component';\r\nimport { ProfileWithCommentsComponent } from './pages/profile-with-comments/profile-with-comments.component';\r\nimport { HomeMainComponent } from './pages/home-main/home-main.component';\r\nimport { ClappModule } from 'clapp';\r\nimport { NoopAnimationsModule } from '@angular/platform-browser/animations';\r\n\r\n\r\n@NgModule({\r\n  declarations: [\r\n    ProfileSimpleComponent,\r\n    ProfileWithCommentsComponent,\r\n    HomeMainComponent\r\n  ],\r\n  imports: [\r\n     CommonModule,\r\n    HomeRoutingModule,\r\n    ClappModule\r\n  ],\r\n  exports: []\r\n})\r\nexport class HomeModule { }\r\n",
             "children": [
                 {
                     "type": "providers",
@@ -1788,7 +1705,7 @@
                 "deprecated": false,
                 "deprecationMessage": "",
                 "type": "object",
-                "defaultValue": "{\n  account: '<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 24 24\"><g><path fill=\"none\" d=\"M0 0h24v24H0z\"/><path d=\"M12 22C6.477 22 2 17.523 2 12S6.477 2 12 2s10 4.477 10 10-4.477 10-10 10zm-4.987-3.744A7.966 7.966 0 0 0 12 20c1.97 0 3.773-.712 5.167-1.892A6.979 6.979 0 0 0 12.16 16a6.981 6.981 0 0 0-5.147 2.256zM5.616 16.82A8.975 8.975 0 0 1 12.16 14a8.972 8.972 0 0 1 6.362 2.634 8 8 0 1 0-12.906.187zM12 13a4 4 0 1 1 0-8 4 4 0 0 1 0 8zm0-2a2 2 0 1 0 0-4 2 2 0 0 0 0 4z\"/></g></svg>',\n  add: '<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 24 24\"><g><path fill=\"none\" d=\"M0 0h24v24H0z\"/><path d=\"M19 13h-6v6h-2v-6H5v-2h6V5h2v6h6v2z\"/></g></svg>',\n  admin: '<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 24 24\"><g><path fill=\"none\" d=\"M0 0h24v24H0z\"/><path d=\"M12 14v2a6 6 0 0 0-6 6H4a8 8 0 0 1 8-8zm0-1c-3.315 0-6-2.685-6-6s2.685-6 6-6 6 2.685 6 6-2.685 6-6 6zm0-2c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm9 6h1v5h-8v-5h1v-1a3 3 0 0 1 6 0v1zm-2 0v-1a1 1 0 0 0-2 0v1h2z\"/></g></svg>',\n  apps: '<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 24 24\"><g><path fill=\"none\" d=\"M0 0h24v24H0z\"/><path d=\"M6.75 2.5A4.25 4.25 0 0 1 11 6.75V11H6.75a4.25 4.25 0 1 1 0-8.5zM9 9V6.75A2.25 2.25 0 1 0 6.75 9H9zm-2.25 4H11v4.25A4.25 4.25 0 1 1 6.75 13zm0 2A2.25 2.25 0 1 0 9 17.25V15H6.75zm10.5-12.5a4.25 4.25 0 1 1 0 8.5H13V6.75a4.25 4.25 0 0 1 4.25-4.25zm0 6.5A2.25 2.25 0 1 0 15 6.75V9h2.25zM13 13h4.25A4.25 4.25 0 1 1 13 17.25V13zm2 2v2.25A2.25 2.25 0 1 0 17.25 15H15z\"/></g></svg>',\n  arrowLeft: '<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 24 24\"><g><path fill=\"none\" d=\"M0 0h24v24H0z\"/><path d=\"M7.828 11H20v2H7.828l5.364 5.364-1.414 1.414L4 12l7.778-7.778 1.414 1.414z\"/></g></svg>',\n  arrowRight: '<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 24 24\"><g><path fill=\"none\" d=\"M0 0h24v24H0z\"/><path d=\"M16.172 11l-5.364-5.364 1.414-1.414L20 12l-7.778 7.778-1.414-1.414L16.172 13H4v-2z\"/></g></svg>',\n  attachment: '<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 24 24\"><g><path fill=\"none\" d=\"M0 0h24v24H0z\"/><path d=\"M14 13.5V8a4 4 0 1 0-8 0v5.5a6.5 6.5 0 1 0 13 0V4h2v9.5a8.5 8.5 0 1 1-17 0V8a6 6 0 1 1 12 0v5.5a3.5 3.5 0 0 1-7 0V8h2v5.5a1.5 1.5 0 0 0 3 0z\"/></g></svg>',\n  awardFill: '<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 24 24\"><g><path fill=\"none\" d=\"M0 0h24v24H0z\"/><path d=\"M17 15.245v6.872a.5.5 0 0 1-.757.429L12 20l-4.243 2.546a.5.5 0 0 1-.757-.43v-6.87a8 8 0 1 1 10 0zM12 15a6 6 0 1 0 0-12 6 6 0 0 0 0 12zm0-2a4 4 0 1 1 0-8 4 4 0 0 1 0 8z\"/></g></svg>',\n  awardLine: '<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 24 24\"><g><path fill=\"none\" d=\"M0 0h24v24H0z\"/><path d=\"M17 15.245v6.872a.5.5 0 0 1-.757.429L12 20l-4.243 2.546a.5.5 0 0 1-.757-.43v-6.87a8 8 0 1 1 10 0zm-8 1.173v3.05l3-1.8 3 1.8v-3.05A7.978 7.978 0 0 1 12 17a7.978 7.978 0 0 1-3-.582zM12 15a6 6 0 1 0 0-12 6 6 0 0 0 0 12z\"/></g></svg>',\n  calendar: '<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 24 24\"><g><path fill=\"none\" d=\"M0 0h24v24H0z\"/><path d=\"M17 3h4a1 1 0 0 1 1 1v16a1 1 0 0 1-1 1H3a1 1 0 0 1-1-1V4a1 1 0 0 1 1-1h4V1h2v2h6V1h2v2zm-2 2H9v2H7V5H4v4h16V5h-3v2h-2V5zm5 6H4v8h16v-8z\"/></g></svg>',\n  camera: '<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 24 24\"><g><path fill=\"none\" d=\"M0 0h24v24H0z\"/><path d=\"M9.828 5l-2 2H4v12h16V7h-3.828l-2-2H9.828zM9 3h6l2 2h4a1 1 0 0 1 1 1v14a1 1 0 0 1-1 1H3a1 1 0 0 1-1-1V6a1 1 0 0 1 1-1h4l2-2zm3 15a5.5 5.5 0 1 1 0-11 5.5 5.5 0 0 1 0 11zm0-2a3.5 3.5 0 1 0 0-7 3.5 3.5 0 0 0 0 7z\"/></g></svg>',\n  chevronDown: '<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 24 24\"><g><path fill=\"none\" d=\"M0 0h24v24H0z\"/><path d=\"M12 13.172l4.95-4.95 1.414 1.414L12 16 5.636 9.636 7.05 8.222z\"/></g></svg>',\n  chevronLeft: '<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 24 24\"><g><path fill=\"none\" d=\"M0 0h24v24H0z\"/><path d=\"M10.828 12l4.95 4.95-1.414 1.414L8 12l6.364-6.364 1.414 1.414z\"/></g></svg>',\n  chevronRight: '<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 24 24\"><g><path fill=\"none\" d=\"M0 0h24v24H0z\"/><path d=\"M13.172 12l-4.95-4.95 1.414-1.414L16 12l-6.364 6.364-1.414-1.414z\"/></g></svg>',\n  chevronUp: '<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 24 24\"><g><path fill=\"none\" d=\"M0 0h24v24H0z\"/><path d=\"M12 10.828l-4.95 4.95-1.414-1.414L12 8l6.364 6.364-1.414 1.414z\"/></g></svg>',\n  close: '<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 24 24\"><g><path fill=\"none\" d=\"M0 0h24v24H0z\"/><path d=\"M12 10.586l4.95-4.95 1.414 1.414-4.95 4.95 4.95 4.95-1.414 1.414-4.95-4.95-4.95 4.95-1.414-1.414 4.95-4.95-4.95-4.95L7.05 5.636z\"/></g></svg>',\n  dashboard: '<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 24 24\"><g><path fill=\"none\" d=\"M0 0h24v24H0z\"/><path d=\"M13 21V11h8v10h-8zM3 13V3h8v10H3zm6-2V5H5v6h4zM3 21v-6h8v6H3zm2-2h4v-2H5v2zm10 0h4v-6h-4v6zM13 3h8v6h-8V3zm2 2v2h4V5h-4z\"/></g></svg>',\n  delete: '<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 24 24\"><g><path fill=\"none\" d=\"M0 0h24v24H0z\"/><path d=\"M17 6h5v2h-2v13a1 1 0 0 1-1 1H5a1 1 0 0 1-1-1V8H2V6h5V3a1 1 0 0 1 1-1h8a1 1 0 0 1 1 1v3zm1 2H6v12h12V8zm-9 3h2v6H9v-6zm4 0h2v6h-2v-6zM9 4v2h6V4H9z\"/></g></svg>',\n  developer: '<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 24 24\"><g><path fill=\"none\" d=\"M0 0h24v24H0z\"/><path d=\"M23 12l-7.071 7.071-1.414-1.414L20.172 12l-5.657-5.657 1.414-1.414L23 12zM3.828 12l5.657 5.657-1.414 1.414L1 12l7.071-7.071 1.414 1.414L3.828 12z\"/></g></svg>',\n  download: '<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 24 24\"><g><path fill=\"none\" d=\"M0 0h24v24H0z\"/><path d=\"M3 19h18v2H3v-2zm10-5.828L19.071 7.1l1.414 1.414L12 17 3.515 8.515 4.929 7.1 11 13.17V2h2v11.172z\"/></g></svg>',\n  dropDown: '<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 24 24\"><g><path fill=\"none\" d=\"M0 0h24v24H0z\"/><path d=\"M12 15l-4.243-4.243 1.415-1.414L12 12.172l2.828-2.829 1.415 1.414z\"/></g></svg>',\n  dropUp: '<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 24 24\"><g><path fill=\"none\" d=\"M0 0h24v24H0z\"/><path d=\"M12 11.828l-2.828 2.829-1.415-1.414L12 9l4.243 4.243-1.415 1.414L12 11.828z\"/></g></svg>',\n  edit: '<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 24 24\"><g><path fill=\"none\" d=\"M0 0h24v24H0z\"/><path d=\"M6.414 16L16.556 5.858l-1.414-1.414L5 14.586V16h1.414zm.829 2H3v-4.243L14.435 2.322a1 1 0 0 1 1.414 0l2.829 2.829a1 1 0 0 1 0 1.414L7.243 18zM3 20h18v2H3v-2z\"/></g></svg>',\n  explore: '<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 24 24\"><g><path fill=\"none\" d=\"M0 0h24v24H0z\"/><path d=\"M12 14v2a6 6 0 0 0-6 6H4a8 8 0 0 1 8-8zm0-1c-3.315 0-6-2.685-6-6s2.685-6 6-6 6 2.685 6 6-2.685 6-6 6zm0-2c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm9.446 9.032l1.504 1.504-1.414 1.414-1.504-1.504a4 4 0 1 1 1.414-1.414zM18 20a2 2 0 1 0 0-4 2 2 0 0 0 0 4z\"/></g></svg>',\n  facebook: '<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 24 24\"><g><path fill=\"none\" d=\"M0 0h24v24H0z\"/><path d=\"M14 13.5h2.5l1-4H14v-2c0-1.03 0-2 2-2h1.5V2.14c-.326-.043-1.557-.14-2.857-.14C11.928 2 10 3.657 10 6.7v2.8H7v4h3V22h4v-8.5z\"/></g></svg>',\n  filter: '<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 24 24\"><g><path fill=\"none\" d=\"M0 0H24V24H0z\"/><path d=\"M21 4v2h-1l-5 7.5V22H9v-8.5L4 6H3V4h18zM6.404 6L11 12.894V20h2v-7.106L17.596 6H6.404z\"/></g></svg>',\n  gatekeeper: '<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 40 19\"><g><path d=\"M11.1214 3.229L8.85495 0.955505L2.94076 6.85283L0 9.8015L2.94076 12.7829L8.85495 18.6803L11.1214 16.4068L4.64877 9.8015L11.1214 3.229Z\"/><path d=\"M19.9259 16.7687C18.6654 16.7687 17.4977 16.4536 16.4226 15.8234C15.3753 15.2025 14.5412 14.3684 13.9203 13.3211C13.2901 12.246 12.975 11.0783 12.975 9.81785C12.975 8.55743 13.2901 7.38968 13.9203 6.31461C14.5412 5.26734 15.3753 4.43324 16.4226 3.81229C17.4977 3.18208 18.6654 2.86697 19.9259 2.86697C21.1863 2.86697 22.354 3.18208 23.4291 3.81229C24.4764 4.43324 25.3105 5.26734 25.9314 6.31461C26.5616 7.38968 26.8767 8.55743 26.8767 9.81785C26.8767 11.0783 26.5616 12.246 25.9314 13.3211C25.3105 14.3684 24.4764 15.2025 23.4291 15.8234C22.354 16.4536 21.1863 16.7687 19.9259 16.7687ZM19.2308 10.3739V12.5982H20.621V10.3739C21.0009 10.2071 21.2836 9.94297 21.469 9.58152C21.6543 9.21081 21.7053 8.82619 21.6219 8.42768C21.5385 8.01989 21.3346 7.68625 21.0102 7.42675C20.6951 7.16725 20.3336 7.0375 19.9259 7.0375C19.5181 7.0375 19.152 7.16725 18.8276 7.42675C18.5125 7.68625 18.3133 8.01989 18.2298 8.42768C18.1464 8.82619 18.1974 9.21081 18.3828 9.58152C18.5681 9.94297 18.8508 10.2071 19.2308 10.3739Z\"/><path d=\"M36.6793 6.85283L30.7977 0.955505L28.4986 3.229L34.9861 9.8015L28.4986 16.4068L30.7977 18.6803L36.6793 12.7829L39.62 9.8015L36.6793 6.85283Z\"/><path d=\"M11.1214 3.229L8.85495 0.955505L2.94076 6.85283L0 9.8015L2.94076 12.7829L8.85495 18.6803L11.1214 16.4068L4.64877 9.8015L11.1214 3.229Z\"/><path d=\"M19.9259 16.7687C18.6654 16.7687 17.4977 16.4536 16.4226 15.8234C15.3753 15.2025 14.5412 14.3684 13.9203 13.3211C13.2901 12.246 12.975 11.0783 12.975 9.81785C12.975 8.55743 13.2901 7.38968 13.9203 6.31461C14.5412 5.26734 15.3753 4.43324 16.4226 3.81229C17.4977 3.18208 18.6654 2.86697 19.9259 2.86697C21.1863 2.86697 22.354 3.18208 23.4291 3.81229C24.4764 4.43324 25.3105 5.26734 25.9314 6.31461C26.5616 7.38968 26.8767 8.55743 26.8767 9.81785C26.8767 11.0783 26.5616 12.246 25.9314 13.3211C25.3105 14.3684 24.4764 15.2025 23.4291 15.8234C22.354 16.4536 21.1863 16.7687 19.9259 16.7687ZM19.2308 10.3739V12.5982H20.621V10.3739C21.0009 10.2071 21.2836 9.94297 21.469 9.58152C21.6543 9.21081 21.7053 8.82619 21.6219 8.42768C21.5385 8.01989 21.3346 7.68625 21.0102 7.42675C20.6951 7.16725 20.3336 7.0375 19.9259 7.0375C19.5181 7.0375 19.152 7.16725 18.8276 7.42675C18.5125 7.68625 18.3133 8.01989 18.2298 8.42768C18.1464 8.82619 18.1974 9.21081 18.3828 9.58152C18.5681 9.94297 18.8508 10.2071 19.2308 10.3739Z\"/><path d=\"M36.6793 6.85283L30.7977 0.955505L28.4986 3.229L34.9861 9.8015L28.4986 16.4068L30.7977 18.6803L36.6793 12.7829L39.62 9.8015L36.6793 6.85283Z\"/></g></svg>',\n  help: '<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 24 24\"><g><path fill=\"none\" d=\"M0 0h24v24H0z\"/><path d=\"M12 22C6.477 22 2 17.523 2 12S6.477 2 12 2s10 4.477 10 10-4.477 10-10 10zm0-2a8 8 0 1 0 0-16 8 8 0 0 0 0 16zm-1-5h2v2h-2v-2zm2-1.645V14h-2v-1.5a1 1 0 0 1 1-1 1.5 1.5 0 1 0-1.471-1.794l-1.962-.393A3.501 3.501 0 1 1 13 13.355z\"/></g></svg>',\n  hr: '<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 24 24\"><g><path fill=\"none\" d=\"M0 0h24v24H0z\"/><path fill-rule=\"nonzero\" d=\"M12 11a5 5 0 0 1 5 5v6h-2v-6a3 3 0 0 0-2.824-2.995L12 13a3 3 0 0 0-2.995 2.824L9 16v6H7v-6a5 5 0 0 1 5-5zm-6.5 3c.279 0 .55.033.81.094a5.947 5.947 0 0 0-.301 1.575L6 16v.086a1.492 1.492 0 0 0-.356-.08L5.5 16a1.5 1.5 0 0 0-1.493 1.356L4 17.5V22H2v-4.5A3.5 3.5 0 0 1 5.5 14zm13 0a3.5 3.5 0 0 1 3.5 3.5V22h-2v-4.5a1.5 1.5 0 0 0-1.356-1.493L18.5 16c-.175 0-.343.03-.5.085V16c0-.666-.108-1.306-.309-1.904.259-.063.53-.096.809-.096zm-13-6a2.5 2.5 0 1 1 0 5 2.5 2.5 0 0 1 0-5zm13 0a2.5 2.5 0 1 1 0 5 2.5 2.5 0 0 1 0-5zm-13 2a.5.5 0 1 0 0 1 .5.5 0 0 0 0-1zm13 0a.5.5 0 1 0 0 1 .5.5 0 0 0 0-1zM12 2a4 4 0 1 1 0 8 4 4 0 0 1 0-8zm0 2a2 2 0 1 0 0 4 2 2 0 0 0 0-4z\"/></g></svg>',\n  info: '<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 24 24\"><g><path fill=\"none\" d=\"M0 0h24v24H0z\"/><path d=\"M12 22C6.477 22 2 17.523 2 12S6.477 2 12 2s10 4.477 10 10-4.477 10-10 10zm0-2a8 8 0 1 0 0-16 8 8 0 0 0 0 16zM11 7h2v2h-2V7zm0 4h2v6h-2v-6z\"/></g></svg>',\n  instagram: '<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 24 24\"><g><path fill=\"none\" d=\"M0 0h24v24H0z\"/><path fill-rule=\"nonzero\" d=\"M12 9a3 3 0 1 0 0 6 3 3 0 0 0 0-6zm0-2a5 5 0 1 1 0 10 5 5 0 0 1 0-10zm6.5-.25a1.25 1.25 0 0 1-2.5 0 1.25 1.25 0 0 1 2.5 0zM12 4c-2.474 0-2.878.007-4.029.058-.784.037-1.31.142-1.798.332-.434.168-.747.369-1.08.703a2.89 2.89 0 0 0-.704 1.08c-.19.49-.295 1.015-.331 1.798C4.006 9.075 4 9.461 4 12c0 2.474.007 2.878.058 4.029.037.783.142 1.31.331 1.797.17.435.37.748.702 1.08.337.336.65.537 1.08.703.494.191 1.02.297 1.8.333C9.075 19.994 9.461 20 12 20c2.474 0 2.878-.007 4.029-.058.782-.037 1.309-.142 1.797-.331.433-.169.748-.37 1.08-.702.337-.337.538-.65.704-1.08.19-.493.296-1.02.332-1.8.052-1.104.058-1.49.058-4.029 0-2.474-.007-2.878-.058-4.029-.037-.782-.142-1.31-.332-1.798a2.911 2.911 0 0 0-.703-1.08 2.884 2.884 0 0 0-1.08-.704c-.49-.19-1.016-.295-1.798-.331C14.925 4.006 14.539 4 12 4zm0-2c2.717 0 3.056.01 4.122.06 1.065.05 1.79.217 2.428.465.66.254 1.216.598 1.772 1.153a4.908 4.908 0 0 1 1.153 1.772c.247.637.415 1.363.465 2.428.047 1.066.06 1.405.06 4.122 0 2.717-.01 3.056-.06 4.122-.05 1.065-.218 1.79-.465 2.428a4.883 4.883 0 0 1-1.153 1.772 4.915 4.915 0 0 1-1.772 1.153c-.637.247-1.363.415-2.428.465-1.066.047-1.405.06-4.122.06-2.717 0-3.056-.01-4.122-.06-1.065-.05-1.79-.218-2.428-.465a4.89 4.89 0 0 1-1.772-1.153 4.904 4.904 0 0 1-1.153-1.772c-.248-.637-.415-1.363-.465-2.428C2.013 15.056 2 14.717 2 12c0-2.717.01-3.056.06-4.122.05-1.066.217-1.79.465-2.428a4.88 4.88 0 0 1 1.153-1.772A4.897 4.897 0 0 1 5.45 2.525c.638-.248 1.362-.415 2.428-.465C8.944 2.013 9.283 2 12 2z\"/></g></svg>',\n  link: '<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 24 24\"><g><path fill=\"none\" d=\"M0 0h24v24H0z\"/><path d=\"M18.364 15.536L16.95 14.12l1.414-1.414a5 5 0 1 0-7.071-7.071L9.879 7.05 8.464 5.636 9.88 4.222a7 7 0 0 1 9.9 9.9l-1.415 1.414zm-2.828 2.828l-1.415 1.414a7 7 0 0 1-9.9-9.9l1.415-1.414L7.05 9.88l-1.414 1.414a5 5 0 1 0 7.071 7.071l1.414-1.414 1.415 1.414zm-.708-10.607l1.415 1.415-7.071 7.07-1.415-1.414 7.071-7.07z\"/></g></svg>',\n  linkedin: '<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 24 24\"><g><path fill=\"none\" d=\"M0 0h24v24H0z\"/><path fill-rule=\"nonzero\" d=\"M6.94 5a2 2 0 1 1-4-.002 2 2 0 0 1 4 .002zM7 8.48H3V21h4V8.48zm6.32 0H9.34V21h3.94v-6.57c0-3.66 4.77-4 4.77 0V21H22v-7.93c0-6.17-7.06-5.94-8.72-2.91l.04-1.68z\"/></g></svg>',\n  logOut: '<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 24 24\"><g><path fill=\"none\" d=\"M0 0h24v24H0z\"/><path d=\"M4 18h2v2h12V4H6v2H4V3a1 1 0 0 1 1-1h14a1 1 0 0 1 1 1v18a1 1 0 0 1-1 1H5a1 1 0 0 1-1-1v-3zm2-7h7v2H6v3l-5-4 5-4v3z\"/></g></svg>',\n  mail: '<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 24 24\"><g><path fill=\"none\" d=\"M0 0h24v24H0z\"/><path d=\"M3 3h18a1 1 0 0 1 1 1v16a1 1 0 0 1-1 1H3a1 1 0 0 1-1-1V4a1 1 0 0 1 1-1zm17 4.238l-7.928 7.1L4 7.216V19h16V7.238zM4.511 5l7.55 6.662L19.502 5H4.511z\"/></g></svg>',\n  menu: '<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 24 24\"><g><path fill=\"none\" d=\"M0 0h24v24H0z\"/><path d=\"M3 4h18v2H3V4zm0 7h18v2H3v-2zm0 7h18v2H3v-2z\"/></g></svg>',\n  more: '<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 24 24\"><g><path fill=\"none\" d=\"M0 0h24v24H0z\"/><path d=\"M12 3c-.825 0-1.5.675-1.5 1.5S11.175 6 12 6s1.5-.675 1.5-1.5S12.825 3 12 3zm0 15c-.825 0-1.5.675-1.5 1.5S11.175 21 12 21s1.5-.675 1.5-1.5S12.825 18 12 18zm0-7.5c-.825 0-1.5.675-1.5 1.5s.675 1.5 1.5 1.5 1.5-.675 1.5-1.5-.675-1.5-1.5-1.5z\"/></g></svg>',\n  points: '<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 24 24\"><g><path fill=\"none\" d=\"M0 0h24v24H0z\"/><path fill-rule=\"nonzero\" d=\"M12 7a8 8 0 1 1 0 16 8 8 0 0 1 0-16zm0 2a6 6 0 1 0 0 12 6 6 0 0 0 0-12zm0 1.5l1.323 2.68 2.957.43-2.14 2.085.505 2.946L12 17.25l-2.645 1.39.505-2.945-2.14-2.086 2.957-.43L12 10.5zM18 2v3l-1.363 1.138A9.935 9.935 0 0 0 13 5.049L13 2 18 2zm-7-.001v3.05a9.935 9.935 0 0 0-3.636 1.088L6 5V2l5-.001z\"/></g></svg>',\n  reorder: '<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 24 24\"><g><path fill=\"none\" d=\"M0 0h24v24H0z\"/><path d=\"M3 4h18v2H3V4zm0 15h18v2H3v-2zm0-5h18v2H3v-2zm0-5h18v2H3V9z\"/></g></svg>',\n  search: '<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 24 24\"><g><path fill=\"none\" d=\"M0 0h24v24H0z\"/><path d=\"M18.031 16.617l4.283 4.282-1.415 1.415-4.282-4.283A8.96 8.96 0 0 1 11 20c-4.968 0-9-4.032-9-9s4.032-9 9-9 9 4.032 9 9a8.96 8.96 0 0 1-1.969 5.617zm-2.006-.742A6.977 6.977 0 0 0 18 11c0-3.868-3.133-7-7-7-3.868 0-7 3.132-7 7 0 3.867 3.132 7 7 7a6.977 6.977 0 0 0 4.875-1.975l.15-.15z\"/></g></svg>',\n  settings: '<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 24 24\"><g><path fill=\"none\" d=\"M0 0h24v24H0z\"/><path d=\"M2 12c0-.865.11-1.703.316-2.504A3 3 0 0 0 4.99 4.867a9.99 9.99 0 0 1 4.335-2.505 3 3 0 0 0 5.348 0 9.99 9.99 0 0 1 4.335 2.505 3 3 0 0 0 2.675 4.63c.206.8.316 1.638.316 2.503 0 .865-.11 1.703-.316 2.504a3 3 0 0 0-2.675 4.629 9.99 9.99 0 0 1-4.335 2.505 3 3 0 0 0-5.348 0 9.99 9.99 0 0 1-4.335-2.505 3 3 0 0 0-2.675-4.63C2.11 13.704 2 12.866 2 12zm4.804 3c.63 1.091.81 2.346.564 3.524.408.29.842.541 1.297.75A4.993 4.993 0 0 1 12 18c1.26 0 2.438.471 3.335 1.274.455-.209.889-.46 1.297-.75A4.993 4.993 0 0 1 17.196 15a4.993 4.993 0 0 1 2.77-2.25 8.126 8.126 0 0 0 0-1.5A4.993 4.993 0 0 1 17.195 9a4.993 4.993 0 0 1-.564-3.524 7.989 7.989 0 0 0-1.297-.75A4.993 4.993 0 0 1 12 6a4.993 4.993 0 0 1-3.335-1.274 7.99 7.99 0 0 0-1.297.75A4.993 4.993 0 0 1 6.804 9a4.993 4.993 0 0 1-2.77 2.25 8.126 8.126 0 0 0 0 1.5A4.993 4.993 0 0 1 6.805 15zM12 15a3 3 0 1 1 0-6 3 3 0 0 1 0 6zm0-2a1 1 0 1 0 0-2 1 1 0 0 0 0 2z\"/></g></svg>',\n  skills: '<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 24 24\"><g><path fill=\"none\" d=\"M0 0h24v24H0z\"/><path d=\"M2 18h7v2H2v-2zm0-7h9v2H2v-2zm0-7h20v2H2V4zm18.674 9.025l1.156-.391 1 1.732-.916.805a4.017 4.017 0 0 1 0 1.658l.916.805-1 1.732-1.156-.391c-.41.37-.898.655-1.435.83L19 21h-2l-.24-1.196a3.996 3.996 0 0 1-1.434-.83l-1.156.392-1-1.732.916-.805a4.017 4.017 0 0 1 0-1.658l-.916-.805 1-1.732 1.156.391c.41-.37.898-.655 1.435-.83L17 11h2l.24 1.196c.536.174 1.024.46 1.434.83zM18 18a2 2 0 1 0 0-4 2 2 0 0 0 0 4z\"/></g></svg>',\n  sort: '<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 24 24\"><g><path fill=\"none\" d=\"M0 0h24v24H0z\"/><path d=\"M11.95 7.95l-1.414 1.414L8 6.828 8 20H6V6.828L3.465 9.364 2.05 7.95 7 3l4.95 4.95zm10 8.1L17 21l-4.95-4.95 1.414-1.414 2.537 2.536L16 4h2v13.172l2.536-2.536 1.414 1.414z\"/></g></svg>',\n  success: '<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 24 24\"><g><path fill=\"none\" d=\"M0 0h24v24H0z\"/><path d=\"M12 22C6.477 22 2 17.523 2 12S6.477 2 12 2s10 4.477 10 10-4.477 10-10 10zm0-2a8 8 0 1 0 0-16 8 8 0 0 0 0 16zm-.997-4L6.76 11.757l1.414-1.414 2.829 2.829 5.656-5.657 1.415 1.414L11.003 16z\"/></g></svg>',\n  thumbUpFill: '<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 24 24\"><g><path fill=\"none\" d=\"M0 0h24v24H0z\"/><path d=\"M2 9h3v12H2a1 1 0 0 1-1-1V10a1 1 0 0 1 1-1zm5.293-1.293l6.4-6.4a.5.5 0 0 1 .654-.047l.853.64a1.5 1.5 0 0 1 .553 1.57L14.6 8H21a2 2 0 0 1 2 2v2.104a2 2 0 0 1-.15.762l-3.095 7.515a1 1 0 0 1-.925.619H8a1 1 0 0 1-1-1V8.414a1 1 0 0 1 .293-.707z\"/></g></svg>',\n  thumbUpLine: '<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 24 24\"><g><path fill=\"none\" d=\"M0 0h24v24H0z\"/><path d=\"M14.6 8H21a2 2 0 0 1 2 2v2.104a2 2 0 0 1-.15.762l-3.095 7.515a1 1 0 0 1-.925.619H2a1 1 0 0 1-1-1V10a1 1 0 0 1 1-1h3.482a1 1 0 0 0 .817-.423L11.752.85a.5.5 0 0 1 .632-.159l1.814.907a2.5 2.5 0 0 1 1.305 2.853L14.6 8zM7 10.588V19h11.16L21 12.104V10h-6.4a2 2 0 0 1-1.938-2.493l.903-3.548a.5.5 0 0 0-.261-.571l-.661-.33-4.71 6.672c-.25.354-.57.644-.933.858zM5 11H3v8h2v-8z\"/></g></svg>',\n  twitter: '<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 24 24\"><g><path fill=\"none\" d=\"M0 0h24v24H0z\"/><path d=\"M22.162 5.656a8.384 8.384 0 0 1-2.402.658A4.196 4.196 0 0 0 21.6 4c-.82.488-1.719.83-2.656 1.015a4.182 4.182 0 0 0-7.126 3.814 11.874 11.874 0 0 1-8.62-4.37 4.168 4.168 0 0 0-.566 2.103c0 1.45.738 2.731 1.86 3.481a4.168 4.168 0 0 1-1.894-.523v.052a4.185 4.185 0 0 0 3.355 4.101 4.21 4.21 0 0 1-1.89.072A4.185 4.185 0 0 0 7.97 16.65a8.394 8.394 0 0 1-6.191 1.732 11.83 11.83 0 0 0 6.41 1.88c7.693 0 11.9-6.373 11.9-11.9 0-.18-.005-.362-.013-.54a8.496 8.496 0 0 0 2.087-2.165z\"/></g></svg>',\n  upload: '<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 24 24\"><g><path fill=\"none\" d=\"M0 0h24v24H0z\"/><path d=\"M3 19h18v2H3v-2zM13 5.828V17h-2V5.828L4.929 11.9l-1.414-1.414L12 2l8.485 8.485-1.414 1.414L13 5.83z\"/></g></svg>',\n  warning: '<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 24 24\"><g><path fill=\"none\" d=\"M0 0h24v24H0z\"/><path d=\"M12 22C6.477 22 2 17.523 2 12S6.477 2 12 2s10 4.477 10 10-4.477 10-10 10zm0-2a8 8 0 1 0 0-16 8 8 0 0 0 0 16zm-1-5h2v2h-2v-2zm0-8h2v6h-2V7z\"/></g></svg>',\n}"
+                "defaultValue": "{\r\n  account: '<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 24 24\"><g><path fill=\"none\" d=\"M0 0h24v24H0z\"/><path d=\"M12 22C6.477 22 2 17.523 2 12S6.477 2 12 2s10 4.477 10 10-4.477 10-10 10zm-4.987-3.744A7.966 7.966 0 0 0 12 20c1.97 0 3.773-.712 5.167-1.892A6.979 6.979 0 0 0 12.16 16a6.981 6.981 0 0 0-5.147 2.256zM5.616 16.82A8.975 8.975 0 0 1 12.16 14a8.972 8.972 0 0 1 6.362 2.634 8 8 0 1 0-12.906.187zM12 13a4 4 0 1 1 0-8 4 4 0 0 1 0 8zm0-2a2 2 0 1 0 0-4 2 2 0 0 0 0 4z\"/></g></svg>',\r\n  add: '<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 24 24\"><g><path fill=\"none\" d=\"M0 0h24v24H0z\"/><path d=\"M19 13h-6v6h-2v-6H5v-2h6V5h2v6h6v2z\"/></g></svg>',\r\n  admin: '<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 24 24\"><g><path fill=\"none\" d=\"M0 0h24v24H0z\"/><path d=\"M12 14v2a6 6 0 0 0-6 6H4a8 8 0 0 1 8-8zm0-1c-3.315 0-6-2.685-6-6s2.685-6 6-6 6 2.685 6 6-2.685 6-6 6zm0-2c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm9 6h1v5h-8v-5h1v-1a3 3 0 0 1 6 0v1zm-2 0v-1a1 1 0 0 0-2 0v1h2z\"/></g></svg>',\r\n  apps: '<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 24 24\"><g><path fill=\"none\" d=\"M0 0h24v24H0z\"/><path d=\"M6.75 2.5A4.25 4.25 0 0 1 11 6.75V11H6.75a4.25 4.25 0 1 1 0-8.5zM9 9V6.75A2.25 2.25 0 1 0 6.75 9H9zm-2.25 4H11v4.25A4.25 4.25 0 1 1 6.75 13zm0 2A2.25 2.25 0 1 0 9 17.25V15H6.75zm10.5-12.5a4.25 4.25 0 1 1 0 8.5H13V6.75a4.25 4.25 0 0 1 4.25-4.25zm0 6.5A2.25 2.25 0 1 0 15 6.75V9h2.25zM13 13h4.25A4.25 4.25 0 1 1 13 17.25V13zm2 2v2.25A2.25 2.25 0 1 0 17.25 15H15z\"/></g></svg>',\r\n  arrowLeft: '<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 24 24\"><g><path fill=\"none\" d=\"M0 0h24v24H0z\"/><path d=\"M7.828 11H20v2H7.828l5.364 5.364-1.414 1.414L4 12l7.778-7.778 1.414 1.414z\"/></g></svg>',\r\n  arrowRight: '<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 24 24\"><g><path fill=\"none\" d=\"M0 0h24v24H0z\"/><path d=\"M16.172 11l-5.364-5.364 1.414-1.414L20 12l-7.778 7.778-1.414-1.414L16.172 13H4v-2z\"/></g></svg>',\r\n  attachment: '<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 24 24\"><g><path fill=\"none\" d=\"M0 0h24v24H0z\"/><path d=\"M14 13.5V8a4 4 0 1 0-8 0v5.5a6.5 6.5 0 1 0 13 0V4h2v9.5a8.5 8.5 0 1 1-17 0V8a6 6 0 1 1 12 0v5.5a3.5 3.5 0 0 1-7 0V8h2v5.5a1.5 1.5 0 0 0 3 0z\"/></g></svg>',\r\n  awardFill: '<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 24 24\"><g><path fill=\"none\" d=\"M0 0h24v24H0z\"/><path d=\"M17 15.245v6.872a.5.5 0 0 1-.757.429L12 20l-4.243 2.546a.5.5 0 0 1-.757-.43v-6.87a8 8 0 1 1 10 0zM12 15a6 6 0 1 0 0-12 6 6 0 0 0 0 12zm0-2a4 4 0 1 1 0-8 4 4 0 0 1 0 8z\"/></g></svg>',\r\n  awardLine: '<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 24 24\"><g><path fill=\"none\" d=\"M0 0h24v24H0z\"/><path d=\"M17 15.245v6.872a.5.5 0 0 1-.757.429L12 20l-4.243 2.546a.5.5 0 0 1-.757-.43v-6.87a8 8 0 1 1 10 0zm-8 1.173v3.05l3-1.8 3 1.8v-3.05A7.978 7.978 0 0 1 12 17a7.978 7.978 0 0 1-3-.582zM12 15a6 6 0 1 0 0-12 6 6 0 0 0 0 12z\"/></g></svg>',\r\n  calendar: '<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 24 24\"><g><path fill=\"none\" d=\"M0 0h24v24H0z\"/><path d=\"M17 3h4a1 1 0 0 1 1 1v16a1 1 0 0 1-1 1H3a1 1 0 0 1-1-1V4a1 1 0 0 1 1-1h4V1h2v2h6V1h2v2zm-2 2H9v2H7V5H4v4h16V5h-3v2h-2V5zm5 6H4v8h16v-8z\"/></g></svg>',\r\n  camera: '<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 24 24\"><g><path fill=\"none\" d=\"M0 0h24v24H0z\"/><path d=\"M9.828 5l-2 2H4v12h16V7h-3.828l-2-2H9.828zM9 3h6l2 2h4a1 1 0 0 1 1 1v14a1 1 0 0 1-1 1H3a1 1 0 0 1-1-1V6a1 1 0 0 1 1-1h4l2-2zm3 15a5.5 5.5 0 1 1 0-11 5.5 5.5 0 0 1 0 11zm0-2a3.5 3.5 0 1 0 0-7 3.5 3.5 0 0 0 0 7z\"/></g></svg>',\r\n  chevronDown: '<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 24 24\"><g><path fill=\"none\" d=\"M0 0h24v24H0z\"/><path d=\"M12 13.172l4.95-4.95 1.414 1.414L12 16 5.636 9.636 7.05 8.222z\"/></g></svg>',\r\n  chevronLeft: '<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 24 24\"><g><path fill=\"none\" d=\"M0 0h24v24H0z\"/><path d=\"M10.828 12l4.95 4.95-1.414 1.414L8 12l6.364-6.364 1.414 1.414z\"/></g></svg>',\r\n  chevronRight: '<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 24 24\"><g><path fill=\"none\" d=\"M0 0h24v24H0z\"/><path d=\"M13.172 12l-4.95-4.95 1.414-1.414L16 12l-6.364 6.364-1.414-1.414z\"/></g></svg>',\r\n  chevronUp: '<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 24 24\"><g><path fill=\"none\" d=\"M0 0h24v24H0z\"/><path d=\"M12 10.828l-4.95 4.95-1.414-1.414L12 8l6.364 6.364-1.414 1.414z\"/></g></svg>',\r\n  close: '<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 24 24\"><g><path fill=\"none\" d=\"M0 0h24v24H0z\"/><path d=\"M12 10.586l4.95-4.95 1.414 1.414-4.95 4.95 4.95 4.95-1.414 1.414-4.95-4.95-4.95 4.95-1.414-1.414 4.95-4.95-4.95-4.95L7.05 5.636z\"/></g></svg>',\r\n  dashboard: '<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 24 24\"><g><path fill=\"none\" d=\"M0 0h24v24H0z\"/><path d=\"M13 21V11h8v10h-8zM3 13V3h8v10H3zm6-2V5H5v6h4zM3 21v-6h8v6H3zm2-2h4v-2H5v2zm10 0h4v-6h-4v6zM13 3h8v6h-8V3zm2 2v2h4V5h-4z\"/></g></svg>',\r\n  delete: '<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 24 24\"><g><path fill=\"none\" d=\"M0 0h24v24H0z\"/><path d=\"M17 6h5v2h-2v13a1 1 0 0 1-1 1H5a1 1 0 0 1-1-1V8H2V6h5V3a1 1 0 0 1 1-1h8a1 1 0 0 1 1 1v3zm1 2H6v12h12V8zm-9 3h2v6H9v-6zm4 0h2v6h-2v-6zM9 4v2h6V4H9z\"/></g></svg>',\r\n  developer: '<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 24 24\"><g><path fill=\"none\" d=\"M0 0h24v24H0z\"/><path d=\"M23 12l-7.071 7.071-1.414-1.414L20.172 12l-5.657-5.657 1.414-1.414L23 12zM3.828 12l5.657 5.657-1.414 1.414L1 12l7.071-7.071 1.414 1.414L3.828 12z\"/></g></svg>',\r\n  download: '<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 24 24\"><g><path fill=\"none\" d=\"M0 0h24v24H0z\"/><path d=\"M3 19h18v2H3v-2zm10-5.828L19.071 7.1l1.414 1.414L12 17 3.515 8.515 4.929 7.1 11 13.17V2h2v11.172z\"/></g></svg>',\r\n  dropDown: '<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 24 24\"><g><path fill=\"none\" d=\"M0 0h24v24H0z\"/><path d=\"M12 15l-4.243-4.243 1.415-1.414L12 12.172l2.828-2.829 1.415 1.414z\"/></g></svg>',\r\n  dropUp: '<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 24 24\"><g><path fill=\"none\" d=\"M0 0h24v24H0z\"/><path d=\"M12 11.828l-2.828 2.829-1.415-1.414L12 9l4.243 4.243-1.415 1.414L12 11.828z\"/></g></svg>',\r\n  edit: '<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 24 24\"><g><path fill=\"none\" d=\"M0 0h24v24H0z\"/><path d=\"M6.414 16L16.556 5.858l-1.414-1.414L5 14.586V16h1.414zm.829 2H3v-4.243L14.435 2.322a1 1 0 0 1 1.414 0l2.829 2.829a1 1 0 0 1 0 1.414L7.243 18zM3 20h18v2H3v-2z\"/></g></svg>',\r\n  explore: '<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 24 24\"><g><path fill=\"none\" d=\"M0 0h24v24H0z\"/><path d=\"M12 14v2a6 6 0 0 0-6 6H4a8 8 0 0 1 8-8zm0-1c-3.315 0-6-2.685-6-6s2.685-6 6-6 6 2.685 6 6-2.685 6-6 6zm0-2c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm9.446 9.032l1.504 1.504-1.414 1.414-1.504-1.504a4 4 0 1 1 1.414-1.414zM18 20a2 2 0 1 0 0-4 2 2 0 0 0 0 4z\"/></g></svg>',\r\n  facebook: '<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 24 24\"><g><path fill=\"none\" d=\"M0 0h24v24H0z\"/><path d=\"M14 13.5h2.5l1-4H14v-2c0-1.03 0-2 2-2h1.5V2.14c-.326-.043-1.557-.14-2.857-.14C11.928 2 10 3.657 10 6.7v2.8H7v4h3V22h4v-8.5z\"/></g></svg>',\r\n  filter: '<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 24 24\"><g><path fill=\"none\" d=\"M0 0H24V24H0z\"/><path d=\"M21 4v2h-1l-5 7.5V22H9v-8.5L4 6H3V4h18zM6.404 6L11 12.894V20h2v-7.106L17.596 6H6.404z\"/></g></svg>',\r\n  gatekeeper: '<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 40 19\"><g><path d=\"M11.1214 3.229L8.85495 0.955505L2.94076 6.85283L0 9.8015L2.94076 12.7829L8.85495 18.6803L11.1214 16.4068L4.64877 9.8015L11.1214 3.229Z\"/><path d=\"M19.9259 16.7687C18.6654 16.7687 17.4977 16.4536 16.4226 15.8234C15.3753 15.2025 14.5412 14.3684 13.9203 13.3211C13.2901 12.246 12.975 11.0783 12.975 9.81785C12.975 8.55743 13.2901 7.38968 13.9203 6.31461C14.5412 5.26734 15.3753 4.43324 16.4226 3.81229C17.4977 3.18208 18.6654 2.86697 19.9259 2.86697C21.1863 2.86697 22.354 3.18208 23.4291 3.81229C24.4764 4.43324 25.3105 5.26734 25.9314 6.31461C26.5616 7.38968 26.8767 8.55743 26.8767 9.81785C26.8767 11.0783 26.5616 12.246 25.9314 13.3211C25.3105 14.3684 24.4764 15.2025 23.4291 15.8234C22.354 16.4536 21.1863 16.7687 19.9259 16.7687ZM19.2308 10.3739V12.5982H20.621V10.3739C21.0009 10.2071 21.2836 9.94297 21.469 9.58152C21.6543 9.21081 21.7053 8.82619 21.6219 8.42768C21.5385 8.01989 21.3346 7.68625 21.0102 7.42675C20.6951 7.16725 20.3336 7.0375 19.9259 7.0375C19.5181 7.0375 19.152 7.16725 18.8276 7.42675C18.5125 7.68625 18.3133 8.01989 18.2298 8.42768C18.1464 8.82619 18.1974 9.21081 18.3828 9.58152C18.5681 9.94297 18.8508 10.2071 19.2308 10.3739Z\"/><path d=\"M36.6793 6.85283L30.7977 0.955505L28.4986 3.229L34.9861 9.8015L28.4986 16.4068L30.7977 18.6803L36.6793 12.7829L39.62 9.8015L36.6793 6.85283Z\"/><path d=\"M11.1214 3.229L8.85495 0.955505L2.94076 6.85283L0 9.8015L2.94076 12.7829L8.85495 18.6803L11.1214 16.4068L4.64877 9.8015L11.1214 3.229Z\"/><path d=\"M19.9259 16.7687C18.6654 16.7687 17.4977 16.4536 16.4226 15.8234C15.3753 15.2025 14.5412 14.3684 13.9203 13.3211C13.2901 12.246 12.975 11.0783 12.975 9.81785C12.975 8.55743 13.2901 7.38968 13.9203 6.31461C14.5412 5.26734 15.3753 4.43324 16.4226 3.81229C17.4977 3.18208 18.6654 2.86697 19.9259 2.86697C21.1863 2.86697 22.354 3.18208 23.4291 3.81229C24.4764 4.43324 25.3105 5.26734 25.9314 6.31461C26.5616 7.38968 26.8767 8.55743 26.8767 9.81785C26.8767 11.0783 26.5616 12.246 25.9314 13.3211C25.3105 14.3684 24.4764 15.2025 23.4291 15.8234C22.354 16.4536 21.1863 16.7687 19.9259 16.7687ZM19.2308 10.3739V12.5982H20.621V10.3739C21.0009 10.2071 21.2836 9.94297 21.469 9.58152C21.6543 9.21081 21.7053 8.82619 21.6219 8.42768C21.5385 8.01989 21.3346 7.68625 21.0102 7.42675C20.6951 7.16725 20.3336 7.0375 19.9259 7.0375C19.5181 7.0375 19.152 7.16725 18.8276 7.42675C18.5125 7.68625 18.3133 8.01989 18.2298 8.42768C18.1464 8.82619 18.1974 9.21081 18.3828 9.58152C18.5681 9.94297 18.8508 10.2071 19.2308 10.3739Z\"/><path d=\"M36.6793 6.85283L30.7977 0.955505L28.4986 3.229L34.9861 9.8015L28.4986 16.4068L30.7977 18.6803L36.6793 12.7829L39.62 9.8015L36.6793 6.85283Z\"/></g></svg>',\r\n  help: '<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 24 24\"><g><path fill=\"none\" d=\"M0 0h24v24H0z\"/><path d=\"M12 22C6.477 22 2 17.523 2 12S6.477 2 12 2s10 4.477 10 10-4.477 10-10 10zm0-2a8 8 0 1 0 0-16 8 8 0 0 0 0 16zm-1-5h2v2h-2v-2zm2-1.645V14h-2v-1.5a1 1 0 0 1 1-1 1.5 1.5 0 1 0-1.471-1.794l-1.962-.393A3.501 3.501 0 1 1 13 13.355z\"/></g></svg>',\r\n  hr: '<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 24 24\"><g><path fill=\"none\" d=\"M0 0h24v24H0z\"/><path fill-rule=\"nonzero\" d=\"M12 11a5 5 0 0 1 5 5v6h-2v-6a3 3 0 0 0-2.824-2.995L12 13a3 3 0 0 0-2.995 2.824L9 16v6H7v-6a5 5 0 0 1 5-5zm-6.5 3c.279 0 .55.033.81.094a5.947 5.947 0 0 0-.301 1.575L6 16v.086a1.492 1.492 0 0 0-.356-.08L5.5 16a1.5 1.5 0 0 0-1.493 1.356L4 17.5V22H2v-4.5A3.5 3.5 0 0 1 5.5 14zm13 0a3.5 3.5 0 0 1 3.5 3.5V22h-2v-4.5a1.5 1.5 0 0 0-1.356-1.493L18.5 16c-.175 0-.343.03-.5.085V16c0-.666-.108-1.306-.309-1.904.259-.063.53-.096.809-.096zm-13-6a2.5 2.5 0 1 1 0 5 2.5 2.5 0 0 1 0-5zm13 0a2.5 2.5 0 1 1 0 5 2.5 2.5 0 0 1 0-5zm-13 2a.5.5 0 1 0 0 1 .5.5 0 0 0 0-1zm13 0a.5.5 0 1 0 0 1 .5.5 0 0 0 0-1zM12 2a4 4 0 1 1 0 8 4 4 0 0 1 0-8zm0 2a2 2 0 1 0 0 4 2 2 0 0 0 0-4z\"/></g></svg>',\r\n  info: '<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 24 24\"><g><path fill=\"none\" d=\"M0 0h24v24H0z\"/><path d=\"M12 22C6.477 22 2 17.523 2 12S6.477 2 12 2s10 4.477 10 10-4.477 10-10 10zm0-2a8 8 0 1 0 0-16 8 8 0 0 0 0 16zM11 7h2v2h-2V7zm0 4h2v6h-2v-6z\"/></g></svg>',\r\n  instagram: '<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 24 24\"><g><path fill=\"none\" d=\"M0 0h24v24H0z\"/><path fill-rule=\"nonzero\" d=\"M12 9a3 3 0 1 0 0 6 3 3 0 0 0 0-6zm0-2a5 5 0 1 1 0 10 5 5 0 0 1 0-10zm6.5-.25a1.25 1.25 0 0 1-2.5 0 1.25 1.25 0 0 1 2.5 0zM12 4c-2.474 0-2.878.007-4.029.058-.784.037-1.31.142-1.798.332-.434.168-.747.369-1.08.703a2.89 2.89 0 0 0-.704 1.08c-.19.49-.295 1.015-.331 1.798C4.006 9.075 4 9.461 4 12c0 2.474.007 2.878.058 4.029.037.783.142 1.31.331 1.797.17.435.37.748.702 1.08.337.336.65.537 1.08.703.494.191 1.02.297 1.8.333C9.075 19.994 9.461 20 12 20c2.474 0 2.878-.007 4.029-.058.782-.037 1.309-.142 1.797-.331.433-.169.748-.37 1.08-.702.337-.337.538-.65.704-1.08.19-.493.296-1.02.332-1.8.052-1.104.058-1.49.058-4.029 0-2.474-.007-2.878-.058-4.029-.037-.782-.142-1.31-.332-1.798a2.911 2.911 0 0 0-.703-1.08 2.884 2.884 0 0 0-1.08-.704c-.49-.19-1.016-.295-1.798-.331C14.925 4.006 14.539 4 12 4zm0-2c2.717 0 3.056.01 4.122.06 1.065.05 1.79.217 2.428.465.66.254 1.216.598 1.772 1.153a4.908 4.908 0 0 1 1.153 1.772c.247.637.415 1.363.465 2.428.047 1.066.06 1.405.06 4.122 0 2.717-.01 3.056-.06 4.122-.05 1.065-.218 1.79-.465 2.428a4.883 4.883 0 0 1-1.153 1.772 4.915 4.915 0 0 1-1.772 1.153c-.637.247-1.363.415-2.428.465-1.066.047-1.405.06-4.122.06-2.717 0-3.056-.01-4.122-.06-1.065-.05-1.79-.218-2.428-.465a4.89 4.89 0 0 1-1.772-1.153 4.904 4.904 0 0 1-1.153-1.772c-.248-.637-.415-1.363-.465-2.428C2.013 15.056 2 14.717 2 12c0-2.717.01-3.056.06-4.122.05-1.066.217-1.79.465-2.428a4.88 4.88 0 0 1 1.153-1.772A4.897 4.897 0 0 1 5.45 2.525c.638-.248 1.362-.415 2.428-.465C8.944 2.013 9.283 2 12 2z\"/></g></svg>',\r\n  link: '<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 24 24\"><g><path fill=\"none\" d=\"M0 0h24v24H0z\"/><path d=\"M18.364 15.536L16.95 14.12l1.414-1.414a5 5 0 1 0-7.071-7.071L9.879 7.05 8.464 5.636 9.88 4.222a7 7 0 0 1 9.9 9.9l-1.415 1.414zm-2.828 2.828l-1.415 1.414a7 7 0 0 1-9.9-9.9l1.415-1.414L7.05 9.88l-1.414 1.414a5 5 0 1 0 7.071 7.071l1.414-1.414 1.415 1.414zm-.708-10.607l1.415 1.415-7.071 7.07-1.415-1.414 7.071-7.07z\"/></g></svg>',\r\n  linkedin: '<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 24 24\"><g><path fill=\"none\" d=\"M0 0h24v24H0z\"/><path fill-rule=\"nonzero\" d=\"M6.94 5a2 2 0 1 1-4-.002 2 2 0 0 1 4 .002zM7 8.48H3V21h4V8.48zm6.32 0H9.34V21h3.94v-6.57c0-3.66 4.77-4 4.77 0V21H22v-7.93c0-6.17-7.06-5.94-8.72-2.91l.04-1.68z\"/></g></svg>',\r\n  logOut: '<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 24 24\"><g><path fill=\"none\" d=\"M0 0h24v24H0z\"/><path d=\"M4 18h2v2h12V4H6v2H4V3a1 1 0 0 1 1-1h14a1 1 0 0 1 1 1v18a1 1 0 0 1-1 1H5a1 1 0 0 1-1-1v-3zm2-7h7v2H6v3l-5-4 5-4v3z\"/></g></svg>',\r\n  mail: '<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 24 24\"><g><path fill=\"none\" d=\"M0 0h24v24H0z\"/><path d=\"M3 3h18a1 1 0 0 1 1 1v16a1 1 0 0 1-1 1H3a1 1 0 0 1-1-1V4a1 1 0 0 1 1-1zm17 4.238l-7.928 7.1L4 7.216V19h16V7.238zM4.511 5l7.55 6.662L19.502 5H4.511z\"/></g></svg>',\r\n  menu: '<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 24 24\"><g><path fill=\"none\" d=\"M0 0h24v24H0z\"/><path d=\"M3 4h18v2H3V4zm0 7h18v2H3v-2zm0 7h18v2H3v-2z\"/></g></svg>',\r\n  more: '<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 24 24\"><g><path fill=\"none\" d=\"M0 0h24v24H0z\"/><path d=\"M12 3c-.825 0-1.5.675-1.5 1.5S11.175 6 12 6s1.5-.675 1.5-1.5S12.825 3 12 3zm0 15c-.825 0-1.5.675-1.5 1.5S11.175 21 12 21s1.5-.675 1.5-1.5S12.825 18 12 18zm0-7.5c-.825 0-1.5.675-1.5 1.5s.675 1.5 1.5 1.5 1.5-.675 1.5-1.5-.675-1.5-1.5-1.5z\"/></g></svg>',\r\n  points: '<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 24 24\"><g><path fill=\"none\" d=\"M0 0h24v24H0z\"/><path fill-rule=\"nonzero\" d=\"M12 7a8 8 0 1 1 0 16 8 8 0 0 1 0-16zm0 2a6 6 0 1 0 0 12 6 6 0 0 0 0-12zm0 1.5l1.323 2.68 2.957.43-2.14 2.085.505 2.946L12 17.25l-2.645 1.39.505-2.945-2.14-2.086 2.957-.43L12 10.5zM18 2v3l-1.363 1.138A9.935 9.935 0 0 0 13 5.049L13 2 18 2zm-7-.001v3.05a9.935 9.935 0 0 0-3.636 1.088L6 5V2l5-.001z\"/></g></svg>',\r\n  reorder: '<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 24 24\"><g><path fill=\"none\" d=\"M0 0h24v24H0z\"/><path d=\"M3 4h18v2H3V4zm0 15h18v2H3v-2zm0-5h18v2H3v-2zm0-5h18v2H3V9z\"/></g></svg>',\r\n  search: '<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 24 24\"><g><path fill=\"none\" d=\"M0 0h24v24H0z\"/><path d=\"M18.031 16.617l4.283 4.282-1.415 1.415-4.282-4.283A8.96 8.96 0 0 1 11 20c-4.968 0-9-4.032-9-9s4.032-9 9-9 9 4.032 9 9a8.96 8.96 0 0 1-1.969 5.617zm-2.006-.742A6.977 6.977 0 0 0 18 11c0-3.868-3.133-7-7-7-3.868 0-7 3.132-7 7 0 3.867 3.132 7 7 7a6.977 6.977 0 0 0 4.875-1.975l.15-.15z\"/></g></svg>',\r\n  settings: '<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 24 24\"><g><path fill=\"none\" d=\"M0 0h24v24H0z\"/><path d=\"M2 12c0-.865.11-1.703.316-2.504A3 3 0 0 0 4.99 4.867a9.99 9.99 0 0 1 4.335-2.505 3 3 0 0 0 5.348 0 9.99 9.99 0 0 1 4.335 2.505 3 3 0 0 0 2.675 4.63c.206.8.316 1.638.316 2.503 0 .865-.11 1.703-.316 2.504a3 3 0 0 0-2.675 4.629 9.99 9.99 0 0 1-4.335 2.505 3 3 0 0 0-5.348 0 9.99 9.99 0 0 1-4.335-2.505 3 3 0 0 0-2.675-4.63C2.11 13.704 2 12.866 2 12zm4.804 3c.63 1.091.81 2.346.564 3.524.408.29.842.541 1.297.75A4.993 4.993 0 0 1 12 18c1.26 0 2.438.471 3.335 1.274.455-.209.889-.46 1.297-.75A4.993 4.993 0 0 1 17.196 15a4.993 4.993 0 0 1 2.77-2.25 8.126 8.126 0 0 0 0-1.5A4.993 4.993 0 0 1 17.195 9a4.993 4.993 0 0 1-.564-3.524 7.989 7.989 0 0 0-1.297-.75A4.993 4.993 0 0 1 12 6a4.993 4.993 0 0 1-3.335-1.274 7.99 7.99 0 0 0-1.297.75A4.993 4.993 0 0 1 6.804 9a4.993 4.993 0 0 1-2.77 2.25 8.126 8.126 0 0 0 0 1.5A4.993 4.993 0 0 1 6.805 15zM12 15a3 3 0 1 1 0-6 3 3 0 0 1 0 6zm0-2a1 1 0 1 0 0-2 1 1 0 0 0 0 2z\"/></g></svg>',\r\n  skills: '<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 24 24\"><g><path fill=\"none\" d=\"M0 0h24v24H0z\"/><path d=\"M2 18h7v2H2v-2zm0-7h9v2H2v-2zm0-7h20v2H2V4zm18.674 9.025l1.156-.391 1 1.732-.916.805a4.017 4.017 0 0 1 0 1.658l.916.805-1 1.732-1.156-.391c-.41.37-.898.655-1.435.83L19 21h-2l-.24-1.196a3.996 3.996 0 0 1-1.434-.83l-1.156.392-1-1.732.916-.805a4.017 4.017 0 0 1 0-1.658l-.916-.805 1-1.732 1.156.391c.41-.37.898-.655 1.435-.83L17 11h2l.24 1.196c.536.174 1.024.46 1.434.83zM18 18a2 2 0 1 0 0-4 2 2 0 0 0 0 4z\"/></g></svg>',\r\n  sort: '<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 24 24\"><g><path fill=\"none\" d=\"M0 0h24v24H0z\"/><path d=\"M11.95 7.95l-1.414 1.414L8 6.828 8 20H6V6.828L3.465 9.364 2.05 7.95 7 3l4.95 4.95zm10 8.1L17 21l-4.95-4.95 1.414-1.414 2.537 2.536L16 4h2v13.172l2.536-2.536 1.414 1.414z\"/></g></svg>',\r\n  success: '<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 24 24\"><g><path fill=\"none\" d=\"M0 0h24v24H0z\"/><path d=\"M12 22C6.477 22 2 17.523 2 12S6.477 2 12 2s10 4.477 10 10-4.477 10-10 10zm0-2a8 8 0 1 0 0-16 8 8 0 0 0 0 16zm-.997-4L6.76 11.757l1.414-1.414 2.829 2.829 5.656-5.657 1.415 1.414L11.003 16z\"/></g></svg>',\r\n  thumbUpFill: '<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 24 24\"><g><path fill=\"none\" d=\"M0 0h24v24H0z\"/><path d=\"M2 9h3v12H2a1 1 0 0 1-1-1V10a1 1 0 0 1 1-1zm5.293-1.293l6.4-6.4a.5.5 0 0 1 .654-.047l.853.64a1.5 1.5 0 0 1 .553 1.57L14.6 8H21a2 2 0 0 1 2 2v2.104a2 2 0 0 1-.15.762l-3.095 7.515a1 1 0 0 1-.925.619H8a1 1 0 0 1-1-1V8.414a1 1 0 0 1 .293-.707z\"/></g></svg>',\r\n  thumbUpLine: '<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 24 24\"><g><path fill=\"none\" d=\"M0 0h24v24H0z\"/><path d=\"M14.6 8H21a2 2 0 0 1 2 2v2.104a2 2 0 0 1-.15.762l-3.095 7.515a1 1 0 0 1-.925.619H2a1 1 0 0 1-1-1V10a1 1 0 0 1 1-1h3.482a1 1 0 0 0 .817-.423L11.752.85a.5.5 0 0 1 .632-.159l1.814.907a2.5 2.5 0 0 1 1.305 2.853L14.6 8zM7 10.588V19h11.16L21 12.104V10h-6.4a2 2 0 0 1-1.938-2.493l.903-3.548a.5.5 0 0 0-.261-.571l-.661-.33-4.71 6.672c-.25.354-.57.644-.933.858zM5 11H3v8h2v-8z\"/></g></svg>',\r\n  twitter: '<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 24 24\"><g><path fill=\"none\" d=\"M0 0h24v24H0z\"/><path d=\"M22.162 5.656a8.384 8.384 0 0 1-2.402.658A4.196 4.196 0 0 0 21.6 4c-.82.488-1.719.83-2.656 1.015a4.182 4.182 0 0 0-7.126 3.814 11.874 11.874 0 0 1-8.62-4.37 4.168 4.168 0 0 0-.566 2.103c0 1.45.738 2.731 1.86 3.481a4.168 4.168 0 0 1-1.894-.523v.052a4.185 4.185 0 0 0 3.355 4.101 4.21 4.21 0 0 1-1.89.072A4.185 4.185 0 0 0 7.97 16.65a8.394 8.394 0 0 1-6.191 1.732 11.83 11.83 0 0 0 6.41 1.88c7.693 0 11.9-6.373 11.9-11.9 0-.18-.005-.362-.013-.54a8.496 8.496 0 0 0 2.087-2.165z\"/></g></svg>',\r\n  upload: '<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 24 24\"><g><path fill=\"none\" d=\"M0 0h24v24H0z\"/><path d=\"M3 19h18v2H3v-2zM13 5.828V17h-2V5.828L4.929 11.9l-1.414-1.414L12 2l8.485 8.485-1.414 1.414L13 5.83z\"/></g></svg>',\r\n  warning: '<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 24 24\"><g><path fill=\"none\" d=\"M0 0h24v24H0z\"/><path d=\"M12 22C6.477 22 2 17.523 2 12S6.477 2 12 2s10 4.477 10 10-4.477 10-10 10zm0-2a8 8 0 1 0 0-16 8 8 0 0 0 0 16zm-1-5h2v2h-2v-2zm0-8h2v6h-2V7z\"/></g></svg>',\r\n}"
             },
             {
                 "name": "context",
@@ -1814,6 +1731,16 @@
                 "name": "environment",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
+                "file": "src/environments/environment.prod.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "object",
+                "defaultValue": "{\r\n  production: true\r\n}"
+            },
+            {
+                "name": "environment",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
                 "file": "src/environments/environment.ts",
                 "deprecated": false,
                 "deprecationMessage": "",
@@ -1831,16 +1758,6 @@
                 "defaultValue": "Template.bind({})"
             },
             {
-                "name": "environment",
-                "ctype": "miscellaneous",
-                "subtype": "variable",
-                "file": "src/environments/environment.prod.ts",
-                "deprecated": false,
-                "deprecationMessage": "",
-                "type": "object",
-                "defaultValue": "{\n  production: true\n}"
-            },
-            {
                 "name": "IconFill",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
@@ -1848,7 +1765,7 @@
                 "deprecated": false,
                 "deprecationMessage": "",
                 "type": "",
-                "defaultValue": "{\n  ApplaudoNavyBlue : 'applaudo-navy-blue',\n  ApplaudoRed : 'applaudo-red',\n  LightGray : 'light-gray',\n  White : 'white',\n  ApplaudoRedPlus : 'applaudo-red-plus',\n  ApplaudoRedMinus : 'applaudo-red-minus',\n  ErrorRed : 'error-red',\n  Green : 'green',\n  MidGray : 'mid-gray',\n  Yellow : 'yellow',\n  Charcoal : 'charcoal',\n  CoolGray : 'cool-gray',\n  Platinum : 'platinum',\n  ApplaudoPurple : 'applaudo-purple',\n  Blue : 'blue',\n  Bronze : 'bronze',\n  LightNavyBlue : 'light-navy-blue',\n} as const"
+                "defaultValue": "{\r\n  ApplaudoNavyBlue : 'applaudo-navy-blue',\r\n  ApplaudoRed : 'applaudo-red',\r\n  LightGray : 'light-gray',\r\n  White : 'white',\r\n  ApplaudoRedPlus : 'applaudo-red-plus',\r\n  ApplaudoRedMinus : 'applaudo-red-minus',\r\n  ErrorRed : 'error-red',\r\n  Green : 'green',\r\n  MidGray : 'mid-gray',\r\n  Yellow : 'yellow',\r\n  Charcoal : 'charcoal',\r\n  CoolGray : 'cool-gray',\r\n  Platinum : 'platinum',\r\n  ApplaudoPurple : 'applaudo-purple',\r\n  Blue : 'blue',\r\n  Bronze : 'bronze',\r\n  LightNavyBlue : 'light-navy-blue',\r\n  Cyan: 'cyan',\r\n} as const"
             },
             {
                 "name": "Large",
@@ -1951,6 +1868,16 @@
                 "defaultValue": "Template.bind({})"
             },
             {
+                "name": "Principal",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "src/stories/clapp-lib/components/tag.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "",
+                "defaultValue": "Template.bind({})"
+            },
+            {
                 "name": "require",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
@@ -2045,8 +1972,8 @@
                 "file": "src/stories/clapp-lib/components/nav-link.stories.ts",
                 "deprecated": false,
                 "deprecationMessage": "",
-                "type": "Story<SvgIconComponent>",
-                "defaultValue": "(args: SvgIconComponent) => ({\n  props: args,\n})"
+                "type": "Story<NavLinkComponent>",
+                "defaultValue": "(args: NavLinkComponent) => ({\r\n  props: args,\r\n})"
             },
             {
                 "name": "Template",
@@ -2056,7 +1983,7 @@
                 "deprecated": false,
                 "deprecationMessage": "",
                 "type": "Story<SvgIconComponent>",
-                "defaultValue": "(args: SvgIconComponent) => ({\n  props: args,\n})"
+                "defaultValue": "(args: SvgIconComponent) => ({\r\n  props: args,\r\n})"
             },
             {
                 "name": "Template",
@@ -2066,7 +1993,37 @@
                 "deprecated": false,
                 "deprecationMessage": "",
                 "type": "Story<SidebarContextComponent>",
-                "defaultValue": "(args: SidebarContextComponent) => ({\n  props: args,\n  template: `<cl-sidebar-context>\n    <ng-container content>\n    Lorem Ipsum is simply dummy text of the printing and typesetting industry. \n    Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, \n    when an unknown printer took a galley of type and scrambled it to make a type \n    specimen book. It has survived not only five centuries, but also the leap into \n    electronic typesetting, remaining essentially unchanged. It was popularised in \n    the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, \n    and more recently with desktop publishing software like Aldus PageMaker including \n    versions of Lorem Ipsum.\n    </ng-container>\n  </cl-sidebar-context>`,\n  styles: [\n    `\n    :host {\n      font-family: 'Avenir Next';\n      font-weight: 600;\n      font-size: 16px;\n      line-height: 24px;\n    }\n    `,\n  ],\n})"
+                "defaultValue": "(args: SidebarContextComponent) => ({\r\n  props: args,\r\n  template: `\r\n  <cl-sidebar-context>\r\n\r\n  <ng-container sidebarHeader>\r\n    <cl-svg-icon [icon]=\"'gatekeeper'\" [fill]=\"'ApplaudoRed'\"></cl-svg-icon>\r\n  </ng-container>\r\n\r\n  <ng-container sidebarContent>\r\n    <cl-nav-link [icon]=\"'account'\" text=\"account\" [showText]=\"!isCollapsed\"></cl-nav-link>\r\n    <cl-nav-link [icon]=\"'admin'\" text=\"admin\" [showText]=\"!isCollapsed\"></cl-nav-link>\r\n    <cl-nav-link [icon]=\"'awardFill'\" text=\"awardFill\" [showText]=\"!isCollapsed\"></cl-nav-link>\r\n    <cl-nav-link [icon]=\"'calendar'\" text=\"calendar\" [showText]=\"!isCollapsed\"></cl-nav-link>\r\n  </ng-container>\r\n\r\n  <ng-container sidebarFooter>\r\n    <cl-nav-link [icon]=\"'logOut'\" text=\"Log Out\" [showText]=\"!isCollapsed\"></cl-nav-link>\r\n  </ng-container>\r\n\r\n  <ng-container content>\r\n    Lorem Ipsum is simply dummy text of the printing and typesetting industry. \r\n    Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, \r\n    when an unknown printer took a galley of type and scrambled it to make a type \r\n    specimen book. It has survived not only five centuries, but also the leap into \r\n    electronic typesetting, remaining essentially unchanged. It was popularised in \r\n    the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, \r\n    and more recently with desktop publishing software like Aldus PageMaker including \r\n    versions of Lorem Ipsum.\r\n  </ng-container>\r\n\r\n  </cl-sidebar-context>`,\r\n  styles: [\r\n    `\r\n    :host {\r\n      font-family: 'Avenir Next';\r\n      font-weight: 600;\r\n      font-size: 16px;\r\n      line-height: 24px;\r\n      min-height: 200px;\r\n    }\r\n    `,\r\n  ],\r\n})"
+            },
+            {
+                "name": "Template",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "src/stories/clapp-lib/components/tag.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "Story<TagComponent>",
+                "defaultValue": "(args: TagComponent) => ({\r\n  props: args,\r\n})"
+            },
+            {
+                "name": "Tertiary",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "src/stories/clapp-lib/components/button.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "",
+                "defaultValue": "Template.bind({})"
+            },
+            {
+                "name": "Text",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "src/stories/clapp-lib/components/button.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "",
+                "defaultValue": "Template.bind({})"
             }
         ],
         "functions": [],
@@ -2127,7 +2084,7 @@
                     "deprecated": false,
                     "deprecationMessage": "",
                     "type": "object",
-                    "defaultValue": "{\n  account: '<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 24 24\"><g><path fill=\"none\" d=\"M0 0h24v24H0z\"/><path d=\"M12 22C6.477 22 2 17.523 2 12S6.477 2 12 2s10 4.477 10 10-4.477 10-10 10zm-4.987-3.744A7.966 7.966 0 0 0 12 20c1.97 0 3.773-.712 5.167-1.892A6.979 6.979 0 0 0 12.16 16a6.981 6.981 0 0 0-5.147 2.256zM5.616 16.82A8.975 8.975 0 0 1 12.16 14a8.972 8.972 0 0 1 6.362 2.634 8 8 0 1 0-12.906.187zM12 13a4 4 0 1 1 0-8 4 4 0 0 1 0 8zm0-2a2 2 0 1 0 0-4 2 2 0 0 0 0 4z\"/></g></svg>',\n  add: '<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 24 24\"><g><path fill=\"none\" d=\"M0 0h24v24H0z\"/><path d=\"M19 13h-6v6h-2v-6H5v-2h6V5h2v6h6v2z\"/></g></svg>',\n  admin: '<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 24 24\"><g><path fill=\"none\" d=\"M0 0h24v24H0z\"/><path d=\"M12 14v2a6 6 0 0 0-6 6H4a8 8 0 0 1 8-8zm0-1c-3.315 0-6-2.685-6-6s2.685-6 6-6 6 2.685 6 6-2.685 6-6 6zm0-2c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm9 6h1v5h-8v-5h1v-1a3 3 0 0 1 6 0v1zm-2 0v-1a1 1 0 0 0-2 0v1h2z\"/></g></svg>',\n  apps: '<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 24 24\"><g><path fill=\"none\" d=\"M0 0h24v24H0z\"/><path d=\"M6.75 2.5A4.25 4.25 0 0 1 11 6.75V11H6.75a4.25 4.25 0 1 1 0-8.5zM9 9V6.75A2.25 2.25 0 1 0 6.75 9H9zm-2.25 4H11v4.25A4.25 4.25 0 1 1 6.75 13zm0 2A2.25 2.25 0 1 0 9 17.25V15H6.75zm10.5-12.5a4.25 4.25 0 1 1 0 8.5H13V6.75a4.25 4.25 0 0 1 4.25-4.25zm0 6.5A2.25 2.25 0 1 0 15 6.75V9h2.25zM13 13h4.25A4.25 4.25 0 1 1 13 17.25V13zm2 2v2.25A2.25 2.25 0 1 0 17.25 15H15z\"/></g></svg>',\n  arrowLeft: '<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 24 24\"><g><path fill=\"none\" d=\"M0 0h24v24H0z\"/><path d=\"M7.828 11H20v2H7.828l5.364 5.364-1.414 1.414L4 12l7.778-7.778 1.414 1.414z\"/></g></svg>',\n  arrowRight: '<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 24 24\"><g><path fill=\"none\" d=\"M0 0h24v24H0z\"/><path d=\"M16.172 11l-5.364-5.364 1.414-1.414L20 12l-7.778 7.778-1.414-1.414L16.172 13H4v-2z\"/></g></svg>',\n  attachment: '<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 24 24\"><g><path fill=\"none\" d=\"M0 0h24v24H0z\"/><path d=\"M14 13.5V8a4 4 0 1 0-8 0v5.5a6.5 6.5 0 1 0 13 0V4h2v9.5a8.5 8.5 0 1 1-17 0V8a6 6 0 1 1 12 0v5.5a3.5 3.5 0 0 1-7 0V8h2v5.5a1.5 1.5 0 0 0 3 0z\"/></g></svg>',\n  awardFill: '<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 24 24\"><g><path fill=\"none\" d=\"M0 0h24v24H0z\"/><path d=\"M17 15.245v6.872a.5.5 0 0 1-.757.429L12 20l-4.243 2.546a.5.5 0 0 1-.757-.43v-6.87a8 8 0 1 1 10 0zM12 15a6 6 0 1 0 0-12 6 6 0 0 0 0 12zm0-2a4 4 0 1 1 0-8 4 4 0 0 1 0 8z\"/></g></svg>',\n  awardLine: '<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 24 24\"><g><path fill=\"none\" d=\"M0 0h24v24H0z\"/><path d=\"M17 15.245v6.872a.5.5 0 0 1-.757.429L12 20l-4.243 2.546a.5.5 0 0 1-.757-.43v-6.87a8 8 0 1 1 10 0zm-8 1.173v3.05l3-1.8 3 1.8v-3.05A7.978 7.978 0 0 1 12 17a7.978 7.978 0 0 1-3-.582zM12 15a6 6 0 1 0 0-12 6 6 0 0 0 0 12z\"/></g></svg>',\n  calendar: '<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 24 24\"><g><path fill=\"none\" d=\"M0 0h24v24H0z\"/><path d=\"M17 3h4a1 1 0 0 1 1 1v16a1 1 0 0 1-1 1H3a1 1 0 0 1-1-1V4a1 1 0 0 1 1-1h4V1h2v2h6V1h2v2zm-2 2H9v2H7V5H4v4h16V5h-3v2h-2V5zm5 6H4v8h16v-8z\"/></g></svg>',\n  camera: '<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 24 24\"><g><path fill=\"none\" d=\"M0 0h24v24H0z\"/><path d=\"M9.828 5l-2 2H4v12h16V7h-3.828l-2-2H9.828zM9 3h6l2 2h4a1 1 0 0 1 1 1v14a1 1 0 0 1-1 1H3a1 1 0 0 1-1-1V6a1 1 0 0 1 1-1h4l2-2zm3 15a5.5 5.5 0 1 1 0-11 5.5 5.5 0 0 1 0 11zm0-2a3.5 3.5 0 1 0 0-7 3.5 3.5 0 0 0 0 7z\"/></g></svg>',\n  chevronDown: '<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 24 24\"><g><path fill=\"none\" d=\"M0 0h24v24H0z\"/><path d=\"M12 13.172l4.95-4.95 1.414 1.414L12 16 5.636 9.636 7.05 8.222z\"/></g></svg>',\n  chevronLeft: '<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 24 24\"><g><path fill=\"none\" d=\"M0 0h24v24H0z\"/><path d=\"M10.828 12l4.95 4.95-1.414 1.414L8 12l6.364-6.364 1.414 1.414z\"/></g></svg>',\n  chevronRight: '<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 24 24\"><g><path fill=\"none\" d=\"M0 0h24v24H0z\"/><path d=\"M13.172 12l-4.95-4.95 1.414-1.414L16 12l-6.364 6.364-1.414-1.414z\"/></g></svg>',\n  chevronUp: '<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 24 24\"><g><path fill=\"none\" d=\"M0 0h24v24H0z\"/><path d=\"M12 10.828l-4.95 4.95-1.414-1.414L12 8l6.364 6.364-1.414 1.414z\"/></g></svg>',\n  close: '<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 24 24\"><g><path fill=\"none\" d=\"M0 0h24v24H0z\"/><path d=\"M12 10.586l4.95-4.95 1.414 1.414-4.95 4.95 4.95 4.95-1.414 1.414-4.95-4.95-4.95 4.95-1.414-1.414 4.95-4.95-4.95-4.95L7.05 5.636z\"/></g></svg>',\n  dashboard: '<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 24 24\"><g><path fill=\"none\" d=\"M0 0h24v24H0z\"/><path d=\"M13 21V11h8v10h-8zM3 13V3h8v10H3zm6-2V5H5v6h4zM3 21v-6h8v6H3zm2-2h4v-2H5v2zm10 0h4v-6h-4v6zM13 3h8v6h-8V3zm2 2v2h4V5h-4z\"/></g></svg>',\n  delete: '<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 24 24\"><g><path fill=\"none\" d=\"M0 0h24v24H0z\"/><path d=\"M17 6h5v2h-2v13a1 1 0 0 1-1 1H5a1 1 0 0 1-1-1V8H2V6h5V3a1 1 0 0 1 1-1h8a1 1 0 0 1 1 1v3zm1 2H6v12h12V8zm-9 3h2v6H9v-6zm4 0h2v6h-2v-6zM9 4v2h6V4H9z\"/></g></svg>',\n  developer: '<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 24 24\"><g><path fill=\"none\" d=\"M0 0h24v24H0z\"/><path d=\"M23 12l-7.071 7.071-1.414-1.414L20.172 12l-5.657-5.657 1.414-1.414L23 12zM3.828 12l5.657 5.657-1.414 1.414L1 12l7.071-7.071 1.414 1.414L3.828 12z\"/></g></svg>',\n  download: '<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 24 24\"><g><path fill=\"none\" d=\"M0 0h24v24H0z\"/><path d=\"M3 19h18v2H3v-2zm10-5.828L19.071 7.1l1.414 1.414L12 17 3.515 8.515 4.929 7.1 11 13.17V2h2v11.172z\"/></g></svg>',\n  dropDown: '<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 24 24\"><g><path fill=\"none\" d=\"M0 0h24v24H0z\"/><path d=\"M12 15l-4.243-4.243 1.415-1.414L12 12.172l2.828-2.829 1.415 1.414z\"/></g></svg>',\n  dropUp: '<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 24 24\"><g><path fill=\"none\" d=\"M0 0h24v24H0z\"/><path d=\"M12 11.828l-2.828 2.829-1.415-1.414L12 9l4.243 4.243-1.415 1.414L12 11.828z\"/></g></svg>',\n  edit: '<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 24 24\"><g><path fill=\"none\" d=\"M0 0h24v24H0z\"/><path d=\"M6.414 16L16.556 5.858l-1.414-1.414L5 14.586V16h1.414zm.829 2H3v-4.243L14.435 2.322a1 1 0 0 1 1.414 0l2.829 2.829a1 1 0 0 1 0 1.414L7.243 18zM3 20h18v2H3v-2z\"/></g></svg>',\n  explore: '<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 24 24\"><g><path fill=\"none\" d=\"M0 0h24v24H0z\"/><path d=\"M12 14v2a6 6 0 0 0-6 6H4a8 8 0 0 1 8-8zm0-1c-3.315 0-6-2.685-6-6s2.685-6 6-6 6 2.685 6 6-2.685 6-6 6zm0-2c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm9.446 9.032l1.504 1.504-1.414 1.414-1.504-1.504a4 4 0 1 1 1.414-1.414zM18 20a2 2 0 1 0 0-4 2 2 0 0 0 0 4z\"/></g></svg>',\n  facebook: '<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 24 24\"><g><path fill=\"none\" d=\"M0 0h24v24H0z\"/><path d=\"M14 13.5h2.5l1-4H14v-2c0-1.03 0-2 2-2h1.5V2.14c-.326-.043-1.557-.14-2.857-.14C11.928 2 10 3.657 10 6.7v2.8H7v4h3V22h4v-8.5z\"/></g></svg>',\n  filter: '<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 24 24\"><g><path fill=\"none\" d=\"M0 0H24V24H0z\"/><path d=\"M21 4v2h-1l-5 7.5V22H9v-8.5L4 6H3V4h18zM6.404 6L11 12.894V20h2v-7.106L17.596 6H6.404z\"/></g></svg>',\n  gatekeeper: '<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 40 19\"><g><path d=\"M11.1214 3.229L8.85495 0.955505L2.94076 6.85283L0 9.8015L2.94076 12.7829L8.85495 18.6803L11.1214 16.4068L4.64877 9.8015L11.1214 3.229Z\"/><path d=\"M19.9259 16.7687C18.6654 16.7687 17.4977 16.4536 16.4226 15.8234C15.3753 15.2025 14.5412 14.3684 13.9203 13.3211C13.2901 12.246 12.975 11.0783 12.975 9.81785C12.975 8.55743 13.2901 7.38968 13.9203 6.31461C14.5412 5.26734 15.3753 4.43324 16.4226 3.81229C17.4977 3.18208 18.6654 2.86697 19.9259 2.86697C21.1863 2.86697 22.354 3.18208 23.4291 3.81229C24.4764 4.43324 25.3105 5.26734 25.9314 6.31461C26.5616 7.38968 26.8767 8.55743 26.8767 9.81785C26.8767 11.0783 26.5616 12.246 25.9314 13.3211C25.3105 14.3684 24.4764 15.2025 23.4291 15.8234C22.354 16.4536 21.1863 16.7687 19.9259 16.7687ZM19.2308 10.3739V12.5982H20.621V10.3739C21.0009 10.2071 21.2836 9.94297 21.469 9.58152C21.6543 9.21081 21.7053 8.82619 21.6219 8.42768C21.5385 8.01989 21.3346 7.68625 21.0102 7.42675C20.6951 7.16725 20.3336 7.0375 19.9259 7.0375C19.5181 7.0375 19.152 7.16725 18.8276 7.42675C18.5125 7.68625 18.3133 8.01989 18.2298 8.42768C18.1464 8.82619 18.1974 9.21081 18.3828 9.58152C18.5681 9.94297 18.8508 10.2071 19.2308 10.3739Z\"/><path d=\"M36.6793 6.85283L30.7977 0.955505L28.4986 3.229L34.9861 9.8015L28.4986 16.4068L30.7977 18.6803L36.6793 12.7829L39.62 9.8015L36.6793 6.85283Z\"/><path d=\"M11.1214 3.229L8.85495 0.955505L2.94076 6.85283L0 9.8015L2.94076 12.7829L8.85495 18.6803L11.1214 16.4068L4.64877 9.8015L11.1214 3.229Z\"/><path d=\"M19.9259 16.7687C18.6654 16.7687 17.4977 16.4536 16.4226 15.8234C15.3753 15.2025 14.5412 14.3684 13.9203 13.3211C13.2901 12.246 12.975 11.0783 12.975 9.81785C12.975 8.55743 13.2901 7.38968 13.9203 6.31461C14.5412 5.26734 15.3753 4.43324 16.4226 3.81229C17.4977 3.18208 18.6654 2.86697 19.9259 2.86697C21.1863 2.86697 22.354 3.18208 23.4291 3.81229C24.4764 4.43324 25.3105 5.26734 25.9314 6.31461C26.5616 7.38968 26.8767 8.55743 26.8767 9.81785C26.8767 11.0783 26.5616 12.246 25.9314 13.3211C25.3105 14.3684 24.4764 15.2025 23.4291 15.8234C22.354 16.4536 21.1863 16.7687 19.9259 16.7687ZM19.2308 10.3739V12.5982H20.621V10.3739C21.0009 10.2071 21.2836 9.94297 21.469 9.58152C21.6543 9.21081 21.7053 8.82619 21.6219 8.42768C21.5385 8.01989 21.3346 7.68625 21.0102 7.42675C20.6951 7.16725 20.3336 7.0375 19.9259 7.0375C19.5181 7.0375 19.152 7.16725 18.8276 7.42675C18.5125 7.68625 18.3133 8.01989 18.2298 8.42768C18.1464 8.82619 18.1974 9.21081 18.3828 9.58152C18.5681 9.94297 18.8508 10.2071 19.2308 10.3739Z\"/><path d=\"M36.6793 6.85283L30.7977 0.955505L28.4986 3.229L34.9861 9.8015L28.4986 16.4068L30.7977 18.6803L36.6793 12.7829L39.62 9.8015L36.6793 6.85283Z\"/></g></svg>',\n  help: '<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 24 24\"><g><path fill=\"none\" d=\"M0 0h24v24H0z\"/><path d=\"M12 22C6.477 22 2 17.523 2 12S6.477 2 12 2s10 4.477 10 10-4.477 10-10 10zm0-2a8 8 0 1 0 0-16 8 8 0 0 0 0 16zm-1-5h2v2h-2v-2zm2-1.645V14h-2v-1.5a1 1 0 0 1 1-1 1.5 1.5 0 1 0-1.471-1.794l-1.962-.393A3.501 3.501 0 1 1 13 13.355z\"/></g></svg>',\n  hr: '<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 24 24\"><g><path fill=\"none\" d=\"M0 0h24v24H0z\"/><path fill-rule=\"nonzero\" d=\"M12 11a5 5 0 0 1 5 5v6h-2v-6a3 3 0 0 0-2.824-2.995L12 13a3 3 0 0 0-2.995 2.824L9 16v6H7v-6a5 5 0 0 1 5-5zm-6.5 3c.279 0 .55.033.81.094a5.947 5.947 0 0 0-.301 1.575L6 16v.086a1.492 1.492 0 0 0-.356-.08L5.5 16a1.5 1.5 0 0 0-1.493 1.356L4 17.5V22H2v-4.5A3.5 3.5 0 0 1 5.5 14zm13 0a3.5 3.5 0 0 1 3.5 3.5V22h-2v-4.5a1.5 1.5 0 0 0-1.356-1.493L18.5 16c-.175 0-.343.03-.5.085V16c0-.666-.108-1.306-.309-1.904.259-.063.53-.096.809-.096zm-13-6a2.5 2.5 0 1 1 0 5 2.5 2.5 0 0 1 0-5zm13 0a2.5 2.5 0 1 1 0 5 2.5 2.5 0 0 1 0-5zm-13 2a.5.5 0 1 0 0 1 .5.5 0 0 0 0-1zm13 0a.5.5 0 1 0 0 1 .5.5 0 0 0 0-1zM12 2a4 4 0 1 1 0 8 4 4 0 0 1 0-8zm0 2a2 2 0 1 0 0 4 2 2 0 0 0 0-4z\"/></g></svg>',\n  info: '<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 24 24\"><g><path fill=\"none\" d=\"M0 0h24v24H0z\"/><path d=\"M12 22C6.477 22 2 17.523 2 12S6.477 2 12 2s10 4.477 10 10-4.477 10-10 10zm0-2a8 8 0 1 0 0-16 8 8 0 0 0 0 16zM11 7h2v2h-2V7zm0 4h2v6h-2v-6z\"/></g></svg>',\n  instagram: '<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 24 24\"><g><path fill=\"none\" d=\"M0 0h24v24H0z\"/><path fill-rule=\"nonzero\" d=\"M12 9a3 3 0 1 0 0 6 3 3 0 0 0 0-6zm0-2a5 5 0 1 1 0 10 5 5 0 0 1 0-10zm6.5-.25a1.25 1.25 0 0 1-2.5 0 1.25 1.25 0 0 1 2.5 0zM12 4c-2.474 0-2.878.007-4.029.058-.784.037-1.31.142-1.798.332-.434.168-.747.369-1.08.703a2.89 2.89 0 0 0-.704 1.08c-.19.49-.295 1.015-.331 1.798C4.006 9.075 4 9.461 4 12c0 2.474.007 2.878.058 4.029.037.783.142 1.31.331 1.797.17.435.37.748.702 1.08.337.336.65.537 1.08.703.494.191 1.02.297 1.8.333C9.075 19.994 9.461 20 12 20c2.474 0 2.878-.007 4.029-.058.782-.037 1.309-.142 1.797-.331.433-.169.748-.37 1.08-.702.337-.337.538-.65.704-1.08.19-.493.296-1.02.332-1.8.052-1.104.058-1.49.058-4.029 0-2.474-.007-2.878-.058-4.029-.037-.782-.142-1.31-.332-1.798a2.911 2.911 0 0 0-.703-1.08 2.884 2.884 0 0 0-1.08-.704c-.49-.19-1.016-.295-1.798-.331C14.925 4.006 14.539 4 12 4zm0-2c2.717 0 3.056.01 4.122.06 1.065.05 1.79.217 2.428.465.66.254 1.216.598 1.772 1.153a4.908 4.908 0 0 1 1.153 1.772c.247.637.415 1.363.465 2.428.047 1.066.06 1.405.06 4.122 0 2.717-.01 3.056-.06 4.122-.05 1.065-.218 1.79-.465 2.428a4.883 4.883 0 0 1-1.153 1.772 4.915 4.915 0 0 1-1.772 1.153c-.637.247-1.363.415-2.428.465-1.066.047-1.405.06-4.122.06-2.717 0-3.056-.01-4.122-.06-1.065-.05-1.79-.218-2.428-.465a4.89 4.89 0 0 1-1.772-1.153 4.904 4.904 0 0 1-1.153-1.772c-.248-.637-.415-1.363-.465-2.428C2.013 15.056 2 14.717 2 12c0-2.717.01-3.056.06-4.122.05-1.066.217-1.79.465-2.428a4.88 4.88 0 0 1 1.153-1.772A4.897 4.897 0 0 1 5.45 2.525c.638-.248 1.362-.415 2.428-.465C8.944 2.013 9.283 2 12 2z\"/></g></svg>',\n  link: '<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 24 24\"><g><path fill=\"none\" d=\"M0 0h24v24H0z\"/><path d=\"M18.364 15.536L16.95 14.12l1.414-1.414a5 5 0 1 0-7.071-7.071L9.879 7.05 8.464 5.636 9.88 4.222a7 7 0 0 1 9.9 9.9l-1.415 1.414zm-2.828 2.828l-1.415 1.414a7 7 0 0 1-9.9-9.9l1.415-1.414L7.05 9.88l-1.414 1.414a5 5 0 1 0 7.071 7.071l1.414-1.414 1.415 1.414zm-.708-10.607l1.415 1.415-7.071 7.07-1.415-1.414 7.071-7.07z\"/></g></svg>',\n  linkedin: '<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 24 24\"><g><path fill=\"none\" d=\"M0 0h24v24H0z\"/><path fill-rule=\"nonzero\" d=\"M6.94 5a2 2 0 1 1-4-.002 2 2 0 0 1 4 .002zM7 8.48H3V21h4V8.48zm6.32 0H9.34V21h3.94v-6.57c0-3.66 4.77-4 4.77 0V21H22v-7.93c0-6.17-7.06-5.94-8.72-2.91l.04-1.68z\"/></g></svg>',\n  logOut: '<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 24 24\"><g><path fill=\"none\" d=\"M0 0h24v24H0z\"/><path d=\"M4 18h2v2h12V4H6v2H4V3a1 1 0 0 1 1-1h14a1 1 0 0 1 1 1v18a1 1 0 0 1-1 1H5a1 1 0 0 1-1-1v-3zm2-7h7v2H6v3l-5-4 5-4v3z\"/></g></svg>',\n  mail: '<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 24 24\"><g><path fill=\"none\" d=\"M0 0h24v24H0z\"/><path d=\"M3 3h18a1 1 0 0 1 1 1v16a1 1 0 0 1-1 1H3a1 1 0 0 1-1-1V4a1 1 0 0 1 1-1zm17 4.238l-7.928 7.1L4 7.216V19h16V7.238zM4.511 5l7.55 6.662L19.502 5H4.511z\"/></g></svg>',\n  menu: '<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 24 24\"><g><path fill=\"none\" d=\"M0 0h24v24H0z\"/><path d=\"M3 4h18v2H3V4zm0 7h18v2H3v-2zm0 7h18v2H3v-2z\"/></g></svg>',\n  more: '<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 24 24\"><g><path fill=\"none\" d=\"M0 0h24v24H0z\"/><path d=\"M12 3c-.825 0-1.5.675-1.5 1.5S11.175 6 12 6s1.5-.675 1.5-1.5S12.825 3 12 3zm0 15c-.825 0-1.5.675-1.5 1.5S11.175 21 12 21s1.5-.675 1.5-1.5S12.825 18 12 18zm0-7.5c-.825 0-1.5.675-1.5 1.5s.675 1.5 1.5 1.5 1.5-.675 1.5-1.5-.675-1.5-1.5-1.5z\"/></g></svg>',\n  points: '<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 24 24\"><g><path fill=\"none\" d=\"M0 0h24v24H0z\"/><path fill-rule=\"nonzero\" d=\"M12 7a8 8 0 1 1 0 16 8 8 0 0 1 0-16zm0 2a6 6 0 1 0 0 12 6 6 0 0 0 0-12zm0 1.5l1.323 2.68 2.957.43-2.14 2.085.505 2.946L12 17.25l-2.645 1.39.505-2.945-2.14-2.086 2.957-.43L12 10.5zM18 2v3l-1.363 1.138A9.935 9.935 0 0 0 13 5.049L13 2 18 2zm-7-.001v3.05a9.935 9.935 0 0 0-3.636 1.088L6 5V2l5-.001z\"/></g></svg>',\n  reorder: '<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 24 24\"><g><path fill=\"none\" d=\"M0 0h24v24H0z\"/><path d=\"M3 4h18v2H3V4zm0 15h18v2H3v-2zm0-5h18v2H3v-2zm0-5h18v2H3V9z\"/></g></svg>',\n  search: '<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 24 24\"><g><path fill=\"none\" d=\"M0 0h24v24H0z\"/><path d=\"M18.031 16.617l4.283 4.282-1.415 1.415-4.282-4.283A8.96 8.96 0 0 1 11 20c-4.968 0-9-4.032-9-9s4.032-9 9-9 9 4.032 9 9a8.96 8.96 0 0 1-1.969 5.617zm-2.006-.742A6.977 6.977 0 0 0 18 11c0-3.868-3.133-7-7-7-3.868 0-7 3.132-7 7 0 3.867 3.132 7 7 7a6.977 6.977 0 0 0 4.875-1.975l.15-.15z\"/></g></svg>',\n  settings: '<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 24 24\"><g><path fill=\"none\" d=\"M0 0h24v24H0z\"/><path d=\"M2 12c0-.865.11-1.703.316-2.504A3 3 0 0 0 4.99 4.867a9.99 9.99 0 0 1 4.335-2.505 3 3 0 0 0 5.348 0 9.99 9.99 0 0 1 4.335 2.505 3 3 0 0 0 2.675 4.63c.206.8.316 1.638.316 2.503 0 .865-.11 1.703-.316 2.504a3 3 0 0 0-2.675 4.629 9.99 9.99 0 0 1-4.335 2.505 3 3 0 0 0-5.348 0 9.99 9.99 0 0 1-4.335-2.505 3 3 0 0 0-2.675-4.63C2.11 13.704 2 12.866 2 12zm4.804 3c.63 1.091.81 2.346.564 3.524.408.29.842.541 1.297.75A4.993 4.993 0 0 1 12 18c1.26 0 2.438.471 3.335 1.274.455-.209.889-.46 1.297-.75A4.993 4.993 0 0 1 17.196 15a4.993 4.993 0 0 1 2.77-2.25 8.126 8.126 0 0 0 0-1.5A4.993 4.993 0 0 1 17.195 9a4.993 4.993 0 0 1-.564-3.524 7.989 7.989 0 0 0-1.297-.75A4.993 4.993 0 0 1 12 6a4.993 4.993 0 0 1-3.335-1.274 7.99 7.99 0 0 0-1.297.75A4.993 4.993 0 0 1 6.804 9a4.993 4.993 0 0 1-2.77 2.25 8.126 8.126 0 0 0 0 1.5A4.993 4.993 0 0 1 6.805 15zM12 15a3 3 0 1 1 0-6 3 3 0 0 1 0 6zm0-2a1 1 0 1 0 0-2 1 1 0 0 0 0 2z\"/></g></svg>',\n  skills: '<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 24 24\"><g><path fill=\"none\" d=\"M0 0h24v24H0z\"/><path d=\"M2 18h7v2H2v-2zm0-7h9v2H2v-2zm0-7h20v2H2V4zm18.674 9.025l1.156-.391 1 1.732-.916.805a4.017 4.017 0 0 1 0 1.658l.916.805-1 1.732-1.156-.391c-.41.37-.898.655-1.435.83L19 21h-2l-.24-1.196a3.996 3.996 0 0 1-1.434-.83l-1.156.392-1-1.732.916-.805a4.017 4.017 0 0 1 0-1.658l-.916-.805 1-1.732 1.156.391c.41-.37.898-.655 1.435-.83L17 11h2l.24 1.196c.536.174 1.024.46 1.434.83zM18 18a2 2 0 1 0 0-4 2 2 0 0 0 0 4z\"/></g></svg>',\n  sort: '<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 24 24\"><g><path fill=\"none\" d=\"M0 0h24v24H0z\"/><path d=\"M11.95 7.95l-1.414 1.414L8 6.828 8 20H6V6.828L3.465 9.364 2.05 7.95 7 3l4.95 4.95zm10 8.1L17 21l-4.95-4.95 1.414-1.414 2.537 2.536L16 4h2v13.172l2.536-2.536 1.414 1.414z\"/></g></svg>',\n  success: '<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 24 24\"><g><path fill=\"none\" d=\"M0 0h24v24H0z\"/><path d=\"M12 22C6.477 22 2 17.523 2 12S6.477 2 12 2s10 4.477 10 10-4.477 10-10 10zm0-2a8 8 0 1 0 0-16 8 8 0 0 0 0 16zm-.997-4L6.76 11.757l1.414-1.414 2.829 2.829 5.656-5.657 1.415 1.414L11.003 16z\"/></g></svg>',\n  thumbUpFill: '<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 24 24\"><g><path fill=\"none\" d=\"M0 0h24v24H0z\"/><path d=\"M2 9h3v12H2a1 1 0 0 1-1-1V10a1 1 0 0 1 1-1zm5.293-1.293l6.4-6.4a.5.5 0 0 1 .654-.047l.853.64a1.5 1.5 0 0 1 .553 1.57L14.6 8H21a2 2 0 0 1 2 2v2.104a2 2 0 0 1-.15.762l-3.095 7.515a1 1 0 0 1-.925.619H8a1 1 0 0 1-1-1V8.414a1 1 0 0 1 .293-.707z\"/></g></svg>',\n  thumbUpLine: '<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 24 24\"><g><path fill=\"none\" d=\"M0 0h24v24H0z\"/><path d=\"M14.6 8H21a2 2 0 0 1 2 2v2.104a2 2 0 0 1-.15.762l-3.095 7.515a1 1 0 0 1-.925.619H2a1 1 0 0 1-1-1V10a1 1 0 0 1 1-1h3.482a1 1 0 0 0 .817-.423L11.752.85a.5.5 0 0 1 .632-.159l1.814.907a2.5 2.5 0 0 1 1.305 2.853L14.6 8zM7 10.588V19h11.16L21 12.104V10h-6.4a2 2 0 0 1-1.938-2.493l.903-3.548a.5.5 0 0 0-.261-.571l-.661-.33-4.71 6.672c-.25.354-.57.644-.933.858zM5 11H3v8h2v-8z\"/></g></svg>',\n  twitter: '<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 24 24\"><g><path fill=\"none\" d=\"M0 0h24v24H0z\"/><path d=\"M22.162 5.656a8.384 8.384 0 0 1-2.402.658A4.196 4.196 0 0 0 21.6 4c-.82.488-1.719.83-2.656 1.015a4.182 4.182 0 0 0-7.126 3.814 11.874 11.874 0 0 1-8.62-4.37 4.168 4.168 0 0 0-.566 2.103c0 1.45.738 2.731 1.86 3.481a4.168 4.168 0 0 1-1.894-.523v.052a4.185 4.185 0 0 0 3.355 4.101 4.21 4.21 0 0 1-1.89.072A4.185 4.185 0 0 0 7.97 16.65a8.394 8.394 0 0 1-6.191 1.732 11.83 11.83 0 0 0 6.41 1.88c7.693 0 11.9-6.373 11.9-11.9 0-.18-.005-.362-.013-.54a8.496 8.496 0 0 0 2.087-2.165z\"/></g></svg>',\n  upload: '<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 24 24\"><g><path fill=\"none\" d=\"M0 0h24v24H0z\"/><path d=\"M3 19h18v2H3v-2zM13 5.828V17h-2V5.828L4.929 11.9l-1.414-1.414L12 2l8.485 8.485-1.414 1.414L13 5.83z\"/></g></svg>',\n  warning: '<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 24 24\"><g><path fill=\"none\" d=\"M0 0h24v24H0z\"/><path d=\"M12 22C6.477 22 2 17.523 2 12S6.477 2 12 2s10 4.477 10 10-4.477 10-10 10zm0-2a8 8 0 1 0 0-16 8 8 0 0 0 0 16zm-1-5h2v2h-2v-2zm0-8h2v6h-2V7z\"/></g></svg>',\n}"
+                    "defaultValue": "{\r\n  account: '<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 24 24\"><g><path fill=\"none\" d=\"M0 0h24v24H0z\"/><path d=\"M12 22C6.477 22 2 17.523 2 12S6.477 2 12 2s10 4.477 10 10-4.477 10-10 10zm-4.987-3.744A7.966 7.966 0 0 0 12 20c1.97 0 3.773-.712 5.167-1.892A6.979 6.979 0 0 0 12.16 16a6.981 6.981 0 0 0-5.147 2.256zM5.616 16.82A8.975 8.975 0 0 1 12.16 14a8.972 8.972 0 0 1 6.362 2.634 8 8 0 1 0-12.906.187zM12 13a4 4 0 1 1 0-8 4 4 0 0 1 0 8zm0-2a2 2 0 1 0 0-4 2 2 0 0 0 0 4z\"/></g></svg>',\r\n  add: '<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 24 24\"><g><path fill=\"none\" d=\"M0 0h24v24H0z\"/><path d=\"M19 13h-6v6h-2v-6H5v-2h6V5h2v6h6v2z\"/></g></svg>',\r\n  admin: '<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 24 24\"><g><path fill=\"none\" d=\"M0 0h24v24H0z\"/><path d=\"M12 14v2a6 6 0 0 0-6 6H4a8 8 0 0 1 8-8zm0-1c-3.315 0-6-2.685-6-6s2.685-6 6-6 6 2.685 6 6-2.685 6-6 6zm0-2c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm9 6h1v5h-8v-5h1v-1a3 3 0 0 1 6 0v1zm-2 0v-1a1 1 0 0 0-2 0v1h2z\"/></g></svg>',\r\n  apps: '<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 24 24\"><g><path fill=\"none\" d=\"M0 0h24v24H0z\"/><path d=\"M6.75 2.5A4.25 4.25 0 0 1 11 6.75V11H6.75a4.25 4.25 0 1 1 0-8.5zM9 9V6.75A2.25 2.25 0 1 0 6.75 9H9zm-2.25 4H11v4.25A4.25 4.25 0 1 1 6.75 13zm0 2A2.25 2.25 0 1 0 9 17.25V15H6.75zm10.5-12.5a4.25 4.25 0 1 1 0 8.5H13V6.75a4.25 4.25 0 0 1 4.25-4.25zm0 6.5A2.25 2.25 0 1 0 15 6.75V9h2.25zM13 13h4.25A4.25 4.25 0 1 1 13 17.25V13zm2 2v2.25A2.25 2.25 0 1 0 17.25 15H15z\"/></g></svg>',\r\n  arrowLeft: '<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 24 24\"><g><path fill=\"none\" d=\"M0 0h24v24H0z\"/><path d=\"M7.828 11H20v2H7.828l5.364 5.364-1.414 1.414L4 12l7.778-7.778 1.414 1.414z\"/></g></svg>',\r\n  arrowRight: '<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 24 24\"><g><path fill=\"none\" d=\"M0 0h24v24H0z\"/><path d=\"M16.172 11l-5.364-5.364 1.414-1.414L20 12l-7.778 7.778-1.414-1.414L16.172 13H4v-2z\"/></g></svg>',\r\n  attachment: '<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 24 24\"><g><path fill=\"none\" d=\"M0 0h24v24H0z\"/><path d=\"M14 13.5V8a4 4 0 1 0-8 0v5.5a6.5 6.5 0 1 0 13 0V4h2v9.5a8.5 8.5 0 1 1-17 0V8a6 6 0 1 1 12 0v5.5a3.5 3.5 0 0 1-7 0V8h2v5.5a1.5 1.5 0 0 0 3 0z\"/></g></svg>',\r\n  awardFill: '<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 24 24\"><g><path fill=\"none\" d=\"M0 0h24v24H0z\"/><path d=\"M17 15.245v6.872a.5.5 0 0 1-.757.429L12 20l-4.243 2.546a.5.5 0 0 1-.757-.43v-6.87a8 8 0 1 1 10 0zM12 15a6 6 0 1 0 0-12 6 6 0 0 0 0 12zm0-2a4 4 0 1 1 0-8 4 4 0 0 1 0 8z\"/></g></svg>',\r\n  awardLine: '<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 24 24\"><g><path fill=\"none\" d=\"M0 0h24v24H0z\"/><path d=\"M17 15.245v6.872a.5.5 0 0 1-.757.429L12 20l-4.243 2.546a.5.5 0 0 1-.757-.43v-6.87a8 8 0 1 1 10 0zm-8 1.173v3.05l3-1.8 3 1.8v-3.05A7.978 7.978 0 0 1 12 17a7.978 7.978 0 0 1-3-.582zM12 15a6 6 0 1 0 0-12 6 6 0 0 0 0 12z\"/></g></svg>',\r\n  calendar: '<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 24 24\"><g><path fill=\"none\" d=\"M0 0h24v24H0z\"/><path d=\"M17 3h4a1 1 0 0 1 1 1v16a1 1 0 0 1-1 1H3a1 1 0 0 1-1-1V4a1 1 0 0 1 1-1h4V1h2v2h6V1h2v2zm-2 2H9v2H7V5H4v4h16V5h-3v2h-2V5zm5 6H4v8h16v-8z\"/></g></svg>',\r\n  camera: '<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 24 24\"><g><path fill=\"none\" d=\"M0 0h24v24H0z\"/><path d=\"M9.828 5l-2 2H4v12h16V7h-3.828l-2-2H9.828zM9 3h6l2 2h4a1 1 0 0 1 1 1v14a1 1 0 0 1-1 1H3a1 1 0 0 1-1-1V6a1 1 0 0 1 1-1h4l2-2zm3 15a5.5 5.5 0 1 1 0-11 5.5 5.5 0 0 1 0 11zm0-2a3.5 3.5 0 1 0 0-7 3.5 3.5 0 0 0 0 7z\"/></g></svg>',\r\n  chevronDown: '<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 24 24\"><g><path fill=\"none\" d=\"M0 0h24v24H0z\"/><path d=\"M12 13.172l4.95-4.95 1.414 1.414L12 16 5.636 9.636 7.05 8.222z\"/></g></svg>',\r\n  chevronLeft: '<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 24 24\"><g><path fill=\"none\" d=\"M0 0h24v24H0z\"/><path d=\"M10.828 12l4.95 4.95-1.414 1.414L8 12l6.364-6.364 1.414 1.414z\"/></g></svg>',\r\n  chevronRight: '<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 24 24\"><g><path fill=\"none\" d=\"M0 0h24v24H0z\"/><path d=\"M13.172 12l-4.95-4.95 1.414-1.414L16 12l-6.364 6.364-1.414-1.414z\"/></g></svg>',\r\n  chevronUp: '<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 24 24\"><g><path fill=\"none\" d=\"M0 0h24v24H0z\"/><path d=\"M12 10.828l-4.95 4.95-1.414-1.414L12 8l6.364 6.364-1.414 1.414z\"/></g></svg>',\r\n  close: '<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 24 24\"><g><path fill=\"none\" d=\"M0 0h24v24H0z\"/><path d=\"M12 10.586l4.95-4.95 1.414 1.414-4.95 4.95 4.95 4.95-1.414 1.414-4.95-4.95-4.95 4.95-1.414-1.414 4.95-4.95-4.95-4.95L7.05 5.636z\"/></g></svg>',\r\n  dashboard: '<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 24 24\"><g><path fill=\"none\" d=\"M0 0h24v24H0z\"/><path d=\"M13 21V11h8v10h-8zM3 13V3h8v10H3zm6-2V5H5v6h4zM3 21v-6h8v6H3zm2-2h4v-2H5v2zm10 0h4v-6h-4v6zM13 3h8v6h-8V3zm2 2v2h4V5h-4z\"/></g></svg>',\r\n  delete: '<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 24 24\"><g><path fill=\"none\" d=\"M0 0h24v24H0z\"/><path d=\"M17 6h5v2h-2v13a1 1 0 0 1-1 1H5a1 1 0 0 1-1-1V8H2V6h5V3a1 1 0 0 1 1-1h8a1 1 0 0 1 1 1v3zm1 2H6v12h12V8zm-9 3h2v6H9v-6zm4 0h2v6h-2v-6zM9 4v2h6V4H9z\"/></g></svg>',\r\n  developer: '<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 24 24\"><g><path fill=\"none\" d=\"M0 0h24v24H0z\"/><path d=\"M23 12l-7.071 7.071-1.414-1.414L20.172 12l-5.657-5.657 1.414-1.414L23 12zM3.828 12l5.657 5.657-1.414 1.414L1 12l7.071-7.071 1.414 1.414L3.828 12z\"/></g></svg>',\r\n  download: '<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 24 24\"><g><path fill=\"none\" d=\"M0 0h24v24H0z\"/><path d=\"M3 19h18v2H3v-2zm10-5.828L19.071 7.1l1.414 1.414L12 17 3.515 8.515 4.929 7.1 11 13.17V2h2v11.172z\"/></g></svg>',\r\n  dropDown: '<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 24 24\"><g><path fill=\"none\" d=\"M0 0h24v24H0z\"/><path d=\"M12 15l-4.243-4.243 1.415-1.414L12 12.172l2.828-2.829 1.415 1.414z\"/></g></svg>',\r\n  dropUp: '<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 24 24\"><g><path fill=\"none\" d=\"M0 0h24v24H0z\"/><path d=\"M12 11.828l-2.828 2.829-1.415-1.414L12 9l4.243 4.243-1.415 1.414L12 11.828z\"/></g></svg>',\r\n  edit: '<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 24 24\"><g><path fill=\"none\" d=\"M0 0h24v24H0z\"/><path d=\"M6.414 16L16.556 5.858l-1.414-1.414L5 14.586V16h1.414zm.829 2H3v-4.243L14.435 2.322a1 1 0 0 1 1.414 0l2.829 2.829a1 1 0 0 1 0 1.414L7.243 18zM3 20h18v2H3v-2z\"/></g></svg>',\r\n  explore: '<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 24 24\"><g><path fill=\"none\" d=\"M0 0h24v24H0z\"/><path d=\"M12 14v2a6 6 0 0 0-6 6H4a8 8 0 0 1 8-8zm0-1c-3.315 0-6-2.685-6-6s2.685-6 6-6 6 2.685 6 6-2.685 6-6 6zm0-2c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm9.446 9.032l1.504 1.504-1.414 1.414-1.504-1.504a4 4 0 1 1 1.414-1.414zM18 20a2 2 0 1 0 0-4 2 2 0 0 0 0 4z\"/></g></svg>',\r\n  facebook: '<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 24 24\"><g><path fill=\"none\" d=\"M0 0h24v24H0z\"/><path d=\"M14 13.5h2.5l1-4H14v-2c0-1.03 0-2 2-2h1.5V2.14c-.326-.043-1.557-.14-2.857-.14C11.928 2 10 3.657 10 6.7v2.8H7v4h3V22h4v-8.5z\"/></g></svg>',\r\n  filter: '<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 24 24\"><g><path fill=\"none\" d=\"M0 0H24V24H0z\"/><path d=\"M21 4v2h-1l-5 7.5V22H9v-8.5L4 6H3V4h18zM6.404 6L11 12.894V20h2v-7.106L17.596 6H6.404z\"/></g></svg>',\r\n  gatekeeper: '<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 40 19\"><g><path d=\"M11.1214 3.229L8.85495 0.955505L2.94076 6.85283L0 9.8015L2.94076 12.7829L8.85495 18.6803L11.1214 16.4068L4.64877 9.8015L11.1214 3.229Z\"/><path d=\"M19.9259 16.7687C18.6654 16.7687 17.4977 16.4536 16.4226 15.8234C15.3753 15.2025 14.5412 14.3684 13.9203 13.3211C13.2901 12.246 12.975 11.0783 12.975 9.81785C12.975 8.55743 13.2901 7.38968 13.9203 6.31461C14.5412 5.26734 15.3753 4.43324 16.4226 3.81229C17.4977 3.18208 18.6654 2.86697 19.9259 2.86697C21.1863 2.86697 22.354 3.18208 23.4291 3.81229C24.4764 4.43324 25.3105 5.26734 25.9314 6.31461C26.5616 7.38968 26.8767 8.55743 26.8767 9.81785C26.8767 11.0783 26.5616 12.246 25.9314 13.3211C25.3105 14.3684 24.4764 15.2025 23.4291 15.8234C22.354 16.4536 21.1863 16.7687 19.9259 16.7687ZM19.2308 10.3739V12.5982H20.621V10.3739C21.0009 10.2071 21.2836 9.94297 21.469 9.58152C21.6543 9.21081 21.7053 8.82619 21.6219 8.42768C21.5385 8.01989 21.3346 7.68625 21.0102 7.42675C20.6951 7.16725 20.3336 7.0375 19.9259 7.0375C19.5181 7.0375 19.152 7.16725 18.8276 7.42675C18.5125 7.68625 18.3133 8.01989 18.2298 8.42768C18.1464 8.82619 18.1974 9.21081 18.3828 9.58152C18.5681 9.94297 18.8508 10.2071 19.2308 10.3739Z\"/><path d=\"M36.6793 6.85283L30.7977 0.955505L28.4986 3.229L34.9861 9.8015L28.4986 16.4068L30.7977 18.6803L36.6793 12.7829L39.62 9.8015L36.6793 6.85283Z\"/><path d=\"M11.1214 3.229L8.85495 0.955505L2.94076 6.85283L0 9.8015L2.94076 12.7829L8.85495 18.6803L11.1214 16.4068L4.64877 9.8015L11.1214 3.229Z\"/><path d=\"M19.9259 16.7687C18.6654 16.7687 17.4977 16.4536 16.4226 15.8234C15.3753 15.2025 14.5412 14.3684 13.9203 13.3211C13.2901 12.246 12.975 11.0783 12.975 9.81785C12.975 8.55743 13.2901 7.38968 13.9203 6.31461C14.5412 5.26734 15.3753 4.43324 16.4226 3.81229C17.4977 3.18208 18.6654 2.86697 19.9259 2.86697C21.1863 2.86697 22.354 3.18208 23.4291 3.81229C24.4764 4.43324 25.3105 5.26734 25.9314 6.31461C26.5616 7.38968 26.8767 8.55743 26.8767 9.81785C26.8767 11.0783 26.5616 12.246 25.9314 13.3211C25.3105 14.3684 24.4764 15.2025 23.4291 15.8234C22.354 16.4536 21.1863 16.7687 19.9259 16.7687ZM19.2308 10.3739V12.5982H20.621V10.3739C21.0009 10.2071 21.2836 9.94297 21.469 9.58152C21.6543 9.21081 21.7053 8.82619 21.6219 8.42768C21.5385 8.01989 21.3346 7.68625 21.0102 7.42675C20.6951 7.16725 20.3336 7.0375 19.9259 7.0375C19.5181 7.0375 19.152 7.16725 18.8276 7.42675C18.5125 7.68625 18.3133 8.01989 18.2298 8.42768C18.1464 8.82619 18.1974 9.21081 18.3828 9.58152C18.5681 9.94297 18.8508 10.2071 19.2308 10.3739Z\"/><path d=\"M36.6793 6.85283L30.7977 0.955505L28.4986 3.229L34.9861 9.8015L28.4986 16.4068L30.7977 18.6803L36.6793 12.7829L39.62 9.8015L36.6793 6.85283Z\"/></g></svg>',\r\n  help: '<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 24 24\"><g><path fill=\"none\" d=\"M0 0h24v24H0z\"/><path d=\"M12 22C6.477 22 2 17.523 2 12S6.477 2 12 2s10 4.477 10 10-4.477 10-10 10zm0-2a8 8 0 1 0 0-16 8 8 0 0 0 0 16zm-1-5h2v2h-2v-2zm2-1.645V14h-2v-1.5a1 1 0 0 1 1-1 1.5 1.5 0 1 0-1.471-1.794l-1.962-.393A3.501 3.501 0 1 1 13 13.355z\"/></g></svg>',\r\n  hr: '<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 24 24\"><g><path fill=\"none\" d=\"M0 0h24v24H0z\"/><path fill-rule=\"nonzero\" d=\"M12 11a5 5 0 0 1 5 5v6h-2v-6a3 3 0 0 0-2.824-2.995L12 13a3 3 0 0 0-2.995 2.824L9 16v6H7v-6a5 5 0 0 1 5-5zm-6.5 3c.279 0 .55.033.81.094a5.947 5.947 0 0 0-.301 1.575L6 16v.086a1.492 1.492 0 0 0-.356-.08L5.5 16a1.5 1.5 0 0 0-1.493 1.356L4 17.5V22H2v-4.5A3.5 3.5 0 0 1 5.5 14zm13 0a3.5 3.5 0 0 1 3.5 3.5V22h-2v-4.5a1.5 1.5 0 0 0-1.356-1.493L18.5 16c-.175 0-.343.03-.5.085V16c0-.666-.108-1.306-.309-1.904.259-.063.53-.096.809-.096zm-13-6a2.5 2.5 0 1 1 0 5 2.5 2.5 0 0 1 0-5zm13 0a2.5 2.5 0 1 1 0 5 2.5 2.5 0 0 1 0-5zm-13 2a.5.5 0 1 0 0 1 .5.5 0 0 0 0-1zm13 0a.5.5 0 1 0 0 1 .5.5 0 0 0 0-1zM12 2a4 4 0 1 1 0 8 4 4 0 0 1 0-8zm0 2a2 2 0 1 0 0 4 2 2 0 0 0 0-4z\"/></g></svg>',\r\n  info: '<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 24 24\"><g><path fill=\"none\" d=\"M0 0h24v24H0z\"/><path d=\"M12 22C6.477 22 2 17.523 2 12S6.477 2 12 2s10 4.477 10 10-4.477 10-10 10zm0-2a8 8 0 1 0 0-16 8 8 0 0 0 0 16zM11 7h2v2h-2V7zm0 4h2v6h-2v-6z\"/></g></svg>',\r\n  instagram: '<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 24 24\"><g><path fill=\"none\" d=\"M0 0h24v24H0z\"/><path fill-rule=\"nonzero\" d=\"M12 9a3 3 0 1 0 0 6 3 3 0 0 0 0-6zm0-2a5 5 0 1 1 0 10 5 5 0 0 1 0-10zm6.5-.25a1.25 1.25 0 0 1-2.5 0 1.25 1.25 0 0 1 2.5 0zM12 4c-2.474 0-2.878.007-4.029.058-.784.037-1.31.142-1.798.332-.434.168-.747.369-1.08.703a2.89 2.89 0 0 0-.704 1.08c-.19.49-.295 1.015-.331 1.798C4.006 9.075 4 9.461 4 12c0 2.474.007 2.878.058 4.029.037.783.142 1.31.331 1.797.17.435.37.748.702 1.08.337.336.65.537 1.08.703.494.191 1.02.297 1.8.333C9.075 19.994 9.461 20 12 20c2.474 0 2.878-.007 4.029-.058.782-.037 1.309-.142 1.797-.331.433-.169.748-.37 1.08-.702.337-.337.538-.65.704-1.08.19-.493.296-1.02.332-1.8.052-1.104.058-1.49.058-4.029 0-2.474-.007-2.878-.058-4.029-.037-.782-.142-1.31-.332-1.798a2.911 2.911 0 0 0-.703-1.08 2.884 2.884 0 0 0-1.08-.704c-.49-.19-1.016-.295-1.798-.331C14.925 4.006 14.539 4 12 4zm0-2c2.717 0 3.056.01 4.122.06 1.065.05 1.79.217 2.428.465.66.254 1.216.598 1.772 1.153a4.908 4.908 0 0 1 1.153 1.772c.247.637.415 1.363.465 2.428.047 1.066.06 1.405.06 4.122 0 2.717-.01 3.056-.06 4.122-.05 1.065-.218 1.79-.465 2.428a4.883 4.883 0 0 1-1.153 1.772 4.915 4.915 0 0 1-1.772 1.153c-.637.247-1.363.415-2.428.465-1.066.047-1.405.06-4.122.06-2.717 0-3.056-.01-4.122-.06-1.065-.05-1.79-.218-2.428-.465a4.89 4.89 0 0 1-1.772-1.153 4.904 4.904 0 0 1-1.153-1.772c-.248-.637-.415-1.363-.465-2.428C2.013 15.056 2 14.717 2 12c0-2.717.01-3.056.06-4.122.05-1.066.217-1.79.465-2.428a4.88 4.88 0 0 1 1.153-1.772A4.897 4.897 0 0 1 5.45 2.525c.638-.248 1.362-.415 2.428-.465C8.944 2.013 9.283 2 12 2z\"/></g></svg>',\r\n  link: '<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 24 24\"><g><path fill=\"none\" d=\"M0 0h24v24H0z\"/><path d=\"M18.364 15.536L16.95 14.12l1.414-1.414a5 5 0 1 0-7.071-7.071L9.879 7.05 8.464 5.636 9.88 4.222a7 7 0 0 1 9.9 9.9l-1.415 1.414zm-2.828 2.828l-1.415 1.414a7 7 0 0 1-9.9-9.9l1.415-1.414L7.05 9.88l-1.414 1.414a5 5 0 1 0 7.071 7.071l1.414-1.414 1.415 1.414zm-.708-10.607l1.415 1.415-7.071 7.07-1.415-1.414 7.071-7.07z\"/></g></svg>',\r\n  linkedin: '<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 24 24\"><g><path fill=\"none\" d=\"M0 0h24v24H0z\"/><path fill-rule=\"nonzero\" d=\"M6.94 5a2 2 0 1 1-4-.002 2 2 0 0 1 4 .002zM7 8.48H3V21h4V8.48zm6.32 0H9.34V21h3.94v-6.57c0-3.66 4.77-4 4.77 0V21H22v-7.93c0-6.17-7.06-5.94-8.72-2.91l.04-1.68z\"/></g></svg>',\r\n  logOut: '<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 24 24\"><g><path fill=\"none\" d=\"M0 0h24v24H0z\"/><path d=\"M4 18h2v2h12V4H6v2H4V3a1 1 0 0 1 1-1h14a1 1 0 0 1 1 1v18a1 1 0 0 1-1 1H5a1 1 0 0 1-1-1v-3zm2-7h7v2H6v3l-5-4 5-4v3z\"/></g></svg>',\r\n  mail: '<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 24 24\"><g><path fill=\"none\" d=\"M0 0h24v24H0z\"/><path d=\"M3 3h18a1 1 0 0 1 1 1v16a1 1 0 0 1-1 1H3a1 1 0 0 1-1-1V4a1 1 0 0 1 1-1zm17 4.238l-7.928 7.1L4 7.216V19h16V7.238zM4.511 5l7.55 6.662L19.502 5H4.511z\"/></g></svg>',\r\n  menu: '<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 24 24\"><g><path fill=\"none\" d=\"M0 0h24v24H0z\"/><path d=\"M3 4h18v2H3V4zm0 7h18v2H3v-2zm0 7h18v2H3v-2z\"/></g></svg>',\r\n  more: '<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 24 24\"><g><path fill=\"none\" d=\"M0 0h24v24H0z\"/><path d=\"M12 3c-.825 0-1.5.675-1.5 1.5S11.175 6 12 6s1.5-.675 1.5-1.5S12.825 3 12 3zm0 15c-.825 0-1.5.675-1.5 1.5S11.175 21 12 21s1.5-.675 1.5-1.5S12.825 18 12 18zm0-7.5c-.825 0-1.5.675-1.5 1.5s.675 1.5 1.5 1.5 1.5-.675 1.5-1.5-.675-1.5-1.5-1.5z\"/></g></svg>',\r\n  points: '<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 24 24\"><g><path fill=\"none\" d=\"M0 0h24v24H0z\"/><path fill-rule=\"nonzero\" d=\"M12 7a8 8 0 1 1 0 16 8 8 0 0 1 0-16zm0 2a6 6 0 1 0 0 12 6 6 0 0 0 0-12zm0 1.5l1.323 2.68 2.957.43-2.14 2.085.505 2.946L12 17.25l-2.645 1.39.505-2.945-2.14-2.086 2.957-.43L12 10.5zM18 2v3l-1.363 1.138A9.935 9.935 0 0 0 13 5.049L13 2 18 2zm-7-.001v3.05a9.935 9.935 0 0 0-3.636 1.088L6 5V2l5-.001z\"/></g></svg>',\r\n  reorder: '<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 24 24\"><g><path fill=\"none\" d=\"M0 0h24v24H0z\"/><path d=\"M3 4h18v2H3V4zm0 15h18v2H3v-2zm0-5h18v2H3v-2zm0-5h18v2H3V9z\"/></g></svg>',\r\n  search: '<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 24 24\"><g><path fill=\"none\" d=\"M0 0h24v24H0z\"/><path d=\"M18.031 16.617l4.283 4.282-1.415 1.415-4.282-4.283A8.96 8.96 0 0 1 11 20c-4.968 0-9-4.032-9-9s4.032-9 9-9 9 4.032 9 9a8.96 8.96 0 0 1-1.969 5.617zm-2.006-.742A6.977 6.977 0 0 0 18 11c0-3.868-3.133-7-7-7-3.868 0-7 3.132-7 7 0 3.867 3.132 7 7 7a6.977 6.977 0 0 0 4.875-1.975l.15-.15z\"/></g></svg>',\r\n  settings: '<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 24 24\"><g><path fill=\"none\" d=\"M0 0h24v24H0z\"/><path d=\"M2 12c0-.865.11-1.703.316-2.504A3 3 0 0 0 4.99 4.867a9.99 9.99 0 0 1 4.335-2.505 3 3 0 0 0 5.348 0 9.99 9.99 0 0 1 4.335 2.505 3 3 0 0 0 2.675 4.63c.206.8.316 1.638.316 2.503 0 .865-.11 1.703-.316 2.504a3 3 0 0 0-2.675 4.629 9.99 9.99 0 0 1-4.335 2.505 3 3 0 0 0-5.348 0 9.99 9.99 0 0 1-4.335-2.505 3 3 0 0 0-2.675-4.63C2.11 13.704 2 12.866 2 12zm4.804 3c.63 1.091.81 2.346.564 3.524.408.29.842.541 1.297.75A4.993 4.993 0 0 1 12 18c1.26 0 2.438.471 3.335 1.274.455-.209.889-.46 1.297-.75A4.993 4.993 0 0 1 17.196 15a4.993 4.993 0 0 1 2.77-2.25 8.126 8.126 0 0 0 0-1.5A4.993 4.993 0 0 1 17.195 9a4.993 4.993 0 0 1-.564-3.524 7.989 7.989 0 0 0-1.297-.75A4.993 4.993 0 0 1 12 6a4.993 4.993 0 0 1-3.335-1.274 7.99 7.99 0 0 0-1.297.75A4.993 4.993 0 0 1 6.804 9a4.993 4.993 0 0 1-2.77 2.25 8.126 8.126 0 0 0 0 1.5A4.993 4.993 0 0 1 6.805 15zM12 15a3 3 0 1 1 0-6 3 3 0 0 1 0 6zm0-2a1 1 0 1 0 0-2 1 1 0 0 0 0 2z\"/></g></svg>',\r\n  skills: '<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 24 24\"><g><path fill=\"none\" d=\"M0 0h24v24H0z\"/><path d=\"M2 18h7v2H2v-2zm0-7h9v2H2v-2zm0-7h20v2H2V4zm18.674 9.025l1.156-.391 1 1.732-.916.805a4.017 4.017 0 0 1 0 1.658l.916.805-1 1.732-1.156-.391c-.41.37-.898.655-1.435.83L19 21h-2l-.24-1.196a3.996 3.996 0 0 1-1.434-.83l-1.156.392-1-1.732.916-.805a4.017 4.017 0 0 1 0-1.658l-.916-.805 1-1.732 1.156.391c.41-.37.898-.655 1.435-.83L17 11h2l.24 1.196c.536.174 1.024.46 1.434.83zM18 18a2 2 0 1 0 0-4 2 2 0 0 0 0 4z\"/></g></svg>',\r\n  sort: '<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 24 24\"><g><path fill=\"none\" d=\"M0 0h24v24H0z\"/><path d=\"M11.95 7.95l-1.414 1.414L8 6.828 8 20H6V6.828L3.465 9.364 2.05 7.95 7 3l4.95 4.95zm10 8.1L17 21l-4.95-4.95 1.414-1.414 2.537 2.536L16 4h2v13.172l2.536-2.536 1.414 1.414z\"/></g></svg>',\r\n  success: '<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 24 24\"><g><path fill=\"none\" d=\"M0 0h24v24H0z\"/><path d=\"M12 22C6.477 22 2 17.523 2 12S6.477 2 12 2s10 4.477 10 10-4.477 10-10 10zm0-2a8 8 0 1 0 0-16 8 8 0 0 0 0 16zm-.997-4L6.76 11.757l1.414-1.414 2.829 2.829 5.656-5.657 1.415 1.414L11.003 16z\"/></g></svg>',\r\n  thumbUpFill: '<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 24 24\"><g><path fill=\"none\" d=\"M0 0h24v24H0z\"/><path d=\"M2 9h3v12H2a1 1 0 0 1-1-1V10a1 1 0 0 1 1-1zm5.293-1.293l6.4-6.4a.5.5 0 0 1 .654-.047l.853.64a1.5 1.5 0 0 1 .553 1.57L14.6 8H21a2 2 0 0 1 2 2v2.104a2 2 0 0 1-.15.762l-3.095 7.515a1 1 0 0 1-.925.619H8a1 1 0 0 1-1-1V8.414a1 1 0 0 1 .293-.707z\"/></g></svg>',\r\n  thumbUpLine: '<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 24 24\"><g><path fill=\"none\" d=\"M0 0h24v24H0z\"/><path d=\"M14.6 8H21a2 2 0 0 1 2 2v2.104a2 2 0 0 1-.15.762l-3.095 7.515a1 1 0 0 1-.925.619H2a1 1 0 0 1-1-1V10a1 1 0 0 1 1-1h3.482a1 1 0 0 0 .817-.423L11.752.85a.5.5 0 0 1 .632-.159l1.814.907a2.5 2.5 0 0 1 1.305 2.853L14.6 8zM7 10.588V19h11.16L21 12.104V10h-6.4a2 2 0 0 1-1.938-2.493l.903-3.548a.5.5 0 0 0-.261-.571l-.661-.33-4.71 6.672c-.25.354-.57.644-.933.858zM5 11H3v8h2v-8z\"/></g></svg>',\r\n  twitter: '<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 24 24\"><g><path fill=\"none\" d=\"M0 0h24v24H0z\"/><path d=\"M22.162 5.656a8.384 8.384 0 0 1-2.402.658A4.196 4.196 0 0 0 21.6 4c-.82.488-1.719.83-2.656 1.015a4.182 4.182 0 0 0-7.126 3.814 11.874 11.874 0 0 1-8.62-4.37 4.168 4.168 0 0 0-.566 2.103c0 1.45.738 2.731 1.86 3.481a4.168 4.168 0 0 1-1.894-.523v.052a4.185 4.185 0 0 0 3.355 4.101 4.21 4.21 0 0 1-1.89.072A4.185 4.185 0 0 0 7.97 16.65a8.394 8.394 0 0 1-6.191 1.732 11.83 11.83 0 0 0 6.41 1.88c7.693 0 11.9-6.373 11.9-11.9 0-.18-.005-.362-.013-.54a8.496 8.496 0 0 0 2.087-2.165z\"/></g></svg>',\r\n  upload: '<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 24 24\"><g><path fill=\"none\" d=\"M0 0h24v24H0z\"/><path d=\"M3 19h18v2H3v-2zM13 5.828V17h-2V5.828L4.929 11.9l-1.414-1.414L12 2l8.485 8.485-1.414 1.414L13 5.83z\"/></g></svg>',\r\n  warning: '<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 24 24\"><g><path fill=\"none\" d=\"M0 0h24v24H0z\"/><path d=\"M12 22C6.477 22 2 17.523 2 12S6.477 2 12 2s10 4.477 10 10-4.477 10-10 10zm0-2a8 8 0 1 0 0-16 8 8 0 0 0 0 16zm-1-5h2v2h-2v-2zm0-8h2v6h-2V7z\"/></g></svg>',\r\n}"
                 },
                 {
                     "name": "IconFill",
@@ -2137,7 +2094,7 @@
                     "deprecated": false,
                     "deprecationMessage": "",
                     "type": "",
-                    "defaultValue": "{\n  ApplaudoNavyBlue : 'applaudo-navy-blue',\n  ApplaudoRed : 'applaudo-red',\n  LightGray : 'light-gray',\n  White : 'white',\n  ApplaudoRedPlus : 'applaudo-red-plus',\n  ApplaudoRedMinus : 'applaudo-red-minus',\n  ErrorRed : 'error-red',\n  Green : 'green',\n  MidGray : 'mid-gray',\n  Yellow : 'yellow',\n  Charcoal : 'charcoal',\n  CoolGray : 'cool-gray',\n  Platinum : 'platinum',\n  ApplaudoPurple : 'applaudo-purple',\n  Blue : 'blue',\n  Bronze : 'bronze',\n  LightNavyBlue : 'light-navy-blue',\n} as const"
+                    "defaultValue": "{\r\n  ApplaudoNavyBlue : 'applaudo-navy-blue',\r\n  ApplaudoRed : 'applaudo-red',\r\n  LightGray : 'light-gray',\r\n  White : 'white',\r\n  ApplaudoRedPlus : 'applaudo-red-plus',\r\n  ApplaudoRedMinus : 'applaudo-red-minus',\r\n  ErrorRed : 'error-red',\r\n  Green : 'green',\r\n  MidGray : 'mid-gray',\r\n  Yellow : 'yellow',\r\n  Charcoal : 'charcoal',\r\n  CoolGray : 'cool-gray',\r\n  Platinum : 'platinum',\r\n  ApplaudoPurple : 'applaudo-purple',\r\n  Blue : 'blue',\r\n  Bronze : 'bronze',\r\n  LightNavyBlue : 'light-navy-blue',\r\n  Cyan: 'cyan',\r\n} as const"
                 }
             ],
             "src/test.ts": [
@@ -2180,6 +2137,18 @@
                     "deprecated": false,
                     "deprecationMessage": "",
                     "type": "literal type"
+                }
+            ],
+            "src/environments/environment.prod.ts": [
+                {
+                    "name": "environment",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "src/environments/environment.prod.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "object",
+                    "defaultValue": "{\r\n  production: true\r\n}"
                 }
             ],
             "src/environments/environment.ts": [
@@ -2254,18 +2223,6 @@
                     "deprecationMessage": "",
                     "type": "",
                     "defaultValue": "Template.bind({})"
-                }
-            ],
-            "src/environments/environment.prod.ts": [
-                {
-                    "name": "environment",
-                    "ctype": "miscellaneous",
-                    "subtype": "variable",
-                    "file": "src/environments/environment.prod.ts",
-                    "deprecated": false,
-                    "deprecationMessage": "",
-                    "type": "object",
-                    "defaultValue": "{\n  production: true\n}"
                 }
             ],
             "src/stories/Button.stories.ts": [
@@ -2402,8 +2359,8 @@
                     "file": "src/stories/clapp-lib/components/nav-link.stories.ts",
                     "deprecated": false,
                     "deprecationMessage": "",
-                    "type": "Story<SvgIconComponent>",
-                    "defaultValue": "(args: SvgIconComponent) => ({\n  props: args,\n})"
+                    "type": "Story<NavLinkComponent>",
+                    "defaultValue": "(args: NavLinkComponent) => ({\r\n  props: args,\r\n})"
                 }
             ],
             "src/stories/clapp-lib/components/svg-icon.stories.ts": [
@@ -2447,7 +2404,29 @@
                     "deprecated": false,
                     "deprecationMessage": "",
                     "type": "Story<SidebarContextComponent>",
-                    "defaultValue": "(args: SidebarContextComponent) => ({\n  props: args,\n  template: `<cl-sidebar-context>\n    <ng-container content>\n    Lorem Ipsum is simply dummy text of the printing and typesetting industry. \n    Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, \n    when an unknown printer took a galley of type and scrambled it to make a type \n    specimen book. It has survived not only five centuries, but also the leap into \n    electronic typesetting, remaining essentially unchanged. It was popularised in \n    the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, \n    and more recently with desktop publishing software like Aldus PageMaker including \n    versions of Lorem Ipsum.\n    </ng-container>\n  </cl-sidebar-context>`,\n  styles: [\n    `\n    :host {\n      font-family: 'Avenir Next';\n      font-weight: 600;\n      font-size: 16px;\n      line-height: 24px;\n    }\n    `,\n  ],\n})"
+                    "defaultValue": "(args: SidebarContextComponent) => ({\r\n  props: args,\r\n  template: `\r\n  <cl-sidebar-context>\r\n\r\n  <ng-container sidebarHeader>\r\n    <cl-svg-icon [icon]=\"'gatekeeper'\" [fill]=\"'ApplaudoRed'\"></cl-svg-icon>\r\n  </ng-container>\r\n\r\n  <ng-container sidebarContent>\r\n    <cl-nav-link [icon]=\"'account'\" text=\"account\" [showText]=\"!isCollapsed\"></cl-nav-link>\r\n    <cl-nav-link [icon]=\"'admin'\" text=\"admin\" [showText]=\"!isCollapsed\"></cl-nav-link>\r\n    <cl-nav-link [icon]=\"'awardFill'\" text=\"awardFill\" [showText]=\"!isCollapsed\"></cl-nav-link>\r\n    <cl-nav-link [icon]=\"'calendar'\" text=\"calendar\" [showText]=\"!isCollapsed\"></cl-nav-link>\r\n  </ng-container>\r\n\r\n  <ng-container sidebarFooter>\r\n    <cl-nav-link [icon]=\"'logOut'\" text=\"Log Out\" [showText]=\"!isCollapsed\"></cl-nav-link>\r\n  </ng-container>\r\n\r\n  <ng-container content>\r\n    Lorem Ipsum is simply dummy text of the printing and typesetting industry. \r\n    Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, \r\n    when an unknown printer took a galley of type and scrambled it to make a type \r\n    specimen book. It has survived not only five centuries, but also the leap into \r\n    electronic typesetting, remaining essentially unchanged. It was popularised in \r\n    the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, \r\n    and more recently with desktop publishing software like Aldus PageMaker including \r\n    versions of Lorem Ipsum.\r\n  </ng-container>\r\n\r\n  </cl-sidebar-context>`,\r\n  styles: [\r\n    `\r\n    :host {\r\n      font-family: 'Avenir Next';\r\n      font-weight: 600;\r\n      font-size: 16px;\r\n      line-height: 24px;\r\n      min-height: 200px;\r\n    }\r\n    `,\r\n  ],\r\n})"
+                }
+            ],
+            "src/stories/clapp-lib/components/tag.stories.ts": [
+                {
+                    "name": "Principal",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "src/stories/clapp-lib/components/tag.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "",
+                    "defaultValue": "Template.bind({})"
+                },
+                {
+                    "name": "Template",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "src/stories/clapp-lib/components/tag.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "Story<TagComponent>",
+                    "defaultValue": "(args: TagComponent) => ({\r\n  props: args,\r\n})"
                 }
             ]
         },
@@ -2611,15 +2590,6 @@
                 "status": "low"
             },
             {
-                "filePath": "projects/clapp/src/lib/components/buttons/icon-button/icon-button.component.ts",
-                "type": "component",
-                "linktype": "component",
-                "name": "IconButtonComponent",
-                "coveragePercent": 0,
-                "coverageCount": "0/3",
-                "status": "low"
-            },
-            {
                 "filePath": "projects/clapp/src/lib/components/nav-link/nav-link.component.ts",
                 "type": "component",
                 "linktype": "component",
@@ -2654,7 +2624,16 @@
                 "linktype": "component",
                 "name": "SvgIconComponent",
                 "coveragePercent": 0,
-                "coverageCount": "0/13",
+                "coverageCount": "0/11",
+                "status": "low"
+            },
+            {
+                "filePath": "projects/clapp/src/lib/components/tag/tag.component.ts",
+                "type": "component",
+                "linktype": "component",
+                "name": "TagComponent",
+                "coveragePercent": 0,
+                "coverageCount": "0/5",
                 "status": "low"
             },
             {
@@ -2889,6 +2868,66 @@
                 "status": "very-good"
             },
             {
+                "filePath": "src/stories/clapp-lib/components/button.stories.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "Icon",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "src/stories/clapp-lib/components/button.stories.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "Primary",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "src/stories/clapp-lib/components/button.stories.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "Secondary",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "src/stories/clapp-lib/components/button.stories.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "Template",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "src/stories/clapp-lib/components/button.stories.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "Tertiary",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "src/stories/clapp-lib/components/button.stories.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "Text",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
                 "filePath": "src/stories/clapp-lib/components/nav-link.stories.ts",
                 "type": "variable",
                 "linktype": "miscellaneous",
@@ -2920,6 +2959,26 @@
             },
             {
                 "filePath": "src/stories/clapp-lib/components/svg-icon.stories.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "Template",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "src/stories/clapp-lib/components/tag.stories.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "Principal",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "src/stories/clapp-lib/components/tag.stories.ts",
                 "type": "variable",
                 "linktype": "miscellaneous",
                 "linksubtype": "variable",
