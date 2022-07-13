@@ -1,0 +1,10 @@
+
+<div id="input-container">
+  <input type="text" name="text" autocomplete="off" class="" required [disabled]="disabled" [placeholder]="(type == 'noLabel') ? placeholder : ''" />
+  <label *ngIf="type == 'plusLabel'" for="text" class="label-name">
+    <span class="content-name" [innerText]="label"></span>
+  </label>
+</div>
+<span class="error-message">
+  <!-- Please enter your text -->
+</span>

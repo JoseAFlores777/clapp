@@ -6,6 +6,7 @@ import { SvgIconComponent } from './components/svg-icon/svg-icon.component';
 import { SidebarContextComponent } from './patterns/sidebar-context/sidebar-context.component';
 import { NavLinkComponent } from './components/nav-link/nav-link.component';
 import { RouterModule } from '@angular/router';
+import { InputTextComponent } from './components/input-text/input-text.component';
 
 
 @NgModule({
@@ -15,6 +16,7 @@ import { RouterModule } from '@angular/router';
     SidebarContextComponent,
     NavLinkComponent,
     ButtonComponent,
+    InputTextComponent,
   ],
   imports: [
     CommonModule,
@@ -26,6 +28,7 @@ import { RouterModule } from '@angular/router';
     SidebarContextComponent,
     NavLinkComponent,
     ButtonComponent,
+    InputTextComponent
   ]
 })
 export class ClappModule { }

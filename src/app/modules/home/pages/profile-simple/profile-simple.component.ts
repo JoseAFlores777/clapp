@@ -7,7 +7,7 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ProfileSimpleComponent implements OnInit {
 
-
+prueba:boolean =false;
 
   constructor() { }
 
